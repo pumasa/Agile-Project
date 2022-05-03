@@ -3,6 +3,7 @@ import os
 
 class Recipe:
     def __init__(self):
+        """This is the constructor"""
         #set of all the ingredients in the recipe
         self.ingredients = []
         #list of instruction steps in the form of a string
@@ -36,7 +37,7 @@ class Recipe:
     def change_serving(self, new_serving):
         change = new_serving / self.serving
         count = 0
-        while count < len(self.ingredients)
+        while count < len(self.ingredients):
             self.ingredients[count[0]] *= change
 
     #adds an ingredient and ingredient quantity to the recipe's ingredient list
