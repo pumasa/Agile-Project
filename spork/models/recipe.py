@@ -36,7 +36,7 @@ class Recipe:
     def change_serving(self, new_serving):
         change = new_serving / self.serving
         count = 0
-        while count < len(self.ingredients)
+        while count < len(self.ingredients):
             self.ingredients[count[0]] *= change
 
     #adds an ingredient and ingredient quantity to the recipe's ingredient list
