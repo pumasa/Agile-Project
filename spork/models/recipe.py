@@ -2,35 +2,18 @@ import json
 import os
 
 class Recipe:
-    def __init__(self):
+    def __init__(self,recipeID,title,serving):
         """This is the constructor"""
         #set of all the ingredients in the recipe
         self.ingredients = []
         #list of instruction steps in the form of a string
         self.instructions = []
 
-        self.recipeID = ''
+        self.recipeID = recipeID
 
-        self.title = ''
-
-        self.author = ''
-
-        self.serving = 1
-
-    #sets the id of the recipe
-    def set_recipeid(self, id):
-        self.recipeID = id
-
-    #set the title of the recipe
-    def set_title(self, title):
         self.title = title
 
-    #sets the author of the recipe
-    def set_author(self, author):
-        self.author = author
 
-    #sets how many the recipe serves
-    def set_serving(self, serving):
         self.serving = serving
 
     #changes how many the recipe serves by altering the quantity values in the recipe list
