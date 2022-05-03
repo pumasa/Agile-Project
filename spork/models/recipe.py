@@ -3,6 +3,7 @@ import os
 
 class Recipe:
     def __init__(self):
+        """This is the constructor"""
         #set of all the ingredients in the recipe
         self.ingredients = []
         #list of instruction steps in the form of a string
