@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="static/css/register-login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Register and Login</title>
+</head>
+
+
+
+<body>
+    <div class="nav_custom">
+        <nav class="navbar navbar-custom">
+            <!-- logo -->
+            <span><a href="/"><img class="navlogo" src="static/img/spork yellow.png" ></a></span>
+            <div class="button-div">
+                <!-- Create button -->
+                <button id="create-button" class="nav-button">Create</button>
+                <!-- Filter button -->
+                <button id="filter-button" class="nav-button">Filter</button>
+                <!-- account login -->
+                <button id="account-button" class="nav-button"><img class="account-icon" src="static/img/account-icon.png"></button>
+                <!-- <img class="account-icon" src="images/account-icon.png"> -->
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- This div is centered | All the contents of the form are here-->
+    <div class="account-body-container">
+        <div class="container" id="account-body">
+
+            <!-- account image -->
+            <div class="account-image container">
+                <img>
+            </div>
+
+            <!-- inputs for email and password -->
+            <input id="email" class="form-control container account-input" type="text" placeholder="Email">
+            <input id="password" class="form-control container account-input" type="text" placeholder="Password">
+
+            <!-- cancle and save buttons -->
+            <div class="cancle-save-container">
+
+
+                <button id="cancle-button" type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal">Register</button>
+
+
+                <button id="save-button" type="button" class="btn btn-success">Login</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Spork Registration</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+
+                        <form method=post action="/register">
+                            <dl>
+
+                                <dt><label for="username">Username</label>
+      <dd><input id="username" name="username" type="text" value="">
+      
+      </dd>
+    
+                                
+      <dt><label for="email">Email Address</label>
+      <dd><input id="email" name="email" type="text" value="">
+      
+      </dd>
+    
+                                
+      <dt><label for="password">New Password</label>
+      <dd><input id="password" name="password" type="password" value="">
+      
+      </dd>
+    
+                                
+      <dt><label for="confirm">Repeat Password</label>
+      <dd><input id="confirm" name="confirm" type="password" value="">
+      
+      </dd>
+    
+                                
+      <dt><label for="accept_tos">I accept the <a href="/about/tos" target="blank">Terms of Service</a> and <a href="/about/privacy-policy" target="blank">Privacy Notice</a> </label>
+      <dd><input id="accept_tos" name="accept_tos" type="checkbox" value="y">
+      
+      </dd>
+    
+                              </dl>
+                              <p><input type=submit value=Register>
+                            </form></div>
+                    </div>
+                   
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

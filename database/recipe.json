@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "Image": "https://www.encodedna.com/images/theme/angularjs.png",
+    "Title": "Omlet",
+    "Author": "Mike",
+    "Servings": 2,
+    "Ingredients": {
+        "Sugar": "1 tsp",
+        "Salt": "1 kg",
+        "Eggs": "1"
+    },
+    "Instructions": "A million years ago Mike decided to cook a salty omlet"
+}

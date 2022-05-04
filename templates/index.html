@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" href="static/css/main.css">
+
+</head>
+
+<body>
+    <div class="nav_custom">
+        <nav class="navbar navbar-custom">
+            <!-- logo -->
+            <span><a href="/"><img class="navlogo" src="static/img/spork yellow.png" ></a></span>
+            <div class="button-div">
+                <!-- Create button -->
+                <a href="/recipe/create">
+                    <button id="create-button" class="nav-button">Create</button></a>
+                <!-- Filter button -->
+                <button id="filter-button" class="nav-button">Filter</button>
+                <!-- account login -->
+                <a href="/login">
+                    <button id="account-button" class="nav-button"><img class="account-icon" src="static/img/account-icon.png"></button></a>
+                <!-- <img class="account-icon" src="images/account-icon.png"> -->
+            </div>
+        </nav>
+
+    </div>
+
+    <div>
+        <table id="recipe">
+            <tr>
+                {% for content in jsonfile %}
+                <th>{{content}}</th>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
