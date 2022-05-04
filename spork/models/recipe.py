@@ -26,7 +26,7 @@ class Recipe:
     #adds an ingredient and ingredient quantity to the recipe's ingredient list
     #takes ingredient and how many of the ingredient is in the recipe as parameters
     def add_ingredient(self, ingredient, quantity):
-        self.ingredients.add((quantity,ingredient))
+        self.ingredients.append((quantity,ingredient))
     
     #removes an ingredient and ingredient quantity from the recipe's ingredient lis
     #takes ingredient as parameter
@@ -63,7 +63,20 @@ class Recipe:
         self.instructions[step_num -1] = instruction
 
     #writes the recipe into the json file
-    def write_to_json(self):
-        parent_dir = os.path.split(os.getcwd())[0]
-        with open(f'{parent_dir}/database/recipe.json', 'w') as f:
-            json.dump(self, f)
+    def save(self):
+        to_json = self.to_json()
+
+        with open(f'spork\\database\\recipe.json', 'r') as f:
+            file_data = json.loads(f.read())
+        
+
+        with open(f'spork\\database\\recipe.json', 'w') as f:
+            file_data.append(to_json)
+            json.dump(file_data, f, indent=1)     
+               
+
+    def to_json(self):
+        json = {f'recipeID': self.recipeID, f'title': self.title, 
+        f'serving':str(self.serving), f'ingredients':str(self.ingredients), f'instructions':str(self.instructions)}
+
+        return json
