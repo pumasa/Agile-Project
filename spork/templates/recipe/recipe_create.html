@@ -20,7 +20,7 @@
     <div class="nav_custom">
         <nav class="navbar navbar-custom">
             <!-- logo -->
-            <span><a href="/"><img class="navlogo" src="../static/images/spork yellow.png"></a></span>
+            <span><a href="/"><img class="navlogo" src="../../static/images/spork yellow.png"></a></span>
             <div class="button-div">
                 <!-- Create button -->
                 <a href="/recipe/create">
@@ -62,20 +62,15 @@
             <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
 
             <div id="insert-ingredient">
-                <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient01">
-                <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit01">
+                <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient1">
+                <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit1">
                 <button type="button" class="btn btn-outline-danger delete">Delete</button>
             </div>
 
-            <div id="insert-ingredient">
-                <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient02">
-                <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit02">
-                <button type="button" class="btn btn-outline-danger delete">Delete</button>
-            </div>
 
             <!-- add button -->
             <div class="add-button-container">
-                <button id="add-button" type="button" class="btn btn-primary">Add +</button>
+                <button id="add-button" type="button" class="btn btn-primary" onclick="addCode()">Add +</button>
             </div>
 
             <!-- steps -->
@@ -101,6 +96,18 @@
 
         <!-- https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Fusers%2Fsimple-user-icon&psig=AOvVaw2JK2IUr8if_R16GQRBkWqr&ust=1651196331872000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIiNiunPtfcCFQAAAAAdAAAAABAD -->
     </div>
+    <script>
+        var count = 2
+        function addCode() {
+            var ingredientAddHTML = "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
+            ingredientAddHTML += " name=\"ingredient" + count +"\""
+            ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
+            ingredientAddHTML += " name=\"unit" + count +"\""
+            ingredientAddHTML += "><button type='button' id='delete' class='btn btn-outline-danger delete'>Delete</button>"
+            document.getElementById("insert-ingredient").innerHTML += ingredientAddHTML
+            count +=1
+        }
+    </script> 
 </body>
 
 </html>
