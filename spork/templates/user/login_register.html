@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/register-login.css">
+    <link rel="stylesheet" href="../static/css/register-login.css">
     <title>Register and Login</title>
 </head>
 
@@ -20,14 +20,16 @@
     <div class="nav_custom">
         <nav class="navbar navbar-custom">
             <!-- logo -->
-            <span><img class="navlogo" src="images/spork yellow.png"></span>
+            <span><a href="/"><img class="navlogo" src="../static/images/spork yellow.png"></a></span>
             <div class="button-div">
                 <!-- Create button -->
-                <button id="create-button" class="nav-button">Create</button>
+                <a href="/recipe/create">
+                    <button id="create-button" class="nav-button">Create</button></a>
                 <!-- Filter button -->
                 <button id="filter-button" class="nav-button">Filter</button>
                 <!-- account login -->
-                <button id="account-button" class="nav-button"><img class="account-icon" src="images/account-icon.png"></button>
+                <a href="/login">
+                    <button id="account-button" class="nav-button"><img class="account-icon" src="../static/images/account-icon.png"></button></a>
                 <!-- <img class="account-icon" src="images/account-icon.png"> -->
             </div>
         </nav>

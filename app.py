@@ -1,35 +1,38 @@
-from flask import Flask, render_template, redirect, url_for, request, abort, jsonify, make_response
-# import os
+# Ask Mike Picus if something is not clear in this file
+
+from flask import Flask, render_template
 import json
-# import html
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='./spork/templates', static_folder = './spork/static' )
 
-# read file
-with open('./database/recipe.json', 'r') as myfile:
-    data = myfile.read()
-
+# index/home page - renders info from recipe.json
 @app.route('/')
 def index():
-    return render_template('index.html', title="page", jsonfile=json.dumps(data)) 
+    with open('./spork/database/recipe.json', 'r') as myfile:
+        data = json.loads(myfile.read())
+        for i in data:
+            x = i['Ingredients']
+    return render_template('index.html', jsonfile = data, ingredients = x) 
 
+# recipe create page
 @app.route('/recipe/create')
 def create():
-    return render_template('recipe_create.html') 
+    return render_template('/recipe/recipe_create.html') 
 
-
-
+# recipe view page
 @app.route('/recipe/view/<recipe_id>')
 def recipe_view():
-    return render_template('view_recipe.html') 
+    return render_template('/recipe/view_recipe.html') 
 
+# register page
 @app.route('/register')
 def register():
-    return render_template('register_login.html') 
+    return render_template('/user/login_register.html') 
 
+# login page
 @app.route('/login')
 def login():
-    return render_template('register_login.html') 
+    return render_template('/user/login_register.html') 
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
@@ -47,16 +50,5 @@ if __name__ == '__main__':
 #     email = req["email"]
 #     password = req["password"]
 
-#     return make_response(jsonify({email:email, password:password}), 200)
 
-# read file
-# with open('./database/recipe.json', 'r') as myfile:
-#     data = myfile.read()
-
-
-
-# @app.route("/")
-# def index():
-    
-#     return render_template('index.html', mike_test = test, title="page", jsonfile=json.dumps(data))
 
