@@ -245,6 +245,14 @@ body {
 }
 
 
+#insert-ingredient{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
 /* cancle, save button > container aligns it to the right*/
 
 .cancle-save-container {
