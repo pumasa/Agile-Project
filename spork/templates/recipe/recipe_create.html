@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../static/css/create.css">
     <title>Create Recipe</title>
@@ -28,7 +29,8 @@
                 <button id="filter-button" class="nav-button">Filter</button>
                 <!-- account login -->
                 <a href="/login">
-                    <button id="account-button" class="nav-button"><img class="account-icon" src="../static/images/account-icon.png"></button></a>
+                    <button id="account-button" class="nav-button"><img class="account-icon"
+                            src="../static/images/account-icon.png"></button></a>
                 <!-- <img class="account-icon" src="images/account-icon.png"> -->
             </div>
         </nav>
@@ -39,46 +41,54 @@
     <div class="container" id="create_body">
 
         <h1 class="black-text text-center">Create Recipe</h1>
+        <form action="/recipe/create" method="POST">
+            <!-- Title, Author, serving, add image -->
+            <div class="basic-info-image">
+                <div class="basic-info">
+                    <input id="title" class="form-control" type="text" placeholder="Title: 'Omlet'" name="title">
+                    <input id="author_name" class="form-control" type="text" placeholder="Author: 'Bob'"
+                        name="author_name">
+                    <input id="serving_amount" class="form-control" type="text" placeholder="Serving: '2'"
+                        name="serving_amount">
+                </div>
 
-        <!-- Title, Author, serving, add image -->
-        <div class="basic-info-image">
-            <div class="basic-info">
-                <input id="title" class="form-control" type="text" placeholder="Title: 'Omlet'">
-                <input id="author_name" class="form-control" type="text" placeholder="Author: 'Bob'">
-                <input id="serving_amount" class="form-control" type="text" placeholder="Serving: '2'">
-            </div>
-
-            <!-- add image pane -->
-            <div id="insert-image">
+                <!-- add image pane -->
+                <!-- <div id="insert-image">
                 <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Add image" />
+            </div> -->
             </div>
-        </div>
 
-        <!-- Ingridients, unit, delete -->
-        <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
+            <!-- Ingridients, unit, delete -->
+            <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
 
-        <div id="insert-ingredient">
-            <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'">
-            <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'">
-            <button type="button" class="btn btn-outline-danger delete">Delete</button>
-        </div>
+            <div id="insert-ingredient">
+                <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient01">
+                <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit01">
+                <button type="button" class="btn btn-outline-danger delete">Delete</button>
+            </div>
 
-        <!-- add button -->
-        <div class="add-button-container">
-            <button id="add-button" type="button" class="btn btn-primary">Add +</button>
-        </div>
+            <div id="insert-ingredient">
+                <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient02">
+                <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit02">
+                <button type="button" class="btn btn-outline-danger delete">Delete</button>
+            </div>
 
-        <!-- steps -->
-        <div class="steps-container">
-            <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
+            <!-- add button -->
+            <div class="add-button-container">
+                <button id="add-button" type="button" class="btn btn-primary">Add +</button>
+            </div>
 
-        <!-- save,cancle button -->
-        <div class="cancle-save-container">
-            <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancle</button>
-            <button id="save-button" type="button" class="btn btn-success">Save</button>
-        </div>
+            <!-- steps -->
+            <div class="steps-container">
+                <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction"></textarea>
+            </div>
 
+            <!-- save,cancle button -->
+            <div class="cancle-save-container">
+                <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancle</button>
+                <button id="save-button" type="submit" class="btn btn-success">Save</button>
+            </div>
+        </form>
 
 
         <!-- <h1 class="a ">Test Lorem Ipsum</h1>
