@@ -1,0 +1,125 @@
+/* DARK MODE */
+
+body {
+    /* background-color: #2e2d2c; */
+    background-color: rgb(33, 33, 33)
+}
+
+
+/* NAVBAR */
+
+.navlogo {
+    max-height: 4.5pc;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 1.2pc 0.1pc 1.2pc;
+}
+
+.account-icon {
+    max-height: 3pc;
+    float: left;
+}
+
+.nav-button {
+    color: rgb(222, 186, 124);
+    background-color: Transparent;
+    border: none;
+    background-repeat: none;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 0pc 0.5pc 1.2pc;
+    font-size: 1.8pc;
+    float: left;
+}
+
+.nav-button:hover {
+    color: #F5E8C7;
+}
+
+
+/* TEXT COLOURS */
+
+.a {
+    color: rgb(251, 167, 14);
+}
+
+.e {
+    color: rgb(254, 176, 58);
+}
+
+.b {
+    color: #F5E8C7;
+}
+
+.c {
+    color: #DEBA9D;
+}
+
+.d {
+    color: #b1d8af;
+}
+
+
+/* ----------------- LIGHT MODE ---------- */
+
+body {
+    background-color: #F6FFFE;
+}
+
+
+/* NAVBAR */
+
+.navlogo {
+    max-height: 4.5pc;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 1.2pc 0.1pc 1.2pc;
+}
+
+.navbar-custom {
+    background-color: #a8d0ce;
+}
+
+.account-icon {
+    max-height: 3pc;
+    float: left;
+}
+
+.nav-button {
+    color: #fff6de;
+    background-color: Transparent;
+    border: none;
+    background-repeat: none;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 0pc 0.5pc 1.2pc;
+    font-size: 1.8pc;
+    float: left;
+}
+
+.nav-button:hover {
+    color: #fff065;
+}
+
+
+/* TEXT COLOURS */
+
+.a {
+    color: #181817;
+}
+
+.e {
+    color: #73d5ca
+}
+
+.c {
+    color: #da9fcc;
+}
+
+.d {
+    color: #f7ca7c;
+}
+
+
+/* BANNER */
+
+
+/* .banner{
+
+} */
