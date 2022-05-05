@@ -1,8 +1,8 @@
 # Ask Mike Picus if something is not clear in this file
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import json
-
+from spork.models.recipe import Recipe
 app = Flask(__name__, template_folder='./spork/templates', static_folder = './spork/static' )
 
 # index/home page - renders info from recipe.json
@@ -11,13 +11,34 @@ def index():
     with open('./spork/database/recipe.json', 'r') as myfile:
         data = json.loads(myfile.read())
         for i in data:
-            x = i['Ingredients']
+            x = i['ingredients']
     return render_template('index.html', jsonfile = data, ingredients = x) 
 
 # recipe create page
-@app.route('/recipe/create')
+@app.route('/recipe/create',methods = ['GET','POST'])
 def create():
-    return render_template('/recipe/recipe_create.html') 
+    if request.method == 'POST':
+        with open('./spork/database/recipe.json', 'r') as myfile:
+            data = json.loads(myfile.read())
+            biggest_id = 0
+            for i in data:
+                if i["recipeID"]>biggest_id:
+                    biggest_id = i["recipeID"]
+            biggest_id +=1
+            
+        recipe_data = request.form
+        
+        print(recipe_data.keys())
+        print(len(recipe_data.keys()))
+        recipe = Recipe(biggest_id,recipe_data['title'],recipe_data['author_name'],recipe_data['serving_amount'])
+        for key in recipe_data.keys():
+            if key[:10] == "ingredient":
+                recipe.add_ingredient(recipe_data[key],recipe_data[f'unit{key[10:]}'])
+        recipe.instructions = recipe_data['instruction']
+        recipe.save()
+        return redirect(url_for("index"))
+    else:
+        return render_template('/recipe/recipe_create.html') 
 
 # recipe view page
 @app.route('/recipe/view/<recipe_id>')
