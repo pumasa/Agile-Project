@@ -1,9 +1,6 @@
 # Ask Mike Picus if something is not clear in this file
 
-from flask import Flask, render_template
-import json
-
-app = Flask(__name__, template_folder='./spork/templates', static_folder = './spork/static' )
+app = Flask(__name__,template_folder='./spork/templates')
 
 # index/home page - renders info from recipe.json
 @app.route('/')
