@@ -244,11 +244,13 @@ body {
     justify-content: space-between;
 }
 
+
 #insert-ingredient{
     display: flex;
     flex-direction: column;
     
 }
+
 
 
 /* cancle, save button > container aligns it to the right*/
