@@ -63,7 +63,7 @@
 
         <!-- add button -->
         <div class="add-button-container">
-            <button id="add-button" type="button" class="btn btn-primary">Add +</button>
+            <button id="add-button" type="button" class="btn btn-primary" onclick="addCode()">Add +</button>
         </div>
 
         <!-- steps -->
@@ -89,6 +89,13 @@
 
         <!-- https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Fusers%2Fsimple-user-icon&psig=AOvVaw2JK2IUr8if_R16GQRBkWqr&ust=1651196331872000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIiNiunPtfcCFQAAAAAdAAAAABAD -->
     </div>
+<script>
+    function addCode() {
+            document.getElementById("insert-ingredient").innerHTML += 
+              "<input id='ingredient' class='form-control' type='text' placeholder='Ingredient: 'Sugar''><input id='unit' class='form-control' type='text' placeholder='Unit: '1 tsp''><button type='button' id='delete' class='btn btn-outline-danger delete'>Delete</button>";
+        }
+</script>  
+
 </body>
 
 </html>
