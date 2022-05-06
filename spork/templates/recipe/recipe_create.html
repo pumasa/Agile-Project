@@ -64,7 +64,6 @@
             <div id="insert-ingredient">
                 <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient1">
                 <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit1">
-                <button type="button" class="btn btn-outline-danger delete">Delete</button>
             </div>
 
 
@@ -99,14 +98,20 @@
     <script>
         var count = 2
         function addCode() {
-            var ingredientAddHTML = "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
+            var ingredientAddHTML =  ("<div id ='delete"+count+"'>")+ "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
             ingredientAddHTML += " name=\"ingredient" + count +"\""
             ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
             ingredientAddHTML += " name=\"unit" + count +"\""
-            ingredientAddHTML += "><button type='button' id='delete' class='btn btn-outline-danger delete'>Delete</button>"
+            ingredientAddHTML += "><button type='button' id='delete"+ count +"' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>"
             document.getElementById("insert-ingredient").innerHTML += ingredientAddHTML
             count +=1
         }
+
+        function reply_click(clicked_id)
+            {
+                const element=document.getElementById(clicked_id);
+                element.remove();
+            }
     </script> 
 </body>
 
