@@ -28,8 +28,6 @@ def create():
             
         recipe_data = request.form
         
-        print(recipe_data.keys())
-        print(len(recipe_data.keys()))
         recipe = Recipe(biggest_id,recipe_data['title'],recipe_data['author_name'],recipe_data['serving_amount'])
         for key in recipe_data.keys():
             if key[:10] == "ingredient":
@@ -41,19 +39,19 @@ def create():
         return render_template('/recipe/recipe_create.html') 
 
 # recipe view page
-@app.route('/recipe/view/<recipe_id>')
-def recipe_view():
-    return render_template('/recipe/view_recipe.html') 
+# @app.route('/recipe/view/<recipe_id>')
+# def recipe_view():
+#     return render_template('/recipe/view_recipe.html') 
 
-# register page
-@app.route('/register')
-def register():
-    return render_template('/user/login_register.html') 
+# # register page
+# @app.route('/register')
+# def register():
+#     return render_template('/user/login_register.html') 
 
-# login page
-@app.route('/login')
-def login():
-    return render_template('/user/login_register.html') 
+# # login page
+# @app.route('/login')
+# def login():
+#     return render_template('/user/login_register.html') 
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
