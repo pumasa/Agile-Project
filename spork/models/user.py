@@ -18,11 +18,11 @@ class User:
     def save(self):
         to_json = self.to_json()
 
-        with open(f'next_change\\Agile-project\\spork\\database\\user.json', 'r') as f:
+        with open(f'spork\\database\\user.json', 'r') as f:
             file_data = json.loads(f.read())
         
 
-        with open(f'next_change\\Agile-project\\spork\\database\\user.json', 'w') as f:
+        with open(f'spork\\database\\user.json', 'w') as f:
             file_data.append(to_json)
             json.dump(file_data, f, indent=1)     
                
