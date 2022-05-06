@@ -197,12 +197,6 @@ body {
 
 /* Insert Ingridients */
 
-#insert-ingredient {
-    display: flex;
-    justify-content: flex-start;
-}
-
-
 /* spaces on right and left and right */
 
 #insert-ingredient .form-control {
@@ -214,7 +208,6 @@ body {
 /* delete button */
 
 .delete {
-    height: 100%;
     margin-top: 1.5pc;
     margin-left: 25%;
     margin-right: 0.6pc;
@@ -243,15 +236,6 @@ body {
     display: flex;
     justify-content: space-between;
 }
-
-
-#insert-ingredient{
-    display: flex;
-    flex-direction: column;
-    
-}
-
-
 
 /* cancle, save button > container aligns it to the right*/
 
