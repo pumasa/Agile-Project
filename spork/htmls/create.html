@@ -73,7 +73,7 @@
 
         <!-- save,cancle button -->
         <div class="cancle-save-container">
-            <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancle</button>
+            <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancel</button>
             <button id="save-button" type="button" class="btn btn-success">Save</button>
         </div>
 
@@ -90,10 +90,19 @@
         <!-- https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Fusers%2Fsimple-user-icon&psig=AOvVaw2JK2IUr8if_R16GQRBkWqr&ust=1651196331872000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIiNiunPtfcCFQAAAAAdAAAAABAD -->
     </div>
 <script>
+    let id=1;
     function addCode() {
             document.getElementById("insert-ingredient").innerHTML += 
-              "<input id='ingredient' class='form-control' type='text' placeholder='Ingredient: 'Sugar''><input id='unit' class='form-control' type='text' placeholder='Unit: '1 tsp''><button type='button' id='delete' class='btn btn-outline-danger delete'>Delete</button>";
+              "<div id ='delete"+id+"'><input id='ingredient"+ id +"'class='form-control' type='text' placeholder='Ingredient: 'Sugar''><input id='unit"+id+ "' class='form-control' type='text' placeholder='Unit: '1 tsp''><button type='button' id='delete"+ id +"' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>";
+              id+=1;
+              console.log(id);
         }
+        function reply_click(clicked_id)
+            {
+                const element=document.getElementById(clicked_id);
+                element.remove();
+                console.log(clicked_id);
+            }
 </script>  
 
 </body>
