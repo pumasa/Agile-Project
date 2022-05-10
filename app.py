@@ -49,6 +49,7 @@ def create():
 # def recipe_view():
 #     return render_template('/recipe/view_recipe.html') 
 
+
 ## register page
 # @app.route('/register', methods = ['GET', 'POST'])
 # def register():
