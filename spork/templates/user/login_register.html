@@ -35,7 +35,7 @@
         </nav>
 
     </div>
-
+    <form action="" method="POST">
     <!-- This div is centered | All the contents of the form are here-->
     <div class="account-body-container">
         <div class="container" id="account-body">
@@ -46,13 +46,13 @@
             </div>
 
             <!-- inputs for email and password -->
-            <input id="email" class="form-control container account-input" type="text" placeholder="Email">
-            <input id="password" class="form-control container account-input" type="text" placeholder="Password">
+            <input id="email" class="form-control container account-input" type="text" name = "email" placeholder="Email">
+            <input id="password" class="form-control container account-input" type="text" name = "password" placeholder="Password">
 
             <!-- cancle and save buttons -->
             <div class="cancle-save-container">
                 <button id="cancle-button" type="button" class="btn btn-outline-secondary">Register</button>
-                <button id="save-button" type="button" class="btn btn-success">Login</button>
+                <button id="save-button" type="submit" class="btn btn-success">Login</button>
             </div>
         </div>
     </div>

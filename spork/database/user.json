@@ -1,1 +1,20 @@
-[]
+[
+ {
+  "userID": 1,
+  "email": "test",
+  "password": "test",
+  "recipes": "[]"
+ },
+ {
+  "userID": 2,
+  "email": "test1",
+  "password": "test1",
+  "recipes": "[]"
+ },
+ {
+  "userID": 3,
+  "email": "test2",
+  "password": "test2",
+  "recipes": "[]"
+ }
+]

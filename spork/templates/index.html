@@ -31,7 +31,7 @@
         </nav>
         <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
             <h1 class="display-4">Recipe Cards</h1>
-            <p id="small-display">Never forget another recipe!</p>
+            <p id="small-display">Hello {{email}}! Never forget another recipe!</p>
             <p id="total-num-recipes"></p>
         </div>
 
@@ -70,8 +70,8 @@
     </div>
     <script>
         //change heading style
-        let author = 'nikki'
-        document.getElementById('small-display').textContent = "Welcome " + author + "! Are you looking for a special recipe today?"
+        // let author = 'nikki'
+        // document.getElementById('small-display').textContent = "Welcome " + {{email}}+ "! Are you looking for a special recipe today?"
 
         //change font style of heading
         document.getElementsByTagName('h1')[0].style.fontFamily = "Impact,Charcoal,sans-serif"

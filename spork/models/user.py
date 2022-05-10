@@ -1,13 +1,14 @@
 import json
 
 class User:
-    def __init__(self, email, password):
+    def __init__(self, userID, email, password):
         #user email will also be used as the username
         self.email = email
         #user password
         self.password = password
         #list of recipeIDs (strings) that the user created
         self.recipes = []
+        self.userID = userID
 
     def update_passwowrd(self, password):
         self.password = password
@@ -18,17 +19,16 @@ class User:
     def save(self):
         to_json = self.to_json()
 
-        with open(f'next_change\\Agile-project\\spork\\database\\user.json', 'r') as f:
+        with open(f'spork\\database\\user.json', 'r') as f:
             file_data = json.loads(f.read())
         
 
-        with open(f'next_change\\Agile-project\\spork\\database\\user.json', 'w') as f:
+        with open(f'spork\\database\\user.json', 'w') as f:
             file_data.append(to_json)
             json.dump(file_data, f, indent=1)     
                
 
     def to_json(self):
-        json = {f'username/email': self.email, f'password': self.password, 
+        json = {f'userID': self.userID, f'email': self.email, f'password': self.password, 
         f'recipes':str(self.recipes)}
-
         return json
