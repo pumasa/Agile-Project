@@ -1,7 +1,7 @@
 import json
 
 class User:
-    def __init__(self, email, userID, password):
+    def __init__(self, userID, email,  password):
         #user ID
         self.userID = userID
         #user email will also be used as the username
