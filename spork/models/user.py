@@ -1,7 +1,9 @@
 import json
 
 class User:
-    def __init__(self, email, password):
+    def __init__(self, email, userID, password):
+        #user ID
+        self.userID = userID
         #user email will also be used as the username
         self.email = email
         #user password
@@ -31,6 +33,7 @@ class User:
                
     def to_json(self):
         json = {
+            f'userID': self.userID,
             f'username/email': str(self.email),
             f'password': str(self.password), 
             f'recipes':self.recipes
