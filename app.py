@@ -39,9 +39,12 @@ def create():
         return render_template('/recipe/recipe_create.html') 
 
 # recipe view page
-# @app.route('/recipe/view/<recipe_id>')
-# def recipe_view():
-#     return render_template('/recipe/view_recipe.html') 
+@app.route('/recipe/view/<id>', methods = ['GET'])
+def recipe_view(id):
+    with open('./spork/database/recipe.json', 'r') as myfile:
+        data = json.loads(myfile.read())
+        q=int(id)   
+    return render_template('/recipe/recipe_view.html', z = data, id = q)
 
 # # register page
 # @app.route('/register')
