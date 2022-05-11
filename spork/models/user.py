@@ -15,6 +15,9 @@ class User:
     def add_recipe(self, recipeID):
         self.recipes.append(recipeID)
 
+    def remove_recipe(self, recipeID):
+        self.recipes.remove(recipeID)
+
     def save(self):
         to_json = self.to_json()
 
@@ -26,9 +29,11 @@ class User:
             file_data.append(to_json)
             json.dump(file_data, f, indent=1)     
                
-
     def to_json(self):
-        json = {f'username/email': self.email, f'password': self.password, 
-        f'recipes':str(self.recipes)}
+        json = {
+            f'username/email': str(self.email),
+            f'password': str(self.password), 
+            f'recipes':self.recipes
+        }
 
         return json
