@@ -1,3 +1,8 @@
 [
-
+ {
+  "id": "1",
+  "email": "1",
+  "password": "sha256$myM643TV$17142a52ee3dd5d7aff94e6cafac7a88c16d85c2330300ccaf9b0ad143b41c09",
+  "recipes": []
+ }
 ]
