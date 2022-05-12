@@ -66,5 +66,15 @@
    "Eggs": "1"
   },
   "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet"
+ },
+ {
+  "recipeID": 7,
+  "title": "Test",
+  "author": "Test",
+  "serving": "1",
+  "ingredients": {
+   "1": "st"
+  },
+  "instructions": "test"
  }
 ]
