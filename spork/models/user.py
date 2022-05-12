@@ -1,20 +1,24 @@
 import json
 
 class User:
-    def __init__(self, userID, email, password):
+    def __init__(self, userID, email,  password):
+        #user ID
+        self.userID = userID
         #user email will also be used as the username
         self.email = email
         #user password
         self.password = password
         #list of recipeIDs (strings) that the user created
         self.recipes = []
-        self.userID = userID
 
     def update_passwowrd(self, password):
         self.password = password
 
     def add_recipe(self, recipeID):
         self.recipes.append(recipeID)
+
+    def remove_recipe(self, recipeID):
+        self.recipes.remove(recipeID)
 
     def save(self):
         to_json = self.to_json()
@@ -27,8 +31,12 @@ class User:
             file_data.append(to_json)
             json.dump(file_data, f, indent=1)     
                
-
     def to_json(self):
-        json = {f'userID': self.userID, f'email': self.email, f'password': self.password, 
-        f'recipes':str(self.recipes)}
+        json = {
+            f'userID': self.userID,
+            f'username/email': str(self.email),
+            f'password': str(self.password), 
+            f'recipes':self.recipes
+        }
+
         return json

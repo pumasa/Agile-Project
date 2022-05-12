@@ -1,11 +1,9 @@
 # Ask Mike Picus if something is not clear in this file
 
-from flask import Flask, render_template, request, redirect, url_for, session, escape
+from flask import Flask, render_template, request, redirect, url_for
 import json
 from spork.models.recipe import Recipe
-from spork.models.user import User
 app = Flask(__name__, template_folder='./spork/templates', static_folder = './spork/static' )
-app.secret_key = 'any random string'
 
 # index/home page - renders info from recipe.json
 @app.route('/')
@@ -14,11 +12,7 @@ def index():
         data = json.loads(myfile.read())
         for i in data:
             x = i['ingredients']
-    if 'email' in session:
-        email = session['email']
-    else:
-        email = "STRANGER"
-    return render_template('index.html', jsonfile = data, ingredients = x, email = email) 
+    return render_template('index.html', jsonfile = data, ingredients = x) 
 
 # recipe create page
 @app.route('/recipe/create',methods = ['GET','POST'])
@@ -45,54 +39,22 @@ def create():
         return render_template('/recipe/recipe_create.html') 
 
 # recipe view page
-# @app.route('/recipe/view/<recipe_id>')
-# def recipe_view():
-#     return render_template('/recipe/view_recipe.html') 
+@app.route('/recipe/view/<id>', methods = ['GET'])
+def recipe_view(id):
+    with open('./spork/database/recipe.json', 'r') as myfile:
+        data = json.loads(myfile.read())
+        q=int(id)   
+    return render_template('/recipe/recipe_view.html', z = data, id = q)
 
-
-## register page
-# @app.route('/register', methods = ['GET', 'POST'])
+# # register page
+# @app.route('/register')
 # def register():
-#     if request.method == 'POST':
-#         with open('./spork/database/user.json', 'r') as user:
-#             usr = json.loads(user.read())
-#             biggest_id_usr = 0
-#             for i in usr:
-#                 if i["userID"]>biggest_id_usr:
-#                     biggest_id_usr = i["userID"]
-#             biggest_id_usr +=1
+#     return render_template('/user/login_register.html') 
 
-#         account = User(biggest_id_usr, request.form['email'], request.form['password'])
-#         account.save()
-#         return redirect(url_for("index"))
-#     else:
-#         return render_template('/user/login_register.html') 
-
-
-
-## login page
-@app.route('/login', methods = ['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        with open('./spork/database/user.json', 'r') as user:
-            usr = json.loads(user.read())
-            
-            
-            for u in usr:
-                
-                if request.form['email'] == u["email"] and request.form['password'] == u["password"]:
-                    session['email'] = request.form['email']
-                    return redirect(url_for('index'))
-                else:
-                    session['email'] = "ERROR"
-                    return redirect(url_for('login'))
-    return render_template('/user/login_register.html') 
-
-@app.route('/logout')
-def logout():
-   # remove the username from the session if it is there
-   session.pop('email', None)
-   return redirect(url_for('index'))
+# # login page
+# @app.route('/login')
+# def login():
+#     return render_template('/user/login_register.html') 
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
