@@ -31,8 +31,8 @@ class Recipe:
         self.title = title
         self.save()
 
-    def update_author(self, title):
-        self.author = title
+    def update_author(self, author):
+        self.author = author
         self.save()
 
     def update_serving(self, serving):
@@ -48,15 +48,32 @@ class Recipe:
 
         with open(f"spork\\database\\recipe.json", "w") as f:
             x = 0
-            for instance in file_data:
+
+            for count, instance in enumerate(file_data):
                 if instance['recipeID'] == to_json['recipeID']:
-                    instance = to_json
+
+                    instance.update(to_json)
+                    file_data[count] = to_json
+
                     x = 1
-                    break
             if x == 0:
                 file_data.append(to_json)
             json.dump(file_data, f, indent=1)
 
+    def update(self):
+        to_json = self.to_json()
+
+        with open(f"spork\\database\\recipe.json", "r") as f:
+            file_data = json.loads(f.read())
+
+        with open(f"spork\\database\\recipe.json", "w") as f:
+       
+            for instance in file_data:
+                if instance['recipeID'] == to_json['recipeID']:
+                    instance.update(to_json) 
+                    
+            json.dump(file_data, f, indent=1)
+            
     def to_json(self):
 
         json = {
