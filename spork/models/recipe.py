@@ -48,9 +48,11 @@ class Recipe:
 
         with open(f"spork\\database\\recipe.json", "w") as f:
             x = 0
-            for instance in file_data:
+
+            for count, instance in enumerate(file_data):
                 if instance['recipeID'] == to_json['recipeID']:
-                    instance = to_json
+                    file_data[count] = to_json
+
                     x = 1
                     break
             if x == 0:
