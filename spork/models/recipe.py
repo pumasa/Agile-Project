@@ -31,8 +31,8 @@ class Recipe:
         self.title = title
         self.save()
 
-    def update_author(self, title):
-        self.author = title
+    def update_author(self, author):
+        self.author = author
         self.save()
 
     def update_serving(self, serving):
@@ -50,9 +50,8 @@ class Recipe:
             x = 0
             for instance in file_data:
                 if instance['recipeID'] == to_json['recipeID']:
-                    instance = to_json
+                    instance.update(to_json)
                     x = 1
-                    break
             if x == 0:
                 file_data.append(to_json)
             json.dump(file_data, f, indent=1)

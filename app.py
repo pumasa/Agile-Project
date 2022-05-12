@@ -43,8 +43,35 @@ def create():
 def recipe_view(id):
     with open('./spork/database/recipe.json', 'r') as myfile:
         data = json.loads(myfile.read())
-        q=int(id)   
+        q=int(id)
+    
     return render_template('/recipe/recipe_view.html', z = data, id = q)
+
+# recipe edit page
+@app.route('/recipe/edit/<id>',methods = ['GET','POST'])
+def recipe_edit(id):
+    with open('./spork/database/recipe.json', 'r') as myfile:
+        data = json.loads(myfile.read())
+        q=int(id)       
+        
+
+    if request.method == 'POST':
+        with open('./spork/database/recipe.json', 'r') as myfile:
+            data = json.loads(myfile.read())
+           
+        recipe_data = request.form
+        recipe = Recipe(q,recipe_data['title'],recipe_data['author_name'],recipe_data['serving_amount'])
+        for key in recipe_data.keys():
+            if key[:10] == "ingredient":
+                recipe.add_ingredient(recipe_data[key],recipe_data[f'unit{key[10:]}'])
+        recipe.instructions = recipe_data['instruction']
+        recipe.save()
+        return redirect(url_for("index"))
+    else:
+        return render_template('/recipe/recipe_edit.html', z = data, id = q) 
+
+
+
 
 # # register page
 # @app.route('/register')
