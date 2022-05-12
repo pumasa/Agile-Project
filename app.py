@@ -1,9 +1,23 @@
 # Ask Mike Picus if something is not clear in this file
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import json
+from flask_login import current_user, login_required, LoginManager, login_user, logout_user
+from werkzeug.security import generate_password_hash, check_password_hash
 from spork.models.recipe import Recipe
+from spork.models.user import User
 app = Flask(__name__, template_folder='./spork/templates', static_folder = './spork/static' )
+app.config['SECRET_KEY'] = 'johnny'
+
+login_manager = LoginManager()
+login_manager.login_view = 'login'
+login_manager.init_app(app)
+
+@login_manager.user_loader
+def load_user(id):
+    temp_account = User("temp_dont_touch","password")
+
+    return temp_account.find_by_id(id)
 
 # index/home page - renders info from recipe.json
 @app.route('/')
@@ -46,16 +60,51 @@ def recipe_view(id):
         q=int(id)   
     return render_template('/recipe/recipe_view.html', z = data, id = q)
 
-# # register page
-# @app.route('/register')
-# def register():
-#     return render_template('/user/login_register.html') 
+@app.route('/register', methods=['GET','POST'])
+def register():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
 
-# # login page
-# @app.route('/login')
-# def login():
-#     return render_template('/user/login_register.html') 
+        usr = User(email,password=generate_password_hash(password, method='sha256'))
 
+        if usr.find_by_email(usr.email):
+            flash('Email already exist')
+            return redirect(url_for('register'))
+
+        usr.save()
+        return redirect(url_for('login'))
+    return render_template("/user/register.html")
+
+
+
+@app.route('/login',methods = ['GET','POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        usr = User(email,password)
+        usr = usr.find_by_email(usr.email)
+        if not usr or not check_password_hash(usr.password,password) :
+            flash('Invalid Email or Password')
+            return redirect(url_for('login'))
+
+        login_user(usr)
+        return redirect(url_for("profile"))
+    return render_template("/user/login.html")
+
+@app.route('/profile')
+@login_required
+def profile():
+
+    return render_template('/user/profile.html', email=current_user.email)
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("index"))
+    
 # start the server with the 'run()' method
 if __name__ == '__main__':
     app.run(debug=True)

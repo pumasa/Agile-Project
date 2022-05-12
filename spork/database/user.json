@@ -1,1 +1,8 @@
-[]
+[
+ {
+  "id": "0",
+  "email": "a@a.com",
+  "password": "sha256$Ggo1NkvPR5UtKLDh$272042e76b1ac17c7dba0432cc820ed9e3cd6f1bbe8056973e6c2fd067bffeea",
+  "recipes": []
+ }
+]
