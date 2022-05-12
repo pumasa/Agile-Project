@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../static/css/recipe_view.css">
+    <link rel="stylesheet" href="../../static/css/recipe_view.css">
     <title>View Recipe</title>
 </head>
 
@@ -20,14 +20,14 @@
     <div class="nav_custom">
         <nav class="navbar navbar-custom">
             <!-- logo -->
-            <span><a href="/"><img class="navlogo" src="../static/images/spork yellow.png"></a></span>
+            <span><a href="/"><img class="navlogo" src="../../static/images/spork yellow.png"></a></span>
             <div class="button-div">
                 <!-- Create button -->
                 <button id="create-button" class="nav-button">Create</button>
                 <!-- Filter button -->
                 <button id="filter-button" class="nav-button">Filter</button>
                 <!-- account login -->
-                <button id="account-button" class="nav-button"><img class="account-icon" src="../static/images/account-icon.png"></button>
+                <button id="account-button" class="nav-button"><img class="account-icon" src="../../static/images/account-icon.png"></button>
                 <!-- <img class="account-icon" src="images/account-icon.png"> -->
             </div>
         </nav>
@@ -35,16 +35,15 @@
     </div>
 
     <!-- This div is centered | All the contents of the form are here-->
-    <div class="container" id="create_body">
-
+    <div class="container" id="create_body"> {% for key in z %} {% if id == key['recipeID'] %}
         <!-- Title, Author, serving, add image -->
         <div class="basic-info-image">
             <div>
-                <h1 class="black-text text-left ricipe-title">(RECIPE NAME)</h1>
+                <h1 class="black-text text-left ricipe-title">{{key['title']}}</h1>
 
                 <div class="basic-info">
-                    <h5 class="black-text text-left">(Author Name)</h5>
-                    <h5 class="black-text text-left">(Servings)</h5>
+                    <h5 class="black-text text-left">Author: {{key['author']}} &nbsp; &nbsp; &nbsp;</h5>
+                    <h5 class="black-text text-left">Servings: {{key['serving']}}</h5>
                 </div>
             </div>
 
@@ -66,10 +65,11 @@
                 </thead>
                 <tbody>
                     <!-- each new ingridient will be a new row with two table datas >> for loop -->
+                    {% for ingr in key['ingredients']%}
                     <tr>
-                        <td>(ingridient)</td>
-                        <td>(unit)</td>
-                    </tr>
+                        <td>{{ingr}}</td>
+                        <td>{{key['ingredients'][ingr]}}</td>
+                    </tr>{% endfor %}
                 </tbody>
             </table>
         </div>
@@ -79,14 +79,14 @@
         <h4 class="steps-title" class="black-text text-left">Steps</h4>
 
         <div class="steps-container">
-            <p id="steps-text" class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt
-                uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+            <p id="steps-text" class="text-justify">{{key['instructions']}}</p>
         </div>
 
         <!-- edit button -->
         <div class="cancle-save-container">
             <button id="cancle-button" type="button" class="btn btn-outline-secondary">Edit</button>
         </div>
+        {% endif %} {% endfor %}
 
 
 

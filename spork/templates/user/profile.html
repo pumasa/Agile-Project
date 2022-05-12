@@ -27,6 +27,9 @@
                     <button id="create-button" class="nav-button">Create</button></a>
                 <!-- Filter button -->
                 <button id="filter-button" class="nav-button">Filter</button>
+                            <!-- Create button -->
+                <a href="/logout">
+                    <button class="nav-button">Logout</button></a>
                 <!-- account login -->
                 <a href="/login">
                     <button id="account-button" class="nav-button"><img class="account-icon" src="../static/images/account-icon.png"></button></a>
@@ -36,25 +39,11 @@
 
     </div>
 
-    <!-- This div is centered | All the contents of the form are here-->
-    <div class="account-body-container">
-        <div class="container" id="account-body">
+    <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
+        <h1 class="display-4">You have login!!</h1>
+        <p id="small-display">Hello {{email}}!</p>
+        <p id="total-num-recipes"></p>
 
-            <!-- account image -->
-            <div class="account-image container">
-                <img>
-            </div>
-
-            <!-- inputs for email and password -->
-            <input id="email" class="form-control container account-input" type="text" placeholder="Email">
-            <input id="password" class="form-control container account-input" type="text" placeholder="Password">
-
-            <!-- cancle and save buttons -->
-            <div class="cancle-save-container">
-                <button id="cancle-button" type="button" class="btn btn-outline-secondary">Register</button>
-                <button id="save-button" type="button" class="btn btn-success">Login</button>
-            </div>
-        </div>
     </div>
 
 </body>
