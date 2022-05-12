@@ -36,11 +36,12 @@ def index():
     with open("./spork/database/recipe.json", "r") as myfile:
         data = json.loads(myfile.read())
         
-
+    
     return render_template('index.html', jsonfile = data) 
 
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
+@login_required
 def create():
     if request.method == "POST":
         with open("./spork/database/recipe.json", "r") as myfile:
@@ -135,6 +136,7 @@ def logout():
 
 ################################################# Recipe delete #################################################
 @app.route('/recipe/view/<int:id>/delete')
+@login_required
 def recipe_delete(id):
   
     with open('./spork/database/recipe.json', "r") as f:
@@ -150,6 +152,7 @@ def recipe_delete(id):
     return redirect(url_for("index"))
 ################################################# Recipe update #################################################
 @app.route('/recipe/view/<int:id>/update', methods = ['GET','POST'])
+@login_required
 def recipe_update(id):
 
     with open('./spork/database/recipe.json', "r") as f:
