@@ -60,6 +60,20 @@ class Recipe:
                 file_data.append(to_json)
             json.dump(file_data, f, indent=1)
 
+    def update(self):
+        to_json = self.to_json()
+
+        with open(f"spork\\database\\recipe.json", "r") as f:
+            file_data = json.loads(f.read())
+
+        with open(f"spork\\database\\recipe.json", "w") as f:
+       
+            for instance in file_data:
+                if instance['recipeID'] == to_json['recipeID']:
+                    instance.update(to_json) 
+                    
+            json.dump(file_data, f, indent=1)
+            
     def to_json(self):
 
         json = {
