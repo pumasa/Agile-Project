@@ -1,16 +1,16 @@
 import json
-from re import I
 from flask_login import UserMixin
+
 
 class User(UserMixin):
     def __init__(self, email, password):
         biggest_id = 0
         data = self.load_database()
         for user in data:
-            if int(user['id']) >biggest_id:
-                biggest_id = user['id']
+            if int(user["id"]) > biggest_id:
+                biggest_id = int(user["id"])
 
-        self.id = biggest_id
+        self.id = str(biggest_id + 1)
         # user email will also be used as the username
         self.email = email
         # user password
@@ -27,27 +27,26 @@ class User(UserMixin):
     def remove_recipe(self, recipeID):
         self.recipes.remove(recipeID)
 
-    def find_by_email(self,email):
+    def find_by_email(self, email):
         """if the user is in database"""
         data = self.load_database()
         for user in data:
             if email == user["email"]:
-                return_user = User(user["email"],user["password"])
-                for i in user['recipes']:
+                return_user = User(user["email"], user["password"])
+                return_user.id = user["id"]
+                for i in user["recipes"]:
                     return_user.recipes.append(i)
                 return return_user
+
     def get_id(self):
         return str(self.id)
 
-    def find_by_id(self,id):
+    def find_by_id(self, id):
         data = self.load_database()
         for user in data:
-            print(user)
-            print(id ,user["id"] )
             if id == user["id"]:
-                print("found_it!")
-                return_user = User(user["email"],user["password"])
-                for i in user['recipes']:
+                return_user = User(user["email"], user["password"])
+                for i in user["recipes"]:
                     return_user.recipes.append(i)
                 return return_user
 
