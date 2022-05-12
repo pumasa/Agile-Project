@@ -47,7 +47,14 @@ class Recipe:
             file_data = json.loads(f.read())
 
         with open(f"spork\\database\\recipe.json", "w") as f:
-            file_data.append(to_json)
+            x = 0
+            for instance in file_data:
+                if instance['recipeID'] == to_json['recipeID']:
+                    instance = to_json
+                    x = 1
+                    break
+            if x == 0:
+                file_data.append(to_json)
             json.dump(file_data, f, indent=1)
 
     def to_json(self):
