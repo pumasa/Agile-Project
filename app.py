@@ -72,7 +72,7 @@ def create():
 ################################################# Recipe view page #################################################
 
 @app.route('/recipe/view/<int:id>', methods = ['GET','POST'])
->>>>>>> develop
+
 def recipe_view(id):
     with open("./spork/database/recipe.json", "r") as myfile:
         data = json.loads(myfile.read())
