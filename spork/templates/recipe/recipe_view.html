@@ -82,12 +82,20 @@
             <p id="steps-text" class="text-justify">{{key['instructions']}}</p>
         </div>
 
+        <!-- Delete button-->
+
+        <div class="cancle-save-container">
+            <a href="/recipe/view/{{key['recipeID']}}/delete">
+                <button id="cancle-button" type="submit" value="Delete" class="btn btn-outline-danger">Delete</button></a>
+        </div>
+        </form>
+
         <!-- edit button -->
         <div class="cancle-save-container">
-            <a href="/recipe/edit/{{key['recipeID']}}">
+            <a href="/recipe/view/{{key['recipeID']}}/update">
                 <button id="cancle-button" type="button" class="btn btn-outline-secondary">Edit</button></a>
-        </div>
-        {% endif %} {% endfor %}
+        </div>{% endif %} {% endfor %}
+
 
 
 
