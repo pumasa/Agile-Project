@@ -11,7 +11,7 @@ class User:
         #list of recipeIDs (strings) that the user created
         self.recipes = []
 
-    def update_passwowrd(self, password):
+    def update_password(self, password):
         self.password = password
 
     def add_recipe(self, recipeID):
