@@ -11,11 +11,10 @@ from flask_login import (
 )
 from werkzeug.security import generate_password_hash, check_password_hash
 from spork.models.recipe import Recipe
+
 from spork.models.user import User
 
-app = Flask(
-    __name__, template_folder="./spork/templates", static_folder="./spork/static"
-)
+app = Flask(__name__, template_folder="./spork/templates", static_folder="./spork/static")
 app.config["SECRET_KEY"] = "johnny"
 
 login_manager = LoginManager()
@@ -30,18 +29,18 @@ def load_user(id):
     return temp_account.find_by_id(id)
 
 
-# index/home page - renders info from recipe.json
-@app.route("/")
+################################################# index/home page - renders info from recipe.json #################################################
+@app.route('/')
+
 def index():
     with open("./spork/database/recipe.json", "r") as myfile:
         data = json.loads(myfile.read())
-        for i in data:
-            x = i["ingredients"]
-    return render_template("index.html", jsonfile=data, ingredients=x)
+        
 
+    return render_template('index.html', jsonfile = data) 
 
-# recipe create page
-@app.route("/recipe/create", methods=["GET", "POST"])
+################################################# Recipe create page #################################################
+@app.route('/recipe/create',methods = ['GET','POST'])
 def create():
     if request.method == "POST":
         with open("./spork/database/recipe.json", "r") as myfile:
@@ -70,14 +69,17 @@ def create():
         return render_template("/recipe/recipe_create.html")
 
 
-# recipe view page
-@app.route("/recipe/view/<id>", methods=["GET"])
+################################################# Recipe view page #################################################
+
+@app.route('/recipe/view/<int:id>', methods = ['GET','POST'])
+>>>>>>> develop
 def recipe_view(id):
     with open("./spork/database/recipe.json", "r") as myfile:
         data = json.loads(myfile.read())
-        q = int(id)
-    return render_template("/recipe/recipe_view.html", z=data, id=q)
+        
+    return render_template('/recipe/recipe_view.html', z = data, id = id)
 
+################################################# Register page #################################################
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -95,6 +97,7 @@ def register():
         return redirect(url_for("login"))
     return render_template("/user/register.html")
 
+################################################# Login page #################################################
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -112,6 +115,7 @@ def login():
         return redirect(url_for("profile"))
     return render_template("/user/login.html")
 
+################################################# Profile #################################################
 
 @app.route("/profile")
 @login_required
@@ -119,6 +123,7 @@ def profile():
 
     return render_template("/user/profile.html", email=current_user.email)
 
+################################################# Logout #################################################
 
 @app.route("/logout")
 @login_required
@@ -126,19 +131,56 @@ def logout():
     logout_user()
     return redirect(url_for("index"))
 
+       
 
-# start the server with the 'run()' method
-if __name__ == "__main__":
+################################################# Recipe delete #################################################
+@app.route('/recipe/view/<int:id>/delete')
+def recipe_delete(id):
+  
+    with open('./spork/database/recipe.json', "r") as f:
+        recipes = json.loads(f.read())
+
+    for recipe in recipes:
+        if recipe['recipeID'] == id:
+            recipes.remove(recipe)
+
+    with open('./spork/database/recipe.json', "w") as f:
+        json.dump(recipes, f, indent=1)
+    
+    return redirect(url_for("index"))
+################################################# Recipe update #################################################
+@app.route('/recipe/view/<int:id>/update', methods = ['GET','POST'])
+def recipe_update(id):
+
+    with open('./spork/database/recipe.json', "r") as f:
+            recipes = json.loads(f.read())
+
+    if request.method == "POST":
+
+        recipe_data = request.form
+    
+        recipe = Recipe(id,recipe_data['title'],recipe_data['author_name'],recipe_data['serving_amount'])
+        for key in recipe_data.keys():
+            if key[:10] == "ingredient":
+                recipe.add_ingredient(recipe_data[key],recipe_data[f'unit{key[10:]}'])
+        recipe.instructions = recipe_data['instruction']
+        recipe.update()
+
+        return redirect(url_for("index"))
+
+    return render_template('/recipe/recipe_update.html', z = recipes, id = id) 
+
+################################################# Error pages #################################################
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
+
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template("500.html"), 500
+
+################################################# start the server with the 'run()' method #################################################
+if __name__ == '__main__':
+
     app.run(debug=True)
 
-# @app.route('/filter')
-# def fliter_view():
-#     return render_template('filter_view.html')
-
-
-# @app.route('/loginSubmit', methods =['POST'])
-# def loginSubmit():
-#     req = request.get_json()
-#     print(req)
-#     email = req["email"]
-#     password = req["password"]
