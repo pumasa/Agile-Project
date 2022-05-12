@@ -48,16 +48,27 @@
     <!-- steps -->
     <h4 class="steps-title" class="black-text text-left">Steps</h4>
 
+
     <div class="steps-container">
         <p id="steps-text" class="text-justify">{{key['instructions']}}</p>
     </div>
 
-    <!-- edit button -->
-    <div class="cancle-save-container">
-        <a href="/recipe/edit/{{key['recipeID']}}">
-            <button id="cancle-button" type="button" class="btn btn-outline-secondary">Edit</button></a>
-    </div>
-    {% endif %} {% endfor %}
+    
+        <!-- Delete button-->
+
+        <div class="cancle-save-container">
+            <a href="/recipe/view/{{key['recipeID']}}/delete">
+                <button id="cancle-button" type="submit" value="Delete" class="btn btn-outline-danger">Delete</button></a>
+        </div>
+        </form>
+
+        <!-- edit button -->
+        <div class="cancle-save-container">
+            <a href="/recipe/view/{{key['recipeID']}}/update">
+                <button id="cancle-button" type="button" class="btn btn-outline-secondary">Edit</button></a>
+        </div>{% endif %} {% endfor %}
+
+
 
 
 
