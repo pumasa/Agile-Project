@@ -103,7 +103,11 @@
             ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
             ingredientAddHTML += " name=\"unit" + count +"\""
             ingredientAddHTML += "><button type='button' id='delete"+ count +"' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>"
+<<<<<<< HEAD
+            document.getElementById("insert-ingredient").insertAdjacentHTML("afterend",ingredientAddHTML)
+=======
             document.getElementById("insert-ingredient").innerHTML += ingredientAddHTML
+>>>>>>> develop
             count +=1
         }
 
