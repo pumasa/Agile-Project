@@ -31,8 +31,8 @@ class Recipe:
         self.title = title
         self.save()
 
-    def update_author(self, title):
-        self.author = title
+    def update_author(self, author):
+        self.author = author
         self.save()
 
     def update_serving(self, serving):
