@@ -150,115 +150,23 @@ body {
 }
 
 
-/* ---- create form ---- */
+/* ---- view register/login body ---- */
 
-#create_body {
-    background-color: #faf9f9;
-    /* padding: 2pc auto 2pc auto; */
+.account-body-container {
     margin-top: 8pc;
     margin-bottom: 8pc;
-    padding-bottom: 2pc;
-    padding-top: 1pc;
 }
 
-.basic-info {
+
+/* Email and Password inputs */
+
+.account-input {
+    margin-top: 1.5pc;
     width: 50%;
-    margin-right: 20%;
 }
 
 
-/* each textbox margin between them */
-
-.form-control {
-    margin-top: 2pc
-}
-
-
-/* insert image */
-
-#insert-image .form-control-lg {
-    width: 20pc;
-    height: 20pc;
-    opacity: 0;
-    margin-top: 0;
-}
-
-#insert-image {
-    width: 20pc;
-    height: 20pc;
-    margin-top: 1.5pc;
-    background-color: #e8e8e8;
-}
-
-.basic-info-image {
-    display: flex;
-}
-
-
-/* Insert Ingridients */
-
-
-/* spaces on right and left and right */
-
-#insert-ingredient .form-control {
-    margin-right: 1.5pc;
-    margin-top: 1.5pc
-}
-
-
-/* delete button */
-
-.delete-button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 1.5pc;
-    height: 100%;
-    margin-top: 1.5pc;
-    margin-left: 25%;
-    margin-right: 0.6pc;
-}
-
-
-/* .delete { */
-
-
-/* margin-top: 1.5pc; */
-
-
-/* margin-left: 25%; */
-
-
-/* margin-right: 0.6pc; */
-
-
-/* } */
-
-
-/* add button > container aligns it to the right*/
-
-.add-button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 1.5pc;
-    height: 100%;
-    margin-top: 1.5pc;
-    margin-left: 25%;
-    margin-right: 0.6pc;
-}
-
-
-/* steps textbox */
-
-.steps-container {
-    width: 80%;
-    height: 20pc;
-    /* background-color: black; */
-    display: flex;
-    justify-content: space-between;
-}
-
-
-/* cancle, save button > container aligns it to the right*/
+/* register login buttons */
 
 .cancle-save-container {
     display: flex;
@@ -276,4 +184,52 @@ body {
 
 #save-button {
     width: 20%;
+    margin-right: 33%;
+}
+
+.container{
+    background-color:  #f2f2f2;
+    border-radius: 0.5rem;
+}
+
+.form__display{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.form__display > input {
+    height: 30px;
+    margin-bottom: 15px;
+    background-color: white;
+    width: 90%;
+}
+
+.form__display > textarea {
+    margin-bottom: 15px;
+    background-color: white;
+    width: 90%;
+}
+
+.container > h2{
+    padding-top: 10px;
+}
+
+.form__display > button{
+    margin: 10px;
+    width: 100px;
+}
+
+.image__upload{
+    width: 90%;
+}
+
+.delete-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5pc;
+    height: 100%;
+    margin-top: 1.5pc;
+    margin-left: 25%;
+    margin-right: 0.6pc;
 }

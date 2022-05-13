@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
     <link rel="stylesheet" href="../static/css/register-login.css">
     <title>Register and Login</title>
@@ -44,17 +44,42 @@
             </div>
 
             <!-- inputs for email and password -->
-            <input id="email" class="form-control container account-input" type="text" placeholder="Email">
-            <input id="password" class="form-control container account-input" type="text" placeholder="Password">
+            
+            <input id="email" class="form-control container account-input" type="text" placeholder="Email" name="Email">
+            
+            <input id="password" class="form-control container account-input" type="password" placeholder="Password" name="password">
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+            
 
-            <!-- cancle and save buttons -->
-            <div class="cancle-save-container">
-                <button id="cancle-button" type="button" class="btn btn-outline-secondary">Register</button>
-                <button id="save-button" type="button" class="btn btn-success">Login</button>
+            <!-- cancel and save buttons -->
+            <div class="cancel-save-container">
+                <button id="login_button" type="button" class="btn btn-success">Login</button>
+            </div>
+            <div class="register__button">
+                <p>Not a User yet click here to Register -></p>
+                <button id="register_button" type="button" class="btn btn-outline-secondary">Register</button>
             </div>
         </div>
     </div>
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
 
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+
+        // prevent form submit
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+    </script>
 </body>
 
 </html>
