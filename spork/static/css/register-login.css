@@ -155,14 +155,14 @@ body {
 .account-body-container {
     margin-top: 8pc;
     margin-bottom: 8pc;
+    
 }
 
 #account-body {
     background-color: #faf9f9;
     padding-bottom: 2pc;
     padding-top: 2pc;
-    /* display: flex;
-    justify-content: center; */
+    align-items: center;
 }
 
 
@@ -186,7 +186,7 @@ body {
 
 /* register login buttons */
 
-.cancle-save-container {
+.cancel-save-container {
     display: flex;
     justify-content: flex-end;
     margin-top: 1.5pc;
@@ -196,11 +196,27 @@ body {
     margin-right: 0.6pc;
 }
 
-#cancle-button {
-    margin-right: 1.5pc;
-}
-
-#save-button {
+#login_button {
     width: 20%;
     margin-right: 33%;
 }
+
+.register__button{
+    background-color: var(--body_bg);
+    padding: 10px;
+    width: 30%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 33%;
+}
+
+#register_button{
+    width: fit-content;
+}
+
+.container{
+    border: 1px solid gray;
+}
+
+

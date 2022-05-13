@@ -1,6 +1,4 @@
 import json
-import os
-
 
 class Recipe:
     def __init__(self, recipeID, title, author, serving):
@@ -19,9 +17,27 @@ class Recipe:
     def add_ingredient(self, ingredient, quantity):
         self.ingredients[str(ingredient)] = str(quantity)
 
+
+    def remove_ingredient(self, ingredient):
+        self.ingredients.pop(ingredient)
+
+    
     # #adds an instruction to the instruction list
-    def add_instructions(self, instruction):
+    def update_instructions(self, instruction):
         self.instructions = instruction
+
+
+    def update_title(self, title):
+        self.title = title
+
+
+    def update_author(self, author):
+        self.author = author
+
+
+    def update_serving(self, serving):
+        self.serving = serving
+
 
     # writes the recipe into the json file
     def save(self):
@@ -31,9 +47,30 @@ class Recipe:
             file_data = json.loads(f.read())
 
         with open(f"spork\\database\\recipe.json", "w") as f:
-            file_data.append(to_json)
+            x = 0
+
+            for instance in file_data:
+                if instance['recipeID'] == to_json['recipeID']:
+                    instance.update(to_json)
+                    x = 1
+            if x == 0:
+                file_data.append(to_json)
             json.dump(file_data, f, indent=1)
 
+    def update(self):
+        to_json = self.to_json()
+
+        with open(f"spork\\database\\recipe.json", "r") as f:
+            file_data = json.loads(f.read())
+
+        with open(f"spork\\database\\recipe.json", "w") as f:
+       
+            for instance in file_data:
+                if instance['recipeID'] == to_json['recipeID']:
+                    instance.update(to_json) 
+                    
+            json.dump(file_data, f, indent=1)
+            
     def to_json(self):
 
         json = {
@@ -47,52 +84,24 @@ class Recipe:
 
         return json
     
-def delete(recipeid):
-
-        with open(f"spork\\database\\recipe.json", "r") as f:
-            recipes = json.loads(f.read())
-
-        for recipe in recipes:
-            if recipe['recipeID'] == recipeid:
-                recipes.remove(recipe)
-
-        with open(f"spork\\database\\recipe.json", "w") as f:
-            json.dump(recipes, f, indent=1)
-
-
-    # changes how many the recipe serves by altering the quantity values in the recipe list
-    # def change_serving(self, new_serving):
-    #     change = new_serving / self.serving
-    #     count = 0
-    #     while count < len(self.ingredients):
-    #         self.ingredients[count[0]] *= change
-
-    # removes an ingredient and ingredient quantity from the recipe's ingredient lis
-    # takes ingredient as parameter
-    # def remove_ingredient(self, ingredient):
-    #     for elem in self.ingredients:
-    #         if elem[1] == ingredient:
-    #             self.ingredients.remove(elem)
-    #             break
-
-    # #returns true if the ingredient is in the recipe, otherwise returns false
-    # #takes ingredient as parameter
-    # def check_for_ingredient(self, ingredient):
-    #     for elem in self.ingredients:
-    #         if elem[1] == ingredient:
-    #             return True
-    #     return False
-
-    # #removes an instruction from the instruction list
-    # #takes instruction number as parameter
-    # def remove_step(self, step_num):
-    #     self.instructions.remove(self.instructions[step_num - 1])
-
-    # #removes the last instruction from the instruction list
-    # def pop_step(self):
-    #     self.instructions.remove(self.instructions[len(self.instructions) -1])
-
-    # alters an instruction
-    # takes an instruction step and an instruction string as parameters
-    # def change_step(self, step_num, instruction):
-    #     self.instructions[step_num -1] = instruction
+#def delete(recipeid):
+#
+#    with open(f"spork\\database\\recipe.json", "r") as f:
+#        recipes = json.loads(f.read())
+#
+#    for recipe in recipes:
+#        if recipe['recipeID'] == recipeid:
+#            recipes.remove(recipe)
+#
+#    with open(f"spork\\database\\recipe.json", "w") as f:
+#        json.dump(recipes, f, indent=1)
+#
+#    with open(f'spork\\database\\user.json', 'r') as f:
+#        users = json.loads(f.read())
+#        
+#    for user in users:
+#        if recipeid in user['recipes']:
+#            user['recipes'].remove(recipeid)
+#
+#    with open(f'spork\\database\\user.json', 'w') as f:
+#        json.dump(users, f, indent=1)
