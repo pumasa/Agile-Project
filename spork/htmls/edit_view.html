@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../static/css/create.css">
-    <title>Create Recipe</title>
+    <title>Edit Recipe</title>
 </head>
 
 
@@ -36,7 +36,7 @@
     <!-- This div is centered | All the contents of the form are here-->
     <div class="container" id="create_body">
 
-        <h1 class="black-text text-center">Create Recipe</h1>
+        <h1 class="black-text text-center">Edit Recipe</h1>
 
         <!-- Title, Author, serving, add image -->
         <div class="basic-info-image">
@@ -70,7 +70,7 @@
 
         <!-- steps -->
         <div class="steps-container">
-            <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Steps to make the recipe"></textarea>
         </div>
 
         <!-- save,cancle button -->
@@ -91,21 +91,20 @@
 
         <!-- https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Fusers%2Fsimple-user-icon&psig=AOvVaw2JK2IUr8if_R16GQRBkWqr&ust=1651196331872000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIiNiunPtfcCFQAAAAAdAAAAABAD -->
     </div>
-    <script>
-        let id = 1;
-
-        function addCode() {
+<script>
+    let id=1;
+    function addCode() {
             document.getElementById("insert-ingredient").insertAdjacentHTML("afterend", "<div id ='delete"+id+"'><input id='ingredient"+ id +"'class='form-control' type='text' placeholder='Ingredient: 'Sugar''><input id='unit"+id+ "' class='form-control' type='text' placeholder='Unit: '1 tsp''><div class='delete-button-container'><button type='button' id='delete"+ id +"' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div></div>"); 
-            id += 1;
-            console.log(id);
+              id+=1;
+              console.log(id);
         }
-
-        function reply_click(clicked_id) {
-            const element = document.getElementById(clicked_id);
-            element.remove();
-            console.log(clicked_id);
-        }
-    </script>
+        function reply_click(clicked_id)
+            {
+                const element=document.getElementById(clicked_id);
+                element.remove();
+                console.log(clicked_id);
+            }
+</script>  
 
 </body>
 
