@@ -1,20 +1,20 @@
-{% extends "layout.html" %} {% block title %}Create Recipe{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="../static/css/create.css"> {% endblock %} {% block content %}
+ {% extends "layout.html" %} {% block title %}Update Recipe{% endblock %} {% block head %} {{ super() }}
+<link rel="stylesheet" href="../../../static/css/create.css"> {% endblock %} {% block content %}
 
 
 </div>
 
 <!-- This div is centered | All the contents of the form are here-->
-<div class="container" id="create_body">
+<div class="container" id="create_body">{% for key in z %} {% if id == key['recipeID'] %}
 
-    <h1 class="black-text text-center">Create Recipe</h1>
-    <form action="/recipe/create" method="POST">
+    <h1 class="black-text text-center">Update Recipe</h1>
+    <form action="" method="POST">
         <!-- Title, Author, serving, add image -->
         <div class="basic-info-image">
             <div class="basic-info">
-                <input id="title" class="form-control" type="text" placeholder="Title: 'Omlet'" name="title">
-                <input id="author_name" class="form-control" type="text" placeholder="Author: 'Bob'" name="author_name">
-                <input id="serving_amount" class="form-control" type="text" placeholder="Serving: '2'" name="serving_amount">
+                <input id="title" class="form-control" type="text" value="{{key['title']}}" name="title">
+                <input id="author_name" class="form-control" type="text" value="{{key['author']}}" name="author_name">
+                <input id="serving_amount" class="form-control" type="text" value="{{key['serving']}}" name="serving_amount">
             </div>
 
             <!-- add image pane -->
@@ -25,11 +25,11 @@
 
         <!-- Ingridients, unit, delete -->
         <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
-
+        {% for ingr in key['ingredients']%}
         <div id="insert-ingredient">
-            <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient1">
-            <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit1">
-        </div>
+            <input id="ingredient" class="form-control" type="text" value="{{ingr}}" name="ingredient1">
+            <input id="unit" class="form-control" type="text" value="{{key['ingredients'][ingr]}}" name="unit1">
+        </div>{% endfor %}
 
 
         <!-- add button -->
@@ -39,15 +39,17 @@
 
         <!-- steps -->
         <div class="steps-container">
-            <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction"></textarea>
+            <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction">{{key['instructions']}}</textarea>
         </div>
 
         <!-- save,cancle button -->
         <div class="cancle-save-container">
-            <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancle</button>
+            <a href="/recipe/view/{{key['recipeID']}}">
+                <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancel</button></a>
+
             <button id="save-button" type="submit" class="btn btn-success">Save</button>
         </div>
-    </form>
+    </form>{% endif %} {% endfor %}
 
 
     <!-- <h1 class="a ">Test Lorem Ipsum</h1>
@@ -69,7 +71,7 @@
         ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
         ingredientAddHTML += " name=\"unit" + count + "\""
         ingredientAddHTML += "><button type='button' id='delete" + count + "' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>"
-        document.getElementById("insert-ingredient").insertAdjacentHTML("afterend", ingredientAddHTML)
+        document.getElementById("insert-ingredient").innerHTML += ingredientAddHTML
         count += 1
     }
 
