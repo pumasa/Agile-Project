@@ -53,7 +53,6 @@ class Recipe:
                 if instance['recipeID'] == to_json['recipeID']:
                     instance.update(to_json)
                     x = 1
-                    
             if x == 0:
                 file_data.append(to_json)
             json.dump(file_data, f, indent=1)
@@ -85,24 +84,24 @@ class Recipe:
 
         return json
     
-def delete(recipeid):
-
-    with open(f"spork\\database\\recipe.json", "r") as f:
-        recipes = json.loads(f.read())
-
-    for recipe in recipes:
-        if recipe['recipeID'] == recipeid:
-            recipes.remove(recipe)
-
-    with open(f"spork\\database\\recipe.json", "w") as f:
-        json.dump(recipes, f, indent=1)
-
-    with open(f'spork\\database\\user.json', 'r') as f:
-        users = json.loads(f.read())
-        
-    for user in users:
-        if recipeid in user['recipes']:
-            user['recipes'].remove(recipeid)
-
-    with open(f'spork\\database\\user.json', 'w') as f:
-        json.dump(users, f, indent=1)
+#def delete(recipeid):
+#
+#    with open(f"spork\\database\\recipe.json", "r") as f:
+#        recipes = json.loads(f.read())
+#
+#    for recipe in recipes:
+#        if recipe['recipeID'] == recipeid:
+#            recipes.remove(recipe)
+#
+#    with open(f"spork\\database\\recipe.json", "w") as f:
+#        json.dump(recipes, f, indent=1)
+#
+#    with open(f'spork\\database\\user.json', 'r') as f:
+#        users = json.loads(f.read())
+#        
+#    for user in users:
+#        if recipeid in user['recipes']:
+#            user['recipes'].remove(recipeid)
+#
+#    with open(f'spork\\database\\user.json', 'w') as f:
+#        json.dump(users, f, indent=1)
