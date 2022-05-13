@@ -46,6 +46,7 @@ class User(UserMixin):
         for user in data:
             if id == user["id"]:
                 return_user = User(user["email"], user["password"])
+                return_user.id = user["id"]
                 for i in user["recipes"]:
                     return_user.recipes.append(i)
                 return return_user

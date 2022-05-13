@@ -41,7 +41,7 @@ def index():
 
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
-@login_required
+# @login_required
 def create():
     if request.method == "POST":
         with open("./spork/database/recipe.json", "r") as myfile:
@@ -119,7 +119,7 @@ def login():
 ################################################# Profile #################################################
 
 @app.route("/profile")
-@login_required
+# @login_required
 def profile():
 
     return render_template("/user/profile.html", email=current_user.email)
@@ -127,7 +127,7 @@ def profile():
 ################################################# Logout #################################################
 
 @app.route("/logout")
-@login_required
+# @login_required
 def logout():
     logout_user()
     return redirect(url_for("index"))
@@ -136,7 +136,7 @@ def logout():
 
 ################################################# Recipe delete #################################################
 @app.route('/recipe/view/<int:id>/delete')
-@login_required
+# @login_required
 def recipe_delete(id):
   
     with open('./spork/database/recipe.json', "r") as f:
@@ -152,7 +152,7 @@ def recipe_delete(id):
     return redirect(url_for("index"))
 ################################################# Recipe update #################################################
 @app.route('/recipe/view/<int:id>/update', methods = ['GET','POST'])
-@login_required
+# @login_required
 def recipe_update(id):
 
     with open('./spork/database/recipe.json', "r") as f:
