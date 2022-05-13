@@ -16,28 +16,28 @@ class Recipe:
     # takes ingredient and how many of the ingredient is in the recipe as parameters
     def add_ingredient(self, ingredient, quantity):
         self.ingredients[str(ingredient)] = str(quantity)
-        self.save()
+
 
     def remove_ingredient(self, ingredient):
-        self.ingredients.remove(ingredient)
-        self.save()
+        self.ingredients.pop(ingredient)
+
     
     # #adds an instruction to the instruction list
     def update_instructions(self, instruction):
         self.instructions = instruction
-        self.save()
+
 
     def update_title(self, title):
         self.title = title
-        self.save()
+
 
     def update_author(self, author):
         self.author = author
-        self.save()
+
 
     def update_serving(self, serving):
         self.serving = serving
-        self.save()
+
 
     # writes the recipe into the json file
     def save(self):
@@ -49,13 +49,11 @@ class Recipe:
         with open(f"spork\\database\\recipe.json", "w") as f:
             x = 0
 
-            for count, instance in enumerate(file_data):
+            for instance in file_data:
                 if instance['recipeID'] == to_json['recipeID']:
-
                     instance.update(to_json)
-                    file_data[count] = to_json
-
                     x = 1
+                    
             if x == 0:
                 file_data.append(to_json)
             json.dump(file_data, f, indent=1)
