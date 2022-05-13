@@ -16,28 +16,28 @@ class Recipe:
     # takes ingredient and how many of the ingredient is in the recipe as parameters
     def add_ingredient(self, ingredient, quantity):
         self.ingredients[str(ingredient)] = str(quantity)
-        self.save()
+
 
     def remove_ingredient(self, ingredient):
         self.ingredients.remove(ingredient)
-        self.save()
+
     
     # #adds an instruction to the instruction list
     def update_instructions(self, instruction):
         self.instructions = instruction
-        self.save()
+
 
     def update_title(self, title):
         self.title = title
-        self.save()
+
 
     def update_author(self, author):
         self.author = author
-        self.save()
+
 
     def update_serving(self, serving):
         self.serving = serving
-        self.save()
+
 
     # writes the recipe into the json file
     def save(self):
