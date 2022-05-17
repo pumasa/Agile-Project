@@ -77,7 +77,7 @@ def recipe_view(id):
     # with open("./spork/database/recipe.json", "r") as myfile:
     #     data = json.loads(myfile.read())
     if request.method == 'GET':
-        return render_template("/recipe/recipe_create_12.html")
+        return render_template("/recipe/recipe_view.html")
     # for recipe in data:
     #     if id == recipe["recipeID"]:
     #         single_recipe.update(recipe)
