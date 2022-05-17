@@ -77,7 +77,7 @@ def test_save(user2):
         ) as mock_file:
             user2.save()
             assert mock_file.call_count == 2
-            assert mock_file.call_args[0][0] == "spork\\database\\user.json"
+            assert "spork\\database\\user.json" in mock_file.call_args[0][0]
 
             data = mock_json.call_args[0][0]
             assert mock_json.call_count == 1
@@ -101,7 +101,7 @@ def test_find_by_email(user):
             user = user.find_by_email("a@a.com")
 
             assert mock_file.call_count == 2
-            assert mock_file.call_args[0][0] == "spork\\database\\user.json"
+            assert "spork\\database\\user.json" in mock_file.call_args[0][0]
             
             assert isinstance(user,User)
             assert user.id == "1"
@@ -119,7 +119,7 @@ def test_find_by_id(user):
             user = user.find_by_id("1")
 
             assert mock_file.call_count == 2
-            assert mock_file.call_args[0][0] == "spork\\database\\user.json"
+            assert "spork\\database\\user.json" in mock_file.call_args[0][0]
             
             assert isinstance(user,User)
             assert user.id == "1"

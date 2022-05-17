@@ -1,6 +1,6 @@
 import json
 from flask_login import UserMixin
-
+import os
 
 class User(UserMixin):
     def __init__(self, email, password):
@@ -54,13 +54,14 @@ class User(UserMixin):
     def save(self):
         to_json = self.to_json()
         file_data = self.load_database()
-
-        with open(f"spork\\database\\user.json", "w") as f:
+        csv_path = self.return_path("../database/user.json")
+        with open(csv_path, "w") as f:
             file_data.append(to_json)
             json.dump(file_data, f, indent=1)
 
     def load_database(self):
-        with open(f"spork\\database\\user.json", "r") as f:
+        csv_path = self.return_path("../database/user.json")
+        with open(csv_path, "r") as f:
             file_data = json.loads(f.read())
         return file_data
 
@@ -73,3 +74,8 @@ class User(UserMixin):
         }
 
         return json
+
+    def return_path(self,given_path):
+        cwd = os.path.abspath(os.path.dirname(__file__))
+        csv_path = os.path.abspath(os.path.join(cwd, given_path))
+        return csv_path
