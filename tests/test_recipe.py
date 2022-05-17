@@ -114,7 +114,7 @@ def test_save(recipe2):
         ) as mock_file:
             recipe2.save()
             assert mock_file.call_count == 2
-            assert mock_file.call_args[0][0] == "spork\\database\\recipe.json"
+            assert "spork\\database\\recipe.json" in mock_file.call_args[0][0]
 
             data = mock_json.call_args[0][0]
             assert mock_json.call_count == 1
