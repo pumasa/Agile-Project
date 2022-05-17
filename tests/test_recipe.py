@@ -1,4 +1,4 @@
-from spork.models.recipe import Recipe, delete
+from spork.models.recipe import Recipe
 import pytest
 from unittest.mock import patch, mock_open
 

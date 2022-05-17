@@ -72,13 +72,18 @@ def create():
 
 ################################################# Recipe view page #################################################
 
-@app.route('/recipe/view/<int:id>', methods = ['GET','POST'])
-
+@app.route('/recipe/view/<int:id>', methods = ['GET'])
 def recipe_view(id):
-    with open("./spork/database/recipe.json", "r") as myfile:
-        data = json.loads(myfile.read())
-        
-    return render_template('/recipe/recipe_view.html', z = data, id = id)
+    # with open("./spork/database/recipe.json", "r") as myfile:
+    #     data = json.loads(myfile.read())
+    if request.method == 'GET':
+        return render_template("/recipe/recipe_create_12.html")
+    # for recipe in data:
+    #     if id == recipe["recipeID"]:
+    #         single_recipe.update(recipe)
+    else:
+        return "404"
+    # return render_template('index.html')
 
 ################################################# Register page #################################################
 
