@@ -1,3 +1,8 @@
 [
-
+ {
+  "id": "1",
+  "email": "test",
+  "password": "sha256$hYrooM23i5Jxelgq$a282e1c86265f2aeea8f01f69f65e984c6d01268bdd81408cbd3be8534e327ac",
+  "recipes": []
+ }
 ]
