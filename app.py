@@ -122,8 +122,14 @@ def login():
 @app.route("/profile")
 # @login_required
 def profile():
+    with open("./spork/database/recipe.json", "r") as myfile:
+        data = json.loads(myfile.read())
+        return_data = []
+        for recipe in data:
+            if recipe['recipeID'] in current_user.recipes:
+                return_data.append(recipe)
 
-    return render_template("/user/profile.html", email=current_user.email)
+    return render_template("/user/profile.html", jsonfile=return_data)
 
 ################################################# Logout #################################################
 
