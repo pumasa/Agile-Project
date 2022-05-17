@@ -1,4 +1,5 @@
 import json
+import random
 
 class Recipe:
     def __init__(self, recipeID, title, author, serving):
@@ -37,6 +38,74 @@ class Recipe:
 
     def update_serving(self, serving):
         self.serving = serving
+
+    def search(self, search):
+        results=[]
+
+        #breaks the search string into lowercase keywords
+        keywords = search.lower().split()
+        #retrieves list of recipes in database
+        file_data = self.load_database()
+
+        #iterates through all recipes
+        for recipe in file_data:
+            #breaks the title into lowercase words
+            title_words = recipe['title'].lower().split()
+            for word in title_words:
+                for keyword in keywords:
+                    #checks for a match between a word from a title and a keyword
+                    if word == keyword:
+                        #if a match is found, both the loops will break and we will move onto the next recipe
+                        results.append(recipe['recipeID'])
+                        break
+                #this else statement executes if there were no matches with the current title word
+                #it loops and checks for a match between a keyword and the next word from the recipe's title
+                #(an else statement after a for loop will execute only when the for loop terminated normally)
+                #(it will not execute if the for loop was ended by the break keyword)
+                else:
+                    continue
+                break
+
+        #returns list of recipe ids that were found
+        return results
+
+    def filter(self, filter):
+        results = []
+        #retrieves list of recipes from the database
+        file_data = self.load_database()
+
+        #iterates over all recipes
+        for recipe in file_data:
+            #sets the variable used to keep track of how many ingredients matched
+            x = 0
+            #iterates over all the ingredients we're filtering for
+            for ingredient in filter:
+                #if the ingredient is in the recipe, add 1 to the match counter
+                if ingredient in recipe['ingredients']:
+                    x += 1
+                #if there was no match, exit loop and move onto the next recipe
+                else:
+                    break
+            #adds the recipeID to the result list if all ingredients from the filter are in the recipe
+            if x == len(filter):
+                results.append(recipe['recipeID'])
+        
+        return results
+
+    #function takes a list of recipes and returns a specified number of recommendations at random
+    def recommendation(self, recipes, recommendations_num):
+        results = []
+        #iterates until the specified number of recommmendations has been collected
+        while recommendations_num > 0:
+            #takes random recipe
+            recommendation = random.choice(recipes)
+            #adds recipe to results
+            results.append(recommendation['recipeID'])
+            #removes recipe from list so that it can't be selected again by random.choice
+            recipes.remove(recommendation)
+            recommendations_num -= 1
+            
+        return results
 
 
     # writes the recipe into the json file
