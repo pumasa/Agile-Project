@@ -180,7 +180,7 @@ def recipe_update(id):
 
         return redirect(url_for("index"))
 
-    return redirect(url_for("recipe_view", id = id))
+    return render_template("/recipe/recipe_update.html", z = recipes, id = id)
 
 ################################################# Error pages #################################################
 @app.route('/user/<int:id>/delete')
