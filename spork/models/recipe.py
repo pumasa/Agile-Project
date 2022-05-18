@@ -112,8 +112,7 @@ class Recipe:
     def save(self):
         to_json = self.to_json()
         csv_path = self.return_path("../database/recipe.json")
-        with open(csv_path, "r") as f:
-            file_data = json.loads(f.read())
+        file_data = self.load_database()
 
         with open(csv_path, "w") as f:
             x = 0
@@ -129,8 +128,7 @@ class Recipe:
     def update(self):
         to_json = self.to_json()
         csv_path = self.return_path("../database/recipe.json")
-        with open(csv_path, "r") as f:
-            file_data = json.loads(f.read())
+        file_data = self.load_database()
 
         with open(csv_path, "w") as f:
        
@@ -158,6 +156,11 @@ class Recipe:
         csv_path = os.path.abspath(os.path.join(cwd, given_path))
         return csv_path
 
+    def load_database(self):
+        csv_path = self.return_path("../database/recipe.json")
+        with open(csv_path, "r") as f:
+            file_data = json.loads(f.read())
+        return file_data
 #def delete(recipeid):
 #
 #    with open(f"spork\\database\\recipe.json", "r") as f:
