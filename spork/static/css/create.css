@@ -259,6 +259,28 @@ body {
     width: 20%;
 }
 
+
+
+/* search */
+
+.logo-search {
+    display: flex;
+}
+
+.search-button {
+    width: 3.3rem;
+    height: 70%;
+}
+
+.input-group {
+    /* margin-top: -2rem; */
+    padding-left: 1rem;
+}
+
+.search-field {
+    margin-top: 0rem;
+
 .dynamic_div > button{
     margin-top: 10px;
+
 }
