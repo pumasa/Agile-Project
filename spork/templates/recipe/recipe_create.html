@@ -68,8 +68,10 @@
         ingredientAddHTML += " name=\"ingredient" + count + "\""
         ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
         ingredientAddHTML += " name=\"unit" + count + "\""
+
         ingredientAddHTML += "><button type='button' id='delete" + count + "' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>"
         document.getElementById("add-button-container").insertAdjacentHTML("beforebegin", ingredientAddHTML)
+
         count += 1
     }
 

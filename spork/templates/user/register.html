@@ -1,32 +1,55 @@
 {% extends "layout.html" %} {% block title %}Register{% endblock %} {% block head %} {{ super() }}
 <link rel="stylesheet" href="../static/css/register-login.css"> {% endblock %} {% block content %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    </div>
+</div>
 
-    <!-- This div is centered | All the contents of the form are here-->
-    <div class="account-body-container">
-        <div class="container" id="account-body">
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <div class="notification">
-                        {{ messages[0] }}. Go to <a href="{{ url_for('login') }}">login page</a>.
-                    </div>
-                {% endif %}
-            {% endwith %}
-
-
-
-            <form action="/register" method="POST">
-                <!-- inputs for email and password -->
-                <input id="email" class="form-control container account-input" type="text" placeholder="Email" name="email">
-                <input id="password" class="form-control container account-input" type="text" placeholder="Password" name="password">
-
-                <!-- cancle and save buttons -->
-                <div class="cancle-save-container">
-                    <button id="cancle-button" type="submit" class="btn btn-outline-secondary">Register</button>
-                    <!-- <button id="save-button" type="submit" class="btn btn-success">Login</button> -->
-                </div>
-            </form>
+<!-- This div is centered | All the contents of the form are here-->
+<div class="account-body-container">
+    <div class="container" id="account-body">
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <div class="notification">
+            {{ messages[0] }}. Go to <a href="{{ url_for('login') }}">login page</a>.
         </div>
+        {% endif %} {% endwith %}
+
+
+
+        <form action="/register" method="POST">
+            <!-- inputs for email and password -->
+            <div>
+                <h4 class="register-text">Email</h4>
+                <input id="email" class="form-control container account-input" type="text" placeholder="Email" name="email">
+            </div>
+
+            <div>
+                <h4 class="register-text">Password</h4>
+                <div class="password-container">
+                    <input id="password" class="form-control account-input password-register" type="password" placeholder="Password" name="password">
+                    <i id="visibilityBtn"><span class="material-symbols-outlined">visibility</span></i>
+                </div>
+            </div>
+
+            <!-- cancle and save buttons -->
+            <div class="cancel-save-container">
+                <button id="cancle-button" type="submit" class="btn btn-success">Register</button>
+            </div>
+        </form>
     </div>
-    {% endblock %}
+</div>
+
+<script>
+    const visibilityBtn = document.getElementById("visibilityBtn")
+    visibilityBtn.addEventListener("click", toggleVisibility)
+
+    function toggleVisibility() {
+        const passwordInput = document.getElementById("password")
+        if (passwordInput.type === "password") {
+            password.type = "text"
+        } else {
+            password.type = "password"
+        }
+    }
+    // alert("it works")
+</script>
+{% endblock %}
