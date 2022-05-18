@@ -1,1 +1,22 @@
-[]
+[{
+        "id": "1",
+        "email": "test",
+        "password": "sha256$hYrooM23i5Jxelgq$a282e1c86265f2aeea8f01f69f65e984c6d01268bdd81408cbd3be8534e327ac",
+        "recipes": [
+            1,
+            2
+        ]
+    },
+    {
+        "id": "2",
+        "email": "",
+        "password": "sha256$VEoSaVlrFbUY6MXg$3112e5775dfaecc4ac363a16c952ae6e1f1cfb1c1ce3b859898221420c085c42",
+        "recipes": []
+    },
+    {
+        "id": "3",
+        "email": "a",
+        "password": "sha256$WTPShdAJAPcXu3TL$07f941e24ada16cef0dad675f020565453cbcee3e4a7e04704e9af6d2b636d0f",
+        "recipes": []
+    }
+]

@@ -2,3 +2,5 @@ pytest
 pytest-cov
 flask
 flask-login
+pytest-flask
+gunicorn

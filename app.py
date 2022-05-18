@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request, redirect, url_for, flash
 import json
+import os
 from flask_login import (
     current_user,
     login_required,
@@ -31,9 +32,9 @@ def load_user(id):
 
 ################################################# index/home page - renders info from recipe.json #################################################
 @app.route('/')
-
 def index():
-    with open("./spork/database/recipe.json", "r") as myfile:
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as myfile:
         data = json.loads(myfile.read())
         
     
@@ -41,10 +42,10 @@ def index():
 
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
-# @login_required
 def create():
     if request.method == "POST":
-        with open("./spork/database/recipe.json", "r") as myfile:
+        csv_path = return_path("spork/database/recipe.json")
+        with open(csv_path, "r") as myfile:
             data = json.loads(myfile.read())
             biggest_id = 0
             for i in data:
@@ -72,13 +73,17 @@ def create():
 
 ################################################# Recipe view page #################################################
 
-@app.route('/recipe/view/<int:id>', methods = ['GET','POST'])
-
+@app.route('/recipe/view/<int:id>', methods = ['GET'])
 def recipe_view(id):
-    with open("./spork/database/recipe.json", "r") as myfile:
-        data = json.loads(myfile.read())
-        
-    return render_template('/recipe/recipe_view.html', z = data, id = id)
+    if request.method == 'GET':
+        csv_path = return_path("spork/database/recipe.json")
+        with open(csv_path, "r") as myfile:
+            data = json.loads(myfile.read())
+            single_recipe = {}
+            for recipe in data:
+                if id == recipe["recipeID"]:
+                    single_recipe.update(recipe)
+        return render_template("/recipe/recipe_view.html", data=single_recipe)
 
 ################################################# Register page #################################################
 
@@ -121,13 +126,19 @@ def login():
 @app.route("/profile")
 # @login_required
 def profile():
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as myfile:
+        data = json.loads(myfile.read())
+        return_data = []
+        for recipe in data:
+            if recipe['recipeID'] in current_user.recipes:
+                return_data.append(recipe)
 
-    return render_template("/user/profile.html", email=current_user.email)
+    return render_template("/user/profile.html", jsonfile=return_data)
 
 ################################################# Logout #################################################
 
 @app.route("/logout")
-# @login_required
 def logout():
     logout_user()
     return redirect(url_for("index"))
@@ -136,26 +147,24 @@ def logout():
 
 ################################################# Recipe delete #################################################
 @app.route('/recipe/view/<int:id>/delete')
-# @login_required
 def recipe_delete(id):
-  
-    with open('./spork/database/recipe.json', "r") as f:
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as f:
         recipes = json.loads(f.read())
 
     for recipe in recipes:
         if recipe['recipeID'] == id:
             recipes.remove(recipe)
 
-    with open('./spork/database/recipe.json', "w") as f:
+    with open(csv_path, "w") as f:
         json.dump(recipes, f, indent=1)
     
     return redirect(url_for("index"))
 ################################################# Recipe update #################################################
 @app.route('/recipe/view/<int:id>/update', methods = ['GET','POST'])
-# @login_required
 def recipe_update(id):
-
-    with open('./spork/database/recipe.json', "r") as f:
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as f:
             recipes = json.loads(f.read())
 
     if request.method == "POST":
@@ -171,8 +180,28 @@ def recipe_update(id):
 
         return redirect(url_for("index"))
 
-    return render_template('/recipe/recipe_update.html', z = recipes, id = id) 
+    return render_template("/recipe/recipe_update.html", z = recipes, id = id)
 
+################################################# Error pages #################################################
+@app.route('/user/<int:id>/delete')
+def user_delete(id):
+    csv_path = return_path("spork/database/user.json")
+    with open(csv_path, "r") as f:
+        users = json.loads(f.read())
+
+    for user in users:
+        if user['id'] == str(id):
+            users.remove(user)
+
+    with open(csv_path, "w") as f:
+        json.dump(users, f, indent=1)
+    
+    return "",200
+################################################# return path #################################################
+def return_path(given_path):
+    cwd = os.path.abspath(os.path.dirname(__file__))
+    csv_path = os.path.abspath(os.path.join(cwd, given_path))
+    return csv_path
 ################################################# Error pages #################################################
 @app.errorhandler(404)
 def page_not_found(e):
@@ -184,6 +213,6 @@ def page_not_found(e):
 
 ################################################# start the server with the 'run()' method #################################################
 if __name__ == '__main__':
-
-    app.run(debug=True)
+    port = os.environ.get("PORT", 5000)
+    app.run(debug=False, host="0.0.0.0",port=port)
 

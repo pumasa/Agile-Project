@@ -155,7 +155,6 @@ body {
 .account-body-container {
     margin-top: 8pc;
     margin-bottom: 8pc;
-    
 }
 
 #account-body {
@@ -176,24 +175,37 @@ body {
 }
 
 
+/* greeting messages */
+
+#small-display {
+    padding-top: 1.2pc;
+}
+
+
 /* Email and Password inputs */
 
 .account-input {
-    margin-top: 1.5pc;
+    margin-top: 1pc;
+    margin-bottom: 2pc;
     width: 50%;
 }
 
 
-/* register login buttons */
+/* align email and password text */
+
+.register-text {
+    padding-left: 25%;
+}
+
+
+/* register and login buttons */
 
 .cancel-save-container {
     display: flex;
     justify-content: flex-end;
     margin-top: 1.5pc;
-    height: 100%;
     margin-top: 1.5pc;
-    margin-left: 25%;
-    margin-right: 0.6pc;
+    margin-right: 25%;
 }
 
 #login_button {
@@ -201,7 +213,7 @@ body {
     margin-right: 33%;
 }
 
-.register__button{
+.register__button {
     background-color: var(--body_bg);
     padding: 10px;
     width: 30%;
@@ -211,12 +223,38 @@ body {
     margin-left: 33%;
 }
 
-#register_button{
+
+/* aligning the register and the login buttons nicely */
+
+#register-button {
     width: fit-content;
 }
 
-.container{
-    border: 1px solid gray;
+
+/* making password box the right size*/
+
+.password-register {
+    letter-spacing: 0.1ch;
+    margin-right: 1pc;
+    width: 67%;
 }
 
 
+/* making the password field align wiht eye */
+
+.password-container {
+    display: flex;
+    padding-left: 25%;
+}
+
+.material-symbols-outlined {
+    padding-top: 100%;
+}
+
+
+/* align eye inside  */
+
+i {
+    margin-left: -3pc;
+    cursor: pointer;
+}
