@@ -219,7 +219,7 @@ body {
 
 /* add button > container aligns it to the right*/
 
-.add-button-container {
+#add-button-container {
     display: flex;
     align-items: flex-end;
     margin-top: 1.5pc;
@@ -257,4 +257,8 @@ body {
 
 #save-button {
     width: 20%;
+}
+
+.dynamic_div > button{
+    margin-top: 10px;
 }
