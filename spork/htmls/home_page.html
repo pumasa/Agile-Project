@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../static/css/filter_view.css">
+
+</head>
+
+<body>
+    <div class="nav_custom">
+        <nav class="navbar navbar-custom">
+            <!-- logo -->
+            <span><img class="navlogo" src="../static/images/spork yellow.png"></span>
+            <div class="button-div">
+                <!-- Create button -->
+                <button id="create-button" class="nav-button">Create</button>
+                <!-- Filter button -->
+                <button id="filter-button" class="nav-button">Filter</button>
+                <!-- account login -->
+                <button id="account-button" class="nav-button"><img class="account-icon" src="../static/images/account-icon.png"></button>
+                <!-- <img class="account-icon" src="images/account-icon.png"> -->
+            </div>
+        </nav>
+        <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
+            <h1 class="display-4">Recipe Cards</h1>
+            <p id="small-display">Never forget another recipe!</p>
+            <p id="total-num-recipes"></p>
+          </div>
+        
+          <div class="container">
+            <div class="card-deck text-center">
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card mb-4 box-shadow">
+                  <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Chocolate Cake</h4>
+                  </div>
+                  <div class="card-body">
+                    <img src="https://justamumnz.com/wp-content/uploads/2017/06/Best-Ever-Chocolate-Cake-1.jpg" alt="image" width="100" class="img-thumbnail">
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>sugar</li>
+                      <li>Cocoa</li>
+                      <li>flour</li>
+                      <li>salt</li>
+                      <li>Baking powder</li>
+                    </ul>
+                    <span id="number-of-ingredients"> </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card mb-4 box-shadow">
+                  <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Tiramisu</h4>
+                  </div>
+                  <div class="card-body">
+                    <img src="https://www.fifteenspatulas.com/wp-content/uploads/2012/11/Tiramisu-Fifteen-Spatulas-1.jpg" alt="image" width="100" class="img-thumbnail">
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Egg</li>
+                      <li>Sugar</li>
+                      <li>WIne</li>
+                      <li>Cream</li>
+                      <li>Coffee liqueur </li>
+                    </ul>
+                    <span id="number-of-ingredients"> </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card mb-4 box-shadow">
+                  <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Apple pie</h4>
+                  </div>
+                  <div class="card-body">
+                    <img src="https://images-gmi-pmc.edge-generalmills.com/173da066-c6b4-45dd-9b28-0d459cf6f169.jpg" alt="image" width="100" class="img-thumbnail">
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>lots of apples</li>
+                      <li>butter</li>
+                      <li>Sugar</li>
+                      <li>Vanilla</li>
+                      <li>Flour</li>
+                    </ul>
+                    <span id="number-of-ingredients"> </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card mb-4 box-shadow">
+                  <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Carrot cake</h4>
+                  </div>
+                  <div class="card-body">
+                    <img src="https://nofailrecipe.com/wp-content/uploads/2016/05/Ultimate-Carrot-Cake-1024x512-1200x715.jpg" alt="image" width="100" class="img-thumbnail">
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Carrots</li>
+                      <li>Eggs</li>
+                      <li>Oil</li>
+                      <li>Sugar</li>
+                      <li>Vanilla</li>
+                      <li>Flour</li>
+                      <li>Baking soda</li>
+                    </ul>
+                    <span id="number-of-ingredients"> </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card mb-4 box-shadow">
+                  <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Cupcake</h4>
+                  </div>
+                  <div class="card-body">
+                    <img src="https://www.bakedbyrachel.com/wp-content/uploads/2016/07/choccookiescreamcupcakes2_bakedbyrachel.jpg" alt="image" width="100" class="img-thumbnail">
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>BUttercream</li>
+                      <li>butter</li>
+                      <li>icing</li>
+                      <li>Sugar</li>
+                      <li>Vanilla</li>
+                      <li>salt</li>
+                    </ul>
+                    <span id="number-of-ingredients"> </span>
+                  </div>
+                </div>
+              </div>
+              <div class="add-button-container">
+                <button id="add-button" type="button" class="btn btn-primary">Add New recipe</button>
+              </div>
+        
+            </div>
+          </div>
+          
+
+    </div>
+    <script>
+        
+
+    //change heading style
+    let author = 'nikki'
+    document.getElementById('small-display').textContent = "Welcome " + author + "! Are you looking for a special recipe today?"
+
+    //change font style of heading
+    document.getElementsByTagName('h1')[0].style.fontFamily = "Impact,Charcoal,sans-serif"
+
+    //get the number of recipe boxes and replace the p id="total-num-recipes" inner text with this value
+    let cardBodyDivs = document.getElementsByClassName('card-body') 
+    document.getElementById('total-num-recipes').textContent = "You have  " + cardBodyDivs.length + " recipes so far"
+
+    //4 get all li tag and lowercase text inside
+    let LITags = document.querySelectorAll('li')
+    for (let i = 0; i < LITags.length; i++) {
+    LITags[i].textContent = LITags[i].textContent.toLowerCase()
+}
+
+
+    </script>
+    
+</body>
+
+</html>
