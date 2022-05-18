@@ -116,7 +116,7 @@ def test_recipe_view(test_client):
             
 def test_recipe_delete_get(test_client):
     data = test_client.get("/recipe/view/1/update",follow_redirects=True).data.decode("utf-8")
-    assert "View Recipe" in data
+    assert "Update Recipe" in data
 
 def test_recipe_delete_post(test_client):
     with patch("json.dump") as mock_json:

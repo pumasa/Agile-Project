@@ -219,7 +219,7 @@ body {
 
 /* add button > container aligns it to the right*/
 
-.add-button-container {
+#add-button-container {
     display: flex;
     align-items: flex-end;
     margin-top: 1.5pc;
@@ -260,6 +260,7 @@ body {
 }
 
 
+
 /* search */
 
 .logo-search {
@@ -278,4 +279,8 @@ body {
 
 .search-field {
     margin-top: 0rem;
+
+.dynamic_div > button{
+    margin-top: 10px;
+
 }

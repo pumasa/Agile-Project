@@ -180,7 +180,7 @@ def recipe_update(id):
 
         return redirect(url_for("index"))
 
-    return redirect(url_for("recipe_view", id = id))
+    return render_template("/recipe/recipe_update.html", z = recipes, id = id)
 
 ################################################# Error pages #################################################
 @app.route('/user/<int:id>/delete')
@@ -213,6 +213,7 @@ def page_not_found(e):
 
 ################################################# start the server with the 'run()' method #################################################
 if __name__ == '__main__':
-
     app.run(debug=True)
+    # port = os.environ.get("PORT", 5000)
+    # app.run(debug=False, host="0.0.0.0",port=port)
 
