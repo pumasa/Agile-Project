@@ -1,7 +1,7 @@
 from spork.models.recipe import Recipe
 import pytest
 from unittest.mock import patch, mock_open
-
+import os
 # Mockmock = Mock()
 
 JSON_FILE = """[
@@ -114,7 +114,8 @@ def test_save(recipe2):
         ) as mock_file:
             recipe2.save()
             assert mock_file.call_count == 2
-            assert mock_file.call_args[0][0] == "spork\\database\\recipe.json"
+            csv_path = return_path("../spork/database/recipe.json")
+            assert csv_path == mock_file.call_args[0][0]
 
             data = mock_json.call_args[0][0]
             assert mock_json.call_count == 1
@@ -171,6 +172,10 @@ def test_update(recipe3):
                 "instructions": "A million years ago Mike decided to cook a salty omlet",
             }
 
+def return_path(given_path):
+    cwd = os.path.abspath(os.path.dirname(__file__))
+    csv_path = os.path.abspath(os.path.join(cwd, given_path))
+    return csv_path
 
 # # test written wron doesn't work
 # def test_delete(recipe2):

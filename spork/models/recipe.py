@@ -1,6 +1,6 @@
 import json
 import random
-
+import os
 class Recipe:
     def __init__(self, recipeID, title, author, serving):
         """This is the constructor"""
@@ -111,11 +111,11 @@ class Recipe:
     # writes the recipe into the json file
     def save(self):
         to_json = self.to_json()
-
-        with open(f"spork\\database\\recipe.json", "r") as f:
+        csv_path = self.return_path("../database/recipe.json")
+        with open(csv_path, "r") as f:
             file_data = json.loads(f.read())
 
-        with open(f"spork\\database\\recipe.json", "w") as f:
+        with open(csv_path, "w") as f:
             x = 0
 
             for instance in file_data:
@@ -128,11 +128,11 @@ class Recipe:
 
     def update(self):
         to_json = self.to_json()
-
-        with open(f"spork\\database\\recipe.json", "r") as f:
+        csv_path = self.return_path("../database/recipe.json")
+        with open(csv_path, "r") as f:
             file_data = json.loads(f.read())
 
-        with open(f"spork\\database\\recipe.json", "w") as f:
+        with open(csv_path, "w") as f:
        
             for instance in file_data:
                 if instance['recipeID'] == to_json['recipeID']:
@@ -153,6 +153,11 @@ class Recipe:
 
         return json
     
+    def return_path(self,given_path):
+        cwd = os.path.abspath(os.path.dirname(__file__))
+        csv_path = os.path.abspath(os.path.join(cwd, given_path))
+        return csv_path
+
 #def delete(recipeid):
 #
 #    with open(f"spork\\database\\recipe.json", "r") as f:

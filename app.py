@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request, redirect, url_for, flash
 import json
+import os
 from flask_login import (
     current_user,
     login_required,
@@ -32,7 +33,8 @@ def load_user(id):
 ################################################# index/home page - renders info from recipe.json #################################################
 @app.route('/')
 def index():
-    with open("./spork/database/recipe.json", "r") as myfile:
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as myfile:
         data = json.loads(myfile.read())
         
     
@@ -42,7 +44,8 @@ def index():
 @app.route('/recipe/create',methods = ['GET','POST'])
 def create():
     if request.method == "POST":
-        with open("./spork/database/recipe.json", "r") as myfile:
+        csv_path = return_path("spork/database/recipe.json")
+        with open(csv_path, "r") as myfile:
             data = json.loads(myfile.read())
             biggest_id = 0
             for i in data:
@@ -73,7 +76,8 @@ def create():
 @app.route('/recipe/view/<int:id>', methods = ['GET'])
 def recipe_view(id):
     if request.method == 'GET':
-        with open("./spork/database/recipe.json", "r") as myfile:
+        csv_path = return_path("spork/database/recipe.json")
+        with open(csv_path, "r") as myfile:
             data = json.loads(myfile.read())
             single_recipe = {}
             for recipe in data:
@@ -122,8 +126,15 @@ def login():
 @app.route("/profile")
 # @login_required
 def profile():
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as myfile:
+        data = json.loads(myfile.read())
+        return_data = []
+        for recipe in data:
+            if recipe['recipeID'] in current_user.recipes:
+                return_data.append(recipe)
 
-    return render_template("/user/profile.html", email=current_user.email)
+    return render_template("/user/profile.html", jsonfile=return_data)
 
 ################################################# Logout #################################################
 
@@ -137,23 +148,23 @@ def logout():
 ################################################# Recipe delete #################################################
 @app.route('/recipe/view/<int:id>/delete')
 def recipe_delete(id):
-
-    with open('./spork/database/recipe.json', "r") as f:
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as f:
         recipes = json.loads(f.read())
 
     for recipe in recipes:
         if recipe['recipeID'] == id:
             recipes.remove(recipe)
 
-    with open('./spork/database/recipe.json', "w") as f:
+    with open(csv_path, "w") as f:
         json.dump(recipes, f, indent=1)
     
     return redirect(url_for("index"))
 ################################################# Recipe update #################################################
 @app.route('/recipe/view/<int:id>/update', methods = ['GET','POST'])
 def recipe_update(id):
-
-    with open('./spork/database/recipe.json', "r") as f:
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as f:
             recipes = json.loads(f.read())
 
     if request.method == "POST":
@@ -174,19 +185,23 @@ def recipe_update(id):
 ################################################# Error pages #################################################
 @app.route('/user/<int:id>/delete')
 def user_delete(id):
-
-    with open('./spork/database/user.json', "r") as f:
+    csv_path = return_path("spork/database/user.json")
+    with open(csv_path, "r") as f:
         users = json.loads(f.read())
 
     for user in users:
         if user['id'] == str(id):
             users.remove(user)
 
-    with open('./spork/database/user.json', "w") as f:
+    with open(csv_path, "w") as f:
         json.dump(users, f, indent=1)
     
     return "",200
-
+################################################# return path #################################################
+def return_path(given_path):
+    cwd = os.path.abspath(os.path.dirname(__file__))
+    csv_path = os.path.abspath(os.path.join(cwd, given_path))
+    return csv_path
 ################################################# Error pages #################################################
 @app.errorhandler(404)
 def page_not_found(e):
