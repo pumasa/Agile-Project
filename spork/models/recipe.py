@@ -2,7 +2,7 @@ import json
 import random
 import os
 class Recipe:
-    def __init__(self, recipeID, title, author, serving):
+    def __init__(self, recipeID, title, author, serving, image):
         """This is the constructor"""
         # set of all the ingredients in the recipe
         self.ingredients = {}
@@ -12,9 +12,14 @@ class Recipe:
         self.author = author
         self.title = title
         self.serving = serving
+        self.image = image
 
     # adds an ingredient and ingredient quantity to the recipe's ingredient list
     # takes ingredient and how many of the ingredient is in the recipe as parameters
+
+    def update_image(self, image):
+        self.image = image
+
     def add_ingredient(self, ingredient, quantity):
         self.ingredients[str(ingredient)] = str(quantity)
 
