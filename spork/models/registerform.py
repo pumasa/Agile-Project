@@ -1,4 +1,5 @@
 import string
+from turtle import right
 
 class RegisterForm:
     def __init__(self,email,password,confirm_password) -> None:
@@ -35,23 +36,28 @@ class RegisterForm:
             email_breakdown = self.email.split("@")
             left_half = email_breakdown[0]
             right_half = email_breakdown[1]
+            if len(left_half) == 0 or len(right_half)<=3:
+                return False
         except:
             return False
         
         # 4. if . is after @
         if right_half.count('.') ==0 :
             return False
-        
         # 5. if 2 char or more after .
         try:
             not_alowed_symbol = string.punctuation.replace('-','')    
-            right_half_breakdown = self.email.split(".")
+            right_half_breakdown = right_half.split(".")
             for i in right_half_breakdown[1:]:
                 if len(i)<2:
                     return False
                 for char in i:
                     if char in not_alowed_symbol:
                         return False
+
+            for char in right_half_breakdown[0]:
+                if char in not_alowed_symbol:
+                    return False
         except:
             return False
         
