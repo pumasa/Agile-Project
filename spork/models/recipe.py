@@ -15,6 +15,7 @@ class Recipe:
 
     # adds an ingredient and ingredient quantity to the recipe's ingredient list
     # takes ingredient and how many of the ingredient is in the recipe as parameters
+
     def add_ingredient(self, ingredient, quantity):
         self.ingredients[str(ingredient)] = str(quantity)
 
@@ -70,6 +71,8 @@ class Recipe:
         return results
 
     def filter(self, filter):
+        #filter is a list of strings, where the strings are the ingredients you are filtering
+        #the filter list is case sensitive
         results = []
         #retrieves list of recipes from the database
         file_data = self.load_database()
@@ -81,7 +84,7 @@ class Recipe:
             #iterates over all the ingredients we're filtering for
             for ingredient in filter:
                 #if the ingredient is in the recipe, add 1 to the match counter
-                if ingredient in recipe['ingredients']:
+                if ingredient.lower() in [x.lower() for x in recipe['ingredients'].keys()]:
                     x += 1
                 #if there was no match, exit loop and move onto the next recipe
                 else:
@@ -112,8 +115,7 @@ class Recipe:
     def save(self):
         to_json = self.to_json()
         csv_path = self.return_path("../database/recipe.json")
-        with open(csv_path, "r") as f:
-            file_data = json.loads(f.read())
+        file_data = self.load_database()
 
         with open(csv_path, "w") as f:
             x = 0
@@ -129,8 +131,7 @@ class Recipe:
     def update(self):
         to_json = self.to_json()
         csv_path = self.return_path("../database/recipe.json")
-        with open(csv_path, "r") as f:
-            file_data = json.loads(f.read())
+        file_data = self.load_database()
 
         with open(csv_path, "w") as f:
        
@@ -158,6 +159,11 @@ class Recipe:
         csv_path = os.path.abspath(os.path.join(cwd, given_path))
         return csv_path
 
+    def load_database(self):
+        csv_path = self.return_path("../database/recipe.json")
+        with open(csv_path, "r") as f:
+            file_data = json.loads(f.read())
+        return file_data
 #def delete(recipeid):
 #
 #    with open(f"spork\\database\\recipe.json", "r") as f:

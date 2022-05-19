@@ -258,3 +258,24 @@ i {
     margin-left: -3pc;
     cursor: pointer;
 }
+
+
+/* search */
+
+.logo-search {
+    display: flex;
+}
+
+.search-button {
+    width: 3.3rem;
+    height: 70%;
+}
+
+.input-group {
+    /* margin-top: -2rem; */
+    padding-left: 1rem;
+}
+
+.search-icon {
+    padding-top: 0%
+}
