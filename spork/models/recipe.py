@@ -2,7 +2,7 @@ import json
 import random
 import os
 class Recipe:
-    def __init__(self, recipeID, title, author, serving):
+    def __init__(self, recipeID, title, author, serving, image):
         """This is the constructor"""
         # set of all the ingredients in the recipe
         self.ingredients = {}
@@ -12,9 +12,14 @@ class Recipe:
         self.author = author
         self.title = title
         self.serving = serving
+        self.image = image
 
     # adds an ingredient and ingredient quantity to the recipe's ingredient list
     # takes ingredient and how many of the ingredient is in the recipe as parameters
+
+    def update_image(self, image):
+        self.image = image
+
     def add_ingredient(self, ingredient, quantity):
         self.ingredients[str(ingredient)] = str(quantity)
 
@@ -70,6 +75,8 @@ class Recipe:
         return results
 
     def filter(self, filter):
+        #filter is a list of strings, where the strings are the ingredients you are filtering
+        #the filter list is case sensitive
         results = []
         #retrieves list of recipes from the database
         file_data = self.load_database()
@@ -81,7 +88,7 @@ class Recipe:
             #iterates over all the ingredients we're filtering for
             for ingredient in filter:
                 #if the ingredient is in the recipe, add 1 to the match counter
-                if ingredient in recipe['ingredients']:
+                if ingredient.lower() in [x.lower() for x in recipe['ingredients'].keys()]:
                     x += 1
                 #if there was no match, exit loop and move onto the next recipe
                 else:
