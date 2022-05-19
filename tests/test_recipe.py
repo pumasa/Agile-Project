@@ -50,9 +50,9 @@ JSON_FILE_2 = """[
   "author": "Adrian",
   "serving": "2",
   "ingredients": {
-   "Sugar": "1 tsp",
+   "Mushroom": "1 tsp",
    "Salt": "1 kg",
-   "Eggs": "1"
+   "Water": "1"
   },
   "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet"
  },
@@ -62,7 +62,19 @@ JSON_FILE_2 = """[
   "author": "Adrian",
   "serving": "2",
   "ingredients": {
-   "Sugar": "1 tsp",
+   "Tonkatsu": "1 tsp",
+   "Salt": "1 kg",
+   "Eggs": "1"
+  },
+  "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet"
+ },
+  {
+  "recipeID": 4,
+  "title": "Hamburger",
+  "author": "Adrian",
+  "serving": "2",
+  "ingredients": {
+   "Beef": "1 tsp",
    "Salt": "1 kg",
    "Eggs": "1"
   },
@@ -232,3 +244,16 @@ def test_search(recipe3):
         assert result[0] == 2
         assert result[1] == 3
         
+def test_filter(recipe3):
+    with patch(
+            "builtins.open", new_callable=mock_open, read_data=JSON_FILE_2
+        ) as mock_file:
+        result = recipe3.filter(["Salt", "Eggs"] )
+        assert len(result) == 3
+        assert result[0] == 1
+        assert result[1] == 3
+        assert result[2] == 4
+
+        result = recipe3.filter(["Salt", "Beef"])
+        assert len(result) == 1
+        assert result[0] == 4

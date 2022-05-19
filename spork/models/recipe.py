@@ -70,6 +70,8 @@ class Recipe:
         return results
 
     def filter(self, filter):
+        #filter is a list of strings, where the strings are the ingredients you are filtering
+        #the filter list is case sensitive
         results = []
         #retrieves list of recipes from the database
         file_data = self.load_database()
