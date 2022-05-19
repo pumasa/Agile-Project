@@ -5,7 +5,7 @@ class RegisterForm:
         self.email = email
         self.password = password
         self.confirm_password = confirm_password
-        
+
     def check_confirm_password(self):
         if self.password == self.confirm_password:
             return True
@@ -58,4 +58,35 @@ class RegisterForm:
         return True
     
     
+    def check_password_strength(self):
+        symbol = string.punctuation
+
+        upper_count = 0
+        lower_count = 0
+        special_count = 0
+        number_count = 0
         
+        if not len(self.password) >= 8:
+            return False
+
+        for char in self.password:
+            if char.isupper():
+                upper_count +=1
+            if char.islower():
+                lower_count +=1
+            if char.isdigit():
+                number_count +=1
+            if char in symbol:
+                special_count +=1
+
+        if upper_count>0 and lower_count>0 and special_count>0 and number_count>0:
+            return True
+        else:
+            return False
+
+    def check_error(self):
+        return {
+            "confirm_password_error": self.check_confirm_password(),
+            "email_error":self.check_email(),
+            "password_strength_error":self.check_password_strength()
+        }
