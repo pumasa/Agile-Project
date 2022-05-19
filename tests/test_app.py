@@ -10,12 +10,11 @@ import json
 def test_client():
     # Create a test client using the Flask application configured for testing
     with app.test_client() as testing_client:
-        set_up()
+        current_recipe_file_data, current_user_file_data = set_up()
         # Establish an application context
         with app.app_context():
             yield testing_client  # this is where the testing happens!
-        tear_down()
-    
+        tear_down(current_recipe_file_data,current_user_file_data)
     
 
 JSON_FILE = """[
@@ -68,10 +67,13 @@ USER_JSON = """[
 
 
 def test_index_route(test_client):
+    # current_recipe_file_data, current_user_file_data = set_up()
+    
     response = test_client.get("/")
     assert response.status_code == 200
     assert "<title>Home Page</title>" in response.data.decode("utf-8")
 
+    # tear_down(current_recipe_file_data,current_user_file_data)
 
 def test_create_route(test_client):
     response = test_client.get("/recipe/create")
@@ -84,17 +86,17 @@ def test_create_route_redirect(test_client):
         "/recipe/create", data=NEW_RECIPE, follow_redirects=True
     )
     assert response.status_code == 200
-    assert response.request.path == "/"
+    assert response.request.path == "/profile"
 
-    # data = mock_json.call_args[0][0]
-    # assert data[-1] == {
-    #     "recipeID": 3,
-    #     "title": "Tiramisuaa",
-    #     "author": "Avi",
-    #     "serving": "2",
-    #     "ingredients": {"Sugar": "1 tsp", "Salt": "1 kg"},
-    #     "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet",
-    # }
+    data = load_recipe_database()
+    assert data[-1] == {
+        "recipeID": 3,
+        "title": "Tiramisuaa",
+        "author": "Avi",
+        "serving": "2",
+        "ingredients": {"Sugar": "1 tsp", "Salt": "1 kg"},
+        "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet",
+    }
 
 def test_load_user():
     with patch(
@@ -191,16 +193,13 @@ def test_recipe_delete(test_client):
             assert data[0]['recipeID'] != 1
 
 def set_up():
-    mock_recipe_json = JSON_FILE
-    mock_user_json = USER_JSON
+    mock_recipe_json = json.loads(JSON_FILE)
+    mock_user_json = json.loads(USER_JSON)
     csv_path_recipe = return_path("../spork/database/recipe.json")
     csv_path_user = return_path("../spork/database/user.json")
 
-    with open(csv_path_recipe, "r") as f:
-        current_recipe_file_data = json.loads(f.read())
-
-    with open(csv_path_user, "r") as f:
-        current_user_file_data = json.loads(f.read())
+    current_recipe_file_data = load_recipe_database()
+    current_user_file_data = load_user_database()
 
     with open(csv_path_recipe, "w") as f:
         json.dump(mock_recipe_json, f, indent=1)
@@ -227,4 +226,13 @@ def return_path(given_path):
     return csv_path
 
 def load_recipe_database():
-    pass
+    csv_path = return_path("../spork/database/recipe.json")
+    with open(csv_path, "r") as f:
+        file_data = json.loads(f.read())
+    return file_data
+
+def load_user_database():
+    csv_path = return_path("../spork/database/user.json")
+    with open(csv_path, "r") as f:
+        file_data = json.loads(f.read())
+    return file_data
