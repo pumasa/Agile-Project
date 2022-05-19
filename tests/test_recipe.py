@@ -248,12 +248,12 @@ def test_filter(recipe3):
     with patch(
             "builtins.open", new_callable=mock_open, read_data=JSON_FILE_2
         ) as mock_file:
-        result = recipe3.filter(["Salt", "Eggs"] )
+        result = recipe3.filter(["salt", "eggs"] )
         assert len(result) == 3
         assert result[0] == 1
         assert result[1] == 3
         assert result[2] == 4
 
-        result = recipe3.filter(["Salt", "Beef"])
+        result = recipe3.filter(["salt", "beef"])
         assert len(result) == 1
         assert result[0] == 4
