@@ -24,7 +24,7 @@ class RegisterForm:
         # 3. if 1 char or more is after the @
         # 4. if . is after @
         # 5. if 2 char or more after .
-        
+        not_alowed_symbol = string.punctuation.replace('.','')
         
         # 1. if @ is in the string and only 1
         if not self.email.count('@') == 1 :
@@ -38,6 +38,9 @@ class RegisterForm:
             right_half = email_breakdown[1]
             if len(left_half) == 0 or len(right_half)<=3:
                 return False
+            for char in left_half:
+                if char in not_alowed_symbol:
+                    return False
         except:
             return False
         
