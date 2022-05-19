@@ -66,7 +66,10 @@ def create():
                 recipe.add_ingredient(recipe_data[key], recipe_data[f"unit{key[10:]}"])
         recipe.instructions = recipe_data["instruction"]
         recipe.save()
-        return redirect(url_for("index"))
+        if current_user.is_authenticated:
+            current_user.recipes.append(biggest_id)
+            current_user.update_recipe()
+        return redirect(url_for("profile"))
     else:
         return render_template("/recipe/recipe_create.html")
 
@@ -126,14 +129,14 @@ def login():
 @app.route("/profile")
 # @login_required
 def profile():
-    csv_path = return_path("spork/database/recipe.json")
-    with open(csv_path, "r") as myfile:
-        data = json.loads(myfile.read())
-        return_data = []
-        for recipe in data:
-            if recipe['recipeID'] in current_user.recipes:
-                return_data.append(recipe)
-
+    return_data = []
+    if current_user.is_authenticated:
+        csv_path = return_path("spork/database/recipe.json")
+        with open(csv_path, "r") as myfile:
+            data = json.loads(myfile.read())
+            for recipe in data:
+                if recipe['recipeID'] in current_user.recipes:
+                    return_data.append(recipe)
     return render_template("/user/profile.html", jsonfile=return_data)
 
 ################################################# Logout #################################################
@@ -210,6 +213,7 @@ def page_not_found(e):
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template("500.html"), 500
+
 
 ################################################# start the server with the 'run()' method #################################################
 if __name__ == '__main__':

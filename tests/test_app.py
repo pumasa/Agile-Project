@@ -3,14 +3,18 @@ from app import app,load_user
 from unittest.mock import patch, mock_open
 from spork.models.user import User
 import pytest
-    
+import os
+import json
+
 @pytest.fixture(scope='module')
 def test_client():
     # Create a test client using the Flask application configured for testing
     with app.test_client() as testing_client:
+        set_up()
         # Establish an application context
         with app.app_context():
             yield testing_client  # this is where the testing happens!
+        tear_down()
     
     
 
@@ -55,17 +59,12 @@ NEW_RECIPE = {
 USER_JSON = """[
  {
   "id": "1",
-  "email": "a@a.com",
-  "password": "sha256$4hiabElOY80HtHo7$6277c8ae218b536abe484f2e95459f1d27e4e8f03d31360c8d63397239aa4304",
-  "recipes": []
- }, 
- {
-  "id": "2",
-  "email": "test",
-  "password": "sha256$hYrooM23i5Jxelgq$a282e1c86265f2aeea8f01f69f65e984c6d01268bdd81408cbd3be8534e327ac",
+  "email": "test@test.com",
+  "password": "sha256$PlXvzhujQ3DJklY7$8551a46fe87dc5042b66996216709e28ec33bc2191e53d895ea166101ea11160",
   "recipes": []
  }
 ]"""
+
 
 
 def test_index_route(test_client):
@@ -81,26 +80,21 @@ def test_create_route(test_client):
 
 
 def test_create_route_redirect(test_client):
-    with patch("json.dump") as mock_json:
-        with patch(
-            "builtins.open", new_callable=mock_open, read_data=JSON_FILE
-        ) as mock_file:
-            response = test_client.post(
-                "/recipe/create", data=NEW_RECIPE, follow_redirects=True
-            )
-            assert mock_file.call_count == 4
-            assert response.status_code == 200
-            assert response.request.path == "/"
+    response = test_client.post(
+        "/recipe/create", data=NEW_RECIPE, follow_redirects=True
+    )
+    assert response.status_code == 200
+    assert response.request.path == "/"
 
-            data = mock_json.call_args[0][0]
-            assert data[-1] == {
-                "recipeID": 3,
-                "title": "Tiramisuaa",
-                "author": "Avi",
-                "serving": "2",
-                "ingredients": {"Sugar": "1 tsp", "Salt": "1 kg"},
-                "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet",
-            }
+    # data = mock_json.call_args[0][0]
+    # assert data[-1] == {
+    #     "recipeID": 3,
+    #     "title": "Tiramisuaa",
+    #     "author": "Avi",
+    #     "serving": "2",
+    #     "ingredients": {"Sugar": "1 tsp", "Salt": "1 kg"},
+    #     "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet",
+    # }
 
 def test_load_user():
     with patch(
@@ -195,3 +189,42 @@ def test_recipe_delete(test_client):
             response = test_client.get("/recipe/view/1/delete")
             data = mock_json.call_args[0][0]
             assert data[0]['recipeID'] != 1
+
+def set_up():
+    mock_recipe_json = JSON_FILE
+    mock_user_json = USER_JSON
+    csv_path_recipe = return_path("../spork/database/recipe.json")
+    csv_path_user = return_path("../spork/database/user.json")
+
+    with open(csv_path_recipe, "r") as f:
+        current_recipe_file_data = json.loads(f.read())
+
+    with open(csv_path_user, "r") as f:
+        current_user_file_data = json.loads(f.read())
+
+    with open(csv_path_recipe, "w") as f:
+        json.dump(mock_recipe_json, f, indent=1)
+
+    with open(csv_path_user, "w") as f:
+        json.dump(mock_user_json, f, indent=1)
+
+    return current_recipe_file_data, current_user_file_data
+
+def tear_down(current_recipe_file_data,current_user_file_data):
+    csv_path_recipe = return_path("../spork/database/recipe.json")
+    csv_path_user = return_path("../spork/database/user.json")
+
+    with open(csv_path_recipe, "w") as f:
+        json.dump(current_recipe_file_data, f, indent=1)
+
+    with open(csv_path_user, "w") as f:
+        json.dump(current_user_file_data, f, indent=1)
+
+
+def return_path(given_path):
+    cwd = os.path.abspath(os.path.dirname(__file__))
+    csv_path = os.path.abspath(os.path.join(cwd, given_path))
+    return csv_path
+
+def load_recipe_database():
+    pass

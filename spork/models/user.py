@@ -79,3 +79,16 @@ class User(UserMixin):
         cwd = os.path.abspath(os.path.dirname(__file__))
         csv_path = os.path.abspath(os.path.join(cwd, given_path))
         return csv_path
+
+    def update_recipe(self):
+        to_json = self.to_json()
+        file_data = self.load_database()
+        csv_path = self.return_path("../database/user.json")
+        with open(csv_path, "w") as f:
+       
+            for instance in file_data:
+                if instance['id'] == to_json['id']:
+                    instance.update(to_json) 
+                    
+            json.dump(file_data, f, indent=1)
+
