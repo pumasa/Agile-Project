@@ -83,7 +83,7 @@ class Recipe:
             #iterates over all the ingredients we're filtering for
             for ingredient in filter:
                 #if the ingredient is in the recipe, add 1 to the match counter
-                if ingredient in recipe['ingredients']:
+                if ingredient.lower() in [x.lower() for x in recipe['ingredients'].keys()]:
                     x += 1
                 #if there was no match, exit loop and move onto the next recipe
                 else:
