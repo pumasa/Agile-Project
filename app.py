@@ -31,14 +31,29 @@ def load_user(id):
 
 
 ################################################# index/home page - renders info from recipe.json #################################################
-@app.route('/')
+@app.route('/', methods = ['GET','POST'])
 def index():
     csv_path = return_path("spork/database/recipe.json")
     with open(csv_path, "r") as myfile:
         data = json.loads(myfile.read())
+    
+    search = str(request.form.get("search"))
+    
+    results=[]
+    keywords = search.lower().split()
+    for recipe in data:
+        title_words = recipe['title'].lower().split()
+        for word in title_words:
+            for keyword in keywords:
+                if word == keyword:
+                    results.append(recipe['recipeID'])
+                    break
+            else:
+                continue
+            break
         
     
-    return render_template('index.html', jsonfile = data) 
+    return render_template('index.html', jsonfile = data, search=results) 
 
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
