@@ -1,6 +1,5 @@
 # Ask Mike Picus if something is not clear in this file
 
-import random
 from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 from flask_login import (
@@ -30,71 +29,15 @@ def load_user(id):
     return temp_account.find_by_id(id)
 
 
-################################################# filter #################################################
-@app.route('/filter', methods = ['GET','POST'])
-def filter():
-        csv_path = return_path("spork/database/recipe.json")
-        with open(csv_path, "r") as myfile:
-            data = json.loads(myfile.read())
-
-        tags = request.form.getlist('meat')
-
-        if request.method == "POST":
-            return render_template ('filter_view.html', data = data, tags=tags)
-
-            
-        return render_template('filter_options.html', data = data, tags=tags) 
-
 ################################################# index/home page - renders info from recipe.json #################################################
 @app.route('/')
 
 def index():
     with open("./spork/database/recipe.json", "r") as myfile:
         data = json.loads(myfile.read())
-
-
+        
     
-
-    pool = []
-    for recipe in data:
-        pool.append(recipe)
-    recommendation = random.choice(pool)
-    
-    search = str(request.form.get("search"))
-    
-    results=[]
-    keywords = search.lower().split()
-#search recipes
-    for recipe in data:
-        title_words = recipe['title'].lower().split()
-        for word in title_words:
-            for keyword in keywords:
-                if word == keyword:
-                    results.append(recipe['recipeID'])
-                    flash("Here are some recipes for you!")
-                    break
-            else:
-                continue
-            break
-#search ingredients
-    for recipe in data:
-        ingredient_words = [ingredient.lower() for ingredient in recipe['ingredients'].keys()]
-        for word in ingredient_words:
-            for keyword in keywords:
-                if word == keyword:
-                    if recipe['recipeID'] not in results:
-                        results.append(recipe['recipeID'])
-                        break
-            else:
-                continue
-            break    
-
-    if request.method == "POST":
-        if len(results) < 1:
-            flash("This recipe does not exist! Please try a different one!")
-
-    return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation) 
-
+    return render_template('index.html', jsonfile = data) 
 
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
@@ -121,7 +64,6 @@ def create():
             if key[:10] == "ingredient":
                 recipe.add_ingredient(recipe_data[key], recipe_data[f"unit{key[10:]}"])
         recipe.instructions = recipe_data["instruction"]
-        recipe.tags += request.form.getlist('meat')
         recipe.save()
         return redirect(url_for("index"))
     else:

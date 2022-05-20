@@ -11,14 +11,12 @@ class Recipe:
         self.author = author
         self.title = title
         self.serving = serving
-        self.tags = []
+
     # adds an ingredient and ingredient quantity to the recipe's ingredient list
     # takes ingredient and how many of the ingredient is in the recipe as parameters
     def add_ingredient(self, ingredient, quantity):
         self.ingredients[str(ingredient)] = str(quantity)
 
-    def add_tags(self, tags):
-        self.tags += tags
 
     def remove_ingredient(self, ingredient):
         self.ingredients.pop(ingredient)
@@ -78,7 +76,6 @@ class Recipe:
         json = {
             f"recipeID": self.recipeID,
             f"title": self.title,
-            f"tags": self.tags,
             f"author": self.author,
             f"serving": str(self.serving),
             f"ingredients": self.ingredients,
