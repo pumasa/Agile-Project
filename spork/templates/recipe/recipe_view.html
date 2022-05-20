@@ -5,15 +5,15 @@
 </div>
 
 <!-- This div is centered | All the contents of the form are here-->
-<div class="container" id="create_body"> {% for key in z %} {% if id == key['recipeID'] %}
+<div class="container" id="create_body"> 
     <!-- Title, Author, serving, add image -->
     <div class="basic-info-image">
         <div>
-            <h1 class="black-text text-left ricipe-title">{{key['title']}}</h1>
+            <h1 class="black-text text-left ricipe-title">{{data['title']}}</h1>
 
             <div class="basic-info">
-                <h5 class="black-text text-left">Author: {{key['author']}} &nbsp; &nbsp; &nbsp;</h5>
-                <h5 class="black-text text-left">Servings: {{key['serving']}}</h5>
+                <h5 class="black-text text-left">Author: {{data['author']}} &nbsp; &nbsp; &nbsp;</h5>
+                <h5 class="black-text text-left">Servings: {{data['serving']}}</h5>
             </div>
         </div>
 
@@ -35,10 +35,10 @@
             </thead>
             <tbody>
                 <!-- each new ingridient will be a new row with two table datas >> for loop -->
-                {% for ingr in key['ingredients']%}
+                {% for ingr in data['ingredients']%}
                 <tr>
                     <td>{{ingr}}</td>
-                    <td>{{key['ingredients'][ingr]}}</td>
+                    <td>{{data['ingredients'][ingr]}}</td>
                 </tr>{% endfor %}
             </tbody>
         </table>
@@ -50,36 +50,23 @@
 
 
     <div class="steps-container">
-        <p id="steps-text" class="text-justify">{{key['instructions']}}</p>
+        <p id="steps-text" class="text-justify">{{data['instructions']}}</p>
     </div>
 
     
         <!-- Delete button-->
+        {% if data['recipeID'] in current_user.recipes %}
+            <div class="cancle-save-container">
+                <a href="/recipe/view/{{data['recipeID']}}/delete">
+                    <button id="cancle-button" type="submit" value="Delete" class="btn btn-outline-danger">Delete</button></a>
+            </div>
+            </form>
 
-        <div class="cancle-save-container">
-            <a href="/recipe/view/{{key['recipeID']}}/delete">
-                <button id="cancle-button" type="submit" value="Delete" class="btn btn-outline-danger">Delete</button></a>
-        </div>
-        </form>
-
-        <!-- edit button -->
-        <div class="cancle-save-container">
-            <a href="/recipe/view/{{key['recipeID']}}/update">
-                <button id="cancle-button" type="button" class="btn btn-outline-secondary">Edit</button></a>
-        </div>{% endif %} {% endfor %}
-
-
-
-
-
-    <!-- <h1 class="a ">Test Lorem Ipsum</h1>
-        <h1 class="e ">Test Lorem Ipsum</h1>
-
-        <h1 class="c ">Test Lorem Ipsum</h1>
-        <h1 class="d ">Test Lorem Ipsum</h1> -->
-
-    <!-- <h1 class="b ">Test Lorem Ipsum</h1> -->
-
-    <!-- https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Fusers%2Fsimple-user-icon&psig=AOvVaw2JK2IUr8if_R16GQRBkWqr&ust=1651196331872000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIiNiunPtfcCFQAAAAAdAAAAABAD -->
+            <!-- edit button -->
+            <div class="cancle-save-container">
+                <a href="/recipe/view/{{data['recipeID']}}/update">
+                    <button id="cancle-button" type="button" class="btn btn-outline-secondary">Edit</button></a>
+            </div>
+        {% endif %}
 </div>
 {% endblock %}
