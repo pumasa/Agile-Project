@@ -279,3 +279,7 @@ i {
 .search-icon {
     padding-top: 0%
 }
+
+.account-icon{
+    max-height: 40px;
+}
