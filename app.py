@@ -1,5 +1,6 @@
 # Ask Mike Picus if something is not clear in this file
 
+import random
 from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 import os
@@ -36,6 +37,14 @@ def index():
     csv_path = return_path("spork/database/recipe.json")
     with open(csv_path, "r") as myfile:
         data = json.loads(myfile.read())
+
+    
+
+    pool = []
+    for recipe in data:
+        pool.append(recipe['recipeID'])
+    recommendation = random.choice(pool)
+    
     
     search = str(request.form.get("search"))
     
