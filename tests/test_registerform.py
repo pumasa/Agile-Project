@@ -35,7 +35,13 @@ def test_check_email_success():
     assert rf.check_email() == True
 
 def test_check_email_faiilure():
-    rf=RegisterForm("@test.com","AAa2341@13w","AAa2341@13w")
+    rf=RegisterForm(1,"AAa2341@13w","AAa2341@13w")
+    assert rf.check_email() == False
+    rf=RegisterForm("a@j233","AAa2341@13w","AAa2341@13w")
+    assert rf.check_email() == False
+    rf=RegisterForm("asdas@test.c.ca","AAa2341@13w","AAa2341@13w")
+    assert rf.check_email() == False
+    rf=RegisterForm("asdas@test3!.ca.ca","AAa2341@13w","AAa2341@13w")
     assert rf.check_email() == False
     rf=RegisterForm("t@.co","AAa2341@13w","AAa2341@13w")
     assert rf.check_email() == False

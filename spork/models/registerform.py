@@ -94,7 +94,7 @@ class RegisterForm:
 
     def check_error(self):
         return {
-            "confirm_password_error": self.check_confirm_password(),
-            "email_error":self.check_email(),
-            "password_strength_error":self.check_password_strength()
+            "confirm_password_error": not self.check_confirm_password(),
+            "email_error": not self.check_email(),
+            "password_strength_error": not self.check_password_strength()
         }

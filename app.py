@@ -118,6 +118,7 @@ def register():
         
         register_form = RegisterForm(email,password,confirm_password)
         error_dict = register_form.check_error()
+        
         if error_dict["confirm_password_error"] == True:
             flash("Confirm Password doesn not match")
             return redirect(url_for("register"))
@@ -142,19 +143,22 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password")
+    if current_user.is_anonymous:
+        if request.method == "POST":
+            email = request.form.get("email")
+            password = request.form.get("password")
 
-        usr = User(email, password)
-        usr = usr.find_by_email(usr.email)
+            usr = User(email, password)
+            usr = usr.find_by_email(usr.email)
 
-        if not usr or not check_password_hash(usr.password, password):
-            flash("Invalid Email or Password")
-            return redirect(url_for("login"))
-        login_user(usr)
+            if not usr or not check_password_hash(usr.password, password):
+                flash("Invalid Email or Password")
+                return redirect(url_for("login"))
+            login_user(usr)
+            return redirect(url_for("profile"))
+        return render_template("/user/login.html")
+    else:
         return redirect(url_for("profile"))
-    return render_template("/user/login.html")
 
 ################################################# Profile #################################################
 
@@ -223,22 +227,6 @@ def recipe_update(id):
     else:
         return "NOT YOUR RECIPE, DON'T CHEAT"
 
-################################################# Error pages #################################################
-@app.route('/user/<int:id>/delete')
-@login_required
-def user_delete(id):
-    csv_path = return_path("spork/database/user.json")
-    with open(csv_path, "r") as f:
-        users = json.loads(f.read())
-
-    for user in users:
-        if user['id'] == str(id):
-            users.remove(user)
-
-    with open(csv_path, "w") as f:
-        json.dump(users, f, indent=1)
-    
-    return "",200
 ################################################# return path #################################################
 def return_path(given_path):
     cwd = os.path.abspath(os.path.dirname(__file__))

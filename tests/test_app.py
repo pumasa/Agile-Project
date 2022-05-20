@@ -18,13 +18,6 @@ def test_app():
 def client(test_app):
     return test_app.test_client()
 
-# @pytest.fixture(scope='module')
-# def test_client_no_login():
-#     # Create a test client using the Flask application configured for testing
-#     with app.test_client() as testing_client:
-#         # Establish an application context
-#         with app.app_context():
-#             yield testing_client  # this is where the testing happens!
 
 JSON_FILE = """[
  {
@@ -74,6 +67,25 @@ USER_JSON = """[
 ]"""
 
 
+def test_login(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+        
+        # login fail
+        response3 = client.post('/login', data={'email': 'johnny@bcit.ca','password': 'Acit2911!fun'}, follow_redirects=True)
+        assert response3.request.path == '/login'
+        assert "Invalid Email or Password" in response3.data.decode("utf-8")
+            
+        # login
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        response = client.get("/profile",follow_redirects=True)
+        assert response.status_code == 200
+        assert "<title>Profile</title>" in response.data.decode("utf-8")
+
+        response = client.get('/login', follow_redirects=True)
+        assert response.request.path == "/profile"
+        
+        tear_down(current_recipe_file_data,current_user_file_data)
 
 def test_index_route(client):
     current_recipe_file_data, current_user_file_data = set_up()
@@ -194,6 +206,11 @@ def test_profile(client):
         assert response.status_code == 200
         assert "<title>Login</title>" in response.data.decode("utf-8")
         
+        # login fail
+        response3 = client.post('/login', data={'email': 'johnny@bcit.ca','password': 'Acit2911!fun'}, follow_redirects=True)
+        assert response3.request.path == '/login'
+        assert "Invalid Email or Password" in response3.data.decode("utf-8")
+            
         # login
         client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
         response = client.get("/profile",follow_redirects=True)
@@ -260,62 +277,49 @@ def test_recipe_update_post(client):
         
         tear_down(current_recipe_file_data,current_user_file_data)
 
-def test_recipe_delete(client):
-    current_recipe_file_data, current_user_file_data = set_up()
-    response = client.get("/user/1/delete")
-            
-    tear_down(current_recipe_file_data,current_user_file_data)
-# def test_register_user(client):
-#     current_recipe_file_data, current_user_file_data = set_up()
-#     tear_down(current_recipe_file_data,current_user_file_data)
-#     response = client.post('/register', data={'email': 'alice@example.com','password': 'foo'}, follow_redirects=True)
-#     assert response.status_code == 200
-#     assert response.request.path == '/login' # redirected to login
-    
-#     # try register with same email
-#     response2 = client.post('/register', data={'email': 'alice@example.com','password': 'foo'}, follow_redirects=True)
-#     assert response2.request.path == '/register'
-#     assert "Email already exist" in response2.data.decode("utf-8")
 
-#     # try login with wrong password
-#     response3 = client.post('/login', data={'email': 'alice@example.com','password': 'wrong'}, follow_redirects=True)
-#     assert response3.request.path == '/login'
-#     assert "Invalid Email or Password" in response3.data.decode("utf-8")
+def test_register_user(client):
     
-#     # try login with wrong user
-#     response3 = client.post('/login', data={'email': 'johnny_will_never_create_this_email','password': 'wrong'}, follow_redirects=True)
-#     assert response3.request.path == '/login'
-#     assert "Invalid Email or Password" in response3.data.decode("utf-8")
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+        
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        
+        # cannot register if login
+        response = client.get("/register", follow_redirects = True)
+        assert response.request.path == "/"
+        
+        #log out first
+        client.get("/logout")
+        
+        # register requirement not met
+        response = client.post('/register', data={'email': 'alice@example.com','password': 'foo','confirm_password': 'foo'}, follow_redirects=True)
+        assert response.status_code == 200
+        assert response.request.path == '/register' # redirected to register
+        
+        response = client.post('/register', data={'email': '@ce@example.com','password': 'foo','confirm_password': 'foo'}, follow_redirects=True)
+        assert response.status_code == 200
+        assert response.request.path == '/register' # redirected to register
+        
+        response = client.post('/register', data={'email': 'alice@example.com','password': 'Acit2911!fun','confirm_password': 'acit'}, follow_redirects=True)
+        assert response.status_code == 200
+        assert response.request.path == '/register' # redirected to register
+        
+        response = client.post('/register', data={'email': 'test@test.com','password': 'Aa12345678!','confirm_password': 'Aa12345678!'}, follow_redirects=True)
+        assert response.status_code == 200
+        assert response.request.path == '/register' # redirected to register
+        assert "Email already exist" in response.data.decode("utf-8")
+        
+        
+        # meet register requirement
+        response = client.post('/register', data={'email': 'johnny@bcit.ca','password': 'Acit2911!fun','confirm_password': 'Acit2911!fun'}, follow_redirects=True)
+        assert response.request.path == '/login'
+
+        
+        database = load_user_database()
+        assert database[-1]['email'] == "johnny@bcit.ca"
     
-#     # login with new user
-#     response4 = client.post('/login', data={'email': 'alice@example.com','password': 'foo'}, follow_redirects=True)
-#     assert response4.status_code == 200
-#     assert response4.request.path == '/profile' # redirected to profile
-#     assert "logout" in response4.data.decode("utf-8")
-#     assert "<title>Profile</title>" in response4.data.decode("utf-8")
-    
-#     # Test log out
-#     response5 = client.get('/logout',follow_redirects=True)
-#     assert response5.request.path == '/' # redirected to index
-#     assert "logout" not in response5.data.decode("utf-8")
-    
-#     # Delete user 
-#     temp_user = User("idontknowwhyiuseit","justletmeuseit")
-#     user = temp_user.find_by_email('alice@example.com')
-#     id = user.get_id()
-#     client.get(f"/user/{id}/delete")
-    
-    
-# def test_recipe_delete(client):
-#     current_recipe_file_data, current_user_file_data = set_up()
-#     tear_down(current_recipe_file_data,current_user_file_data)
-#     with patch("json.dump") as mock_json:
-#         with patch(
-#             "builtins.open", new_callable=mock_open, read_data=JSON_FILE
-#         ) as mock_file:
-#             response = client.get("/recipe/view/1/delete")
-#             data = mock_json.call_args[0][0]
-#             assert data[0]['recipeID'] != 1
+        tear_down(current_recipe_file_data,current_user_file_data)
 
 def set_up():
     mock_recipe_json = json.loads(JSON_FILE)
