@@ -1,4 +1,61 @@
-/* FIXED */
+/* DARK MODE */
+
+body {
+    /* background-color: #2e2d2c; */
+    background-color: rgb(33, 33, 33)
+}
+
+
+/* NAVBAR */
+
+.navlogo {
+    max-height: 4.5pc;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 1.2pc 0.1pc 1.2pc;
+}
+
+.account-icon {
+    max-height: 3pc;
+    float: left;
+}
+
+.nav-button {
+    color: rgb(222, 186, 124);
+    background-color: Transparent;
+    border: none;
+    background-repeat: none;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 0pc 0.5pc 1.2pc;
+    font-size: 1.8pc;
+    float: left;
+}
+
+.nav-button:hover {
+    color: #F5E8C7;
+}
+
+
+/* TEXT COLOURS */
+
+.a {
+    color: rgb(251, 167, 14);
+}
+
+.e {
+    color: rgb(254, 176, 58);
+}
+
+.b {
+    color: #F5E8C7;
+}
+
+.c {
+    color: #DEBA9D;
+}
+
+.d {
+    color: #b1d8af;
+}
 
 
 /* ----------------- LIGHT MODE ---------- */
@@ -16,14 +73,147 @@
 
 body {
     background-color: var(--body_bg);
-    padding-bottom: 2rem;
 }
 
 
-/* greeting messages */
+/* ----- NAVBAR ----- */
 
-#small-display {
-    padding-top: 1.2pc;
+.navlogo {
+    max-height: 4.5pc;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 1.2pc 0.1pc 1.2pc;
+}
+
+.navbar-custom {
+    background-color: var(--blue);
+    overflow: hidden;
+    position: fixed;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    z-index: 1;
+    /* Full width */
+}
+
+.account-icon {
+    max-height: 3pc;
+    float: left;
+}
+
+
+/* create, filter buttons */
+
+.nav-button {
+    color: var(--light_pink);
+    color: var(--black);
+    background-color: Transparent;
+    border: none;
+    background-repeat: none;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 0pc 0.5pc 1.2pc;
+    font-size: 1.8pc;
+    float: left;
+}
+
+.nav-button:hover {
+    color: var(--hover_yellow);
+}
+
+
+/* Create Text */
+
+.text-center {
+    color: var(--black);
+}
+
+
+/* TEXT COLOURS */
+
+.a {
+    color: #181817;
+    /* var(--black) */
+}
+
+.e {
+    color: #73d5ca
+    /* var(--darker_blue) */
+}
+
+.c {
+    color: #da9fcc;
+    /* var(--dark_pink) */
+}
+
+.d {
+    color: #f7ca7c;
+    /* var(--orange); */
+}
+
+
+/* ---- view ingridients body ---- */
+
+.filter-body-container {
+    margin-top: 8pc;
+    margin-bottom: 8pc;
+}
+
+#filter-body {
+    background-color: #faf9f9;
+    padding-bottom: 2pc;
+    padding-top: 2pc;
+    display: flex;
+    justify-content: center;
+}
+
+.single-recipe-body {
+    background-color: #e5e9e8;
+    height: 100%;
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* image */
+
+.image {
+    width: 10pc;
+    height: 10pc;
+    background-color: #a5a5a5;
+}
+
+.author-servings {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* Text of the recipe formats */
+
+.text-body {
+    margin: 1pc;
+}
+
+#title {
+    margin-bottom: 0px;
+}
+
+#author {
+    margin-right: 0.5pc;
+}
+
+
+/* -------------------- */
+
+#recipebox {
+    display: flex;
+}
+
+#recipe {
+    margin-top: 100px;
+    background: orangered;
+    justify-content: space-evenly;
 }
 
 
@@ -38,121 +228,11 @@ a:active {
 }
 
 
-/* search */
-
-.logo-search {
-    display: flex;
-}
-
-.search-button {
-    width: 3.3rem;
-    height: 70%;
-}
-
-.input-group {
-    padding-top: 1.4rem;
-    padding-left: 1rem;
-}
-
-
-/* section seperate */
-
-hr {
-    border-top: 1px dashed rgb(98, 187, 184);
-    border-width: 0.4pc;
-}
-
-
-/* see more button */
-
-.see_more_button {
-    background-color: rgb(98, 187, 184);
-    border: none;
-    color: white;
-    font-weight: 600;
-}
-
-.see_more_button:hover {
-    background-color: rgb(88, 158, 156);
-}
-
-.see-more-container {
-    display: flex;
-    justify-content: center;
-    margin-top: -2.3rem;
-}
-
-
-/* "random" section */
-
-.random-container {
-    background-color: #c4e1df;
-    margin-top: 3rem;
-    /* margin-bottom: 3rem; */
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    /* scale */
-    transform: scale(0.9);
-    transform-origin: 0 1;
-}
-
-
-/* "random" button */
-
-.center-text,
-.center-random-button {
-    display: flex;
-    justify-content: center;
-}
-
-.random-button {
-    margin-top: 1.5rem;
-    font-size: 1.5rem;
-    width: 55%;
-    padding-top: 0.5pc;
-    padding-bottom: 0.5pc;
-}
-
-
-/* algin random suggestion */
-
-.random-suggestion-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-
-/* temp item DELETE LATER */
-
-.imitation {
-    width: 15rem;
-    height: 18rem;
-    background-color: #181817;
-}
-
-
-/* Add recipe section */
-
-.add-recipe-container {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding-top: 2rem;
-    /* padding-bottom: 1rem; */
-    /* scale */
-    transform: scale(0.9);
-    transform-origin: 0 1;
-}
-
-
 /* Add button  */
 
 .add-button-container {
     display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-    font-size: 1.5rem;
-}
-.account-icon{
-    max-height: 40px;
+    flex-flow: column;
+    justify-content: end;
+    padding-bottom: 1.7rem;
 }
