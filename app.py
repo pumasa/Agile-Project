@@ -51,7 +51,17 @@ def index():
             else:
                 continue
             break
-        
+    for recipe in data:
+        ingredient_words = [ingredient.lower() for ingredient in recipe['ingredients'].keys()]
+        for word in ingredient_words:
+            for keyword in keywords:
+                if word == keyword:
+                    if recipe['recipeID'] not in results:
+                        results.append(recipe['recipeID'])
+                        break
+            else:
+                continue
+            break    
     
     return render_template('index.html', jsonfile = data, search=results) 
 
