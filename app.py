@@ -1,5 +1,6 @@
 # Ask Mike Picus if something is not clear in this file
 
+import random
 from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 import os
@@ -45,6 +46,14 @@ def index():
     csv_path = return_path("spork/database/recipe.json")
     with open(csv_path, "r") as myfile:
         data = json.loads(myfile.read())
+
+    
+
+    pool = []
+    for recipe in data:
+        pool.append(recipe)
+    recommendation = random.choice(pool)
+    print(recommendation)
     
     search = str(request.form.get("search"))
     
@@ -79,7 +88,7 @@ def index():
         if len(results) < 1:
             flash("This recipe does not exist! Please try a different one!")
 
-    return render_template('index.html', jsonfile = data, search=results) 
+    return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation) 
 
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])

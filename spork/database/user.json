@@ -1,16 +1,15 @@
-[
- {
-  "id": "1",
-  "email": "test@test.com",
-  "password": "sha256$PlXvzhujQ3DJklY7$8551a46fe87dc5042b66996216709e28ec33bc2191e53d895ea166101ea11160",
-  "recipes": []
- },
- {
-  "id": "2",
-  "email": "test@mail.com",
-  "password": "sha256$KNr310XZS6GmBDYm$c1c922392c7fbb08f65ab00c5637ca1f8c7157c46f29b44923ddc8e6e265472c",
-  "recipes": [
-   10
-  ]
- }
+[{
+        "id": "1",
+        "email": "test@test.com",
+        "password": "sha256$PlXvzhujQ3DJklY7$8551a46fe87dc5042b66996216709e28ec33bc2191e53d895ea166101ea11160",
+        "recipes": []
+    },
+    {
+        "id": "2",
+        "email": "test@mail.com",
+        "password": "sha256$KNr310XZS6GmBDYm$c1c922392c7fbb08f65ab00c5637ca1f8c7157c46f29b44923ddc8e6e265472c",
+        "recipes": [
+            10
+        ]
+    }
 ]

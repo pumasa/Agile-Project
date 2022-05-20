@@ -1,5 +1,6 @@
 {% extends "layout.html" %} {% block title %}Login{% endblock %} {% block head %} {{ super() }}
 <link rel="stylesheet" href="../static/css/register-login.css"> {% endblock %} {% block content %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 
 
@@ -22,7 +23,10 @@
         <form action="/login" method="POST">
             <!-- inputs for email and password -->
             <input id="email" class="form-control container account-input" type="text" placeholder="Email" name="email">
-            <input id="password" class="form-control container account-input password-login" type="text" placeholder="Password" name="password">
+            <div class="password-container">
+                <input id="password" class="form-control account-input password-register" type="password" placeholder="Password" name="password">
+                <i id="visibilityBtn"><span class="material-symbols-outlined">visibility</span></i>
+            </div>
 
             <!-- cancle and save buttons -->
             <div class="cancel-save-container">
@@ -31,5 +35,20 @@
         </form>
     </div>
 </div>
+
+<script>
+    const visibilityBtn = document.getElementById("visibilityBtn")
+    visibilityBtn.addEventListener("click", toggleVisibility)
+
+    function toggleVisibility() {
+        const passwordInput = document.getElementById("password")
+        if (passwordInput.type === "password") {
+            password.type = "text"
+        } else {
+            password.type = "password"
+        }
+    }
+    // alert("it works")
+</script>
 
 {% endblock %}
