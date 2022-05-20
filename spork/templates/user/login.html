@@ -22,10 +22,15 @@
         <form action="/login" method="POST">
             <!-- inputs for email and password -->
             <input id="email" class="form-control container account-input" type="text" placeholder="Email" name="email">
-            <input id="password" class="form-control container account-input" type="text" placeholder="Password" name="password">
+
+            <div class="password-container">
+                <input id="password" class="form-control account-input password-register" type="password" placeholder="Password" name="password">
+                <i id="visibilityBtn"><span class="material-symbols-outlined">visibility</span></i>
+            </div>
+
 
             <!-- cancle and save buttons -->
-            <div class="cancle-save-container">
+            <div class="cancel-save-container">
                 <button id="save-button" type="submit" class="btn btn-success">Login</button>
             </div>
         </form>

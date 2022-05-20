@@ -199,8 +199,12 @@ body {
     margin-bottom: 0px;
 }
 
-#author {
-    margin-right: 0.5pc;
+.random-button {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    padding-top: 0.5pc;
+    padding-bottom: 0.5pc;
+
 }
 
 

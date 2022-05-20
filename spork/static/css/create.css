@@ -212,37 +212,18 @@ body {
     display: flex;
     justify-content: flex-end;
     margin-top: 1.5pc;
-    height: 100%;
-    margin-top: 1.5pc;
-    margin-left: 25%;
+    margin-top: 2pc;
     margin-right: 0.6pc;
 }
 
 
-/* .delete { */
-
-
-/* margin-top: 1.5pc; */
-
-
-/* margin-left: 25%; */
-
-
-/* margin-right: 0.6pc; */
-
-
-/* } */
-
-
 /* add button > container aligns it to the right*/
 
-.add-button-container {
+#add-button-container {
     display: flex;
-    justify-content: flex-end;
+    align-items: flex-end;
     margin-top: 1.5pc;
-    height: 100%;
     margin-top: 1.5pc;
-    margin-left: 25%;
     margin-right: 0.6pc;
 }
 

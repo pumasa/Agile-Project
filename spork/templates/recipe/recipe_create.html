@@ -33,7 +33,7 @@
 
 
         <!-- add button -->
-        <div class="add-button-container">
+        <div id="add-button-container">
             <button id="add-button" type="button" class="btn btn-primary" onclick="addCode()">Add +</button>
         </div>
 
@@ -44,7 +44,7 @@
 
         <!-- save,cancle button -->
         <div class="cancle-save-container">
-            <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancle</button>
+            <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancel</button>
             <button id="save-button" type="submit" class="btn btn-success">Save</button>
         </div>
     </form>
@@ -64,12 +64,14 @@
     var count = 2
 
     function addCode() {
-        var ingredientAddHTML = ("<div id ='delete" + count + "'>") + "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
+        var ingredientAddHTML = ("<div id ='delete" + count + "' class='dynamic_div'>") + "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
         ingredientAddHTML += " name=\"ingredient" + count + "\""
         ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
         ingredientAddHTML += " name=\"unit" + count + "\""
+
         ingredientAddHTML += "><button type='button' id='delete" + count + "' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>"
-        document.getElementById("insert-ingredient").insertAdjacentHTML("afterend", ingredientAddHTML)
+        document.getElementById("add-button-container").insertAdjacentHTML("beforebegin", ingredientAddHTML)
+
         count += 1
     }
 
