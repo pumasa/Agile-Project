@@ -2,7 +2,7 @@ from unittest import mock
 from spork.models.user import User
 import pytest
 from unittest.mock import patch, mock_open
-import os
+
 # Mockmock = Mock()
 
 JSON_FILE = """ [{
@@ -77,8 +77,7 @@ def test_save(user2):
         ) as mock_file:
             user2.save()
             assert mock_file.call_count == 2
-            csv_path = return_path("../spork/database/user.json")
-            assert csv_path == mock_file.call_args[0][0]
+            assert mock_file.call_args[0][0] == "spork\\database\\user.json"
 
             data = mock_json.call_args[0][0]
             assert mock_json.call_count == 1
@@ -102,8 +101,7 @@ def test_find_by_email(user):
             user = user.find_by_email("a@a.com")
 
             assert mock_file.call_count == 2
-            csv_path = return_path("../spork/database/user.json")
-            assert csv_path == mock_file.call_args[0][0]
+            assert mock_file.call_args[0][0] == "spork\\database\\user.json"
             
             assert isinstance(user,User)
             assert user.id == "1"
@@ -121,16 +119,10 @@ def test_find_by_id(user):
             user = user.find_by_id("1")
 
             assert mock_file.call_count == 2
-            csv_path = return_path("../spork/database/user.json")
-            assert csv_path == mock_file.call_args[0][0]
+            assert mock_file.call_args[0][0] == "spork\\database\\user.json"
             
             assert isinstance(user,User)
             assert user.id == "1"
             assert user.email == "a@a.com"
             assert user.password == "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e"
             assert user.recipes == [2]
-
-def return_path(given_path):
-    cwd = os.path.abspath(os.path.dirname(__file__))
-    csv_path = os.path.abspath(os.path.join(cwd, given_path))
-    return csv_path

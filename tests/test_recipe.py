@@ -1,7 +1,7 @@
-from spork.models.recipe import Recipe
+from spork.models.recipe import Recipe, delete
 import pytest
 from unittest.mock import patch, mock_open
-import os
+
 # Mockmock = Mock()
 
 JSON_FILE = """[
@@ -24,57 +24,6 @@ JSON_FILE = """[
   "serving": "2",
   "ingredients": {
    "Sugar": "1 tsp",
-   "Salt": "1 kg",
-   "Eggs": "1"
-  },
-  "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet"
- }
-]"""
-
-JSON_FILE_2 = """[
- {
-  "recipeID": 1,
-  "title": "Omlet",
-  "author": "Mike",
-  "serving": "2",
-  "ingredients": {
-   "Sugar": "1 tsp",
-   "Salt": "1 kg",
-   "Eggs": "1"
-  },
-  "instructions": "A million years ago Mike decided to cook a salty omlet"
- },
- {
-  "recipeID": 2,
-  "title": "Mushroom Soup",
-  "author": "Adrian",
-  "serving": "2",
-  "ingredients": {
-   "Mushroom": "1 tsp",
-   "Salt": "1 kg",
-   "Water": "1"
-  },
-  "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet"
- },
-  {
-  "recipeID": 3,
-  "title": "Tonkatsu Soup",
-  "author": "Adrian",
-  "serving": "2",
-  "ingredients": {
-   "Tonkatsu": "1 tsp",
-   "Salt": "1 kg",
-   "Eggs": "1"
-  },
-  "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet"
- },
-  {
-  "recipeID": 4,
-  "title": "Hamburger",
-  "author": "Adrian",
-  "serving": "2",
-  "ingredients": {
-   "Beef": "1 tsp",
    "Salt": "1 kg",
    "Eggs": "1"
   },
@@ -165,8 +114,7 @@ def test_save(recipe2):
         ) as mock_file:
             recipe2.save()
             assert mock_file.call_count == 2
-            csv_path = return_path("../spork/database/recipe.json")
-            assert csv_path == mock_file.call_args[0][0]
+            assert mock_file.call_args[0][0] == "spork\\database\\recipe.json"
 
             data = mock_json.call_args[0][0]
             assert mock_json.call_count == 1
@@ -223,37 +171,78 @@ def test_update(recipe3):
                 "instructions": "A million years ago Mike decided to cook a salty omlet",
             }
 
-def return_path(given_path):
-    cwd = os.path.abspath(os.path.dirname(__file__))
-    csv_path = os.path.abspath(os.path.join(cwd, given_path))
-    return csv_path
 
-def test_search(recipe3):
-    with patch(
-            "builtins.open", new_callable=mock_open, read_data=JSON_FILE_2
-        ) as mock_file:
-        result = recipe3.search("mushroom")
-        assert len(result) == 1
-        assert result[0] == 2
-        
-        result = recipe3.search("room")
-        assert len(result) == 0
-        
-        result = recipe3.search("soup")
-        assert len(result) == 2
-        assert result[0] == 2
-        assert result[1] == 3
-        
-def test_filter(recipe3):
-    with patch(
-            "builtins.open", new_callable=mock_open, read_data=JSON_FILE_2
-        ) as mock_file:
-        result = recipe3.filter(["salt", "eggs"] )
-        assert len(result) == 3
-        assert result[0] == 1
-        assert result[1] == 3
-        assert result[2] == 4
+# # test written wron doesn't work
+# def test_delete(recipe2):
+#     with patch("json.dump") as mock_json:
+#         with patch(
+#             "builtins.open", new_callable=mock_open, read_data=JSON_FILE
+#         ) as mock_file:
+#             recipe2.save()
+#             assert recipe2.recipeID == 3
+#             delete(3)
+#             data = mock_json.call_args[0][0]
+#             assert data[-1] == {
+#                 "recipeID": 2,
+#                 "title": "Mushroom Soup",
+#                 "author": "Adrian",
+#                 "serving": "2",
+#                 "ingredients": {"Sugar": "1 tsp", "Salt": "1 kg", "Eggs": "1"},
+#                 "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet",
+#             }
 
-        result = recipe3.filter(["salt", "beef"])
-        assert len(result) == 1
-        assert result[0] == 4
+
+# def test_save(recipe3):
+#     #opens file frist, reads it into data, appends the result of to json to the end
+#     # result = recipe3.to_json()
+#     with patch("builtins.open", mock_open(read_data="data")) as mock_file:
+#         assert open("spork\\database\\recipe.json").read() == "data"
+#         mock_file.assert_called_with("spork\\database\\recipe.json")
+
+
+# # change serving >> Left out for now unless we need it
+# def test_change_serving(recipe):
+#     recipechange_serving(new_serving=5)
+
+# # remove ingridients
+# def test_remove_ingredient(recipe2):
+#     recipe2.remove_ingredient(ingredient="salt")
+#     assert recipe2.ingredients == [('0.5 tsp', 'pepper')]
+
+# # adding steps
+# def test_check_for_ingredient(recipe2):
+#     assert recipe2.check_for_ingredient(ingredient="milk") == False
+
+#     assert recipe2.check_for_ingredient(ingredient="salt") == True
+
+# adding steps to recipe
+# def test_add_step(recipe2):
+#     recipe2.add_step(instruction="Crack egg")
+#     assert recipe2.instructions == ["Crack egg"]
+
+#     recipe2.add_step(instruction="Salt it")
+#     assert recipe2.instructions == ["Crack egg", "Salt it"]
+
+# -------- Update recipe, now it has ingridients -------
+
+# @pytest.fixture
+# def recipe3():
+#     recipe3=Recipe(recipeID = 1,title ="omlet",serving=10)
+#     recipe3.ingredients= [("0.5 tsp", "salt"), ("0.5 tsp", "pepper")]
+#     recipe3.instructions = ["Crack egg", "Salt it"]
+#     return recipe3
+
+# # remove a step
+# def test_remove_step(recipe3):
+#     recipe3.remove_step(step_num=1)
+#     assert recipe3.instructions == ["Salt it"]
+
+# # remove the last step
+# def test_pop_step(recipe3):
+#     recipe3.pop_step()
+#     assert recipe3.instructions == ["Crack egg"]
+
+# # get a step number and replace the instruction with a new one thats given
+# def test_change_step(recipe3):
+#     recipe3.change_step(step_num=2, instruction="Scramble it")
+#     assert recipe3.instructions == ["Crack egg", "Scramble it"]
