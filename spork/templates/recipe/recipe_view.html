@@ -9,11 +9,11 @@
     <!-- Title, Author, serving, add image -->
     <div class="basic-info-image">
         <div>
-            <h1 class="black-text text-left ricipe-title">{{data['title']}}</h1>
+            <h1 class="black-text text-left ricipe-title">{{key['title']}}</h1>
 
             <div class="basic-info">
-                <h5 class="black-text text-left">Author: {{data['author']}} &nbsp; &nbsp; &nbsp;</h5>
-                <h5 class="black-text text-left">Servings: {{data['serving']}}</h5>
+                <h5 class="black-text text-left">Author: {{key['author']}} &nbsp; &nbsp; &nbsp;</h5>
+                <h5 class="black-text text-left">Servings: {{key['serving']}}</h5>
             </div>
         </div>
 
@@ -35,10 +35,10 @@
             </thead>
             <tbody>
                 <!-- each new ingridient will be a new row with two table datas >> for loop -->
-                {% for ingr in data['ingredients']%}
+                {% for ingr in key['ingredients']%}
                 <tr>
                     <td>{{ingr}}</td>
-                    <td>{{data['ingredients'][ingr]}}</td>
+                    <td>{{key['ingredients'][ingr]}}</td>
                 </tr>{% endfor %}
             </tbody>
         </table>
@@ -50,7 +50,7 @@
 
 
     <div class="steps-container">
-        <p id="steps-text" class="text-justify">{{data['instructions']}}</p>
+        <p id="steps-text" class="text-justify">{{key['instructions']}}</p>
     </div>
 
 
@@ -69,5 +69,6 @@
 
 
     {% endif %}
+
 </div>
 {% endblock %}
