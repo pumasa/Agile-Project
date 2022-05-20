@@ -5,7 +5,7 @@
 </div>
 
 <!-- This div is centered | All the contents of the form are here-->
-<div class="container" id="create_body"> 
+<div class="container" id="create_body">
     <!-- Title, Author, serving, add image -->
     <div class="basic-info-image">
         <div>
@@ -53,20 +53,21 @@
         <p id="steps-text" class="text-justify">{{data['instructions']}}</p>
     </div>
 
+
     
         <!-- Delete button-->
         {% if data['recipeID'] in current_user.recipes %}
-            <div class="cancle-save-container">
-                <a href="/recipe/view/{{data['recipeID']}}/delete">
-                    <button id="cancle-button" type="submit" value="Delete" class="btn btn-outline-danger">Delete</button></a>
-            </div>
-            </form>
+          <div class="delete-container">
+              <!-- Edit button-->
+              <a href="/recipe/view/{{data['recipeID']}}/update">
+                  <button id="edit-button" type="button" class="btn btn-primary buttons">Edit</button></a>
 
-            <!-- edit button -->
-            <div class="cancle-save-container">
-                <a href="/recipe/view/{{data['recipeID']}}/update">
-                    <button id="cancle-button" type="button" class="btn btn-outline-secondary">Edit</button></a>
-            </div>
+              <!-- Delete button -->
+              <a href="/recipe/view/{{data['recipeID']}}/delete">
+                  <button id="delete-button" type="submit" value="Delete" class="btn btn-outline-danger buttons">Delete</button></a>
+          </div>
+
+
         {% endif %}
 </div>
 {% endblock %}
