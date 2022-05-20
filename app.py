@@ -12,7 +12,7 @@ from flask_login import (
 )
 from werkzeug.security import generate_password_hash, check_password_hash
 from spork.models.recipe import Recipe
-
+from spork.models.registerform import RegisterForm
 from spork.models.user import User
 
 app = Flask(__name__, template_folder="./spork/templates", static_folder="./spork/static")
@@ -57,6 +57,7 @@ def index():
 
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
+@login_required
 def create():
     if request.method == "POST":
         csv_path = return_path("spork/database/recipe.json")
@@ -83,7 +84,7 @@ def create():
         recipe.save()
         if current_user.is_authenticated:
             current_user.recipes.append(biggest_id)
-            current_user.update_recipe()
+            current_user.update_user()
         return redirect(url_for("profile"))
     else:
         return render_template("/recipe/recipe_create.html")
@@ -107,10 +108,26 @@ def recipe_view(id):
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for("index"))
+        
     if request.method == "POST":
         email = request.form.get("email")
         password = request.form.get("password")
-
+        confirm_password = request.form.get("confirm_password")
+        
+        register_form = RegisterForm(email,password,confirm_password)
+        error_dict = register_form.check_error()
+        if error_dict["confirm_password_error"] == True:
+            flash("Confirm Password doesn not match")
+            return redirect(url_for("register"))
+        if error_dict["email_error"] == True:
+            flash("Not an Email!! Hint: You email username before @ must use letters, numbers and periods only")
+            return redirect(url_for("register"))
+        if error_dict["password_strength_error"] == True:
+            flash("Password not strong enough!! Hint: Your password must have at least 8 character, at least 1 upper case, lower case, numeric, and special character ")
+            return redirect(url_for("register"))
+        
         usr = User(email, password=generate_password_hash(password, method="sha256"))
 
         if usr.find_by_email(usr.email):
@@ -142,7 +159,7 @@ def login():
 ################################################# Profile #################################################
 
 @app.route("/profile")
-# @login_required
+@login_required
 def profile():
     return_data = []
     if current_user.is_authenticated:
@@ -157,6 +174,7 @@ def profile():
 ################################################# Logout #################################################
 
 @app.route("/logout")
+@login_required
 def logout():
     logout_user()
     return redirect(url_for("index"))
@@ -165,6 +183,7 @@ def logout():
 
 ################################################# Recipe delete #################################################
 @app.route('/recipe/view/<int:id>/delete')
+@login_required
 def recipe_delete(id):
     csv_path = return_path("spork/database/recipe.json")
     with open(csv_path, "r") as f:
@@ -180,28 +199,33 @@ def recipe_delete(id):
     return redirect(url_for("index"))
 ################################################# Recipe update #################################################
 @app.route('/recipe/view/<int:id>/update', methods = ['GET','POST'])
+@login_required
 def recipe_update(id):
-    csv_path = return_path("spork/database/recipe.json")
-    with open(csv_path, "r") as f:
-            recipes = json.loads(f.read())
+    if id in current_user.recipes:
+        csv_path = return_path("spork/database/recipe.json")
+        with open(csv_path, "r") as f:
+                recipes = json.loads(f.read())
 
-    if request.method == "POST":
+        if request.method == "POST":
 
-        recipe_data = request.form
-    
-        recipe = Recipe(id,recipe_data['title'],recipe_data['author_name'],recipe_data['serving_amount'])
-        for key in recipe_data.keys():
-            if key[:10] == "ingredient":
-                recipe.add_ingredient(recipe_data[key],recipe_data[f'unit{key[10:]}'])
-        recipe.instructions = recipe_data['instruction']
-        recipe.update()
+            recipe_data = request.form
+        
+            recipe = Recipe(id,recipe_data['title'],recipe_data['author_name'],recipe_data['serving_amount'])
+            for key in recipe_data.keys():
+                if key[:10] == "ingredient":
+                    recipe.add_ingredient(recipe_data[key],recipe_data[f'unit{key[10:]}'])
+            recipe.instructions = recipe_data['instruction']
+            recipe.update()
 
-        return redirect(url_for("index"))
+            return redirect(url_for("index"))
 
-    return render_template("/recipe/recipe_update.html", z = recipes, id = id)
+        return render_template("/recipe/recipe_update.html", z = recipes, id = id)
+    else:
+        return "NOT YOUR RECIPE, DON'T CHEAT"
 
 ################################################# Error pages #################################################
 @app.route('/user/<int:id>/delete')
+@login_required
 def user_delete(id):
     csv_path = return_path("spork/database/user.json")
     with open(csv_path, "r") as f:

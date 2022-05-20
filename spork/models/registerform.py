@@ -1,5 +1,4 @@
 import string
-from turtle import right
 
 class RegisterForm:
     def __init__(self,email,password,confirm_password) -> None:

@@ -80,7 +80,7 @@ class User(UserMixin):
         csv_path = os.path.abspath(os.path.join(cwd, given_path))
         return csv_path
 
-    def update_recipe(self):
+    def update_user(self):
         to_json = self.to_json()
         file_data = self.load_database()
         csv_path = self.return_path("../database/user.json")
