@@ -1,0 +1,22 @@
+[{
+        "MEAT": ["Beef",
+            "Chicken",
+            "Fish & Seafood",
+            "Meat & Chicken",
+            "Pork",
+            "Turkey"
+        ]
+    },
+
+    {
+        "MEAL": [
+            "Appetizer",
+            "Breakfast",
+            "Dessert",
+            "Drinks",
+            "Lunch & Dinner",
+            "Snacks"
+        ]
+    }
+
+]

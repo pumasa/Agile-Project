@@ -4,7 +4,7 @@
 
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
     <h1 class="display-4">Recipe Cards</h1>
-    <p id="small-display">Hello {{email}}! Never forget another recipe!</p>
+    <p id="small-display">{% with messages = get_flashed_messages() %}{% if messages %}{{ messages[0] }}{% endif %} {% endwith %}</p>
     <p id="total-num-recipes"></p>
 </div>
 
@@ -19,7 +19,7 @@
 
                     <div class="card-header">
 
-                        <h4 class="my-0 font-weight-normal">{{ content['title']}}</h4>
+                        <h4 class="my-0 font-weight-normal">{{ content['title'][0:8]}}</h4>
                     </div>
                     <div class="card-body">
                         <img src="https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272" alt="image" width="100" class="img-thumbnail">
@@ -71,7 +71,7 @@
 
 
 </div>
-<script>
+<!-- <script>
     //change heading style
     // let author = 'nikki'
     // document.getElementById('small-display').textContent = "Welcome " + {{email}}+ "! Are you looking for a special recipe today?"
@@ -88,5 +88,5 @@
     for (let i = 0; i < LITags.length; i++) {
         LITags[i].textContent = LITags[i].textContent.toLowerCase()
     }
-</script>
+</script> -->
 {% endblock %}
