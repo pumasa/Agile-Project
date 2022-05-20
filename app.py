@@ -64,7 +64,7 @@ def index():
     
     results=[]
     keywords = search.lower().split()
-#search recipes
+    #search recipes
     for recipe in data:
         title_words = recipe['title'].lower().split()
         for word in title_words:
@@ -76,7 +76,7 @@ def index():
             else:
                 continue
             break
-#search ingredients
+    #search ingredients
     for recipe in data:
         ingredient_words = [ingredient.lower() for ingredient in recipe['ingredients'].keys()]
         for word in ingredient_words:
