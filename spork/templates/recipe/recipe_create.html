@@ -1,0 +1,91 @@
+{% extends "layout.html" %} {% block title %}Create Recipe{% endblock %} {% block head %} {{ super() }}
+<link rel="stylesheet" href="../static/css/create.css"> {% endblock %} {% block content %}
+
+
+</div>
+
+<!-- This div is centered | All the contents of the form are here-->
+<div class="container" id="create_body">
+
+    <h1 class="black-text text-center">Create Recipe</h1>
+    <form action="/recipe/create" method="POST">
+        <!-- Title, Author, serving, add image -->
+        <div class="basic-info-image">
+            <div class="basic-info">
+                <input id="title" class="form-control" type="text" placeholder="Title: 'Omlet'" name="title">
+                <input id="author_name" class="form-control" type="text" placeholder="Author: 'Bob'" name="author_name">
+                <input id="serving_amount" class="form-control" type="text" placeholder="Serving: '2'" name="serving_amount">
+
+            </div>
+            <div>
+                <input type="checkbox" id="vehicle1" name="meat" value="Beef"><label for="vehicle1">Beef</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Chiken"><label for="vehicle1">Chicken</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Fish"><label for="vehicle1">Fish & Seafood</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Pork"><label for="vehicle1">Pork</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Turkey"><label for="vehicle1">Turkey</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Lamb"><label for="vehicle1">Lamb</label><br>
+            </div>
+            <!-- add image pane -->
+            <!-- <div id="insert-image">
+                <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Add image" />
+            </div> -->
+        </div>
+
+        <!-- Ingridients, unit, delete -->
+        <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
+
+        <div id="insert-ingredient">
+            <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient1">
+            <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit1">
+        </div>
+
+
+        <!-- add button -->
+        <div id="add-button-container">
+            <button id="add-button" type="button" class="btn btn-primary" onclick="addCode()">Add +</button>
+        </div>
+
+        <!-- steps -->
+        <div class="steps-container">
+            <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction"></textarea>
+        </div>
+
+        <!-- save,cancle button -->
+        <div class="cancle-save-container">
+            <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancel</button>
+            <button id="save-button" type="submit" class="btn btn-success">Save</button>
+        </div>
+    </form>
+
+
+    <!-- <h1 class="a ">Test Lorem Ipsum</h1>
+        <h1 class="e ">Test Lorem Ipsum</h1>
+
+        <h1 class="c ">Test Lorem Ipsum</h1>
+        <h1 class="d ">Test Lorem Ipsum</h1> -->
+
+    <!-- <h1 class="b ">Test Lorem Ipsum</h1> -->
+
+    <!-- https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Fusers%2Fsimple-user-icon&psig=AOvVaw2JK2IUr8if_R16GQRBkWqr&ust=1651196331872000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIiNiunPtfcCFQAAAAAdAAAAABAD -->
+</div>
+<script>
+    var count = 2
+
+    function addCode() {
+        var ingredientAddHTML = ("<div id ='delete" + count + "' class='dynamic_div'>") + "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
+        ingredientAddHTML += " name=\"ingredient" + count + "\""
+        ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
+        ingredientAddHTML += " name=\"unit" + count + "\""
+
+        ingredientAddHTML += "><button type='button' id='delete" + count + "' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>"
+        document.getElementById("add-button-container").insertAdjacentHTML("beforebegin", ingredientAddHTML)
+
+        count += 1
+    }
+
+    function reply_click(clicked_id) {
+        const element = document.getElementById(clicked_id);
+        element.remove();
+    }
+</script>
+{% endblock %}

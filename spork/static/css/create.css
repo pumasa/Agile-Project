@@ -1,0 +1,157 @@
+/* FIXED */
+
+
+/* ----------------- LIGHT MODE ---------- */
+
+:root {
+    --body_bg: #F6FFFE;
+    --black: #181817;
+    --blue: #a8d0ce;
+    --darker_blue: #73d5ca;
+    --light_pink: #fff6de;
+    --dark_pink: #da9fcc;
+    --orange: #f7ca7c;
+    --hover_yellow: #fff065;
+}
+
+body {
+    background-color: var(--body_bg);
+}
+
+
+/* ---- create form ---- */
+
+#create_body {
+    background-color: #faf9f9;
+    /* padding: 2pc auto 2pc auto; */
+    margin-top: 8pc;
+    margin-bottom: 8pc;
+    padding-bottom: 2pc;
+    padding-top: 1pc;
+}
+
+.basic-info {
+    width: 50%;
+    margin-right: 20%;
+}
+
+
+/* each textbox margin between them */
+
+.form-control {
+    margin-top: 2pc
+}
+
+
+/* insert image */
+
+#insert-image .form-control-lg {
+    width: 20pc;
+    height: 20pc;
+    opacity: 0;
+    margin-top: 0;
+}
+
+#insert-image {
+    width: 20pc;
+    height: 20pc;
+    margin-top: 1.5pc;
+    background-color: #e8e8e8;
+}
+
+.basic-info-image {
+    display: flex;
+}
+
+
+/* Insert Ingridients */
+
+
+/* spaces on right and left and right */
+
+#insert-ingredient .form-control {
+    margin-right: 1.5pc;
+    margin-top: 1.5pc
+}
+
+
+/* delete button */
+
+.delete-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5pc;
+    margin-top: 2pc;
+    margin-right: 0.6pc;
+}
+
+
+/* add button > container aligns it to the right*/
+
+#add-button-container {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 1.5pc;
+    margin-top: 1.5pc;
+    margin-right: 0.6pc;
+}
+
+
+/* steps textbox */
+
+.steps-container {
+    width: 80%;
+    height: 20pc;
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* cancle, save button > container aligns it to the right*/
+
+.cancle-save-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5pc;
+    height: 100%;
+    margin-top: 1.5pc;
+    margin-left: 25%;
+    margin-right: 0.6pc;
+}
+
+#cancle-button {
+    margin-right: 1.5pc;
+}
+
+#save-button {
+    width: 20%;
+}
+
+
+/* search */
+
+.logo-search {
+    display: flex;
+}
+
+.search-button {
+    width: 3.3rem;
+    height: 70%;
+}
+
+.input-group {
+    padding-left: 1rem;
+}
+
+.search-field {
+    margin-top: 0rem;
+}
+
+.account-icon{
+    max-height: 40px;
+}
+.navlogo{
+    max-height: 72px;
+    max-width: 128px;
+}

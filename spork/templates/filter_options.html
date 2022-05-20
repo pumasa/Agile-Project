@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block title %}Home Page{% endblock %} {% block head %} {{ super() }}
+
+<link rel="stylesheet" href="static/css/register-login.css">{% endblock %} {% block content %}
+<title>Filter Options</title>
+</head>
+
+
+
+<body>
+
+
+    <!-- This div is centered | All the contents of the form are here-->
+    <div class="account-body-container">
+        <div class="container" id="account-body">
+            <h2 class="black-text text-center ricipe-title">Filter</h2>
+            <form action="" method="POST">
+                <!-- this will be dinamic! >> loopy loop? -->
+
+                <H5> Meat </H5>
+                <div class="form-check">
+                    <!-- id will be dinamically assigned using variable? -->
+                    <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Beef"><label class="form-check-label" for="(ingredient)">Beef</label><br>
+                    <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Chiken"><label class="form-check-label" for="(ingredient)">Chicken</label><br>
+                    <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Fish"><label class="form-check-label" for="(ingredient)">Fish & Seafood</label><br>
+                    <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Pork"><label class="form-check-label" for="(ingredient)">Pork</label><br>
+                    <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Turkey"><label class="form-check-label" for="(ingredient)">Turkey</label><br>
+                    <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Lamb"><label class="form-check-label" for="(ingredient)">Lamb</label><br>
+                    </br>
+                    <div class="add-button-container">
+                        <a href="/filter">
+                            <button id="add-button" type="submit" class="btn btn-primary add_recipe_button">Submit</button></a>
+                    </div>
+                </div> <br></form>
+
+            <!-- example extra content -->
+
+            <!-- end of example -->
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+{% endblock %}

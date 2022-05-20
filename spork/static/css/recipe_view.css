@@ -1,0 +1,163 @@
+/* ----------------- LIGHT MODE ---------- */
+
+:root {
+    --body_bg: #F6FFFE;
+    --black: #181817;
+    --blue: #a8d0ce;
+    --darker_blue: #73d5ca;
+    --light_pink: #fff6de;
+    --dark_pink: #da9fcc;
+    --orange: #f7ca7c;
+    --hover_yellow: #fff065;
+}
+
+body {
+    background-color: var(--body_bg);
+}
+
+
+/* ----- NAVBAR ----- */
+
+.navlogo {
+    max-height: 4.5pc;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 1.2pc 0.1pc 1.2pc;
+}
+
+.navbar-custom {
+    background-color: var(--blue);
+    overflow: hidden;
+    position: fixed;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+}
+
+
+/* create, filter buttons */
+
+.nav-button {
+    color: var(--light_pink);
+    color: var(--black);
+    background-color: Transparent;
+    border: none;
+    background-repeat: none;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 0pc 0.5pc 1.2pc;
+    font-size: 1.8pc;
+    float: left;
+}
+
+.nav-button:hover {
+    color: var(--hover_yellow);
+}
+
+
+/* ---- view ingridients body ---- */
+
+#create_body {
+    background-color: #faf9f9;
+    margin-top: 8pc;
+    margin-bottom: 8pc;
+    padding-bottom: 2pc;
+}
+
+.ricipe-title {
+    margin-top: 1pc;
+}
+
+.basic-info-image {
+    display: flex;
+    justify-content: space-between;
+}
+
+.basic-info {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* each textbox margin between them */
+
+.form-control {
+    margin-top: 2pc
+}
+
+
+/* image */
+
+#image {
+    width: 20pc;
+    height: 20pc;
+    margin-top: 1.5pc;
+    background-color: #e8e8e8;
+}
+
+.basic-info-image {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* ingridients list*/
+
+#ingredients-list {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    margin-top: 2pc;
+}
+
+
+/* steps textbox */
+
+.steps-title {
+    margin-top: 1.5pc;
+}
+
+.steps-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* cancle, save button > container aligns it to the right*/
+
+.delete-container,
+.edit-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2pc;
+    margin-right: 0.6pc;
+}
+
+.buttons {
+    margin-right: 1.5pc;
+}
+
+
+/* search */
+
+.logo-search {
+    display: flex;
+}
+
+.search-button {
+    width: 3.3rem;
+    height: 70%;
+}
+
+.input-group {
+    padding-top: 1.4rem;
+    padding-left: 1rem;
+}
+
+.search-field {
+    margin-top: 0rem;
+}
+
+.account-icon{
+    max-height: 40px;
+}

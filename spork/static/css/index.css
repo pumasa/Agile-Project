@@ -1,0 +1,157 @@
+/* FIXED */
+
+
+/* ----------------- LIGHT MODE ---------- */
+
+:root {
+    --body_bg: #F6FFFE;
+    --black: #181817;
+    --blue: #a8d0ce;
+    --darker_blue: #73d5ca;
+    --light_pink: #fff6de;
+    --dark_pink: #da9fcc;
+    --orange: #f7ca7c;
+    --hover_yellow: #fff065;
+}
+
+body {
+    background-color: var(--body_bg);
+    padding-bottom: 2rem;
+}
+
+
+/* greeting messages */
+
+#small-display {
+    padding-top: 1.2pc;
+}
+
+
+/* fix blue text links */
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* search */
+
+.logo-search {
+    display: flex;
+}
+
+.search-button {
+    width: 3.3rem;
+    height: 70%;
+}
+
+.input-group {
+    padding-top: 1.4rem;
+    padding-left: 1rem;
+}
+
+
+/* section seperate */
+
+hr {
+    border-top: 1px dashed rgb(98, 187, 184);
+    border-width: 0.4pc;
+}
+
+
+/* see more button */
+
+.see_more_button {
+    background-color: rgb(98, 187, 184);
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.see_more_button:hover {
+    background-color: rgb(88, 158, 156);
+}
+
+.see-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -2.3rem;
+}
+
+
+/* "random" section */
+
+.random-container {
+    background-color: #c4e1df;
+    margin-top: 3rem;
+    /* margin-bottom: 3rem; */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* scale */
+    transform: scale(0.9);
+    transform-origin: 0 1;
+}
+
+
+/* "random" button */
+
+.center-text,
+.center-random-button {
+    display: flex;
+    justify-content: center;
+}
+
+.random-button {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    padding-top: 0.5pc;
+    padding-bottom: 0.5pc;
+}
+
+
+/* algin random suggestion */
+
+.random-suggestion-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+
+/* temp item DELETE LATER */
+
+.imitation {
+    width: 15rem;
+    height: 18rem;
+    background-color: #181817;
+}
+
+
+/* Add recipe section */
+
+.add-recipe-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    /* padding-bottom: 1rem; */
+    /* scale */
+    transform: scale(0.9);
+    transform-origin: 0 1;
+}
+
+
+/* Add button  */
+
+.add-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+}
+.account-icon{
+    max-height: 40px;
+}
