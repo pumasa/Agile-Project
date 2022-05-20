@@ -1,5 +1,0 @@
-[run]
-omit = 
-    tests/*
-    spork\models\__init__.py
-    spork\models\image.py

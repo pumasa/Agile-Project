@@ -212,18 +212,37 @@ body {
     display: flex;
     justify-content: flex-end;
     margin-top: 1.5pc;
-    margin-top: 2pc;
+    height: 100%;
+    margin-top: 1.5pc;
+    margin-left: 25%;
     margin-right: 0.6pc;
 }
 
 
+/* .delete { */
+
+
+/* margin-top: 1.5pc; */
+
+
+/* margin-left: 25%; */
+
+
+/* margin-right: 0.6pc; */
+
+
+/* } */
+
+
 /* add button > container aligns it to the right*/
 
-#add-button-container {
+.add-button-container {
     display: flex;
-    align-items: flex-end;
+    justify-content: flex-end;
     margin-top: 1.5pc;
+    height: 100%;
     margin-top: 1.5pc;
+    margin-left: 25%;
     margin-right: 0.6pc;
 }
 
@@ -257,30 +276,4 @@ body {
 
 #save-button {
     width: 20%;
-}
-
-
-
-/* search */
-
-.logo-search {
-    display: flex;
-}
-
-.search-button {
-    width: 3.3rem;
-    height: 70%;
-}
-
-.input-group {
-    /* margin-top: -2rem; */
-    padding-left: 1rem;
-}
-
-.search-field {
-    margin-top: 0rem;
-}
-.dynamic_div > button{
-    margin-top: 10px;
-
 }
