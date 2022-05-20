@@ -21,12 +21,48 @@
                 <input id="email" class="form-control container account-input" type="text" placeholder="Email" name="email">
                 <input id="password" class="form-control container account-input" type="text" placeholder="Password" name="password">
 
-                <!-- cancle and save buttons -->
-                <div class="cancle-save-container">
-                    <button id="cancle-button" type="submit" class="btn btn-outline-secondary">Register</button>
-                    <!-- <button id="save-button" type="submit" class="btn btn-success">Login</button> -->
+            <div>
+                <h4 class="register-text">Confirm Password</h4>
+                <div class="password-container">
+
+                    <input id="confirm_password" class="form-control account-input password-register" type="password" placeholder="Password" name="confirm_password">
+                    <i id="confirm_visibilityBtn"><span class="material-symbols-outlined">visibility</span></i>
                 </div>
-            </form>
-        </div>
+            </div>
+
+
+            <!-- cancle and save buttons -->
+            <div class="cancel-save-container">
+                <button id="cancle-button" type="submit" class="btn btn-success">Register</button>
+            </div>
+        </form>
     </div>
-    {% endblock %}
+</div>
+
+<script>
+    const visibilityBtn = document.getElementById("visibilityBtn")
+    visibilityBtn.addEventListener("click", toggleVisibility)
+
+    function toggleVisibility() {
+        const passwordInput = document.getElementById("password")
+        if (passwordInput.type === "password") {
+            password.type = "text"
+        } else {
+            password.type = "password"
+        }
+    }
+    // alert("it works")
+
+    const confirm_visibilityBtn = document.getElementById("confirm_visibilityBtn")
+    confirm_visibilityBtn.addEventListener("click", toggleVisibility_confirm)
+
+    function toggleVisibility_confirm() {
+        const confirm_passwordInput = document.getElementById("confirm_password")
+        if (confirm_passwordInput.type === "password") {
+            confirm_passwordInput.type = "text"
+        } else {
+            confirm_passwordInput.type = "password"
+        }
+    }
+</script>
+{% endblock %}
