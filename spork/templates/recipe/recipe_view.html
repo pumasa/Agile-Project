@@ -63,7 +63,7 @@
             <button id="edit-button" type="button" class="btn btn-primary buttons">Edit</button></a>
 
         <!-- Delete button -->
-        <a href="/recipe/view/{{data['recipeID']}}/delete">
+        <a href="/recipe/view/{{data['recipeID']}}/delete" onclick="return confirm('Are you sure?')">
             <button id="delete-button" type="submit" value="Delete" class="btn btn-outline-danger buttons">Delete</button></a>
     </div>
 
