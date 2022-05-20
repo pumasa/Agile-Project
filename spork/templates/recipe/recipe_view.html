@@ -55,18 +55,18 @@
 
     
         <!-- Delete button-->
+        {% if data['recipeID'] in current_user.recipes %}
+            <div class="cancle-save-container">
+                <a href="/recipe/view/{{data['recipeID']}}/delete">
+                    <button id="cancle-button" type="submit" value="Delete" class="btn btn-outline-danger">Delete</button></a>
+            </div>
+            </form>
 
-        <div class="cancle-save-container">
-            <a href="/recipe/view/{{data['recipeID']}}/delete">
-                <button id="cancle-button" type="submit" value="Delete" class="btn btn-outline-danger">Delete</button></a>
-        </div>
-        </form>
-
-        <!-- edit button -->
-        <div class="cancle-save-container">
-            <a href="/recipe/view/{{data['recipeID']}}/update">
-                <button id="cancle-button" type="button" class="btn btn-outline-secondary">Edit</button></a>
-        </div>
-
+            <!-- edit button -->
+            <div class="cancle-save-container">
+                <a href="/recipe/view/{{data['recipeID']}}/update">
+                    <button id="cancle-button" type="button" class="btn btn-outline-secondary">Edit</button></a>
+            </div>
+        {% endif %}
 </div>
 {% endblock %}
