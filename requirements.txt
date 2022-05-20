@@ -4,3 +4,4 @@ flask
 flask-login
 pytest-flask
 gunicorn
+opencv-python
