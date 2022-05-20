@@ -157,3 +157,7 @@ body {
 .search-field {
     margin-top: 0rem;
 }
+
+.account-icon{
+    max-height: 40px;
+}

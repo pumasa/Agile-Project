@@ -172,3 +172,7 @@ body {
     color: red;
     background-color: red;
 }
+
+.account-icon{
+    max-height: 40px;
+}

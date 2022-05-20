@@ -153,3 +153,6 @@ hr {
     margin-top: 1.5rem;
     font-size: 1.5rem;
 }
+.account-icon{
+    max-height: 40px;
+}

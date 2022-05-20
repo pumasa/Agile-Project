@@ -59,7 +59,6 @@ def index():
     for recipe in data:
         pool.append(recipe)
     recommendation = random.choice(pool)
-    print(recommendation)
     
     search = str(request.form.get("search"))
     
