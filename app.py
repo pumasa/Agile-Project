@@ -42,9 +42,9 @@ def index():
 
     pool = []
     for recipe in data:
-        pool.append(recipe['recipeID'])
+        pool.append(recipe)
     recommendation = random.choice(pool)
-    
+    print(recommendation)
     
     search = str(request.form.get("search"))
     
@@ -72,7 +72,7 @@ def index():
                 continue
             break    
     
-    return render_template('index.html', jsonfile = data, search=results) 
+    return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation) 
 
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
