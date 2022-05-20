@@ -20,48 +20,10 @@ body {
 }
 
 
-/* ----- NAVBAR ----- */
+/* greeting messages */
 
-.navlogo {
-    max-height: 4.5pc;
-    /*margin: top | right | bottom | left */
-    margin: 0.1pc 1.2pc 0.1pc 1.2pc;
-}
-
-.navbar-custom {
-    background-color: var(--blue);
-    overflow: hidden;
-    position: fixed;
-    /* Set the navbar to fixed position */
-    top: 0;
-    /* Position the navbar at the top of the page */
-    width: 100%;
-    z-index: 1;
-    /* Full width */
-}
-
-.account-icon {
-    max-height: 3pc;
-    float: left;
-}
-
-
-/* create, filter buttons */
-
-.nav-button {
-    color: var(--light_pink);
-    color: var(--black);
-    background-color: Transparent;
-    border: none;
-    background-repeat: none;
-    /*margin: top | right | bottom | left */
-    margin: 0.1pc 0pc 0.5pc 1.2pc;
-    font-size: 1.8pc;
-    float: left;
-}
-
-.nav-button:hover {
-    color: var(--hover_yellow);
+#small-display {
+    padding-top: 1.2pc;
 }
 
 
@@ -253,5 +215,4 @@ hr {
 
 .account-icon{
     max-height: 40px;
-
 }

@@ -9,6 +9,7 @@ instance/
 
 .pytest_cache/
 .coverage
+.coveragerc
 htmlcov/
 
 dist/
