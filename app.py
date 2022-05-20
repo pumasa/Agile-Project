@@ -1,6 +1,5 @@
 # Ask Mike Picus if something is not clear in this file
 
-import random
 from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 import os
@@ -30,21 +29,6 @@ def load_user(id):
 
     return temp_account.find_by_id(id)
 
-
-################################################# filter #################################################
-@app.route('/filter', methods = ['GET','POST'])
-def filter():
-        csv_path = return_path("spork/database/recipe.json")
-        with open(csv_path, "r") as myfile:
-            data = json.loads(myfile.read())
-
-        tags = request.form.getlist('meat')
-
-        if request.method == "POST":
-            return render_template ('filter_view.html', data = data, tags=tags)
-
-            
-        return render_template('filter_options.html', data = data, tags=tags) 
 
 ################################################# index/home page - renders info from recipe.json #################################################
 @app.route('/', methods = ['GET','POST'])
@@ -95,6 +79,7 @@ def index():
 
     return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation) 
 
+
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
 @login_required
@@ -121,7 +106,6 @@ def create():
             if key[:10] == "ingredient":
                 recipe.add_ingredient(recipe_data[key], recipe_data[f"unit{key[10:]}"])
         recipe.instructions = recipe_data["instruction"]
-        recipe.tags += request.form.getlist('meat')
         recipe.save()
         if current_user.is_authenticated:
             current_user.recipes.append(biggest_id)

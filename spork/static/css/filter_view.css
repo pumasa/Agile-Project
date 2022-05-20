@@ -1,4 +1,61 @@
-/* Kinda FIXED */
+/* DARK MODE */
+
+body {
+    /* background-color: #2e2d2c; */
+    background-color: rgb(33, 33, 33)
+}
+
+
+/* NAVBAR */
+
+.navlogo {
+    max-height: 4.5pc;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 1.2pc 0.1pc 1.2pc;
+}
+
+.account-icon {
+    max-height: 3pc;
+    float: left;
+}
+
+.nav-button {
+    color: rgb(222, 186, 124);
+    background-color: Transparent;
+    border: none;
+    background-repeat: none;
+    /*margin: top | right | bottom | left */
+    margin: 0.1pc 0pc 0.5pc 1.2pc;
+    font-size: 1.8pc;
+    float: left;
+}
+
+.nav-button:hover {
+    color: #F5E8C7;
+}
+
+
+/* TEXT COLOURS */
+
+.a {
+    color: rgb(251, 167, 14);
+}
+
+.e {
+    color: rgb(254, 176, 58);
+}
+
+.b {
+    color: #F5E8C7;
+}
+
+.c {
+    color: #DEBA9D;
+}
+
+.d {
+    color: #b1d8af;
+}
 
 
 /* ----------------- LIGHT MODE ---------- */
@@ -16,7 +73,6 @@
 
 body {
     background-color: var(--body_bg);
-    /* padding-bottom: 2rem; */
 }
 
 
@@ -34,14 +90,34 @@ body {
 }
 
 
+/* TEXT COLOURS */
+
+.a {
+    color: #181817;
+    /* var(--black) */
+}
+
+.e {
+    color: #73d5ca
+    /* var(--darker_blue) */
+}
+
+.c {
+    color: #da9fcc;
+    /* var(--dark_pink) */
+}
+
+.d {
+    color: #f7ca7c;
+    /* var(--orange); */
+}
+
+
 /* ---- view ingridients body ---- */
 
 .filter-body-container {
     margin-top: 8pc;
     margin-bottom: 8pc;
-    /* scale */
-    /* transform: scale(0.8);
-    transform-origin: 0 0; */
 }
 
 #filter-body {

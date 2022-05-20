@@ -1,49 +1,23 @@
 {% extends "layout.html" %} {% block title %}Home Page{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="../static/css/index.css"> {% endblock %} {% block content %}
+<link rel="stylesheet" href="../static/css/filter_view.css"> {% endblock %} {% block content %}
 
 
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
     <h1 class="display-4">Recipe Cards</h1>
-    <p id="small-display">{% with messages = get_flashed_messages() %}{% if messages %}{{ messages[0] }}{% endif %} {% endwith %}</p>
+    <p id="small-display">Hello {{email}}! Never forget another recipe!</p>
     <p id="total-num-recipes"></p>
 </div>
 
 <div class="container">
     <div class="card-deck text-center">
-        {% for content in jsonfile %} {% if search %} {% for x in search %} {% if x == content['recipeID']%}
-
-
+        {% for content in jsonfile %}
         <div class="col-sm-6 col-md-3 col-lg-3">
             <a href="/recipe/view/{{content['recipeID']}}">
                 <div class="card mb-4 box-shadow">
 
                     <div class="card-header">
 
-                        <h4 class="my-0 font-weight-normal">{{ content['title'][0:10]}}</h4>
-                    </div>
-                    <div class="card-body">
-                        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272" alt="image" width="100" class="img-thumbnail">
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li> # of servings {{content['serving']}} </li>
-
-
-                        </ul>
-                        <span id="number-of-ingredients"> </span>
-                    </div>
-
-                </div>
-            </a>
-        </div>
-
-        {% endif %}{% endfor %} {% else %}
-
-        <div class="col-sm-6 col-md-3 col-lg-3">
-            <a href="/recipe/view/{{content['recipeID']}}">
-                <div class="card mb-4 box-shadow">
-
-                    <div class="card-header">
-
-                        <h4 class="my-0 font-weight-normal">{{ content['title'][0:10]}}</h4>
+                        <h4 class="my-0 font-weight-normal">{{ content['title']}}</h4>
                     </div>
                     <div class="card-body">
                         <img src="https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272" alt="image" width="100" class="img-thumbnail">
@@ -59,86 +33,19 @@
             </a>
         </div>{% endif %}{% endfor %}
 
-
-
-    </div>
-
-
-    <!-- DASHES -->
-    <hr>
-
-    <!-- The see more button -->
-    <div class="see-more-container">
-        <button id="view-more-button" type="button" class="btn btn-primary see_more_button">See More +</button></a>
-    </div>
-
-    <!-- Section 2 -->
-    <div class="add-recipe-container">
-        <div class="center-text">
-            <h4>Contribute to Spork with your own creations!</h4>
-        </div>
-
-        <!-- button for add -->
         <div class="add-button-container">
             <a href="/recipe/create">
                 <button id="add-button" type="button" class="btn btn-primary add_recipe_button">Add New recipe</button></a>
         </div>
 
     </div>
-
-
-
-    <!-- Section 3 -->
-
-    <div class="random-container">
-        <div class="center-text">
-            <h4>Still not sure what to make?</h4>
-        </div>
-        <div class="center-random-button">
-            <a href="/">
-                <button id="random-button" type="submit" class="btn btn-primary random-button">Click me for a random suggestion!</button></a>
-        </div>
-
-        {% if recommendation %}
-        <!-- Random recipe selected -->
-        <div class="random-suggestion-container">
-            <!-- This is where the random suggestion goes -->
-            <div class="col-sm-6 col-md-3 col-lg-3">
-                <a href="/recipe/view/{{ recommendation['recipeID'] }}">
-                    <div class="card mb-4 box-shadow">
-
-                        <div class="card-header">
-
-                            <h4 class="my-0 font-weight-normal">{{ recommendation['title']}}</h4>
-                        </div>
-                        <div class="card-body">
-                            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272" alt="image" width="100" class="img-thumbnail">
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li> # of servings {{recommendation['serving']}} </li>
-
-
-                            </ul>
-                            <span id="number-of-ingredients"> </span>
-                        </div>
-
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% else %}
-        <!-- Black -->
-        <div class="random-suggestion-container">
-            <!-- This is where the random suggestion goes -->
-            <div class="imitation"></div>
-        </div>
-        {% endif %}
-    </div>
-
 </div>
 
 
+
+
 </div>
-<!-- <script>
+<script>
     //change heading style
     // let author = 'nikki'
     // document.getElementById('small-display').textContent = "Welcome " + {{email}}+ "! Are you looking for a special recipe today?"
@@ -155,5 +62,5 @@
     for (let i = 0; i < LITags.length; i++) {
         LITags[i].textContent = LITags[i].textContent.toLowerCase()
     }
-</script> -->
+</script>
 {% endblock %}
