@@ -161,18 +161,136 @@ body {
     background-color: #faf9f9;
     padding-bottom: 2pc;
     padding-top: 2pc;
-    /* display: flex;
-    justify-content: center; */
+    align-items: center;
 }
 
 
-/* option check boxes */
+/* image */
 
-.form-check-label {
-    color: red;
-    background-color: red;
+.account-image {
+    width: 10pc;
+    height: 10pc;
+    background-color: #181817;
+    border-radius: 100%;
 }
 
-.account-icon{
+
+/* greeting messages */
+
+#small-display {
+    padding-top: 1.2pc;
+}
+
+
+/* Email and Password inputs */
+
+.account-input {
+    margin-top: 1pc;
+    margin-bottom: 2pc;
+    width: 50%;
+}
+
+
+/* align email and password text */
+
+.register-text {
+    padding-left: 25%;
+}
+
+
+/* register and login buttons */
+
+.cancel-save-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5pc;
+    margin-top: 1.5pc;
+    margin-right: 25%;
+}
+
+#login_button {
+    width: 20%;
+    margin-right: 33%;
+}
+
+.register__button {
+    background-color: var(--body_bg);
+    padding: 10px;
+    width: 30%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 33%;
+}
+
+
+/* aligning the register and the login buttons nicely */
+
+#register-button {
+    width: fit-content;
+}
+
+
+/* making password box the right size*/
+
+.password-register {
+    letter-spacing: 0.1ch;
+    margin-right: 1pc;
+    width: 67%;
+}
+
+
+/* making the password field align wiht eye */
+
+.password-container {
+    display: flex;
+    padding-left: 25%;
+}
+
+.material-symbols-outlined {
+    padding-top: 100%;
+}
+
+
+/* align eye inside  */
+
+i {
+    margin-left: -3pc;
+    cursor: pointer;
+}
+
+
+/* search */
+
+.logo-search {
+    display: flex;
+}
+
+.search-button {
+    width: 3.3rem;
+    height: 70%;
+}
+
+.input-group {
+    /* margin-top: -2rem; */
+    padding-left: 1rem;
+}
+
+.search-icon {
+    padding-top: 0%
+}
+
+.account-icon {
     max-height: 40px;
+}
+
+.filter_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.form-check {
+    margin-left: 3rem;
 }
