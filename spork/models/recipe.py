@@ -12,6 +12,7 @@ class Recipe:
         self.author = author
         self.title = title
         self.serving = serving
+        self.image = ""
         self.tags = []
     # adds an ingredient and ingredient quantity to the recipe's ingredient list
     # takes ingredient and how many of the ingredient is in the recipe as parameters
@@ -153,6 +154,7 @@ class Recipe:
             f"serving": str(self.serving),
             f"ingredients": self.ingredients,
             f"instructions": str(self.instructions),
+            f"instructions": self.image
         }
 
         return json
