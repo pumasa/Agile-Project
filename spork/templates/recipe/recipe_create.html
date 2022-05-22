@@ -8,7 +8,7 @@
 <div class="container" id="create_body">
 
     <h1 class="black-text text-center">Create Recipe</h1>
-    <form action="/recipe/create" method="POST">
+    <form action="/recipe/create" enctype="multipart/form-data" method="POST">
         <!-- Title, Author, serving, add image -->
         <div class="basic-info-image">
             <div class="basic-info">
@@ -25,8 +25,8 @@
                 <input type="checkbox" id="vehicle1" name="meat" value="Turkey"><label for="vehicle1">Turkey</label><br>
                 <input type="checkbox" id="vehicle1" name="meat" value="Lamb"><label for="vehicle1">Lamb</label><br>
             </div>
-            <!-- add image pane -->
-            <!-- <div id="insert-image">
+            <!-- add image pane
+            <div id="insert-image">
                 <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Add image" />
             </div> -->
         </div>
@@ -49,13 +49,22 @@
         <div class="steps-container">
             <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction"></textarea>
         </div>
+        
+        <div>
 
+            <dl>
+                <p>
+                    <input type="file" name="file" class="form-control" autocomplete="off">
+                </p>
+            </dl>
+        </div>
         <!-- save,cancle button -->
         <div class="cancle-save-container">
             <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancel</button>
             <button id="save-button" type="submit" class="btn btn-success">Save</button>
         </div>
     </form>
+
 
 
     <!-- <h1 class="a ">Test Lorem Ipsum</h1>

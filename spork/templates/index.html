@@ -22,7 +22,7 @@
                         <h4 class="my-0 font-weight-normal">{{ content['title'][0:10]}}</h4>
                     </div>
                     <div class="card-body">
-                        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272" alt="image" width="100" class="img-thumbnail">
+                        <img src="{{url_for('static', filename='images/'+ content['image'])}}" alt="image" width="100" class="img-thumbnail">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li> # of servings {{content['serving']}} </li>
 
@@ -46,7 +46,7 @@
                         <h4 class="my-0 font-weight-normal">{{ content['title'][0:10]}}</h4>
                     </div>
                     <div class="card-body">
-                        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272" alt="image" width="100" class="img-thumbnail">
+                        <img src="{{url_for('static', filename='images/'+ content['image'])}}" alt="image" width="100" class="img-thumbnail">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li> # of servings {{content['serving']}} </li>
 
@@ -112,7 +112,7 @@
                             <h4 class="my-0 font-weight-normal">{{ recommendation['title']}}</h4>
                         </div>
                         <div class="card-body">
-                            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272" alt="image" width="100" class="img-thumbnail">
+                            <img src="{{url_for('static', filename='images/'+ recommendation['image'])}}" alt="image" width="100" class="img-thumbnail">
                             <ul class="list-unstyled mt-3 mb-4">
                                 <li> # of servings {{recommendation['serving']}} </li>
 

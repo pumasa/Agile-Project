@@ -10,7 +10,7 @@
 <div class="container" id="create_body">{% for key in z %} {% if id == key['recipeID'] %}
 
     <h1 class="black-text text-center">Update Recipe</h1>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <!-- Title, Author, serving, add image -->
         <div class="basic-info-image">
             <div class="basic-info">
@@ -19,10 +19,10 @@
                 <input id="serving_amount" class="form-control" type="text" value="{{key['serving']}}" name="serving_amount">
             </div>
 
-            <!-- add image pane -->
-            <!-- <div id="insert-image">
-                <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Add image" />
-            </div> -->
+            <!-- image -->
+            <div id="image">
+                <img src="{{url_for('static', filename='images/'+ key['image'])}}" alt="recipe image">
+            </div>
         </div>
 
         <!-- Ingridients, unit, delete -->
@@ -43,7 +43,14 @@
         <div class="steps-container">
             <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction">{{key['instructions']}}</textarea>
         </div>
+        <div>
 
+            <dl>
+                <p>
+                    <input type="file" name="file" class="form-control" autocomplete="off">
+                </p>
+            </dl>
+        </div>
         <!-- save,cancle button -->
         <div class="cancle-save-container">
             <a href="/recipe/view/{{key['recipeID']}}">

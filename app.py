@@ -15,9 +15,28 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from spork.models.recipe import Recipe
 from spork.models.registerform import RegisterForm
 from spork.models.user import User
+from werkzeug.utils import secure_filename
+################################################# Function Tool Box ###########################################
+################################################# return path #################################################
+def return_path(given_path):
+    cwd = os.path.abspath(os.path.dirname(__file__))
+    csv_path = os.path.abspath(os.path.join(cwd, given_path))
+    return csv_path
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+################################################# Tool Box Ends ##############################################
 app = Flask(__name__, template_folder="./spork/templates", static_folder="./spork/static")
+
+UPLOAD_FOLDER = return_path("./spork/static/images")
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
 app.config["SECRET_KEY"] = "johnny"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
+
+
 
 login_manager = LoginManager()
 login_manager.login_view = "login"
@@ -92,7 +111,7 @@ def index():
     if request.method == "POST":
         if len(results) < 1:
             flash("This recipe does not exist! Please try a different one!")
-
+        
     return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation) 
 
 ################################################# Recipe create page #################################################
@@ -122,10 +141,24 @@ def create():
                 recipe.add_ingredient(recipe_data[key], recipe_data[f"unit{key[10:]}"])
         recipe.instructions = recipe_data["instruction"]
         recipe.tags += request.form.getlist('meat')
+        
+        
+        # File upload here
+        file = request.files['file']
+        if file.filename == "":
+            filename="default-recipe.jpg"
+            recipe.image = filename
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            recipe.image = filename
+            
         recipe.save()
+            
         if current_user.is_authenticated:
             current_user.recipes.append(biggest_id)
             current_user.update_user()
+            
         return redirect(url_for("profile"))
     else:
         return render_template("/recipe/recipe_create.html")
@@ -260,19 +293,20 @@ def recipe_update(id):
                 if key[:10] == "ingredient":
                     recipe.add_ingredient(recipe_data[key],recipe_data[f'unit{key[10:]}'])
             recipe.instructions = recipe_data['instruction']
+            # File upload here
+            file = request.files['file']
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                recipe.image = filename
             recipe.update()
 
-            return redirect(url_for("index"))
+            return redirect(url_for("profile"))
 
         return render_template("/recipe/recipe_update.html", z = recipes, id = id)
     else:
         return "NOT YOUR RECIPE, DON'T CHEAT"
 
-################################################# return path #################################################
-def return_path(given_path):
-    cwd = os.path.abspath(os.path.dirname(__file__))
-    csv_path = os.path.abspath(os.path.join(cwd, given_path))
-    return csv_path
 ################################################# Error pages #################################################
 @app.errorhandler(404)
 def page_not_found(e):
