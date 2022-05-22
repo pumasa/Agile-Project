@@ -44,6 +44,13 @@ body {
 
 
 /* insert image */
+#image > *{
+    width: 20pc;
+    height: 20pc;
+    margin-top: 1.5pc;
+    max-height: 20pc;
+    max-width: 20pc;
+}
 
 #insert-image .form-control-lg {
     width: 20pc;

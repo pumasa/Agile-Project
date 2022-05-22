@@ -1,5 +1,5 @@
 {% extends "layout.html" %} {% block title %}View Recipe{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="../../static/css/recipe_view.css"> {% endblock %} {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/recipe_view.css')}}"> {% endblock %} {% block content %}
 
 
 </div>
@@ -19,7 +19,7 @@
 
         <!-- image -->
         <div id="image">
-            <img src="{{data['image']}}" alt="recipe image">
+            <img src="{{url_for('static', filename='images/'+ data['image'])}}" alt="recipe image">
         </div>
     </div>
 

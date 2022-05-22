@@ -154,7 +154,7 @@ class Recipe:
             f"serving": str(self.serving),
             f"ingredients": self.ingredients,
             f"instructions": str(self.instructions),
-            f"instructions": self.image
+            f"image": self.image
         }
 
         return json

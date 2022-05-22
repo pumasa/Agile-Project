@@ -15,7 +15,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from spork.models.recipe import Recipe
 from spork.models.registerform import RegisterForm
 from spork.models.user import User
-from spork.models.image import Image
 from werkzeug.utils import secure_filename
 ################################################# Function Tool Box ###########################################
 ################################################# return path #################################################
@@ -112,14 +111,8 @@ def index():
     if request.method == "POST":
         if len(results) < 1:
             flash("This recipe does not exist! Please try a different one!")
-
-    # render fileimage
-    csv_path = return_path("spork/database/image.json")
-    with open(csv_path, "r") as myfile:
-        img_data = json.loads(myfile.read())
-    
         
-    return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation, filename = img_data) 
+    return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation) 
 
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
@@ -154,8 +147,6 @@ def create():
         file = request.files['file']
         if file.filename == "":
             filename="default-recipe.jpg"
-            filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            filename = secure_filename(filename)
             recipe.image = filename
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
@@ -310,7 +301,7 @@ def recipe_update(id):
                 recipe.image = filename
             recipe.update()
 
-            return redirect(url_for("index"))
+            return redirect(url_for("profile"))
 
         return render_template("/recipe/recipe_update.html", z = recipes, id = id)
     else:

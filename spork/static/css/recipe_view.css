@@ -87,11 +87,10 @@ body {
 
 /* image */
 
-#image {
+#image > *{
     width: 20pc;
     height: 20pc;
     margin-top: 1.5pc;
-    background-color: #e8e8e8;
     max-height: 20pc;
     max-width: 20pc;
 }
