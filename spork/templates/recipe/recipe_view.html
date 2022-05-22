@@ -17,10 +17,16 @@
             </div>
         </div>
 
-        <!-- image -->
+        <!-- image -->{%if data['img'] == ''%}
         <div id="image">
             <img src="{{url_for('static', filename='images/'+ data['image'])}}" alt="recipe image">
         </div>
+        {%else%}
+        <div id="image">
+            <img src="{{data['img']}}" alt="recipe image">
+        </div>
+        {% endif%}
+
     </div>
 
     <!-- Ingridients list -->

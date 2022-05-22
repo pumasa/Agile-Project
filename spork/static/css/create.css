@@ -44,7 +44,8 @@ body {
 
 
 /* insert image */
-#image > *{
+
+#image>* {
     width: 20pc;
     height: 20pc;
     margin-top: 1.5pc;
@@ -76,9 +77,45 @@ body {
 
 /* spaces on right and left and right */
 
+#insert-ingredient {
+    display: flex;
+}
+
 #insert-ingredient .form-control {
     margin-right: 1.5pc;
-    margin-top: 1.5pc
+    margin-top: 1.5pc;
+    width: 20pc;
+    display: flex;
+}
+
+.dynamic_div {
+    display: flex;
+}
+
+.dynamic_div .form-control {
+    margin-right: 1.5pc;
+    margin-top: 1.5pc;
+    width: 20pc;
+    display: flex;
+}
+
+.delete {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5pc;
+    margin-top: 1.5pc;
+    margin-right: 0.6pc;
+}
+
+
+/* tags */
+
+#tags {
+    display: flex;
+}
+
+.tags-container {
+    padding-right: 1.5pc;
 }
 
 
@@ -155,10 +192,15 @@ body {
     margin-top: 0rem;
 }
 
-.account-icon{
+.account-icon {
     max-height: 40px;
 }
-.navlogo{
+
+.navlogo {
     max-height: 72px;
     max-width: 128px;
+}
+
+#picture-file {
+    width: 80%
 }
