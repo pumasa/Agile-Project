@@ -15,10 +15,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from spork.models.recipe import Recipe
 from spork.models.registerform import RegisterForm
 from spork.models.user import User
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__, template_folder="./spork/templates", static_folder="./spork/static")
 app.config["SECRET_KEY"] = "johnny"
-
+CORS(app)
 login_manager = LoginManager()
 login_manager.login_view = "login"
 login_manager.init_app(app)
