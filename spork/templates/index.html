@@ -3,6 +3,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/random_view.js') }}"></script>
+<script src="{{ url_for('static', filename='js/load_more.js') }}"></script>
 {% endblock %} {% block content %}
 
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
@@ -77,7 +78,7 @@
 
 
 
-
+<!-- Search Feature -->
 <div class="container">
     <div class="card-deck text-center">
         {% for content in jsonfile %} {% if search %} {% for x in search %} {% if x == content['recipeID']%}
@@ -109,7 +110,8 @@
 
         {% endif %}{% endfor %} {% else %}
 
-        <div class="col-sm-6 col-md-3 col-lg-3">
+        <!-- Default index content -->
+        <div class="col-sm-6 col-md-3 col-lg-3 moreBox" style="display: none;">
             <a href="/recipe/view/{{content['recipeID']}}">
                 <div class="card mb-4 box-shadow">
 
