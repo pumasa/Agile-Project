@@ -10,27 +10,25 @@
 
 <div class="container">
     <div class="card-deck text-center">
-        {% for x in data %} {% for y in x['tags'] %} {% for z in tags %} {% if z in y%}
+        {% for content in data %} {% for y in content['tags'] %} {% for z in tags %} {% if z in y%}
 
 
-        <div class="col-sm-6 col-md-3 col-lg-3">
-            <a href="/recipe/view/{{x['recipeID']}}">
-                <div class="card mb-4 box-shadow">
-
-                    <div class="card-header">
-
-                        <h4 class="my-0 font-weight-normal">{{ x['title'][0:10]}}</h4>
+        <div class="col-md-4 moreBox">
+            <a href="/recipe/view/{{content[ 'recipeID']}} ">
+                <div class="card mb-4 shadow-sm">
+                    {%if content['img'] == ''%}
+                    <img src=" {{url_for( 'static', filename='images/' + content[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
+                    <img src="{{content[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
+                    <div class="card-body ">
+                        <h4 class="my-0 font-weight-normal ">{{ content['title']}}</h4>
+                        <p class="card-text ">{{ content['description']}}</p>
+                        <div class="d-flex justify-content-between align-items-center ">
+                            <div class="btn-group ">
+                                <small class="text-muted ">By: {{content['author']}}</small>
+                            </div>
+                            <small class="text-muted ">Serves: {{content['serving']}}</small>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <img src="{{url_for('static', filename='images/'+ x['image'])}}" alt="image" width="100" class="img-thumbnail">
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li> # of servings {{x['serving']}} </li>
-
-
-                        </ul>
-                        <span id="number-of-ingredients"> </span>
-                    </div>
-
                 </div>
             </a>
         </div>

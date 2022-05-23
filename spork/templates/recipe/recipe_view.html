@@ -29,7 +29,8 @@
 
 
 
-        <!-- image -->{%if data['img'] == ''%}
+        <!-- image -->
+        {%if data['img'] == ''%}
         <div id="image">
             <img src="{{url_for('static', filename='images/'+ data['image'])}}" alt="recipe image">
         </div>
