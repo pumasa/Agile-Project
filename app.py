@@ -1,7 +1,7 @@
 # Ask Mike Picus if something is not clear in this file
 
 import random
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 import json
 import os
 from flask_login import (
@@ -114,6 +114,20 @@ def index():
         
     return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation) 
 
+################################################# Random API #################################################
+@app.route('/random', methods = ['GET'])
+def random_view():
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as myfile:
+        data = json.loads(myfile.read())
+    pool = []
+    for recipe in data:
+        pool.append(recipe)
+    recommendation = random.choice(pool)
+    if recommendation['img'] == "":
+        return jsonify(recipe=recommendation,image_link=url_for('static', filename=f'images/{recommendation["image"]}'))
+    else:
+        return jsonify(recipe=recommendation,image_link=recommendation['img'])
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
 @login_required
@@ -141,7 +155,8 @@ def create():
                 recipe.add_ingredient(recipe_data[key], recipe_data[f"unit{key[10:]}"])
         recipe.instructions = recipe_data["instruction"]
         recipe.tags += request.form.getlist('meat')
-        
+        recipe.img = recipe_data["img"]
+        recipe.description = recipe_data["description"]
         
         # File upload here
         file = request.files['file']

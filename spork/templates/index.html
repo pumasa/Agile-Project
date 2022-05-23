@@ -1,12 +1,80 @@
 {% extends "layout.html" %} {% block title %}Home Page{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="../static/css/index.css"> {% endblock %} {% block content %}
-
+<link rel="stylesheet" href="../static/css/index.css"> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/random_view.js') }}"></script>
+{% endblock %} {% block content %}
 
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
     <h1 class="display-4">Recipe Cards</h1>
     <p id="small-display">{% with messages = get_flashed_messages() %}{% if messages %}{{ messages[0] }}{% endif %} {% endwith %}</p>
     <p id="total-num-recipes"></p>
 </div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Random recipe
+  </button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Still not sure what to make?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+
+                {% if recommendation %}
+                <!-- Random recipe selected -->
+
+                <!-- This is where the random suggestion goes -->
+                <div id="random-card" class="col-sm-12 col-md-12 col-lg-12">
+                    <a href="/recipe/view/{{ recommendation['recipeID'] }}">
+                        <div class="card mb-4 box-shadow">
+
+                            <div class="card-header">
+
+                                <h4 class="my-0 font-weight-normal">{{ recommendation['title']}}</h4>
+                            </div>
+                            <div class="card-body">
+                                <img src="{{url_for('static', filename='images/'+ recommendation['image'])}}" alt="image" width="100" class="img-thumbnail">
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li> # of servings {{recommendation['serving']}} </li>
+
+
+                                </ul>
+                                <span id="number-of-ingredients"> </span>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+
+                {% else %}
+                <!-- Black -->
+                <div class="random-suggestion-container">
+                    <!-- This is where the random suggestion goes -->
+                    <div class="imitation"></div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="new-random-button">Another one!</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 <div class="container">
     <div class="card-deck text-center">
@@ -88,51 +156,7 @@
 
 
 
-    <!-- Section 3 -->
 
-    <div class="random-container">
-        <div class="center-text">
-            <h4>Still not sure what to make?</h4>
-        </div>
-        <div class="center-random-button">
-            <a href="/">
-                <button id="random-button" type="submit" class="btn btn-primary random-button">Click me for a random suggestion!</button></a>
-        </div>
-
-        {% if recommendation %}
-        <!-- Random recipe selected -->
-        <div class="random-suggestion-container">
-            <!-- This is where the random suggestion goes -->
-            <div class="col-sm-6 col-md-3 col-lg-3">
-                <a href="/recipe/view/{{ recommendation['recipeID'] }}">
-                    <div class="card mb-4 box-shadow">
-
-                        <div class="card-header">
-
-                            <h4 class="my-0 font-weight-normal">{{ recommendation['title']}}</h4>
-                        </div>
-                        <div class="card-body">
-                            <img src="{{url_for('static', filename='images/'+ recommendation['image'])}}" alt="image" width="100" class="img-thumbnail">
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li> # of servings {{recommendation['serving']}} </li>
-
-
-                            </ul>
-                            <span id="number-of-ingredients"> </span>
-                        </div>
-
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% else %}
-        <!-- Black -->
-        <div class="random-suggestion-container">
-            <!-- This is where the random suggestion goes -->
-            <div class="imitation"></div>
-        </div>
-        {% endif %}
-    </div>
 
 </div>
 

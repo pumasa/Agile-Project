@@ -15,9 +15,20 @@
                 <input id="title" class="form-control" type="text" placeholder="Title: 'Omlet'" name="title">
                 <input id="author_name" class="form-control" type="text" placeholder="Author: 'Bob'" name="author_name">
                 <input id="serving_amount" class="form-control" type="text" placeholder="Serving: '2'" name="serving_amount">
+                <input id="serving_amount" class="form-control" type="text" placeholder="Description" name="description">
+                <br>
+
 
             </div>
-            <div>
+
+
+            <!-- add image pane
+            <div id="insert-image">
+                <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Add image" />
+            </div> -->
+        </div>
+        <div id="tags">
+            <div class="tags-container">
                 <input type="checkbox" id="vehicle1" name="meat" value="Beef"><label for="vehicle1">Beef</label><br>
                 <input type="checkbox" id="vehicle1" name="meat" value="Chiken"><label for="vehicle1">Chicken</label><br>
                 <input type="checkbox" id="vehicle1" name="meat" value="Fish"><label for="vehicle1">Fish & Seafood</label><br>
@@ -25,18 +36,38 @@
                 <input type="checkbox" id="vehicle1" name="meat" value="Turkey"><label for="vehicle1">Turkey</label><br>
                 <input type="checkbox" id="vehicle1" name="meat" value="Lamb"><label for="vehicle1">Lamb</label><br>
             </div>
-            <!-- add image pane
-            <div id="insert-image">
-                <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Add image" />
-            </div> -->
+            <div class="tags-container">
+                <input type="checkbox" id="vehicle1" name="meat" value="Beef"><label for="vehicle1">Beef</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Chiken"><label for="vehicle1">Chicken</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Fish"><label for="vehicle1">Fish & Seafood</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Pork"><label for="vehicle1">Pork</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Turkey"><label for="vehicle1">Turkey</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Lamb"><label for="vehicle1">Lamb</label><br>
+            </div>
+            <div class="tags-container">
+                <input type="checkbox" id="vehicle1" name="meat" value="Beef"><label for="vehicle1">Beef</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Chiken"><label for="vehicle1">Chicken</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Fish"><label for="vehicle1">Fish & Seafood</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Pork"><label for="vehicle1">Pork</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Turkey"><label for="vehicle1">Turkey</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Lamb"><label for="vehicle1">Lamb</label><br>
+            </div>
+            <div class="tags-container">
+                <input type="checkbox" id="vehicle1" name="meat" value="Beef"><label for="vehicle1">Beef</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Chiken"><label for="vehicle1">Chicken</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Fish"><label for="vehicle1">Fish & Seafood</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Pork"><label for="vehicle1">Pork</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Turkey"><label for="vehicle1">Turkey</label><br>
+                <input type="checkbox" id="vehicle1" name="meat" value="Lamb"><label for="vehicle1">Lamb</label><br>
+            </div>
         </div>
 
         <!-- Ingridients, unit, delete -->
         <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
 
         <div id="insert-ingredient">
-            <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient1">
-            <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit1">
+            <div><input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient1"></div>
+            <div><input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit1"></div>
         </div>
 
 
@@ -49,15 +80,17 @@
         <div class="steps-container">
             <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction"></textarea>
         </div>
-        
-        <div>
+
+        <div id="picture-file">
 
             <dl>
                 <p>
                     <input type="file" name="file" class="form-control" autocomplete="off">
+                    <input id="serving_amount" class="form-control" type="text" placeholder="Or enter image url" name="img">
                 </p>
             </dl>
         </div>
+
         <!-- save,cancle button -->
         <div class="cancle-save-container">
             <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancel</button>

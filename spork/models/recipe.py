@@ -14,6 +14,8 @@ class Recipe:
         self.serving = serving
         self.image = ""
         self.tags = []
+        self.description = ""
+        self.img = ""
     # adds an ingredient and ingredient quantity to the recipe's ingredient list
     # takes ingredient and how many of the ingredient is in the recipe as parameters
 
@@ -31,6 +33,11 @@ class Recipe:
     def update_instructions(self, instruction):
         self.instructions = instruction
 
+    def update_description(self, description):
+        self.description = description
+
+    def update_img(self, img):
+        self.img = img        
 
     def update_title(self, title):
         self.title = title
@@ -154,7 +161,9 @@ class Recipe:
             f"serving": str(self.serving),
             f"ingredients": self.ingredients,
             f"instructions": str(self.instructions),
-            f"image": self.image
+            f"image": self.image,
+            f"img": self.img,
+            f"description": self.description,
         }
 
         return json
