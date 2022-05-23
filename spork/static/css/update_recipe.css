@@ -79,6 +79,7 @@ body {
 
 #insert-ingredient {
     display: flex;
+    flex-wrap: wrap;
 }
 
 #insert-ingredient .form-control {
