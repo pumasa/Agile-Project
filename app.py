@@ -188,6 +188,7 @@ def create():
 
 @app.route('/recipe/view/<int:id>', methods = ['GET'])
 def recipe_view(id):
+    print(current_user.saved_recipes)
     if request.method == 'GET':
         csv_path = return_path("spork/database/recipe.json")
         with open(csv_path, "r") as myfile:
@@ -196,7 +197,10 @@ def recipe_view(id):
             for recipe in data:
                 if id == recipe["recipeID"]:
                     single_recipe.update(recipe)
-        return render_template("/recipe/recipe_view.html", data=single_recipe)
+        if current_user.is_authenticated:
+            return render_template("/recipe/recipe_view.html", data=single_recipe,saved_recipes = current_user.saved_recipes)
+        else:
+            return render_template("/recipe/recipe_view.html", data=single_recipe,saved_recipes = "")
 
 ################################################# Register page #################################################
 
@@ -340,7 +344,36 @@ def recipe_update(id):
         return render_template("/recipe/recipe_update.html", single_recipe = single_recipe, id = id)
     else:
         return "NOT YOUR RECIPE, DON'T CHEAT"
+################################################# Save recipe API #################################################
+@app.route('/save', methods = ['GET'])
+@login_required
+def save_view():
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as myfile:
+        data = json.loads(myfile.read())
+    
+    return_data = []
+    for recipe in data:
+        if recipe["recipeID"] in current_user.saved_recipes:
+            return_data.append(recipe)
+    
+    return render_template("/user/save.html", jsonfile=return_data, email=current_user.email)
 
+@app.route('/save/<int:id>', methods = ['GET'])
+@login_required
+def save(id):
+    current_user.saved_recipes.append(id)
+    current_user.update_user()
+    
+    return redirect(url_for("recipe_view", id = id))
+
+@app.route('/unsave/<int:id>', methods = ['GET'])
+@login_required
+def unsave(id):
+    current_user.saved_recipes.remove(id)
+    current_user.update_user()
+    
+    return redirect(url_for("recipe_view", id = id))
 ################################################# Error pages #################################################
 @app.errorhandler(404)
 def page_not_found(e):
