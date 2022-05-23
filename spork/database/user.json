@@ -10,10 +10,12 @@
   "email": "test@mail.com",
   "password": "sha256$KNr310XZS6GmBDYm$c1c922392c7fbb08f65ab00c5637ca1f8c7157c46f29b44923ddc8e6e265472c",
   "recipes": [
+   1,
    10,
    31,
    31,
-   32
+   32,
+   33
   ]
  }
 ]
