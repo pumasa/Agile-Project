@@ -60,8 +60,11 @@
         <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
         {% for ingr in key['ingredients']%}
         <div id="insert-ingredient">
-            <input id="ingredient" class="form-control" type="text" value="{{ingr}}" name="ingredient1">
-            <input id="unit" class="form-control" type="text" value="{{key['ingredients'][ingr]}}" name="unit1">
+            <div>
+
+                <input id="ingredient" class="form-control" type="text" value="{{ingr}}" name="ingredient1">
+                <input id="unit" class="form-control" type="text" value="{{key['ingredients'][ingr]}}" name="unit1">
+            </div>
         </div>{% endfor %}
 
 
