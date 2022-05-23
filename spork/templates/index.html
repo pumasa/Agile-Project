@@ -1,5 +1,5 @@
 {% extends "layout.html" %} {% block title %}Home Page{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="../static/css/index.css"> 
+<link rel="stylesheet" href="../static/css/index.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/random_view.js') }}"></script>
@@ -84,56 +84,52 @@
         {% for content in jsonfile %} {% if search %} {% for x in search %} {% if x == content['recipeID']%}
 
 
-        <div class="col-sm-6 col-md-3 col-lg-3">
-            <a href="/recipe/view/{{content['recipeID']}}">
-                <div class="card mb-4 box-shadow">
+        <div class="col-md-4 moreBox" style="display: none;">
+            <div class="card mb-4 shadow-sm">
+                {%if content['img'] == ''%}
+                <img src=" {{url_for( 'static', filename='images/' + content[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
+                <img src="{{content[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
+                <div class="card-body ">
+                    <h4 class="my-0 font-weight-normal ">{{ content['title']}}</h4>
+                    <p class="card-text ">{{ content['description']}}</p>
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <div class="btn-group ">
+                            <a href="/recipe/view/{{content[ 'recipeID']}} "><button type="button " class="btn btn-sm btn-outline-secondary ">View</button></a>
 
-                    <div class="card-header">
 
-                        <h4 class="my-0 font-weight-normal">{{ content['title'][0:10]}}</h4>
+                            <button type="button " class="btn btn-sm btn-outline-secondary ">Rate</button>
+                        </div>
+                        <small class="text-muted ">Serves: {{content['serving']}}</small>
                     </div>
-                    <div class="card-body">
-                        {%if content['img'] == ''%}
-                        <img src="{{url_for('static', filename='images/'+ content['image'])}}" alt="image" width="100" class="img-thumbnail"> {%else%}
-                        <img src="{{content['img']}}" alt="image" width="100" class="img-thumbnail"> {% endif%}
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li> # of servings {{content['serving']}} </li>
-
-
-                        </ul>
-                        <span id="number-of-ingredients"> </span>
-                    </div>
-
                 </div>
-            </a>
+            </div>
         </div>
 
         {% endif %}{% endfor %} {% else %}
 
         <!-- Default index content -->
-        <div class="col-sm-6 col-md-3 col-lg-3 moreBox" style="display: none;">
-            <a href="/recipe/view/{{content['recipeID']}}">
-                <div class="card mb-4 box-shadow">
+        <div class="col-md-4 moreBox" style="display: none;">
+            <div class="card mb-4 shadow-sm">
+                {%if content['img'] == ''%}
+                <img src=" {{url_for( 'static', filename='images/' + content[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
+                <img src="{{content[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
+                <div class="card-body ">
+                    <h4 class="my-0 font-weight-normal ">{{ content['title']}}</h4>
+                    <p class="card-text ">{{ content['description']}}</p>
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <div class="btn-group ">
+                            <a href="/recipe/view/{{content[ 'recipeID']}} "><button type="button " class="btn btn-sm btn-outline-secondary ">View</button></a>
 
-                    <div class="card-header">
 
-                        <h4 class="my-0 font-weight-normal">{{ content['title'][0:10]}}</h4>
+                            <button type="button " class="btn btn-sm btn-outline-secondary ">Rate</button>
+                        </div>
+                        <small class="text-muted ">Serves: {{content['serving']}}</small>
                     </div>
-                    <div class="card-body">
-                        {%if content['img'] == ''%}
-                        <img src="{{url_for('static', filename='images/'+ content['image'])}}" alt="image" width="100" class="img-thumbnail"> {%else%}
-                        <img src="{{content['img']}}" alt="image" width="100" class="img-thumbnail"> {% endif%}
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li> # of servings {{content['serving']}} </li>
-
-
-                        </ul>
-                        <span id="number-of-ingredients"> </span>
-                    </div>
-
                 </div>
-            </a>
-        </div>{% endif %}{% endfor %}
+            </div>
+        </div>
+
+        {% endif %}{% endfor %}
 
 
 
