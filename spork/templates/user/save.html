@@ -1,11 +1,11 @@
-{% extends "layout.html" %} {% block title %}Profile{% endblock %} {% block head %} {{ super() }}
+{% extends "layout.html" %} {% block title %}Saved Recipe{% endblock %} {% block head %} {{ super() }}
 <link rel="stylesheet" href="../static/css/register-login.css"> {% endblock %} {% block content %}
 
 </div>
 
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
     <h1 class="display-4">Recipe Cards</h1>
-    <p id="small-display">Hello {{email}}! </p>
+    <p id="small-display">Hello {{email}}! These are your Saved Recipes</p>
     <p id="total-num-recipes"></p>
 </div>
 
@@ -54,7 +54,7 @@
 
     //get the number of recipe boxes and replace the p id="total-num-recipes" inner text with this value
     let cardBodyDivs = document.getElementsByClassName('card-body')
-    document.getElementById('total-num-recipes').textContent = "You have created " + cardBodyDivs.length + " recipes so far"
+    document.getElementById('total-num-recipes').textContent = "You have saved " + cardBodyDivs.length + " recipes so far"
 
     //4 get all li tag and lowercase text inside
     let LITags = document.querySelectorAll('li')

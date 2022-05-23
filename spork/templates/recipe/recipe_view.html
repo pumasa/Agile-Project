@@ -1,11 +1,27 @@
 {% extends "layout.html" %} {% block title %}View Recipe{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="{{url_for('static', filename='css/recipe_view.css')}}"> {% endblock %} {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/recipe_view.css')}}"> 
+{% endblock %} {% block content %}
 
 
 </div>
 
 <!-- This div is centered | All the contents of the form are here-->
 <div class="container" id="create_body">
+    {% if data['recipeID'] not in saved_recipes %}
+    <div id="save-recipe">
+        <a href="/save/{{data['recipeID']}} ">
+
+            <button id="save-recipe-btn"type="button" class="btn btn-primary">Save This Recipe</button>
+        </a>
+    </div>
+    {% else %}
+    <div id="saved-recipe">
+        <a href="/unsave/{{data['recipeID']}} ">
+
+            <button id="saved-recipe-btn"type="button" class="btn btn-secondary">Saved</button>
+        </a>
+    </div>
+    {% endif %}
     <!-- Title, Author, serving, add image -->
     <div class="basic-info-image">
         <div>
