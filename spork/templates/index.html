@@ -156,51 +156,7 @@
 
 
 
-    <!-- Section 3 -->
 
-    <div class="random-container">
-        <div class="center-text">
-            <h4>Still not sure what to make?</h4>
-        </div>
-        <div class="center-random-button">
-            <a href="/">
-                <button id="random-button" type="submit" class="btn btn-primary random-button">Click me for a random suggestion!</button></a>
-        </div>
-
-        {% if recommendation %}
-        <!-- Random recipe selected -->
-        <div class="random-suggestion-container">
-            <!-- This is where the random suggestion goes -->
-            <div class="col-sm-6 col-md-3 col-lg-3">
-                <a href="/recipe/view/{{ recommendation['recipeID'] }}">
-                    <div class="card mb-4 box-shadow">
-
-                        <div class="card-header">
-
-                            <h4 class="my-0 font-weight-normal">{{ recommendation['title']}}</h4>
-                        </div>
-                        <div class="card-body">
-                            <img src="{{url_for('static', filename='images/'+ recommendation['image'])}}" alt="image" width="100" class="img-thumbnail">
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li> # of servings {{recommendation['serving']}} </li>
-
-
-                            </ul>
-                            <span id="number-of-ingredients"> </span>
-                        </div>
-
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% else %}
-        <!-- Black -->
-        <div class="random-suggestion-container">
-            <!-- This is where the random suggestion goes -->
-            <div class="imitation"></div>
-        </div>
-        {% endif %}
-    </div>
 
 </div>
 

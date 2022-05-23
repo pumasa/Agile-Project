@@ -124,7 +124,10 @@ def random_view():
     for recipe in data:
         pool.append(recipe)
     recommendation = random.choice(pool)
-    return jsonify(recipe=recommendation,image_link=url_for('static', filename=f'images/{recommendation["image"]}'))
+    if recommendation['img'] == "":
+        return jsonify(recipe=recommendation,image_link=url_for('static', filename=f'images/{recommendation["image"]}'))
+    else:
+        return jsonify(recipe=recommendation,image_link=recommendation['img'])
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
 @login_required
