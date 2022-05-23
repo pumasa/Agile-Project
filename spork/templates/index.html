@@ -34,28 +34,31 @@
 
                 {% if recommendation %}
                 <!-- Random recipe selected -->
+                <div id="random-card">
+                    <!-- This is where the random suggestion goes -->
+                    <a href="/recipe/view/{{recommendation[ 'recipeID']}} ">
+                        <div class="col-md-10" style="margin-left: auto;margin-right: auto;">
+                            {%if recommendation['img'] == ''%}
 
-                <!-- This is where the random suggestion goes -->
-                <div id="random-card" class="col-md-10" style="margin-left: auto;margin-right: auto;">
-                    {%if recommendation['img'] == ''%}
-                    <img src=" {{url_for( 'static', filename='images/' + recommendation[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
-                    <img src="{{recommendation[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
-
-
-                    <div class="card-body ">
-                        <h4 class="my-0 font-weight-normal ">{{ recommendation['title']}}</h4>
-                        <p class="card-text ">{{ recommendation['description']}}</p>
-                        <div class="d-flex justify-content-between align-items-center ">
-                            <div class="btn-group ">
-                                <a href="/recipe/view/{{recommendation[ 'recipeID']}} "><button type="button " class="btn btn-sm btn-outline-secondary ">View</button></a>
+                            <img src=" {{url_for( 'static', filename='images/' + recommendation[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
+                            <img src="{{recommendation[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
 
 
-                                <button type="button " class="btn btn-sm btn-outline-secondary ">Rate</button>
+                            <div class="card-body ">
+                                <h4 class="my-0 font-weight-normal ">{{ recommendation['title']}}</h4>
+                                <p class="card-text ">{{ recommendation['description']}}</p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <div class="btn-group ">
+                                        <small class="text-muted ">By: {{recommendation['author']}}</small>
+                                    </div>
+                                    <small class="text-muted ">Serves: {{recommendation['serving']}}</small>
+                                </div>
                             </div>
-                            <small class="text-muted ">Serves: {{recommendation['serving']}}</small>
+
                         </div>
-                    </div>
+                    </a>
                 </div>
+
 
                 {% else %}
                 <!-- Black -->
@@ -84,48 +87,54 @@
 
 
         <div class="col-md-4 moreBox" style="display: none;">
-            <div class="card mb-4 shadow-sm">
-                {%if content['img'] == ''%}
-                <img src=" {{url_for( 'static', filename='images/' + content[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
-                <img src="{{content[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
-                <div class="card-body ">
-                    <h4 class="my-0 font-weight-normal ">{{ content['title']}}</h4>
-                    <p class="card-text ">{{ content['description']}}</p>
-                    <div class="d-flex justify-content-between align-items-center ">
-                        <div class="btn-group ">
-                            <a href="/recipe/view/{{content[ 'recipeID']}} "><button type="button " class="btn btn-sm btn-outline-secondary ">View</button></a>
+            <a href="/recipe/view/{{content[ 'recipeID']}} ">
+                <div class="card mb-4 shadow-sm">
+                    {%if content['img'] == ''%}
+                    <img src=" {{url_for( 'static', filename='images/' + content[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
+                    <img src="{{content[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
+                    <div class="card-body ">
+                        <h4 class="my-0 font-weight-normal ">{{ content['title']}}</h4>
+                        <p class="card-text ">{{ content['description']}}</p>
+                        <div class="d-flex justify-content-between align-items-center ">
+                            <div class="btn-group ">
+                                <small class="text-muted ">By: {{content['author']}}</small>
 
 
-                            <button type="button " class="btn btn-sm btn-outline-secondary ">Rate</button>
+
+                            </div>
+                            <small class="text-muted ">Serves: {{content['serving']}}</small>
                         </div>
-                        <small class="text-muted ">Serves: {{content['serving']}}</small>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
 
         {% endif %}{% endfor %} {% else %}
 
         <!-- Default index content -->
         <div class="col-md-4 moreBox" style="display: none;">
-            <div class="card mb-4 shadow-sm">
-                {%if content['img'] == ''%}
-                <img src=" {{url_for( 'static', filename='images/' + content[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
-                <img src="{{content[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
-                <div class="card-body ">
-                    <h4 class="my-0 font-weight-normal ">{{ content['title']}}</h4>
-                    <p class="card-text ">{{ content['description']}}</p>
-                    <div class="d-flex justify-content-between align-items-center ">
-                        <div class="btn-group ">
-                            <a href="/recipe/view/{{content[ 'recipeID']}} "><button type="button " class="btn btn-sm btn-outline-secondary ">View</button></a>
+            <a href="/recipe/view/{{content[ 'recipeID']}} ">
+                <div class="card mb-4 shadow-sm">
+                    {%if content['img'] == ''%}
+
+                    <img src=" {{url_for( 'static', filename='images/' + content[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
+                    <img src="{{content[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{% endif%}
+                    <div class="card-body ">
+                        <h4 class="my-0 font-weight-normal ">{{ content['title']}}</h4>
+                        <p class="card-text ">{{ content['description']}}</p>
+                        <div class="d-flex justify-content-between align-items-center ">
+                            <div class="btn-group ">
+                                <small class="text-muted ">By: {{content['author']}}</small>
 
 
-                            <button type="button " class="btn btn-sm btn-outline-secondary ">Rate</button>
+
+
+                            </div>
+                            <small class="text-muted ">Serves: {{content['serving']}}</small>
                         </div>
-                        <small class="text-muted ">Serves: {{content['serving']}}</small>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
 
         {% endif %}{% endfor %}
