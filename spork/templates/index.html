@@ -9,14 +9,16 @@
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
     <h1 class="display-4">Recipe Cards</h1>
     <p id="small-display">{% with messages = get_flashed_messages() %}{% if messages %}{{ messages[0] }}{% endif %} {% endwith %}</p>
-    <p id="total-num-recipes"></p>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style="height:50px;border: 3px solid black;">
+        Generate Random Recipe
+      </button>
+
 </div>
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Random recipe
-  </button>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -34,28 +36,25 @@
                 <!-- Random recipe selected -->
 
                 <!-- This is where the random suggestion goes -->
-                <div id="random-card" class="col-sm-12 col-md-12 col-lg-12">
-                    <a href="/recipe/view/{{ recommendation['recipeID'] }}">
-                        <div class="card mb-4 box-shadow">
+                <div id="random-card" class="col-md-10" style="margin-left: auto;margin-right: auto;">
+                    {%if recommendation['img'] == ''%}
+                    <img src=" {{url_for( 'static', filename='images/' + recommendation[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
+                    <img src="{{recommendation[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
 
-                            <div class="card-header">
 
-                                <h4 class="my-0 font-weight-normal">{{ recommendation['title']}}</h4>
+                    <div class="card-body ">
+                        <h4 class="my-0 font-weight-normal ">{{ recommendation['title']}}</h4>
+                        <p class="card-text ">{{ recommendation['description']}}</p>
+                        <div class="d-flex justify-content-between align-items-center ">
+                            <div class="btn-group ">
+                                <a href="/recipe/view/{{recommendation[ 'recipeID']}} "><button type="button " class="btn btn-sm btn-outline-secondary ">View</button></a>
+
+
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">Rate</button>
                             </div>
-                            <div class="card-body">
-                                {%if recommendation['img'] == ''%}
-                                <img src="{{url_for('static', filename='images/'+ recommendation['image'])}}" alt="image" width="100" class="img-thumbnail"> {%else%}
-                                <img src="{{recommendation['img']}}" alt="image" width="100" class="img-thumbnail"> {% endif%}
-                                <ul class="list-unstyled mt-3 mb-4">
-                                    <li> # of servings {{recommendation['serving']}} </li>
-
-
-                                </ul>
-                                <span id="number-of-ingredients"> </span>
-                            </div>
-
+                            <small class="text-muted ">Serves: {{recommendation['serving']}}</small>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
                 {% else %}

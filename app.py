@@ -262,7 +262,7 @@ def profile():
             for recipe in data:
                 if recipe['recipeID'] in current_user.recipes:
                     return_data.append(recipe)
-    return render_template("/user/profile.html", jsonfile=return_data)
+    return render_template("/user/profile.html", jsonfile=return_data, email=current_user.email)
 
 ################################################# Logout #################################################
 
