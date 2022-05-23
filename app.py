@@ -297,8 +297,13 @@ def recipe_update(id):
     if id in current_user.recipes:
         csv_path = return_path("spork/database/recipe.json")
         with open(csv_path, "r") as f:
-                recipes = json.loads(f.read())
-
+            recipes = json.loads(f.read())
+        
+        for i in recipes:
+            if i["recipeID"] == id:
+                single_recipe = i
+                
+        
         if request.method == "POST":
 
             recipe_data = request.form
@@ -315,7 +320,9 @@ def recipe_update(id):
             # File upload here
             file = request.files['file']
             if file.filename == "":
-                filename="default-recipe.jpg"
+                filename= single_recipe["img"]
+                if filename == "":
+                    filename = "default-recipe.jpg"
                 recipe.image = filename
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
@@ -325,7 +332,7 @@ def recipe_update(id):
 
             return redirect(url_for("profile"))
 
-        return render_template("/recipe/recipe_update.html", z = recipes, id = id)
+        return render_template("/recipe/recipe_update.html", single_recipe = single_recipe, id = id)
     else:
         return "NOT YOUR RECIPE, DON'T CHEAT"
 
