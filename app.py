@@ -208,14 +208,14 @@ def register():
         register_form = RegisterForm(email,password,confirm_password)
         error_dict = register_form.check_error()
         
-        if error_dict["confirm_password_error"] == True:
-            flash("Confirm Password doesn not match")
-            return redirect(url_for("register"))
         if error_dict["email_error"] == True:
             flash("Not an Email!! Hint: You email username before @ must use letters, numbers and periods only")
             return redirect(url_for("register"))
         if error_dict["password_strength_error"] == True:
             flash("Password not strong enough!! Hint: Your password must have at least 8 character, at least 1 upper case, lower case, numeric, and special character ")
+            return redirect(url_for("register"))
+        if error_dict["confirm_password_error"] == True:
+            flash("Password do not match")
             return redirect(url_for("register"))
         
         usr = User(email, password=generate_password_hash(password, method="sha256"))
