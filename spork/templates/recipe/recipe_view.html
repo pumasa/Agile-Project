@@ -10,12 +10,24 @@
     <div class="basic-info-image">
         <div>
             <h1 class="black-text text-left ricipe-title">{{data['title']}}</h1>
-
+            <h8 class="black-text text-left">Description: {{data['description']}}</h8>
+            <br/>
             <div class="basic-info">
-                <h5 class="black-text text-left">Author: {{data['author']}} &nbsp; &nbsp; &nbsp;</h5>
-                <h5 class="black-text text-left">Servings: {{data['serving']}}</h5>
+                <h5 class="black-text text-left"><br/>Author: {{data['author']}} &nbsp; &nbsp; &nbsp;</h5>
+                <h5 class="black-text text-left"><br/>Servings: {{data['serving']}}</h5>
             </div>
+            <h5 class="black-text text-left"><br/>Tags:</h5>
+            {% for x in data['tags']%}
+            <h8 class="black-text text-left">{{x}}</h8>
+            {%endfor%}
         </div>
+
+
+
+
+
+
+
 
         <!-- image -->{%if data['img'] == ''%}
         <div id="image">
