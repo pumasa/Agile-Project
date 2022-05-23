@@ -1,5 +1,7 @@
 {% extends "layout.html" %} {% block title %}Filter View{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="../static/css/index.css"> {% endblock %} {% block content %}
+<link rel="stylesheet" href="../static/css/index.css"> 
+<script src="{{ url_for('static', filename='js/load_more.js') }}"></script>
+{% endblock %} {% block content %}
 
 
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
@@ -13,7 +15,7 @@
         {% for content in data %} {% for y in content['tags'] %} {% for z in tags %} {% if z in y%}
 
 
-        <div class="col-md-4 moreBox">
+        <div class="col-md-4 moreBox" style="display: none;">
             <a href="/recipe/view/{{content[ 'recipeID']}} ">
                 <div class="card mb-4 shadow-sm">
                     {%if content['img'] == ''%}
