@@ -21,7 +21,9 @@
                         <h4 class="my-0 font-weight-normal">{{ content['title']}}</h4>
                     </div>
                     <div class="card-body">
-                        <img src="{{url_for('static', filename='images/'+ content['image'])}}" alt="image" width="100" class="img-thumbnail">
+                        {%if content['img'] == ''%}
+                        <img src="{{url_for('static', filename='images/'+ content['image'])}}" alt="image" width="100" class="img-thumbnail">{%else%}
+                        <img src="{{content['img']}}" alt="image" width="100" class="img-thumbnail"> {% endif%}
                         <ul class="list-unstyled mt-3 mb-4">
                             <li> # of servings {{content['serving']}} </li>
 
