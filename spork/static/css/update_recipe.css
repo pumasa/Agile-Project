@@ -77,12 +77,11 @@ body {
 
 /* spaces on right and left and right */
 
-#insert-ingredient {
+.insert-ingredient {
     display: flex;
-    flex-wrap: wrap;
 }
 
-#insert-ingredient .form-control {
+.insert-ingredient .form-control {
     margin-right: 1.5pc;
     margin-top: 1.5pc;
     width: 20pc;
