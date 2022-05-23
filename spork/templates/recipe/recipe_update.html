@@ -1,6 +1,6 @@
  {% extends "layout.html" %} {% block title %}Update Recipe{% endblock %} {% block head %} {{ super() }}
 
-<link rel="stylesheet" href="../../../static/css/create.css"> {% endblock %} {% block content %}
+<link rel="stylesheet" href="../../../static/css/update_recipe.css"> {% endblock %} {% block content %}
 
 
 
@@ -15,6 +15,7 @@
         <div class="basic-info-image">
             <div class="basic-info">
                 <input id="title" class="form-control" type="text" value="{{key['title']}}" name="title">
+                <input id="serving_amount" class="form-control" type="text" value="{{key['description']}}" name="description">
                 <input id="author_name" class="form-control" type="text" value="{{key['author']}}" name="author_name">
                 <input id="serving_amount" class="form-control" type="text" value="{{key['serving']}}" name="serving_amount">
             </div>
@@ -24,7 +25,37 @@
                 <img src="{{url_for('static', filename='images/'+ key['image'])}}" alt="recipe image">
             </div>
         </div>
-
+        <div id="tags">
+            <div class="tags-container">
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Beef"><label class="form-check-label" for="(ingredient)">Beef</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Chiken"><label class="form-check-label" for="(ingredient)">Chicken</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Fish"><label class="form-check-label" for="(ingredient)">Fish & Seafood</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Pork"><label class="form-check-label" for="(ingredient)">Pork</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Turkey"><label class="form-check-label" for="(ingredient)">Turkey</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Lamb"><label class="form-check-label" for="(ingredient)">Lamb</label><br>
+            </div>
+            <div class="tags-container">
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Breakfast"><label class="form-check-label" for="(ingredient)">Breakfast</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Desert"><label class="form-check-label" for="(ingredient)">Desert</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Dinner"><label class="form-check-label" for="(ingredient)">Dinner</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Holiday"><label class="form-check-label" for="(ingredient)">Holiday</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Snacks"><label class="form-check-label" for="(ingredient)">Snacks and Appetizers</label><br>
+            </div>
+            <div class="tags-container">
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Egg"><label class="form-check-label" for="(ingredient)">Egg Free</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Gluten"><label class="form-check-label" for="(ingredient)">Gluten Free</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="HEalthy"><label class="form-check-label" for="(ingredient)">Healthy</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Quick"><label class="form-check-label" for="(ingredient)">Quick and Easy</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Vegeterian"><label class="form-check-label" for="(ingredient)">Vegeterian</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Grain"><label class="form-check-label" for="(ingredient)">Whole Grain</label><br>
+            </div>
+            <div class="tags-container">
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Winter"><label class="form-check-label" for="(ingredient)">Winter</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Spring"><label class="form-check-label" for="(ingredient)">Spring</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Summer"><label class="form-check-label" for="(ingredient)">Summer</label><br>
+                <input type="checkbox" class="form-check-input" id="(ingredient)" name="meat" value="Autumn"><label class="form-check-label" for="(ingredient)">Autumn</label><br>
+            </div>
+        </div>
         <!-- Ingridients, unit, delete -->
         <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
         {% for ingr in key['ingredients']%}
@@ -43,11 +74,12 @@
         <div class="steps-container">
             <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction">{{key['instructions']}}</textarea>
         </div>
-        <div>
+        <div id="picture-file">
 
             <dl>
                 <p>
                     <input type="file" name="file" class="form-control" autocomplete="off">
+                    <input id="serving_amount" class="form-control" type="text" value="{{key['img']}}" name="img">
                 </p>
             </dl>
         </div>

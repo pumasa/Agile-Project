@@ -294,6 +294,10 @@ def recipe_update(id):
                 if key[:10] == "ingredient":
                     recipe.add_ingredient(recipe_data[key],recipe_data[f'unit{key[10:]}'])
             recipe.instructions = recipe_data['instruction']
+            recipe.tags += request.form.getlist('meat')
+            recipe.img = recipe_data["img"]
+            recipe.description = recipe_data["description"]
+            
             # File upload here
             file = request.files['file']
             if file and allowed_file(file.filename):
