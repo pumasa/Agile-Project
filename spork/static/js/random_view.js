@@ -17,6 +17,3 @@ $(document).ready(function() {
 
     })
 })
-
-// "<a href=\"/recipe/view/"+data['recipeID']+ "><div class=\"card mb-4 box-shadow\"><div class=\"card-header\"><h4 class=\"my-0 font-weight-normal\">" + data['title'] + "</h4></div><div class=\"card-body\"><img src=\"{{url_for('static', filename='images/'+ " + data['image'] +
-//  ")}}\" alt=\"image\" width=\"100\" class=\"img-thumbnail\"><ul class=\"list-unstyled mt-3 mb-4\"><li> # of servings " + data['serving'] + " </li></ul><span id=\"number-of-ingredients\"> </span></div></div></a>"
