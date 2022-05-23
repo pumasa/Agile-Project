@@ -1,7 +1,7 @@
 # Ask Mike Picus if something is not clear in this file
 
 import random
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 import json
 import os
 from flask_login import (
@@ -114,6 +114,17 @@ def index():
         
     return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation) 
 
+################################################# Random API #################################################
+@app.route('/random', methods = ['GET'])
+def random_view():
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as myfile:
+        data = json.loads(myfile.read())
+    pool = []
+    for recipe in data:
+        pool.append(recipe)
+    recommendation = random.choice(pool)
+    return jsonify(recipe=recommendation,image_link=url_for('static', filename=f'images/{recommendation["image"]}'))
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
 @login_required
