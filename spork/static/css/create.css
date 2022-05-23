@@ -112,6 +112,8 @@ body {
 
 #tags {
     display: flex;
+    position: relative;
+    left: 10px;
 }
 
 .tags-container {

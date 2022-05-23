@@ -59,14 +59,23 @@
         <!-- Ingridients, unit, delete -->
         <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
         {% for ingr in key['ingredients']%}
-        <div id="insert-ingredient">
-            <input id="ingredient" class="form-control" type="text" value="{{ingr}}" name="ingredient1">
-            <input id="unit" class="form-control" type="text" value="{{key['ingredients'][ingr]}}" name="unit1">
-        </div>{% endfor %}
+            {% if loop.index == 1 %}
+            <div class="insert-ingredient">
+                <div><input id="ingredient{{loop.index}}" class="form-control count-js" type="text" value="{{ingr}}" name="ingredient{{loop.index}}"></div>
+                <div><input id="unit{{loop.index}}" class="form-control count-js" type="text" value="{{key['ingredients'][ingr]}}" name="unit{{loop.index}}"></div>
+            </div>
+            {% else %}
+            <div id='delete{{loop.index}}'  class="insert-ingredient">
+                <div><input id="ingredient{{loop.index}}" class="form-control count-js" type="text" value="{{ingr}}" name="ingredient{{loop.index}}"></div>
+                <div><input id="unit{{loop.index}}" class="form-control count-js" type="text" value="{{key['ingredients'][ingr]}}" name="unit{{loop.index}}"></div>
+                <button type='button' id='delete{{loop.index}}' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button>
+            </div>
+            {% endif %}
+        {% endfor %}
 
 
         <!-- add button -->
-        <div class="add-button-container">
+        <div id="add-button-container">
             <button id="add-button" type="button" class="btn btn-primary" onclick="addCode()">Add +</button>
         </div>
 
@@ -104,21 +113,26 @@
     <!-- https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Fusers%2Fsimple-user-icon&psig=AOvVaw2JK2IUr8if_R16GQRBkWqr&ust=1651196331872000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIiNiunPtfcCFQAAAAAdAAAAABAD -->
 </div>
 <script>
-    var count = 2
+        var x = $(".count-js").last().attr("id").slice(-1)
+        console.log(x)
+        var count = parseInt(x) +1
 
-    function addCode() {
-        var ingredientAddHTML = ("<div id ='delete" + count + "'>") + "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
-        ingredientAddHTML += " name=\"ingredient" + count + "\""
-        ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
-        ingredientAddHTML += " name=\"unit" + count + "\""
-        ingredientAddHTML += "><button type='button' id='delete" + count + "' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>"
-        document.getElementById("insert-ingredient").innerHTML += ingredientAddHTML
-        count += 1
-    }
+        function addCode() {
+            var ingredientAddHTML = ("<div id ='delete" + count + "' class='dynamic_div'>") + "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
+            ingredientAddHTML += " name=\"ingredient" + count + "\""
+            ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
+            ingredientAddHTML += " name=\"unit" + count + "\""
 
-    function reply_click(clicked_id) {
-        const element = document.getElementById(clicked_id);
-        element.remove();
-    }
+            ingredientAddHTML += "><button type='button' id='delete" + count + "' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>"
+            document.getElementById("add-button-container").insertAdjacentHTML("beforebegin", ingredientAddHTML)
+
+            count += 1
+        }
+
+        function reply_click(clicked_id) {
+            const element = document.getElementById(clicked_id);
+            element.remove();
+        }
 </script>
 {% endblock %}
+

@@ -1,7 +1,7 @@
 # Ask Mike Picus if something is not clear in this file
 
 import random
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 import json
 import os
 from flask_login import (
@@ -114,6 +114,20 @@ def index():
         
     return render_template('index.html', jsonfile = data, search=results, recommendation = recommendation) 
 
+################################################# Random API #################################################
+@app.route('/random', methods = ['GET'])
+def random_view():
+    csv_path = return_path("spork/database/recipe.json")
+    with open(csv_path, "r") as myfile:
+        data = json.loads(myfile.read())
+    pool = []
+    for recipe in data:
+        pool.append(recipe)
+    recommendation = random.choice(pool)
+    if recommendation['img'] == "":
+        return jsonify(recipe=recommendation,image_link=url_for('static', filename=f'images/{recommendation["image"]}'))
+    else:
+        return jsonify(recipe=recommendation,image_link=recommendation['img'])
 ################################################# Recipe create page #################################################
 @app.route('/recipe/create',methods = ['GET','POST'])
 @login_required
@@ -194,14 +208,14 @@ def register():
         register_form = RegisterForm(email,password,confirm_password)
         error_dict = register_form.check_error()
         
-        if error_dict["confirm_password_error"] == True:
-            flash("Confirm Password doesn not match")
-            return redirect(url_for("register"))
         if error_dict["email_error"] == True:
             flash("Not an Email!! Hint: You email username before @ must use letters, numbers and periods only")
             return redirect(url_for("register"))
         if error_dict["password_strength_error"] == True:
             flash("Password not strong enough!! Hint: Your password must have at least 8 character, at least 1 upper case, lower case, numeric, and special character ")
+            return redirect(url_for("register"))
+        if error_dict["confirm_password_error"] == True:
+            flash("Password do not match")
             return redirect(url_for("register"))
         
         usr = User(email, password=generate_password_hash(password, method="sha256"))
@@ -300,6 +314,9 @@ def recipe_update(id):
             
             # File upload here
             file = request.files['file']
+            if file.filename == "":
+                filename="default-recipe.jpg"
+                recipe.image = filename
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
