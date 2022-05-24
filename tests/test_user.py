@@ -11,7 +11,7 @@ JSON_FILE = """ [{
   "password": "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e",
   "recipes": [2],
   "saved_recipes": [1],
-  "is_admin": False
+  "is_admin": false
  }]"""
 
 # ------- recipe object -------

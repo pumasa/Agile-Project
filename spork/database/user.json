@@ -7,7 +7,8 @@
   "saved_recipes": [
    1,
    2
-  ]
+  ],
+  "is_admin": false
  },
  {
   "id": "2",
@@ -22,7 +23,8 @@
    33,
    31
   ],
-  "saved_recipes": []
+  "saved_recipes": [],
+  "is_admin": false
  },
  {
   "id": "3",
