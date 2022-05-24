@@ -105,20 +105,6 @@ class Recipe:
         
         return results
 
-    #function takes a list of recipes and returns a specified number of recommendations at random
-    def recommendation(self, recipes, recommendations_num):
-        results = []
-        #iterates until the specified number of recommmendations has been collected
-        while recommendations_num > 0:
-            #takes random recipe
-            recommendation = random.choice(recipes)
-            #adds recipe to results
-            results.append(recommendation['recipeID'])
-            #removes recipe from list so that it can't be selected again by random.choice
-            recipes.remove(recommendation)
-            recommendations_num -= 1
-            
-        return results
 
 
     # writes the recipe into the json file
