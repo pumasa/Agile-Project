@@ -57,13 +57,12 @@ def load_user(id):
 ################################################# filter #################################################
 @app.route("/filter", methods=["GET", "POST"])
 def filter():
-    csv_path = return_path("spork/database/recipe.json")
-    with open(csv_path, "r") as myfile:
-        data = json.loads(myfile.read())
-
-    tags = request.form.getlist("meat")
-
     if request.method == "POST":
+        csv_path = return_path("spork/database/recipe.json")
+        with open(csv_path, "r") as myfile:
+            data = json.loads(myfile.read())
+
+        tags = request.form.getlist("meat")
         return_data = []
         for recipe in data:
             for tag in tags:
@@ -72,7 +71,7 @@ def filter():
                         return_data.append(recipe)
 
         return render_template("filter_view.html", data=return_data)
-    return render_template("filter_options.html", data=data, tags=tags)
+    return render_template("filter_options.html")
 
 
 ################################################# index/home page - renders info from recipe.json #################################################

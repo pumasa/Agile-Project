@@ -426,3 +426,74 @@ def test_register_user(client):
         assert database[-1]['email'] == "johnny@bcit.ca"
     
         tear_down(current_recipe_file_data,current_user_file_data)
+
+def test_save_view(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        
+        
+        data = client.get("/recipe/view/1").data.decode("utf-8")  
+        assert "View Recipe" in data
+        assert "Save This Recipe" in data
+        
+        data = client.get("/save").data.decode("utf-8") 
+        assert "Grilled Flank Steak" not in data
+        
+        client.get("/save/1")
+        data = client.get("/recipe/view/1").data.decode("utf-8")  
+        assert "View Recipe" in data
+        assert "Saved" in data
+        
+        data = client.get("/save").data.decode("utf-8") 
+        assert "Grilled Flank Steak" in data
+        
+        
+        client.get("/unsave/1")
+        data = client.get("/recipe/view/1").data.decode("utf-8")  
+        assert "View Recipe" in data
+        assert "Save This Recipe" in data
+        
+        data = client.get("/save").data.decode("utf-8") 
+        assert "Grilled Flank Steak" not in data
+        
+        tear_down(current_recipe_file_data,current_user_file_data)
+        
+def test_random_view(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+        data = client.get("/").data.decode("utf-8")
+        assert "<div class=\"modal-body\">" in data
+        
+        data = client.get("/random").data.decode("utf-8") 
+        assert "recipe" in json.loads(data)
+        assert "image_link" in json.loads(data)
+        
+        tear_down(current_recipe_file_data,current_user_file_data)
+        
+def test_filter(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+
+        data = client.get("/filter").data.decode("utf-8")
+        assert "Filter Options" in data
+        
+        data = client.post('/filter', data={"meat":"Beef"}, follow_redirects=True).data.decode("utf-8")
+        assert "Filter View" in data
+        
+        tear_down(current_recipe_file_data,current_user_file_data)
+    
+def test_search(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+
+        
+        data = client.get('/', data={"search":"Grilled"}, follow_redirects=True).data.decode("utf-8")
+        assert "Grilled Flank Steak" in data
+        assert "Here are some recipes for you!" in data
+        
+        data = client.post('/', data={"search":"Johnny"}, follow_redirects=True).data.decode("utf-8")
+        assert "Grilled Flank Steak" in data
+        assert "This recipe does not exist! Please try a different one!" in data
+        
+        tear_down(current_recipe_file_data,current_user_file_data)
