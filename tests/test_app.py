@@ -242,150 +242,187 @@ def test_recipe_view(client):
         assert ">Edit</button>"  in data
         
         tear_down(current_recipe_file_data,current_user_file_data)
+        
+def test_recipe_delete_get(client):
+    NEW_RECIPE = {
+        "title": "Tiramisuaa",
+        "description": "Verygood",
+        "author_name": "Tony",
+        "serving_amount": 3,
+        "meat": "Beef",
+        "meat": "Chiken",
+        "ingredient1": "Sugar",
+        "unit1": "1 tsp",
+        "ingredient2": "Salt",
+        "unit2": "1 kg",
+        "instruction": "A mil12312lion years ago Mike decided to cook a salty omlet",
+        'img': ''
+    }
 
-# def test_recipe_delete_get(client):
-#     with client:
-#         current_recipe_file_data, current_user_file_data = set_up()
-#         #login
-#         client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
-#         #create recipe
-#         client.post("/recipe/create", data=NEW_RECIPE, follow_redirects=True)
-#         data_recipe = load_recipe_database()
-#         # confirm recipe created
-#         assert len(data_recipe) ==3
-#         assert data_recipe[-1]["recipeID"] == 3
+    csv_path = return_path("../spork/static/images/default-recipe.jpg")
+    csv_data = open(csv_path, "rb")
+    NEW_RECIPE.update({"file" : (csv_data, "default-recipe.jpg")})
+    
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+        #login
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        
+        assert len(current_user.recipes) == 0
+        
+        response = client.post(
+            "/recipe/create", data=NEW_RECIPE, follow_redirects=True, content_type='multipart/form-data'
+        )
+        
+        data_recipe = load_recipe_database()
+        # confirm recipe created
+        assert len(data_recipe) ==3
+        assert data_recipe[-1]["recipeID"] == 3
         
         
-#         #delete the created recipe
-#         data = client.get("/recipe/view/3/delete",follow_redirects=True).data.decode("utf-8")
-#         assert "Home Page" in data
+        #delete the created recipe
+        data = client.get("/recipe/view/3/delete",follow_redirects=True).data.decode("utf-8")
+        assert "Home Page" in data
         
-#         # confirm recipe deleted
-#         database_data = load_recipe_database()
-#         assert len(database_data) ==2
-#         assert database_data[-1]['recipeID'] ==2
+        # confirm recipe deleted
+        database_data = load_recipe_database()
+        assert len(database_data) ==2
+        assert database_data[-1]['recipeID'] ==2
         
-#         tear_down(current_recipe_file_data,current_user_file_data)
+        tear_down(current_recipe_file_data,current_user_file_data)
 
-# def test_profile(client):
-#     with client:
-#         current_recipe_file_data, current_user_file_data = set_up()
-#         # login required
-#         response = client.get("/profile",follow_redirects=True)
-#         assert response.status_code == 200
-#         assert "<title>Login</title>" in response.data.decode("utf-8")
+def test_profile(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+        # login required
+        response = client.get("/profile",follow_redirects=True)
+        assert response.status_code == 200
+        assert "<title>Login</title>" in response.data.decode("utf-8")
         
-#         # login fail
-#         response3 = client.post('/login', data={'email': 'johnny@bcit.ca','password': 'Acit2911!fun'}, follow_redirects=True)
-#         assert response3.request.path == '/login'
-#         assert "Invalid Email or Password" in response3.data.decode("utf-8")
+        # login fail
+        response3 = client.post('/login', data={'email': 'johnny@bcit.ca','password': 'Acit2911!fun'}, follow_redirects=True)
+        assert response3.request.path == '/login'
+        assert "Invalid Email or Password" in response3.data.decode("utf-8")
             
-#         # login
-#         client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
-#         response = client.get("/profile",follow_redirects=True)
-#         assert response.status_code == 200
-#         assert "<title>Profile</title>" in response.data.decode("utf-8")
+        # login
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        response = client.get("/profile",follow_redirects=True)
+        assert response.status_code == 200
+        assert "<title>Profile</title>" in response.data.decode("utf-8")
     
-#         tear_down(current_recipe_file_data,current_user_file_data)
+        tear_down(current_recipe_file_data,current_user_file_data)
         
         
-# def test_logout(client):
-#     with client:
-#         current_recipe_file_data, current_user_file_data = set_up()
-#         # login required
-#         response = client.get("/logout",follow_redirects=True)
-#         assert response.status_code == 200
-#         assert "<title>Login</title>" in response.data.decode("utf-8")
+def test_logout(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+        # login required
+        response = client.get("/logout",follow_redirects=True)
+        assert response.status_code == 200
+        assert "<title>Login</title>" in response.data.decode("utf-8")
         
-#         # login
-#         client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
-#         response = client.get("/logout",follow_redirects=True)
-#         assert response.status_code == 200
-#         assert "<title>Home Page</title>" in response.data.decode("utf-8")
+        # login
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        response = client.get("/logout",follow_redirects=True)
+        assert response.status_code == 200
+        assert "<title>Home Page</title>" in response.data.decode("utf-8")
     
-#         tear_down(current_recipe_file_data,current_user_file_data)
+        tear_down(current_recipe_file_data,current_user_file_data)
         
 
-# def test_recipe_update_get(client):
-#     with client:
-#         current_recipe_file_data, current_user_file_data = set_up()
+def test_recipe_update_get(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
         
-#         #login add recipe
-#         client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
-#         current_user.recipes.append(1)
-#         current_user.update_user()
+        #login add recipe
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        current_user.recipes.append(1)
+        current_user.update_user()
         
-#         response = client.get("/recipe/view/1/update", follow_redirects=True)
-#         assert response.status_code == 200
-#         assert "Omlet" in response.data.decode("utf-8")
+        response = client.get("/recipe/view/1/update", follow_redirects=True)
+        assert response.status_code == 200
+        assert "Grilled" in response.data.decode("utf-8")
         
-#         tear_down(current_recipe_file_data,current_user_file_data)
+        tear_down(current_recipe_file_data,current_user_file_data)
 
 
-# def test_recipe_update_post(client):
-#     with client:
-#         current_recipe_file_data, current_user_file_data = set_up()
-        
-#         client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
-#         current_user.recipes.append(1)
-#         current_user.update_user()
-        
-#         response = client.post("/recipe/view/1/update",data=NEW_RECIPE, follow_redirects=True)
-#         assert response.status_code == 200
-#         assert response.request.path == "/"
-        
-#         data = load_recipe_database()
-#         assert data[0] == {
-#             "recipeID": 1,
-#             "title": "Tiramisuaa",
-#             "author": "Avi",
-#             "serving": "2",
-#             "ingredients": {"Sugar": "1 tsp", "Salt": "1 kg"},
-#             "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet",
-#         }
-        
-#         tear_down(current_recipe_file_data,current_user_file_data)
+def test_recipe_update_post(client):
+    NEW_RECIPE = {
+        "title": "Tiramisuaa",
+        "description": "Verygood",
+        "author_name": "Tony",
+        "serving_amount": 3,
+        "meat": "Beef",
+        "meat": "Chiken",
+        "ingredient1": "Sugar",
+        "unit1": "1 tsp",
+        "ingredient2": "Salt",
+        "unit2": "1 kg",
+        "instruction": "A mil12312lion years ago Mike decided to cook a salty omlet",
+        'img': ''
+    }
 
-
-# def test_register_user(client):
+    csv_path = return_path("../spork/static/images/default-recipe.jpg")
+    csv_data = open(csv_path, "rb")
+    NEW_RECIPE.update({"file" : (csv_data, "default-recipe.jpg")})
     
-#     with client:
-#         current_recipe_file_data, current_user_file_data = set_up()
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
         
-#         client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        current_user.recipes.append(1)
+        current_user.update_user()
         
-#         # cannot register if login
-#         response = client.get("/register", follow_redirects = True)
-#         assert response.request.path == "/"
+        response = client.post("/recipe/view/1/update",data=NEW_RECIPE, follow_redirects=True)
+        assert response.status_code == 200
+        assert response.request.path == "/profile"
         
-#         #log out first
-#         client.get("/logout")
+        data = load_recipe_database()
+        assert data[0]["recipeID"] == 1
+        assert data[0]["title"] == "Tiramisuaa"
         
-#         # register requirement not met
-#         response = client.post('/register', data={'email': 'alice@example.com','password': 'foo','confirm_password': 'foo'}, follow_redirects=True)
-#         assert response.status_code == 200
-#         assert response.request.path == '/register' # redirected to register
+        tear_down(current_recipe_file_data,current_user_file_data)
+
+
+def test_register_user(client):
+    
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
         
-#         response = client.post('/register', data={'email': '@ce@example.com','password': 'foo','confirm_password': 'foo'}, follow_redirects=True)
-#         assert response.status_code == 200
-#         assert response.request.path == '/register' # redirected to register
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
         
-#         response = client.post('/register', data={'email': 'alice@example.com','password': 'Acit2911!fun','confirm_password': 'acit'}, follow_redirects=True)
-#         assert response.status_code == 200
-#         assert response.request.path == '/register' # redirected to register
+        # cannot register if login
+        response = client.get("/register", follow_redirects = True)
+        assert response.request.path == "/"
         
-#         response = client.post('/register', data={'email': 'test@test.com','password': 'Aa12345678!','confirm_password': 'Aa12345678!'}, follow_redirects=True)
-#         assert response.status_code == 200
-#         assert response.request.path == '/register' # redirected to register
-#         assert "Email already exist" in response.data.decode("utf-8")
+        #log out first
+        client.get("/logout")
+        
+        # register requirement not met
+        response = client.post('/register', data={'email': 'alice@example.com','password': 'foo','confirm_password': 'foo'}, follow_redirects=True)
+        assert response.status_code == 200
+        assert response.request.path == '/register' # redirected to register
+        
+        response = client.post('/register', data={'email': '@ce@example.com','password': 'foo','confirm_password': 'foo'}, follow_redirects=True)
+        assert response.status_code == 200
+        assert response.request.path == '/register' # redirected to register
+        
+        response = client.post('/register', data={'email': 'alice@example.com','password': 'Acit2911!fun','confirm_password': 'acit'}, follow_redirects=True)
+        assert response.status_code == 200
+        assert response.request.path == '/register' # redirected to register
+        
+        response = client.post('/register', data={'email': 'test@test.com','password': 'Aa12345678!','confirm_password': 'Aa12345678!'}, follow_redirects=True)
+        assert response.status_code == 200
+        assert response.request.path == '/register' # redirected to register
+        assert "Email already exist" in response.data.decode("utf-8")
         
         
-#         # meet register requirement
-#         response = client.post('/register', data={'email': 'johnny@bcit.ca','password': 'Acit2911!fun','confirm_password': 'Acit2911!fun'}, follow_redirects=True)
-#         assert response.request.path == '/login'
+        # meet register requirement
+        response = client.post('/register', data={'email': 'johnny@bcit.ca','password': 'Acit2911!fun','confirm_password': 'Acit2911!fun'}, follow_redirects=True)
+        assert response.request.path == '/login'
 
         
-#         database = load_user_database()
-#         assert database[-1]['email'] == "johnny@bcit.ca"
+        database = load_user_database()
+        assert database[-1]['email'] == "johnny@bcit.ca"
     
-#         tear_down(current_recipe_file_data,current_user_file_data)
+        tear_down(current_recipe_file_data,current_user_file_data)
