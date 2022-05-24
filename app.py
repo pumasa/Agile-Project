@@ -1,7 +1,7 @@
 # Ask Mike Picus if something is not clear in this file
 
 import random
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, abort
 import json
 import os
 from flask_login import (
@@ -37,10 +37,11 @@ app = Flask(
 UPLOAD_FOLDER = return_path("./spork/static/images")
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 
+
+
 app.config["SECRET_KEY"] = "johnny"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1000 * 1000
-
 
 login_manager = LoginManager()
 login_manager.login_view = "login"
@@ -282,7 +283,7 @@ def login():
             return redirect(url_for("profile"))
         return render_template("/user/login.html")
     else:
-        return redirect(url_for("profile"))
+        abort(404)
 
 
 ################################################# Profile #################################################
@@ -318,25 +319,28 @@ def logout():
 @app.route("/recipe/view/<int:id>/delete")
 @login_required
 def recipe_delete(id):
-    csv_path = return_path("spork/database/recipe.json")
-    with open(csv_path, "r") as f:
-        recipes = json.loads(f.read())
+    if id in current_user.recipes or current_user.is_admin:
+        csv_path = return_path("spork/database/recipe.json")
+        with open(csv_path, "r") as f:
+            recipes = json.loads(f.read())
 
-    for recipe in recipes:
-        if recipe["recipeID"] == id:
-            recipes.remove(recipe)
+        for recipe in recipes:
+            if recipe["recipeID"] == id:
+                recipes.remove(recipe)
 
-    with open(csv_path, "w") as f:
-        json.dump(recipes, f, indent=1)
+        with open(csv_path, "w") as f:
+            json.dump(recipes, f, indent=1)
 
-    return redirect(url_for("index"))
+        return redirect(url_for("index"))
+    else:
+        abort(404)
 
 
 ################################################# Recipe update #################################################
 @app.route("/recipe/view/<int:id>/update", methods=["GET", "POST"])
 @login_required
 def recipe_update(id):
-    if id in current_user.recipes:
+    if id in current_user.recipes or current_user.is_admin:
         csv_path = return_path("spork/database/recipe.json")
         with open(csv_path, "r") as f:
             recipes = json.loads(f.read())
@@ -422,7 +426,6 @@ def unsave(id):
 
     return redirect(url_for("recipe_view", id=id))
 
-
 ################################################# Error pages #################################################
 @app.errorhandler(404)
 def page_not_found(e):
@@ -432,7 +435,6 @@ def page_not_found(e):
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template("500.html"), 500
-
 
 ################################################# start the server with the 'run()' method #################################################
 if __name__ == "__main__":

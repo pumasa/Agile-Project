@@ -18,6 +18,7 @@ class User(UserMixin):
         # list of recipeIDs (strings) that the user created
         self.recipes = []
         self.saved_recipes = []
+        self.is_admin = False
 
     def update_password(self, password):
         self.password = password
@@ -39,6 +40,7 @@ class User(UserMixin):
                     return_user.recipes.append(i)
                 for i in user["saved_recipes"]:
                     return_user.saved_recipes.append(i)
+                return_user.is_admin = user["is_admin"]
                 return return_user
 
     def get_id(self):
@@ -54,6 +56,7 @@ class User(UserMixin):
                     return_user.recipes.append(i)
                 for i in user["saved_recipes"]:
                     return_user.saved_recipes.append(i)
+                return_user.is_admin = user["is_admin"]
                 return return_user
 
     def save(self):
@@ -76,7 +79,8 @@ class User(UserMixin):
             f"email": str(self.email),
             f"password": str(self.password),
             f"recipes": self.recipes,
-            f"saved_recipes": self.saved_recipes
+            f"saved_recipes": self.saved_recipes,
+            f"is_admin": self.is_admin
         }
 
         return json

@@ -10,7 +10,8 @@ JSON_FILE = """ [{
   "email": "a@a.com",
   "password": "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e",
   "recipes": [2],
-  "saved_recipes": [1]
+  "saved_recipes": [1],
+  "is_admin": false
  }]"""
 
 # ------- recipe object -------
@@ -30,6 +31,7 @@ def test_recipe(user):
     assert user.password == "abc123"
     assert user.recipes == []
     assert user.saved_recipes == []
+    assert user.is_admin == False
 
 
 #  Add ingridients
@@ -68,7 +70,8 @@ def test_to_json(user2):
         "email": "michael@gmail.com",
         "password": "pass",
         "recipes": [2, 3, 5],
-        "saved_recipes":[]
+        "saved_recipes":[],
+        "is_admin" :False
     }
 
 
@@ -90,14 +93,16 @@ def test_save(user2):
                 "email": "a@a.com",
                 "password": "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e",
                 "recipes": [2],
-                "saved_recipes": [1]
+                "saved_recipes": [1],
+                "is_admin" :False
             }
             assert data[1] == {
                 "id": "2",
                 "email": "michael@gmail.com",
                 "password": "pass",
                 "recipes": [2, 3, 5],
-                "saved_recipes":[]
+                "saved_recipes":[],
+                "is_admin" :False
             }
 
 def test_find_by_email(user):
@@ -151,14 +156,16 @@ def test_update_user(user2):
                 "email": "a@a.com",
                 "password": "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e",
                 "recipes": [2],
-                "saved_recipes": [1]
+                "saved_recipes": [1],
+                "is_admin" :False
             }
             assert data[1] == {
                 "id": "2",
                 "email": "michael@gmail.com",
                 "password": "pass",
                 "recipes": [2, 3, 5],
-                "saved_recipes":[1]
+                "saved_recipes":[1],
+                "is_admin" :False
             }
             
 def return_path(given_path):

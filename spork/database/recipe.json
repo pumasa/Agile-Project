@@ -495,21 +495,73 @@
   "image": "default-recipe.jpg"
  },
  {
-  "recipeID": 31,
-  "title": "Tiramisuaa",
-  "tags": [
-   "Beef",
-   "Chiken"
-  ],
-  "author": "Tony",
-  "serving": "3",
-  "ingredients": {
-   "sugar": "1",
-   "salt": "1"
-  },
-  "instructions": "1 idk",
-  "image": "default-recipe.jpg",
-  "img": "",
-  "description": "Verygood"
- }
+    "recipeID": 31,
+    "title": "Mac and Cheese",
+    "tags": [
+        "Quick",
+        "Dinner",
+        "Vegeterian"
+    ],
+    "author": "Mark Doe",
+    "description": "Quick, easy, and tasty macaroni and cheese dish. Fancy, designer mac and cheese often costs forty or fifty dollars to prepare when you have so many exotic and expensive cheeses, but they aren't always the best tasting. This simple recipe is cheap and tasty.",
+    "serving": "4",
+    "ingredients": {
+        "Macaroni": "1 cup",
+        "Butter": "1/4 cup",
+        "Flour": "1/4 cup",
+        "Salt": "1/2 tsp",
+        "Milk": "2 cups",
+        "Cheddar cheese": "2 cups"
+    },
+    "instructions": "1) Bring a large pot of lightly salted water to a boil. Cook elbow macaroni in the boiling water, stirring occasionally until cooked through but firm to the bite, 8 minutes.\r\n2) melt butter in a saucepan over medium heat. Add flour, salt, and pepper and stir until smooth, about 5 minutes. Pour in milk slowly, while stirring continuously. Continue to cook and stir until mixture is smooth and bubbling, about 5 minutes, making sure the milk doesn't burn.\r\n3) Add Cheddar cheese and stir until melted, 2 to 4 minutes.\r\n4) Drain macaroni and fold into cheese sauce until coated.",
+    "image": "mac.jpg",
+    "img": ""
+},
+{
+    "recipeID": 32,
+    "title": "Brussels Sprouts in Alfredo Sauce",
+    "tags": [
+        "Quick",
+        "Holiday",
+        "Pork"
+    ],
+    "author": "Natasha Kravchuk",
+    "description": "Creamy parmesan garlic alfredo sauce topped with crispy bacon is our favorite way to eat them. This Brussels sprouts recipe is a fun way to dress up classic roasted Brussels sprouts. It’s a quick and easy side dish that comes together in one-pan!",
+    "serving": "4",
+    "ingredients": {
+        "Brussels sprouts": "2 lbs",
+        "Bacon": "6 oz",
+        "Garlic": "1 clove",
+        "Whipping cream": "1 1/2 cups",
+        "Lemon Juice": "1 Tbsp",
+        "Parmesan cheese": "1/3 cup",
+        "Salt": "3/4 tsp",
+        "Black pepper": "1/4 tsp"
+    },
+    "instructions": "1)Place a large deep skillet or dutch oven or medium heat. Add 6 oz chopped bacon and cook until browned. Remove bacon to a plate, keeping 3 Tbsp of bacon fat in the pan.\r\n2) Add trimmed and halved brussels sprouts and season with 1/2 tsp salt and 1/4 tsp black pepper. Cover and stir occasionally 8-9 min or until tender and lightly browned.\r\n3) Add minced garlic and stir 1 minute until fragrant. Add 1 1/2 cups heavy cream and bring to a simmer.\r\n4) Stir in 1 Tbsp lemon juice then sprinkle the top with 1/3 cup parmesan cheese and stir to combine and season to taste (I added another 1/4 tsp salt). Bring just to a simmer then remove from heat and serve garnished with reserved bacon.",
+    "image": "brussels.jpg",
+    "img": ""
+},
+{
+    "recipeID": 33,
+    "title": "Old-Fashioned Banana Cream Pie",
+    "tags": [
+        "Quick",
+        "Desert"
+    ],
+    "author": "Mary Smith",
+    "description": "This old-fashioned banana cream pie recipe is full of flavor. Because it uses instant pudding, this no-bake dessert is ready in just minutes.",
+    "serving": "8",
+    "ingredients": {
+        "Milk": "1 cup",
+        "Instant vanilla pudding mix": "3.4 ounces",
+        "Vanilla extract": "1/2 tsp",
+        "Whipped topping": "12 ounces",
+        "Cracker crust": "1 cup",
+        "Banana": "2"
+    },
+    "instructions": "1) In a large bowl, whisk milk, pudding mix and vanilla for 2 minutes (mixture will be thick). Fold in 3 cups whipped topping.\r\n2) Pour 1-1/3 cups pudding mixture into pie crust. Layer with banana slices and remaining pudding mixture. Top with remaining whipped topping. If desired, garnish with additional banana slices. Refrigerate until serving.",
+    "image": "banana_cream.jpg",
+    "img": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Old-Fashioned-Banana-Cream-Pie_EXPS_FT20_18664_F_0827_1.jpg?fit=700,1024"
+}
 ]

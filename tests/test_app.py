@@ -135,7 +135,8 @@ USER_JSON = """[
   "email": "test@test.com",
   "password": "sha256$PlXvzhujQ3DJklY7$8551a46fe87dc5042b66996216709e28ec33bc2191e53d895ea166101ea11160",
   "recipes": [],
-  "saved_recipes": []
+  "saved_recipes": [],
+  "is_admin": false
  }
 ]"""
 
