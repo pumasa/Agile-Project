@@ -91,7 +91,7 @@
 
 
     <!-- Delete button-->
-    {% if data['recipeID'] in current_user.recipes %}
+    {% if data['recipeID'] in current_user.recipes or current_user.is_admin %}
     <div class="delete-container">
         <!-- Edit button-->
         <a href="/recipe/view/{{data['recipeID']}}/update">
