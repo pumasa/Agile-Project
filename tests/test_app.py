@@ -7,6 +7,51 @@ import pytest
 import os
 import json
 
+def set_up():
+    mock_recipe_json = json.loads(JSON_FILE)
+    mock_user_json = json.loads(USER_JSON)
+    csv_path_recipe = return_path("../spork/database/recipe.json")
+    csv_path_user = return_path("../spork/database/user.json")
+
+    current_recipe_file_data = load_recipe_database()
+    current_user_file_data = load_user_database()
+
+    with open(csv_path_recipe, "w") as f:
+        json.dump(mock_recipe_json, f, indent=1)
+
+    with open(csv_path_user, "w") as f:
+        json.dump(mock_user_json, f, indent=1)
+
+    return current_recipe_file_data, current_user_file_data
+
+def tear_down(current_recipe_file_data,current_user_file_data):
+    csv_path_recipe = return_path("../spork/database/recipe.json")
+    csv_path_user = return_path("../spork/database/user.json")
+
+    with open(csv_path_recipe, "w") as f:
+        json.dump(current_recipe_file_data, f, indent=1)
+
+    with open(csv_path_user, "w") as f:
+        json.dump(current_user_file_data, f, indent=1)
+
+
+def return_path(given_path):
+    cwd = os.path.abspath(os.path.dirname(__file__))
+    csv_path = os.path.abspath(os.path.join(cwd, given_path))
+    return csv_path
+
+def load_recipe_database():
+    csv_path = return_path("../spork/database/recipe.json")
+    with open(csv_path, "r") as f:
+        file_data = json.loads(f.read())
+    return file_data
+
+def load_user_database():
+    csv_path = return_path("../spork/database/user.json")
+    with open(csv_path, "r") as f:
+        file_data = json.loads(f.read())
+    return file_data
+
 @pytest.fixture()
 def test_app():
     app.config.update({
@@ -63,6 +108,8 @@ JSON_FILE = """[
 }
 ]"""
 
+
+        
 NEW_RECIPE = {
     "title": "Tiramisuaa",
     "description": "Verygood",
@@ -77,6 +124,10 @@ NEW_RECIPE = {
     "instruction": "A mil12312lion years ago Mike decided to cook a salty omlet",
     'img': ''
 }
+
+csv_path = return_path("../spork/static/images/default-recipe.jpg")
+csv_data = open(csv_path, "rb")
+NEW_RECIPE.update({"file" : (csv_data, "default-recipe.jpg")})
 
 USER_JSON = """[
  {
@@ -109,92 +160,88 @@ def test_login(client):
         
         tear_down(current_recipe_file_data,current_user_file_data)
 
-# def test_index_route(client):
-#     current_recipe_file_data, current_user_file_data = set_up()
+def test_index_route(client):
+    current_recipe_file_data, current_user_file_data = set_up()
     
-#     response = client.get("/")
-#     assert response.status_code == 200
-#     assert "<title>Home Page</title>" in response.data.decode("utf-8")
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "<title>Home Page</title>" in response.data.decode("utf-8")
 
-#     tear_down(current_recipe_file_data,current_user_file_data)
+    tear_down(current_recipe_file_data,current_user_file_data)
 
-# def test_create_page_get(client):
-#     current_recipe_file_data, current_user_file_data = set_up()
+def test_create_page_get(client):
+    current_recipe_file_data, current_user_file_data = set_up()
     
-#     response = client.get("/recipe/create", follow_redirects=True)
-#     # unable to create if not log in
-#     assert response.status_code == 200
-#     assert "<title>Login</title>" in response.data.decode("utf-8")
+    response = client.get("/recipe/create", follow_redirects=True)
+    # unable to create if not log in
+    assert response.status_code == 200
+    assert "<title>Login</title>" in response.data.decode("utf-8")
     
-#     # now login
-#     client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
-#     response = client.get("/recipe/create", follow_redirects=True)
-#     assert response.status_code == 200
-#     assert "<title>Create Recipe</title>" in response.data.decode("utf-8")
-#     tear_down(current_recipe_file_data,current_user_file_data)
+    # now login
+    client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+    response = client.get("/recipe/create", follow_redirects=True)
+    assert response.status_code == 200
+    assert "<title>Create Recipe</title>" in response.data.decode("utf-8")
+    tear_down(current_recipe_file_data,current_user_file_data)
 
-# def test_create_recipe_login_post(client):
-#     with client:
-#         current_recipe_file_data, current_user_file_data = set_up()
-#         client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+def test_create_recipe_login_post(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
         
-#         assert len(current_user.recipes) == 0
+        assert len(current_user.recipes) == 0
         
-#         response = client.post(
-#             "/recipe/create", data=NEW_RECIPE, follow_redirects=True
-#         )
-#         assert response.status_code == 200
-#         assert response.request.path == "/profile"
+        response = client.post(
+            "/recipe/create", data=NEW_RECIPE, follow_redirects=True, content_type='multipart/form-data'
+        )
+        assert response.status_code == 200
+        assert response.request.path == "/profile"
 
-#         data = load_recipe_database()
-#         assert data[-1] == {
-#             "recipeID": 3,
-#             "title": "Tiramisuaa",
-#             "author": "Avi",
-#             "serving": "2",
-#             "ingredients": {"Sugar": "1 tsp", "Salt": "1 kg"},
-#             "instructions": "A mil12312lion years ago Mike decided to cook a salty omlet",
-#         }
-#         assert 3 in current_user.recipes
-#         tear_down(current_recipe_file_data,current_user_file_data)
+        data = load_recipe_database()
+        assert data[-1]["recipeID"] == 3
+        assert data[-1]["description"] == "Verygood"
+        assert data[-1]["author"] == "Tony"
+        
+        assert 3 in current_user.recipes
+        tear_down(current_recipe_file_data,current_user_file_data)
 
-# def test_load_user():
-#     current_recipe_file_data, current_user_file_data = set_up()
+def test_load_user():
+    current_recipe_file_data, current_user_file_data = set_up()
     
-#     user = load_user("1")
-#     assert isinstance(user,User)==True
+    user = load_user("1")
+    assert isinstance(user,User)==True
     
-#     tear_down(current_recipe_file_data,current_user_file_data)
+    tear_down(current_recipe_file_data,current_user_file_data)
 
-# def test_recipe_view(client):
-#     with client:
-#         current_recipe_file_data, current_user_file_data = set_up()
+def test_recipe_view(client):
+    with client:
+        current_recipe_file_data, current_user_file_data = set_up()
         
-#         data = client.get("/recipe/view/2").data.decode("utf-8")  
-#         assert "View Recipe" in data
-#         assert "Mushroom Soup" in data
-#         assert "Omlet" not in data
-#         # confirm no delete button
-#         assert ">Delete</button>" not in data
-#         assert ">Edit</button>" not in data
+        data = client.get("/recipe/view/2").data.decode("utf-8")  
+        assert "View Recipe" in data
+        assert "Spatchcock Chicken" in data
+        assert "Grilled Flank Steak" not in data
+        # confirm no delete button
+        assert ">Delete</button>" not in data
+        assert ">Edit</button>" not in data
         
-#         # after login confirm dont have delete button if not user recipe
-#         client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
-#         data = client.get("/recipe/view/2").data.decode("utf-8") 
-#         assert "View Recipe" in data
-#         assert ">Delete</button>" not in data
-#         assert ">Edit</button>" not in data
+        # after login confirm dont have delete button if not user recipe
+        client.post('/login', data={'email': 'test@test.com','password': 'Aa12345678!'})
+        data = client.get("/recipe/view/2").data.decode("utf-8") 
+        assert "View Recipe" in data
+        assert ">Delete</button>" not in data
+        assert ">Edit</button>" not in data
         
-#         # now added recipeID 2 in user
-#         current_user.recipes.append(2)
-#         current_user.update_user()
+        # now added recipeID 2 in user
+        current_user.recipes.append(2)
+        current_user.update_user()
         
-#         data = client.get("/recipe/view/2").data.decode("utf-8") 
-#         assert "View Recipe" in data
-#         assert ">Delete</button>" in data
-#         assert ">Edit</button>"  in data
+        data = client.get("/recipe/view/2").data.decode("utf-8") 
+        assert "View Recipe" in data
+        assert ">Delete</button>" in data
+        assert ">Edit</button>"  in data
         
-#         tear_down(current_recipe_file_data,current_user_file_data)
+        tear_down(current_recipe_file_data,current_user_file_data)
 
 # def test_recipe_delete_get(client):
 #     with client:
@@ -342,48 +389,3 @@ def test_login(client):
 #         assert database[-1]['email'] == "johnny@bcit.ca"
     
 #         tear_down(current_recipe_file_data,current_user_file_data)
-
-def set_up():
-    mock_recipe_json = json.loads(JSON_FILE)
-    mock_user_json = json.loads(USER_JSON)
-    csv_path_recipe = return_path("../spork/database/recipe.json")
-    csv_path_user = return_path("../spork/database/user.json")
-
-    current_recipe_file_data = load_recipe_database()
-    current_user_file_data = load_user_database()
-
-    with open(csv_path_recipe, "w") as f:
-        json.dump(mock_recipe_json, f, indent=1)
-
-    with open(csv_path_user, "w") as f:
-        json.dump(mock_user_json, f, indent=1)
-
-    return current_recipe_file_data, current_user_file_data
-
-def tear_down(current_recipe_file_data,current_user_file_data):
-    csv_path_recipe = return_path("../spork/database/recipe.json")
-    csv_path_user = return_path("../spork/database/user.json")
-
-    with open(csv_path_recipe, "w") as f:
-        json.dump(current_recipe_file_data, f, indent=1)
-
-    with open(csv_path_user, "w") as f:
-        json.dump(current_user_file_data, f, indent=1)
-
-
-def return_path(given_path):
-    cwd = os.path.abspath(os.path.dirname(__file__))
-    csv_path = os.path.abspath(os.path.join(cwd, given_path))
-    return csv_path
-
-def load_recipe_database():
-    csv_path = return_path("../spork/database/recipe.json")
-    with open(csv_path, "r") as f:
-        file_data = json.loads(f.read())
-    return file_data
-
-def load_user_database():
-    csv_path = return_path("../spork/database/user.json")
-    with open(csv_path, "r") as f:
-        file_data = json.loads(f.read())
-    return file_data

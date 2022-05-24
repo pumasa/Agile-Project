@@ -202,7 +202,6 @@ def create():
 
 @app.route("/recipe/view/<int:id>", methods=["GET"])
 def recipe_view(id):
-    print(current_user.saved_recipes)
     if request.method == "GET":
         csv_path = return_path("spork/database/recipe.json")
         with open(csv_path, "r") as myfile:
@@ -219,7 +218,7 @@ def recipe_view(id):
             )
         else:
             return render_template(
-                "/recipe/recipe_view.html", data=single_recipe, saved_recipes=""
+                "/recipe/recipe_view.html", data=single_recipe, saved_recipes=[]
             )
 
 
