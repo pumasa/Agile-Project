@@ -182,7 +182,20 @@ def create():
             filename = "default-recipe.jpg"
             recipe.image = filename
         if file and allowed_file(file.filename):
+            # add logic prevent duplicate filename
+            path = app.config["UPLOAD_FOLDER"]
+            dir_list = os.listdir(path)
             filename = secure_filename(file.filename)
+            count = 0
+            while True:
+                if filename in dir_list:
+                    file_breakdown = filename.split(".")
+                    file_breakdown[-2] += str(count)
+                    count += 1
+                    filename = ".".join(file_breakdown)
+                else:
+                    break
+
             file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
             recipe.image = filename
 
