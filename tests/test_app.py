@@ -145,6 +145,9 @@ def test_login(client):
     with client:
         current_recipe_file_data, current_user_file_data = set_up()
         
+        response = client.get('/login', follow_redirects=True)
+        assert "Login" in response.data.decode("utf-8")
+        
         # login fail
         response3 = client.post('/login', data={'email': 'johnny@bcit.ca','password': 'Acit2911!fun'}, follow_redirects=True)
         assert response3.request.path == '/login'
@@ -156,8 +159,6 @@ def test_login(client):
         assert response.status_code == 200
         assert "<title>Profile</title>" in response.data.decode("utf-8")
 
-        response = client.get('/login', follow_redirects=True)
-        assert response.request.path == "/profile"
         
         tear_down(current_recipe_file_data,current_user_file_data)
 
