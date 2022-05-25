@@ -11,7 +11,7 @@
 <div class="container" id="create_body">
 
     <h1 class="black-text text-center">Create Recipe</h1>
-    <form action="/recipe/create" enctype="multipart/form-data" method="POST">
+    <form action="/recipe/create" enctype="multipart/form-data" method="POST" onsubmit="return validateMyForm()">
         <!-- Title, Author, serving, add image -->
         <div class="basic-info-image">
             <div class="basic-info">
@@ -88,7 +88,7 @@
                     <input id="image_field" type="file" name="file" class="form-control" autocomplete="off" accept="image/*">
                     <br>
                     <p>Or</p>
-                    <input id="serving_amount" class="form-control" type="text" placeholder="Enter image url" name="img">
+                    <input id="online_image" class="form-control" type="text" placeholder="Enter image url" name="img">
                 </p>
             </dl>
         </div>
@@ -130,6 +130,18 @@
     function reply_click(clicked_id) {
         const element = document.getElementById(clicked_id);
         element.remove();
+    }
+
+    function validateMyForm (){
+        if( document.getElementById("image_field").files.length != 0 && document.getElementById("online_image").value.length !=0 ){
+            alert("Choose a Image File to upload OR an Image URL, not Both");
+            return false
+        }
+        if( document.getElementById("title").value.length == 0 ){
+            alert("You need a title");
+            return false
+        }
+        return true
     }
 </script>
 {% endblock %}

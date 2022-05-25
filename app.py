@@ -1,6 +1,7 @@
 # Ask Mike Picus if something is not clear in this file
 
 import random
+import uuid
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, abort
 import json
 import os
@@ -182,7 +183,22 @@ def create():
             filename = "default-recipe.jpg"
             recipe.image = filename
         if file and allowed_file(file.filename):
+            # add logic prevent duplicate filename
+            path = app.config["UPLOAD_FOLDER"]
+            dir_list = os.listdir(path)
             filename = secure_filename(file.filename)
+            unique_id = uuid.uuid4()
+            if filename == "":
+                filename = str(unique_id)
+            while True:
+                if filename in dir_list:
+                    unique_id = uuid.uuid4()
+                    file_breakdown = filename.split(".")
+                    file_breakdown[-2] += str(unique_id)
+                    filename = ".".join(file_breakdown)
+                else:
+                    break
+
             file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
             recipe.image = filename
 
@@ -326,11 +342,32 @@ def recipe_delete(id):
 
         for recipe in recipes:
             if recipe["recipeID"] == id:
+                if not recipe["image"] == "default-recipe.jpg":
+                    dir_path = app.config["UPLOAD_FOLDER"]
+                    path = os.path.join(dir_path, recipe["image"])
+                    if os.path.isfile(path):
+                        os.remove(path)
+                
+                csv_path_user = return_path("spork/database/user.json")
+                with open(csv_path_user, "r") as f:
+                    users = json.loads(f.read())
+                
+                with open(csv_path_user, "w") as f:
+                    for user in users:
+                        if id in user["recipes"]:
+                            data_recipes_list = user["recipes"]
+                            data_recipes_list.remove(id)
+                            if data_recipes_list is None:
+                                data_recipes_list = []
+                            user.update({"recipes": data_recipes_list})
+                    json.dump(users, f, indent=1)
+                    
                 recipes.remove(recipe)
 
         with open(csv_path, "w") as f:
             json.dump(recipes, f, indent=1)
 
+        
         return redirect(url_for("index"))
     else:
         abort(404)
@@ -366,18 +403,30 @@ def recipe_update(id):
                     )
             recipe.instructions = recipe_data["instruction"]
             recipe.tags += request.form.getlist("meat")
+            recipe.image = single_recipe["image"]
             recipe.img = recipe_data["img"]
             recipe.description = recipe_data["description"]
 
             # File upload here
             file = request.files["file"]
-            if file.filename == "":
-                filename = single_recipe["img"]
-                if filename == "":
-                    filename = "default-recipe.jpg"
-                recipe.image = filename
             if file and allowed_file(file.filename):
+                recipe.img = ""
+                # add logic prevent duplicate filename
+                path = app.config["UPLOAD_FOLDER"]
+                dir_list = os.listdir(path)
                 filename = secure_filename(file.filename)
+                unique_id = uuid.uuid4()
+                if filename == "":
+                    filename = str(unique_id)
+                while True:
+                    if filename in dir_list:
+                        unique_id = uuid.uuid4()
+                        file_breakdown = filename.split(".")
+                        file_breakdown[-2] += str(unique_id)
+                        filename = ".".join(file_breakdown)
+                    else:
+                        break
+                    
                 file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
                 recipe.image = filename
             recipe.update()
