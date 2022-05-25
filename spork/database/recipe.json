@@ -563,5 +563,81 @@
     "instructions": "1) In a large bowl, whisk milk, pudding mix and vanilla for 2 minutes (mixture will be thick). Fold in 3 cups whipped topping.\r\n2) Pour 1-1/3 cups pudding mixture into pie crust. Layer with banana slices and remaining pudding mixture. Top with remaining whipped topping. If desired, garnish with additional banana slices. Refrigerate until serving.",
     "image": "banana_cream.jpg",
     "img": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Old-Fashioned-Banana-Cream-Pie_EXPS_FT20_18664_F_0827_1.jpg?fit=700,1024"
-}
+},
+    {
+        "recipeID": 34,
+        "title": "Classic Borscht",
+        "tags": [
+            "Soup"
+        ],
+        "author": "Natasha Kravchuck",
+        "description": "Our family's go-to recipe for Borscht (Red Beet Soup). It's best to have all of the ingredients prepped and ready to go which makes this soon super easy and care free. Serve with a dollop of sour cream or real mayo.",
+        "serving": "10",
+        "ingredients": {
+            "beets" : "3",
+            "olive oil": "4 Tbsp",
+            "chicken broth": "8 cups",
+            "water":"2 cups",
+            "potato":"3",
+            "carrot": "2"
+        },
+        "instructions": "1) Peel, grate and/or slice all vegetables (keeping sliced potatoes in cold water to prevent browning until ready to use then drain). \r\n2) Heat a large soup pot (5 1/2 Qt or larger) over medium/high heat and add 2 Tbsp olive oil. Add grated beets and saute 10 minutes, stirring occasionally until beets are softened. \r\n3) Add 8 cups broth and 2 cups water. Add sliced potatoes and sliced carrots then cook for 10-15 minutes or until easily pierced with a fork. \r\n4) While potatoes are cooking, place a large skillet over medium/high heat and add 2 Tbsp oil. Add chopped onion, celery and bell pepper. Saute stirring occasionally until softened and lightly golden (7-8 minutes). Add 4 Tbsp Ketchup and stir fry 30 seconds then transfer to the soup pot to continue cooking with the potatoes. \r\n5) When potatoes and carrots reach desired softness, add 1 can of beans with their juice, 2 bay leaves, 2-3 Tbsp white vinegar, 1 tsp salt, 1/4 tsp black pepper, 1 pressed garlic clove, and 3 Tbsp chopped dill. Simmer for an additional 2-3 minutes and add more salt and vinegar to taste.",
+        "image": "borscht.jpg",
+        "img":"https://natashaskitchen.com/wp-content/uploads/2018/10/Borscht-Recipe-3-768x1152.jpg"
+    },
+    {
+        "recipeID": 35,
+        "title": "Chicken Cutlets",
+        "tags": [
+            "Chicken",
+            "Dinner"
+        ],
+        "author": "Anthony Miller",
+        "description": "They may be simple, but chicken cutlets will forever be one of our favorite options for versatile protein. Our recipe combines panko bread crumbs and Parmesan for a final coating that gets perfectly crispy-chewy when pan-fried. Serve the cutlets alongside roasted veggies, sliced atop salads, or between bread for a crispy chicken sandwich, the options are endless!",
+        "serving": "4",
+        "ingredients": {
+            "chicken breast": "1lb",
+            "salt": "1 tsp",
+            "black pepper":"1 tsp",
+            "flour": "125 g",
+            "eggs": "2",
+            "breadcrumbs": "170 g",
+            "parmesan cheese": "125 g",
+            "vegetable oil": "60 mL",
+            "parsley": "10 g for serving",
+            "lemon wedge": "for serving"
+        },
+        "instructions": "1) On a cutting board, slice the chicken breasts in half horizontally, creating 2 cutlets. Place the cutlets, 1 at a time, in a large zip-top bag and use a meat mallet to pound to a quarter-inch-thick. Transfer the chicken to a cutting board and pat dry with a paper towel. Season the chicken on both sides with salt and pepper. \r\n2) In a shallow bowl, whisk together the flour, 1 teaspoon of salt, and 1 teaspoon of pepper. In another shallow bowl, beat the eggs. Add the panko and Parmesan to a third shallow bowl and whisk to combine. \r\n3) Coat the chicken in the flour, shaking off any excess. Then, dip in the eggs, letting any excess drip off. Finally, coat in the panko-Parmesan mixture, making sure all sides are covered. Transfer the chicken to a clean cutting board. \r\n4) Heat the vegetable oil in a large pan over medium-high heat until shimmering. Working in batches if needed to avoid overcrowding the pan, add the chicken and cook until golden brown and cooked through, between 2 and 3 minutes per side. \r\n5) Transfer the chicken to a paper towel-lined plate and season with salt. Garnish the chicken cutlets with the parsley and serve with lemon wedges for squeezing on top.",
+        "image": "chicken_cutlet.jpg",
+        "img":""
+    },
+    {
+        "recipeID": 36,
+        "title": "Spaghetti",
+        "tags": [
+            "Pasta",
+            "Dinner"
+        ],
+        "author": "Adam and Joanna",
+        "description": "Easy weeknight friendly spaghetti and meat sauce that's made completely from scratch. Use ground beef, turkey, pork, chicken or lamb to make this simple spaghetti recipe.",
+        "serving": "6",
+        "ingredients": {
+            "ground beef":"1 lb",
+            "olive oil": "3 Tbsp",
+            "onion": "130 g",
+            "garlic": "1 Tbsp",
+            "oregano": "1/2 tsp",
+            "red pepper flakes": "5 pinches",
+            "water": "1 cup",
+            "crushed tomato": "28 oz",
+            "salt" : "1 Tbsp",
+            "pepper": "1 Tbsp",
+            "basil" : "1 handful",
+            "noodles" : "12 oz",
+            "parmesan" : "1/2 cup"
+        },
+        "instructions": "1) Heat the oil in a large pot over medium-high heat (we use a Dutch oven). Add the meat and cook until browned, about 8 minutes. As the meat cooks, use a wooden spoon to break it up into smaller crumbles. \r\n2) Add the onions and cook, stirring every once and a while, until softened, about 5 minutes. \r\n3) Stir in the garlic, tomato paste, oregano, and red pepper flakes and cook, stirring continuously for about 1 minute. \r\n4) Pour in the water and use a wooden spoon to scrape up any bits of meat or onion stuck to the bottom of the pot. Stir in the tomatoes, 3/4 teaspoon of salt, and a generous pinch of black pepper. Bring the sauce to a low simmer. Cook, uncovered, at a low simmer for 25 minutes. As it cooks, stir and taste the sauce a few times so you can adjust the seasoning accordingly (see notes for suggestions). \r\n5) About 15 minutes before the sauce finishes cooking, bring a large pot of salted water to the boil, and then cook pasta according to package directions, but check for doneness a minute or two before the suggested cooking time. \r\n6) Take the sauce off of the heat, and then stir in the basil. Toss in the cooked pasta, and then leave for a minute so that the pasta absorbs some of the sauce. Toss again, and then serve with parmesan sprinkled on top.",
+        "image": "spaghetti.jpg",
+        "img":"https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg"
+    }
 ]
