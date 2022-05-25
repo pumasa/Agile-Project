@@ -1,4 +1,6 @@
 {% extends "layout.html" %} {% block title %}Create Recipe{% endblock %} {% block head %} {{ super() }}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 <link rel="stylesheet" href="../static/css/create.css"> {% endblock %} {% block content %}
 
 
@@ -18,47 +20,44 @@
                 <input id="serving_amount" class="form-control" type="text" placeholder="Serving: '2'" name="serving_amount">
 
                 <br>
-
-
             </div>
 
+            <div id="tags">
+                <div class="tags-container">
+                    <!-- <input type="checkbox" class="form-check-input btn-check" id="(ingredient1)" name="meat" value="Beef" autocomplete="off"><label class="form-check-label btn btn-outline-success" for="(ingredient1)">Beef</label><br> -->
 
-            <!-- add image pane
-            <div id="insert-image">
-                <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Add image" />
-            </div> -->
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient1)" name="meat" autocomplete="off" value="Beef"><label class="form-check-label btn btn-outline-success" for="(ingredient1)">Beef</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient2)" name="meat" autocomplete="off" value="Chicken"><label class="form-check-label btn btn-outline-success" for="(ingredient2)">Chicken</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient3)" name="meat" autocomplete="off" value="Fish & Seafood"><label class="form-check-label btn btn-outline-success" for="(ingredient3)">Fish & Seafood</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient4)" name="meat" autocomplete="off" value="Pork"><label class="form-check-label btn btn-outline-success" for="(ingredient4)">Pork</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient5)" name="meat" autocomplete="off" value="Turkey"><label class="form-check-label btn btn-outline-success" for="(ingredient5)">Turkey</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient6)" name="meat" autocomplete="off" value="Lamb"><label class="form-check-label btn btn-outline-success" for="(ingredient6)">Lamb</label><br>
+                </div>
+                <div class="tags-container">
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient7)" name="meat" autocomplete="off" value="Breakfast"><label class="form-check-label btn btn-outline-success" for="(ingredient7)">Breakfast</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient8)" name="meat" autocomplete="off" value="Dessert"><label class="form-check-label btn btn-outline-success" for="(ingredient8)">Dessert</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient9)" name="meat" autocomplete="off" value="Dinner"><label class="form-check-label btn btn-outline-success" for="(ingredient9)">Dinner</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient10)" name="meat" autocomplete="off" value="Holiday"><label class="form-check-label btn btn-outline-success" for="(ingredient10)">Holiday</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient11)" name="meat" autocomplete="off" value="Snacks"><label class="form-check-label btn btn-outline-success" for="(ingredient11)">Snacks and Appetizers</label><br>
+                </div>
+                <div class="tags-container">
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient12)" name="meat" autocomplete="off" value="Egg Free"><label class="form-check-label btn btn-outline-success" for="(ingredient12)">Egg Free</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient13)" name="meat" autocomplete="off" value="Gluten Free"><label class="form-check-label btn btn-outline-success" for="(ingredient13)">Gluten Free</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient14)" name="meat" autocomplete="off" value="Healthy"><label class="form-check-label btn btn-outline-success" for="(ingredient14)">Healthy</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient15)" name="meat" autocomplete="off" value="Quick and Easy"><label class="form-check-label btn btn-outline-success" for="(ingredient15)">Quick and Easy</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient16)" name="meat" autocomplete="off" value="Vegeterian"><label class="form-check-label btn btn-outline-success" for="(ingredient16)">Vegeterian</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient17)" name="meat" autocomplete="off" value="Whole Grain"><label class="form-check-label btn btn-outline-success" for="(ingredient17)">Whole Grain</label><br>
+                </div>
+                <div class="tags-container">
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient18)" name="meat" autocomplete="off" value="Winter"><label class="form-check-label btn btn-outline-success" for="(ingredient18)">Winter</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient19)" name="meat" autocomplete="off" value="Spring"><label class="form-check-label btn btn-outline-success" for="(ingredient19)">Spring</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient20)" name="meat" autocomplete="off" value="Summer"><label class="form-check-label btn btn-outline-success" for="(ingredient20)">Summer</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient21)" name="meat" autocomplete="off" value="Autumn"><label class="form-check-label btn btn-outline-success" for="(ingredient21)">Autumn</label><br>
+                </div>
+            </div>
+
         </div>
-        <div id="tags">
-            <div class="tags-container">
-                <input type="checkbox" class="form-check-input" id="(ingredient1)" name="meat" value="Beef"><label class="form-check-label" for="(ingredient1)">Beef</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient2)" name="meat" value="Chiken"><label class="form-check-label" for="(ingredient2)">Chicken</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient3)" name="meat" value="Fish"><label class="form-check-label" for="(ingredient3)">Fish & Seafood</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient4)" name="meat" value="Pork"><label class="form-check-label" for="(ingredient4)">Pork</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient5)" name="meat" value="Turkey"><label class="form-check-label" for="(ingredient5)">Turkey</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient6)" name="meat" value="Lamb"><label class="form-check-label" for="(ingredient6)">Lamb</label><br>
-            </div>
-            <div class="tags-container">
-                <input type="checkbox" class="form-check-input" id="(ingredient7)" name="meat" value="Breakfast"><label class="form-check-label" for="(ingredient7)">Breakfast</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient8)" name="meat" value="Desert"><label class="form-check-label" for="(ingredient8)">Desert</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient9)" name="meat" value="Dinner"><label class="form-check-label" for="(ingredient9)">Dinner</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient10)" name="meat" value="Holiday"><label class="form-check-label" for="(ingredient10)">Holiday</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient11)" name="meat" value="Snacks"><label class="form-check-label" for="(ingredient11)">Snacks and Appetizers</label><br>
-            </div>
-            <div class="tags-container">
-                <input type="checkbox" class="form-check-input" id="(ingredient12)" name="meat" value="Egg"><label class="form-check-label" for="(ingredient12)">Egg Free</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient13)" name="meat" value="Gluten"><label class="form-check-label" for="(ingredient13)">Gluten Free</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient14)" name="meat" value="HEalthy"><label class="form-check-label" for="(ingredient14)">Healthy</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient15)" name="meat" value="Quick"><label class="form-check-label" for="(ingredient15)">Quick and Easy</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient16)" name="meat" value="Vegeterian"><label class="form-check-label" for="(ingredient16)">Vegeterian</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient17)" name="meat" value="Grain"><label class="form-check-label" for="(ingredient17)">Whole Grain</label><br>
-            </div>
-            <div class="tags-container">
-                <input type="checkbox" class="form-check-input" id="(ingredient18)" name="meat" value="Winter"><label class="form-check-label" for="(ingredient18)">Winter</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient19)" name="meat" value="Spring"><label class="form-check-label" for="(ingredient19)">Spring</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient20)" name="meat" value="Summer"><label class="form-check-label" for="(ingredient20)">Summer</label><br>
-                <input type="checkbox" class="form-check-input" id="(ingredient21)" name="meat" value="Autumn"><label class="form-check-label" for="(ingredient21)">Autumn</label><br>
-            </div>
-        </div>
+
 
         <!-- Ingridients, unit, delete -->
         <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
@@ -75,6 +74,7 @@
         </div>
 
         <!-- steps -->
+        <p>Steps</p>
         <div class="steps-container">
             <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction"></textarea>
         </div>
@@ -83,8 +83,11 @@
 
             <dl>
                 <p>
-                    <input type="file" name="file" class="form-control" autocomplete="off" accept="image/*">
-                    <input id="serving_amount" class="form-control" type="text" placeholder="Or enter image url" name="img">
+                    <p class="insert-image">Insert Image</p>
+                    <input id="image_field" type="file" name="file" class="form-control" autocomplete="off" accept="image/*">
+                    <br>
+                    <p>Or</p>
+                    <input id="serving_amount" class="form-control" type="text" placeholder="Enter image url" name="img">
                 </p>
             </dl>
         </div>
