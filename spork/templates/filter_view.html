@@ -1,18 +1,18 @@
 {% extends "layout.html" %} {% block title %}Filter View{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="../static/css/index.css"> 
+<link rel="stylesheet" href="../static/css/index.css">
 <script src="{{ url_for('static', filename='js/load_more.js') }}"></script>
 {% endblock %} {% block content %}
 
 
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
-    <h1 class="display-4">Recipe Cards</h1>
+    <!-- <h1 class="display-4">Recipe Cards</h1> -->
     <p id="small-display">{% with messages = get_flashed_messages() %}{% if messages %}{{ messages[0] }}{% endif %} {% endwith %}</p>
     <p id="total-num-recipes"></p>
 </div>
 
 <div class="container">
     <div class="card-deck text-center">
-        {% for content in data %} 
+        {% for content in data %}
 
 
 

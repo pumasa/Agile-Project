@@ -16,14 +16,13 @@
 
 body {
     background-color: var(--body_bg);
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
+    padding-top: 5rem;
 }
 
-
-/* greeting messages */
-
-#small-display {
-    padding-top: 1.2pc;
+.pricing-header {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 
@@ -106,10 +105,12 @@ hr {
 }
 
 .random-button {
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem;
     font-size: 1.5rem;
     padding-top: 0.5pc;
-    padding-bottom: 0.5pc;
+    padding-bottom: 0.5pc; */
+    /* border-width: 0px; */
+    height: 50px;
 }
 
 
@@ -139,8 +140,8 @@ hr {
     padding-top: 2rem;
     /* padding-bottom: 1rem; */
     /* scale */
-    transform: scale(0.9);
-    transform-origin: 0 1;
+    /* transform: scale(0.9);
+    transform-origin: 0 1; */
 }
 
 
@@ -152,6 +153,7 @@ hr {
     margin-top: 1.5rem;
     font-size: 1.5rem;
 }
-.account-icon{
+
+.account-icon {
     max-height: 40px;
 }

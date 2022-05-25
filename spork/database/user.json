@@ -23,5 +23,12 @@
    31
   ],
   "saved_recipes": []
+ },
+ {
+  "id": "3",
+  "email": "a@gmail.com",
+  "password": "sha256$vauThaccbEV1JPBZ$b8105a3fd88828ba6e5bf6cc502adc972d39538a90bd75aea1a7d02748af67a0",
+  "recipes": [],
+  "saved_recipes": []
  }
 ]
