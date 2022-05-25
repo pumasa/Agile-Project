@@ -7,7 +7,8 @@
   "saved_recipes": [
    1,
    2
-  ]
+  ],
+  "is_admin": false
  },
  {
   "id": "2",
@@ -22,13 +23,17 @@
    33,
    31
   ],
-  "saved_recipes": []
+
+  "saved_recipes": [],
+  "is_admin": false
  },
  {
   "id": "3",
-  "email": "a@gmail.com",
-  "password": "sha256$vauThaccbEV1JPBZ$b8105a3fd88828ba6e5bf6cc502adc972d39538a90bd75aea1a7d02748af67a0",
+  "email": "admin@bcit.ca",
+  "password": "sha256$uVgoTsWUSYMh0PTf$dbe749d8364551fc28bbfe1fbc3444e17af1c076fe157351e36695693658350b",
   "recipes": [],
-  "saved_recipes": []
+  "saved_recipes": [],
+  "is_admin": true
+
  }
 ]
