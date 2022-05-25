@@ -7,10 +7,12 @@
 {% endblock %} {% block content %}
 
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
-    <h1 class="display-4">Recipe Cards</h1>
+
+    <!-- <h1 class="display-4">Recipe Cards</h1> -->
+    <div></div>
     <p id="small-display">{% with messages = get_flashed_messages() %}{% if messages %}{{ messages[0] }}{% endif %} {% endwith %}</p>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style="height:50px;border: 3px solid black;">
+    <button type="button" class="btn btn-primary random-button" data-toggle="modal" data-target="#exampleModal">
         Generate Random Recipe
       </button>
 
@@ -25,7 +27,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Still not sure what to make?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Your random recipe:</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
