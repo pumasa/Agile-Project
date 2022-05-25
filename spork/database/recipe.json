@@ -57,23 +57,33 @@
         },
         "instructions": "Melt margarine in hot water. Add sugar and salt and stir. Add cold water and yeast. Stir to dissolve yeast. Add 3 cups flour and mix. Add eggs and 2 1/2 - 3 cups more flour. Mix, cover and let rise until dough doubles in size. Punch down and let rise 30 more minutes or until doubles. Make walnut size balls of dough. Place about 2 inches apart in well-buttered 9 x 13 inch pan. Bake in a preheated 350 degrees F (175 degrees C) oven for 30-45 minutes. Brush top of rolls with margarine while hot.",
         "image": "default-recipe.jpg"
-    },
-    {
+    },    {
         "recipeID": 4,
-        "title": "Sweet Potato Bread I",
+        "title": "Red Potato Salad",
         "tags": [
-            "Whole Grain"
+            "Healthy",
+            "Vegeterian"
         ],
-        "author": "Mary E. Crain",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/394676.jpg",
-        "serving": 2,
-        "description": "A Southern delight with a 'more-ish'  taste.  One bite and you want more! This bread freezes well.",
+        "author": "Joanne",
+        "serving": "6",
         "ingredients": {
-            "": ""
+            "mayonnaise": "1/4 cup",
+            "extra virgin olive oil": "1/4 cup",
+            "white wine vinegar": "1 tbsp",
+            "Dijon mustard": "1 tbsp",
+            "salt": "1/2 tsp",
+            "freshly ground black pepper": "1/4 tsp",
+            "red potatoes": "2.5 lb",
+            "finely chopped celery": "1/2 cup",
+            "sliced scallions": "1/3 cup",
+            "sliced chives": "1/3 cup"
         },
-        "instructions": "Combine sugar and oil; beat well. Add eggs and beat. Combine flour, baking soda, salt, cinnamon and nutmeg. Stir flour mixture into egg mixture alternately with water. Stir in sweet potatoes and chopped nuts. Pour batter into greased 9x5 inch loaf pan (or 2 small loaf pans). Bake at 350 degrees F (175 degrees C) for about one hour.",
-        "image": "default-recipe.jpg"
-    },
+        "instructions": "In a large bowl, whisk to combine the mayonnaise, olive oil, vinegar, mustard, 1/2 tsp salt, and 1/4 tsp black pepper. Place the cut up red potatoes into a large pot, and fill with enough cold water to cover the potatoes, plus an inch. Bring the pot to a boil over high heat, and cook the potatoes until fork tender. The time will really vary depending on if you sliced the potatoes or cut them into chunks, and how large, but for me it usually only takes about 5 minutes once the water is boiling, about 10-15 minutes total. Once the potatoes are fork tender, drain them in a colander and let them sit for a few minutes for the excess steam to come off. While the potatoes are still warm, toss them well with the dressing. Stir in the celery, scallions, and chives, then serve warm or chill for several hours before serving. Enjoy! ",
+        "image": "default-recipe.jpg",
+        "img": "https://www.fifteenspatulas.com/wp-content/uploads/2018/08/Red-Potato-Salad-Fifteen-Spatulas-7-640x427.jpg",
+        "description": "Healthy salad bowl for sharing"
+    }
+   ,
     {
         "recipeID": 5,
         "title": "Orange Buns",
@@ -626,8 +636,8 @@
             "lemon wedge": "for serving"
         },
         "instructions": "1) On a cutting board, slice the chicken breasts in half horizontally, creating 2 cutlets. Place the cutlets, 1 at a time, in a large zip-top bag and use a meat mallet to pound to a quarter-inch-thick. Transfer the chicken to a cutting board and pat dry with a paper towel. Season the chicken on both sides with salt and pepper. \r\n2) In a shallow bowl, whisk together the flour, 1 teaspoon of salt, and 1 teaspoon of pepper. In another shallow bowl, beat the eggs. Add the panko and Parmesan to a third shallow bowl and whisk to combine. \r\n3) Coat the chicken in the flour, shaking off any excess. Then, dip in the eggs, letting any excess drip off. Finally, coat in the panko-Parmesan mixture, making sure all sides are covered. Transfer the chicken to a clean cutting board. \r\n4) Heat the vegetable oil in a large pan over medium-high heat until shimmering. Working in batches if needed to avoid overcrowding the pan, add the chicken and cook until golden brown and cooked through, between 2 and 3 minutes per side. \r\n5) Transfer the chicken to a paper towel-lined plate and season with salt. Garnish the chicken cutlets with the parsley and serve with lemon wedges for squeezing on top.",
-        "image": "chicken_cutlet.jpg",
-        "img": ""
+        "image": "default-recipe.jpg",
+        "img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/12/20/0/FNK_Chicken-Cutlet_H_s4x3.jpg.rend.hgtvcom.616.462.suffix/1576855328048.jpeg"
     },
     {
         "recipeID": 36,
@@ -683,29 +693,19 @@
     },
     {
         "recipeID": 39,
-        "title": "Red Potato Salad",
+        "title": "Sweet Potato Bread I",
         "tags": [
-            "Healthy",
-            "Vegeterian"
+            "Whole Grain"
         ],
-        "author": "Joanne",
-        "serving": "6",
+        "author": "Mary E. Crain",
+        "img": "http://images.media-allrecipes.com/userphotos/250x250/394676.jpg",
+        "serving": 2,
+        "description": "A Southern delight with a 'more-ish'  taste.  One bite and you want more! This bread freezes well.",
         "ingredients": {
-            "mayonnaise": "1/4 cup",
-            "extra virgin olive oil": "1/4 cup",
-            "white wine vinegar": "1 tbsp",
-            "Dijon mustard": "1 tbsp",
-            "salt": "1/2 tsp",
-            "freshly ground black pepper": "1/4 tsp",
-            "red potatoes": "2.5 lb",
-            "finely chopped celery": "1/2 cup",
-            "sliced scallions": "1/3 cup",
-            "sliced chives": "1/3 cup"
+            "": ""
         },
-        "instructions": "In a large bowl, whisk to combine the mayonnaise, olive oil, vinegar, mustard, 1/2 tsp salt, and 1/4 tsp black pepper. Place the cut up red potatoes into a large pot, and fill with enough cold water to cover the potatoes, plus an inch. Bring the pot to a boil over high heat, and cook the potatoes until fork tender. The time will really vary depending on if you sliced the potatoes or cut them into chunks, and how large, but for me it usually only takes about 5 minutes once the water is boiling, about 10-15 minutes total. Once the potatoes are fork tender, drain them in a colander and let them sit for a few minutes for the excess steam to come off. While the potatoes are still warm, toss them well with the dressing. Stir in the celery, scallions, and chives, then serve warm or chill for several hours before serving. Enjoy! ",
-        "image": "default-recipe.jpg",
-        "img": "https://www.fifteenspatulas.com/wp-content/uploads/2018/08/Red-Potato-Salad-Fifteen-Spatulas-7-640x427.jpg",
-        "description": "Healthy salad bowl for sharing"
+        "instructions": "Combine sugar and oil; beat well. Add eggs and beat. Combine flour, baking soda, salt, cinnamon and nutmeg. Stir flour mixture into egg mixture alternately with water. Stir in sweet potatoes and chopped nuts. Pour batter into greased 9x5 inch loaf pan (or 2 small loaf pans). Bake at 350 degrees F (175 degrees C) for about one hour.",
+        "image": "default-recipe.jpg"
     },
     {
         "recipeID": 40,
