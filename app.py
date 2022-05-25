@@ -360,6 +360,12 @@ def recipe_delete(id):
                             if data_recipes_list is None:
                                 data_recipes_list = []
                             user.update({"recipes": data_recipes_list})
+                        if id in user["saved_recipes"]:
+                            data_recipes_list2 = user["saved_recipes"]
+                            data_recipes_list2.remove(id)
+                            if data_recipes_list2 is None:
+                                data_recipes_list2 = []
+                            user.update({"saved_recipes": data_recipes_list2})
                     json.dump(users, f, indent=1)
                     
                 recipes.remove(recipe)
