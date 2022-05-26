@@ -16,7 +16,6 @@
 
 body {
     background-color: var(--body_bg);
-    /* margin-top: -20px; */
 }
 
 
@@ -25,27 +24,22 @@ body {
 #create_body {
     background-color: #faf9f9;
     /* padding: 2pc auto 2pc auto; */
-    margin-top: 2.5pc;
+    margin-top: 2pc;
     margin-bottom: 8pc;
     padding-bottom: 2pc;
     padding-top: 1pc;
-    width: 70%;
-    padding-left: 5%;
 }
 
 .basic-info {
-    width: 75%;
-    margin-right: 7rem;
-    padding-bottom: 0;
+    width: 50%;
+    margin-right: 20%;
 }
 
 
 /* each textbox margin between them */
 
 .form-control {
-    margin-top: 2pc;
-    /* margin-bottom: 2pc; */
-    /* padding-top: 20rem; */
+    margin-top: 2pc
 }
 
 
@@ -73,11 +67,9 @@ body {
     background-color: #e8e8e8;
 }
 
-
-/* 
 .basic-info-image {
     display: flex;
-} */
+}
 
 
 /* Insert Ingridients */
@@ -85,11 +77,11 @@ body {
 
 /* spaces on right and left and right */
 
-#insert-ingredient {
+.insert-ingredient {
     display: flex;
 }
 
-#insert-ingredient .form-control {
+.insert-ingredient .form-control {
     margin-right: 1.5pc;
     margin-top: 1.5pc;
     width: 20pc;
@@ -121,11 +113,11 @@ body {
 #tags {
     display: flex;
     position: relative;
+    left: 10px;
 }
 
 .tags-container {
-    padding-right: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-right: 1.5pc;
 }
 
 
@@ -136,6 +128,7 @@ body {
     justify-content: flex-end;
     margin-top: 1.5pc;
     margin-top: 2pc;
+    margin-right: 0.6pc;
 }
 
 
@@ -143,10 +136,10 @@ body {
 
 #add-button-container {
     display: flex;
-    justify-content: flex-end;
+    align-items: flex-end;
     margin-top: 1.5pc;
     margin-top: 1.5pc;
-    margin-right: 32%;
+    margin-right: 0.6pc;
 }
 
 
@@ -158,7 +151,6 @@ body {
     /* background-color: black; */
     display: flex;
     justify-content: space-between;
-    margin-top: -2rem;
 }
 
 
@@ -245,19 +237,3 @@ body {
 .form-check-label:focus {
     outline: none;
 }
-
-
-/* fix or message */
-
-.insert-image {
-    padding-top: 1rem;
-}
-
-.insert-image {
-    margin-bottom: -1rem;
-}
-
-
-/* #serving_amount {
-    margin-top: -0.5rem;
-} */

@@ -1,41 +1,43 @@
-{% extends "layout.html" %} {% block title %}Home Page{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="../static/css/index.css"> {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block title %}Filter View{% endblock %} {% block head %} {{ super() }}
+<link rel="stylesheet" href="../static/css/index.css">
+<script src="{{ url_for('static', filename='js/load_more.js') }}"></script>
+{% endblock %} {% block content %}
 
 
 <div class="pricing-header px-4 py-3 pt-md-6 pb-md-4 text-center">
-    <h1 class="display-4">Recipe Cards</h1>
+    <!-- <h1 class="display-4">Recipe Cards</h1> -->
     <p id="small-display">{% with messages = get_flashed_messages() %}{% if messages %}{{ messages[0] }}{% endif %} {% endwith %}</p>
     <p id="total-num-recipes"></p>
 </div>
 
 <div class="container">
     <div class="card-deck text-center">
-        {% for x in data %} {% for y in x['tags'] %} {% for z in tags %} {% if z in y%}
+        {% for content in data %}
 
 
-        <div class="col-sm-6 col-md-3 col-lg-3">
-            <a href="/recipe/view/{{x['recipeID']}}">
-                <div class="card mb-4 box-shadow">
 
-                    <div class="card-header">
-
-                        <h4 class="my-0 font-weight-normal">{{ x['title'][0:10]}}</h4>
+        <div class="col-md-4 moreBox" style="display: none;">
+            <a href="/recipe/view/{{content[ 'recipeID']}} ">
+                <div class="card mb-4 shadow-sm">
+                    {%if content['img'] == ''%}
+                    <img src=" {{url_for( 'static', filename='images/' + content[ 'image'])}} " width="100% " height="225 " class="card-img-top " text="Thumbnail ">{%else%}
+                    <img src="{{content[ 'img']}} " width="100% " height="225 " class="card-img-top " text="Thumbnail "> {% endif%}
+                    <div class="card-body ">
+                        <h4 class="my-0 font-weight-normal ">{{ content['title']}}</h4>
+                        <p class="card-text ">{{ content['description']}}</p>
+                        <div class="d-flex justify-content-between align-items-center ">
+                            <div class="btn-group ">
+                                <small class="text-muted ">By: {{content['author']}}</small>
+                            </div>
+                            <small class="text-muted ">Serves: {{content['serving']}}</small>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272" alt="image" width="100" class="img-thumbnail">
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li> # of servings {{x['serving']}} </li>
-
-
-                        </ul>
-                        <span id="number-of-ingredients"> </span>
-                    </div>
-
                 </div>
             </a>
         </div>
 
-        {% endif %}{% endfor %} {% endfor %}{% endfor %}
+
+        {% endfor %}
 
 
 

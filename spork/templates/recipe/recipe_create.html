@@ -1,4 +1,7 @@
 {% extends "layout.html" %} {% block title %}Create Recipe{% endblock %} {% block head %} {{ super() }}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <link rel="stylesheet" href="../static/css/create.css"> {% endblock %} {% block content %}
 
 
@@ -8,35 +11,61 @@
 <div class="container" id="create_body">
 
     <h1 class="black-text text-center">Create Recipe</h1>
-    <form action="/recipe/create" method="POST">
+    <form action="/recipe/create" enctype="multipart/form-data" method="POST" onsubmit="return validateMyForm()">
         <!-- Title, Author, serving, add image -->
         <div class="basic-info-image">
             <div class="basic-info">
                 <input id="title" class="form-control" type="text" placeholder="Title: 'Omlet'" name="title">
+                <input id="serving_amount" class="form-control" type="text" placeholder="Description" name="description">
                 <input id="author_name" class="form-control" type="text" placeholder="Author: 'Bob'" name="author_name">
                 <input id="serving_amount" class="form-control" type="text" placeholder="Serving: '2'" name="serving_amount">
 
+                <br>
             </div>
-            <div>
-                <input type="checkbox" id="vehicle1" name="meat" value="Beef"><label for="vehicle1">Beef</label><br>
-                <input type="checkbox" id="vehicle1" name="meat" value="Chiken"><label for="vehicle1">Chicken</label><br>
-                <input type="checkbox" id="vehicle1" name="meat" value="Fish"><label for="vehicle1">Fish & Seafood</label><br>
-                <input type="checkbox" id="vehicle1" name="meat" value="Pork"><label for="vehicle1">Pork</label><br>
-                <input type="checkbox" id="vehicle1" name="meat" value="Turkey"><label for="vehicle1">Turkey</label><br>
-                <input type="checkbox" id="vehicle1" name="meat" value="Lamb"><label for="vehicle1">Lamb</label><br>
+
+            <div id="tags">
+                <div class="tags-container">
+                    <!-- <input type="checkbox" class="form-check-input btn-check" id="(ingredient1)" name="meat" value="Beef" autocomplete="off"><label class="form-check-label btn btn-outline-success" for="(ingredient1)">Beef</label><br> -->
+
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient1)" name="meat" autocomplete="off" value="Beef"><label class="form-check-label btn btn-outline-success" for="(ingredient1)">Beef</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient2)" name="meat" autocomplete="off" value="Chicken"><label class="form-check-label btn btn-outline-success" for="(ingredient2)">Chicken</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient3)" name="meat" autocomplete="off" value="Fish & Seafood"><label class="form-check-label btn btn-outline-success" for="(ingredient3)">Fish & Seafood</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient4)" name="meat" autocomplete="off" value="Pork"><label class="form-check-label btn btn-outline-success" for="(ingredient4)">Pork</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient5)" name="meat" autocomplete="off" value="Turkey"><label class="form-check-label btn btn-outline-success" for="(ingredient5)">Turkey</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient6)" name="meat" autocomplete="off" value="Lamb"><label class="form-check-label btn btn-outline-success" for="(ingredient6)">Lamb</label><br>
+                </div>
+                <div class="tags-container">
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient7)" name="meat" autocomplete="off" value="Breakfast"><label class="form-check-label btn btn-outline-success" for="(ingredient7)">Breakfast</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient8)" name="meat" autocomplete="off" value="Dessert"><label class="form-check-label btn btn-outline-success" for="(ingredient8)">Dessert</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient9)" name="meat" autocomplete="off" value="Dinner"><label class="form-check-label btn btn-outline-success" for="(ingredient9)">Dinner</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient10)" name="meat" autocomplete="off" value="Holiday"><label class="form-check-label btn btn-outline-success" for="(ingredient10)">Holiday</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient11)" name="meat" autocomplete="off" value="Snacks"><label class="form-check-label btn btn-outline-success" for="(ingredient11)">Snacks and Appetizers</label><br>
+                </div>
+                <div class="tags-container">
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient12)" name="meat" autocomplete="off" value="Egg Free"><label class="form-check-label btn btn-outline-success" for="(ingredient12)">Egg Free</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient13)" name="meat" autocomplete="off" value="Gluten Free"><label class="form-check-label btn btn-outline-success" for="(ingredient13)">Gluten Free</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient14)" name="meat" autocomplete="off" value="Healthy"><label class="form-check-label btn btn-outline-success" for="(ingredient14)">Healthy</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient15)" name="meat" autocomplete="off" value="Quick and Easy"><label class="form-check-label btn btn-outline-success" for="(ingredient15)">Quick and Easy</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient16)" name="meat" autocomplete="off" value="Vegeterian"><label class="form-check-label btn btn-outline-success" for="(ingredient16)">Vegeterian</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient17)" name="meat" autocomplete="off" value="Whole Grain"><label class="form-check-label btn btn-outline-success" for="(ingredient17)">Whole Grain</label><br>
+                </div>
+                <div class="tags-container">
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient18)" name="meat" autocomplete="off" value="Winter"><label class="form-check-label btn btn-outline-success" for="(ingredient18)">Winter</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient19)" name="meat" autocomplete="off" value="Spring"><label class="form-check-label btn btn-outline-success" for="(ingredient19)">Spring</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient20)" name="meat" autocomplete="off" value="Summer"><label class="form-check-label btn btn-outline-success" for="(ingredient20)">Summer</label><br>
+                    <input type="checkbox" class="form-check-input btn-check" id="(ingredient21)" name="meat" autocomplete="off" value="Autumn"><label class="form-check-label btn btn-outline-success" for="(ingredient21)">Autumn</label><br>
+                </div>
             </div>
-            <!-- add image pane -->
-            <!-- <div id="insert-image">
-                <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Add image" />
-            </div> -->
+
         </div>
+
 
         <!-- Ingridients, unit, delete -->
         <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
 
         <div id="insert-ingredient">
-            <input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient1">
-            <input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit1">
+            <div><input id="ingredient" class="form-control" type="text" placeholder="Ingredient: 'Sugar'" name="ingredient1"></div>
+            <div><input id="unit" class="form-control" type="text" placeholder="Unit: '1 tsp'" name="unit1"></div>
         </div>
 
 
@@ -46,8 +75,22 @@
         </div>
 
         <!-- steps -->
+        <p>Steps</p>
         <div class="steps-container">
             <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction"></textarea>
+        </div>
+
+        <div id="picture-file">
+
+            <dl>
+                <p>
+                    <p class="insert-image">Insert Image</p>
+                    <input id="image_field" type="file" name="file" class="form-control" autocomplete="off" accept="image/*">
+                    <br>
+                    <p>Or</p>
+                    <input id="online_image" class="form-control" type="text" placeholder="Enter image url" name="img">
+                </p>
+            </dl>
         </div>
 
         <!-- save,cancle button -->
@@ -56,6 +99,7 @@
             <button id="save-button" type="submit" class="btn btn-success">Save</button>
         </div>
     </form>
+
 
 
     <!-- <h1 class="a ">Test Lorem Ipsum</h1>
@@ -86,6 +130,18 @@
     function reply_click(clicked_id) {
         const element = document.getElementById(clicked_id);
         element.remove();
+    }
+
+    function validateMyForm() {
+        if (document.getElementById("image_field").files.length != 0 && document.getElementById("online_image").value.length != 0) {
+            alert("Choose a Image File to upload OR an Image URL, not Both");
+            return false
+        }
+        if (document.getElementById("title").value.length == 0) {
+            alert("You need a title");
+            return false
+        }
+        return true
     }
 </script>
 {% endblock %}

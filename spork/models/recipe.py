@@ -12,7 +12,10 @@ class Recipe:
         self.author = author
         self.title = title
         self.serving = serving
+        self.image = ""
         self.tags = []
+        self.description = ""
+        self.img = ""
     # adds an ingredient and ingredient quantity to the recipe's ingredient list
     # takes ingredient and how many of the ingredient is in the recipe as parameters
 
@@ -30,6 +33,11 @@ class Recipe:
     def update_instructions(self, instruction):
         self.instructions = instruction
 
+    def update_description(self, description):
+        self.description = description
+
+    def update_img(self, img):
+        self.img = img        
 
     def update_title(self, title):
         self.title = title
@@ -97,20 +105,6 @@ class Recipe:
         
         return results
 
-    #function takes a list of recipes and returns a specified number of recommendations at random
-    def recommendation(self, recipes, recommendations_num):
-        results = []
-        #iterates until the specified number of recommmendations has been collected
-        while recommendations_num > 0:
-            #takes random recipe
-            recommendation = random.choice(recipes)
-            #adds recipe to results
-            results.append(recommendation['recipeID'])
-            #removes recipe from list so that it can't be selected again by random.choice
-            recipes.remove(recommendation)
-            recommendations_num -= 1
-            
-        return results
 
 
     # writes the recipe into the json file
@@ -153,6 +147,9 @@ class Recipe:
             f"serving": str(self.serving),
             f"ingredients": self.ingredients,
             f"instructions": str(self.instructions),
+            f"image": self.image,
+            f"img": self.img,
+            f"description": self.description,
         }
 
         return json

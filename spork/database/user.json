@@ -1,15 +1,46 @@
-[{
-        "id": "1",
-        "email": "test@test.com",
-        "password": "sha256$PlXvzhujQ3DJklY7$8551a46fe87dc5042b66996216709e28ec33bc2191e53d895ea166101ea11160",
-        "recipes": []
-    },
-    {
-        "id": "2",
-        "email": "test@mail.com",
-        "password": "sha256$KNr310XZS6GmBDYm$c1c922392c7fbb08f65ab00c5637ca1f8c7157c46f29b44923ddc8e6e265472c",
-        "recipes": [
-            10
-        ]
-    }
+[
+ {
+  "id": "1",
+  "email": "test@test.com",
+  "password": "sha256$PlXvzhujQ3DJklY7$8551a46fe87dc5042b66996216709e28ec33bc2191e53d895ea166101ea11160",
+  "recipes": [],
+  "saved_recipes": [
+   1,
+   2
+  ],
+  "is_admin": false
+ },
+ {
+  "id": "2",
+  "email": "test@mail.com",
+  "password": "sha256$KNr310XZS6GmBDYm$c1c922392c7fbb08f65ab00c5637ca1f8c7157c46f29b44923ddc8e6e265472c",
+  "recipes": [
+   1,
+   10,
+   31,
+   31,
+   32,
+   33,
+   31
+  ],
+  "saved_recipes": [],
+  "is_admin": false
+ },
+ {
+  "id": "3",
+  "email": "admin@bcit.ca",
+  "password": "sha256$uVgoTsWUSYMh0PTf$dbe749d8364551fc28bbfe1fbc3444e17af1c076fe157351e36695693658350b",
+  "recipes": [],
+  "saved_recipes": [],
+  "is_admin": true
+ },
+ {
+  "id": "4",
+  "email": "a@gmail.com",
+  "password": "sha256$tVLkRzOB4N7uDOho$3d21ecc804024d3abebb081c3922d44f6ea22fcc7762569439b3278004d2e621",
+  "recipes": [
+  ],
+  "saved_recipes": [],
+  "is_admin": false
+ }
 ]

@@ -1,26 +1,61 @@
 {% extends "layout.html" %} {% block title %}View Recipe{% endblock %} {% block head %} {{ super() }}
-<link rel="stylesheet" href="../../static/css/recipe_view.css"> {% endblock %} {% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> 
+<link rel="stylesheet" href="{{url_for('static', filename='css/recipe_view.css')}}">
+{% endblock %} {% block content %}
 
 
 </div>
 
 <!-- This div is centered | All the contents of the form are here-->
 <div class="container" id="create_body">
+    {% if data['recipeID'] not in saved_recipes %}
+    <div id="save-recipe">
+        <a href="/save/{{data['recipeID']}} ">
+
+            <button id="save-recipe-btn" type="button" class="btn btn-primary">Save This Recipe</button>
+        </a>
+    </div>
+    {% else %}
+    <div id="saved-recipe">
+        <a href="/unsave/{{data['recipeID']}} ">
+
+            <button id="saved-recipe-btn" type="button" class="btn btn-secondary">Saved</button>
+        </a>
+    </div>
+    {% endif %}
     <!-- Title, Author, serving, add image -->
     <div class="basic-info-image">
         <div>
             <h1 class="black-text text-left ricipe-title">{{data['title']}}</h1>
-
+            <h8 class="black-text text-left">Description: {{data['description']}}</h8>
+            <br/>
             <div class="basic-info">
-                <h5 class="black-text text-left">Author: {{data['author']}} &nbsp; &nbsp; &nbsp;</h5>
-                <h5 class="black-text text-left">Servings: {{data['serving']}}</h5>
+                <h5 class="black-text text-left"><br/>Author: {{data['author']}} &nbsp; &nbsp; &nbsp;</h5>
+                <h5 class="black-text text-left"><br/>Servings: {{data['serving']}}</h5>
             </div>
+            <h5 class="black-text text-left"><br/>Tags:</h5>
+            {% for x in data['tags']%}
+            <button type="button" class="btn btn-success">{{x}}</button> {%endfor%}
         </div>
+
+
+
+
+
+
+
 
         <!-- image -->
+        {%if data['img'] == ''%}
         <div id="image">
-            <img src="" alt="recipe image">
+            <img src="{{url_for('static', filename='images/'+ data['image'])}}" alt="recipe image">
         </div>
+        {%else%}
+        <div id="image">
+            <img src="{{data['img']}}" alt="recipe image">
+        </div>
+        {% endif%}
+
     </div>
 
     <!-- Ingridients list -->
@@ -56,7 +91,7 @@
 
 
     <!-- Delete button-->
-    {% if data['recipeID'] in current_user.recipes %}
+    {% if data['recipeID'] in current_user.recipes or current_user.is_admin %}
     <div class="delete-container">
         <!-- Edit button-->
         <a href="/recipe/view/{{data['recipeID']}}/update">

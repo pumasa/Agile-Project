@@ -1,57 +1,144 @@
  {% extends "layout.html" %} {% block title %}Update Recipe{% endblock %} {% block head %} {{ super() }}
-
-<link rel="stylesheet" href="../../../static/css/create.css"> {% endblock %} {% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="../../../static/css/update_recipe.css"> {% endblock %} {% block content %}
 
 
 
 </div>
 
 <!-- This div is centered | All the contents of the form are here-->
-<div class="container" id="create_body">{% for key in z %} {% if id == key['recipeID'] %}
+<div class="container" id="create_body">
 
     <h1 class="black-text text-center">Update Recipe</h1>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data" onsubmit="return validateMyForm()">
         <!-- Title, Author, serving, add image -->
         <div class="basic-info-image">
             <div class="basic-info">
-                <input id="title" class="form-control" type="text" value="{{key['title']}}" name="title">
-                <input id="author_name" class="form-control" type="text" value="{{key['author']}}" name="author_name">
-                <input id="serving_amount" class="form-control" type="text" value="{{key['serving']}}" name="serving_amount">
+                <input id="title" class="form-control" type="text" value="{{single_recipe['title']}}" name="title">
+                <input id="serving_amount" class="form-control" type="text" value="{{single_recipe['description']}}" name="description">
+                <input id="author_name" class="form-control" type="text" value="{{single_recipe['author']}}" name="author_name">
+                <input id="serving_amount" class="form-control" type="text" value="{{single_recipe['serving']}}" name="serving_amount">
             </div>
 
-            <!-- add image pane -->
-            <!-- <div id="insert-image">
-                <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Add image" />
-            </div> -->
+            <!-- image -->
+            <div id="image">
+                {%if single_recipe['img'] == ''%}
+                <img src="{{url_for('static', filename='images/'+ single_recipe['image'])}}" alt="recipe image">{%else%}
+                <img src="{{single_recipe['img']}}"> {% endif%}
+            </div>
         </div>
+        <div id="tags">
+            <div class="tags-container">
+                {% if "Beef" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient1)" name="meat" value="Beef" checked><label class="form-check-label btn btn-outline-success" for="(ingredient1)">Beef</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient1)" name="meat" value="Beef"><label class="form-check-label btn btn-outline-success" for="(ingredient1)">Beef</label><br> {% endif %} {% if "Chicken" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient2)" name="meat" value="Chicken" checked><label class="form-check-label btn btn-outline-success" for="(ingredient2)">Chicken</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient2)" name="meat" value="Chicken"><label class="form-check-label btn btn-outline-success" for="(ingredient2)">Chicken</label><br> {% endif %} {% if "Fish & Seafood"
+                in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient3)" name="meat" value="Fish & Seafood" checked><label class="form-check-label btn btn-outline-success" for="(ingredient3)">Fish & Seafood</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient3)" name="meat" value="Fish & Seafood"><label class="form-check-label btn btn-outline-success" for="(ingredient3)">Fish & Seafood</label><br> {% endif %} {% if "Pork"
+                in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient4)" name="meat" value="Pork" checked><label class="form-check-label btn btn-outline-success" for="(ingredient4)">Pork</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient4)" name="meat" value="Pork"><label class="form-check-label btn btn-outline-success" for="(ingredient4)">Pork</label><br> {% endif %} {% if "Turkey" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient5)" name="meat" value="Turkey" checked><label class="form-check-label btn btn-outline-success" for="(ingredient5)">Turkey</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient5)" name="meat" value="Turkey"><label class="form-check-label btn btn-outline-success" for="(ingredient5)">Turkey</label><br> {% endif %} {% if "Lamb" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient6)" name="meat" value="Lamb" checked><label class="form-check-label btn btn-outline-success" for="(ingredient6)">Lamb</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient6)" name="meat" value="Lamb"><label class="form-check-label btn btn-outline-success" for="(ingredient6)">Lamb</label><br> {% endif %}
+            </div>
+            <div class="tags-container">
 
+                {% if "Breakfast" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient7)" name="meat" value="Breakfast" checked><label class="form-check-label btn btn-outline-success" for="(ingredient7)">Breakfast</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient7)" name="meat" value="Breakfast"><label class="form-check-label btn btn-outline-success" for="(ingredient7)">Breakfast</label><br> {% endif %} {% if "Dessert" in
+                single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient8)" name="meat" value="Dessert" checked><label class="form-check-label btn btn-outline-success" for="(ingredient8)">Dessert</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient8)" name="meat" value="Dessert"><label class="form-check-label btn btn-outline-success" for="(ingredient8)">Dessert</label><br> {% endif %} {% if "Dinner" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient9)" name="meat" value="Dinner" checked><label class="form-check-label btn btn-outline-success" for="(ingredient9)">Dinner</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient9)" name="meat" value="Dinner"><label class="form-check-label btn btn-outline-success" for="(ingredient9)">Dinner</label><br> {% endif %} {% if "Holiday" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient10)" name="meat" value="Holiday" checked><label class="form-check-label btn btn-outline-success" for="(ingredient10)">Holiday</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient10)" name="meat" value="Holiday"><label class="form-check-label btn btn-outline-success" for="(ingredient10)">Holiday</label><br> {% endif %} {% if "Snacks and Appetizers"
+                in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient11)" name="meat" value="Snacks and Appetizers" checked><label class="form-check-label btn btn-outline-success" for="(ingredient11)">Snacks and Appetizers</label><br>                {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient11)" name="meat" value="Snacks and Appetizers"><label class="form-check-label btn btn-outline-success" for="(ingredient11)">Snacks and Appetizers</label><br> {% endif
+                %}
+            </div>
+            <div class="tags-container">
+
+                {% if "Egg Free" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient12)" name="meat" value="Egg Free" checked><label class="form-check-label btn btn-outline-success" for="(ingredient12)">Egg Free</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient12)" name="meat" value="Egg Free"><label class="form-check-label btn btn-outline-success" for="(ingredient12)">Egg Free</label><br> {% endif %} {% if "Gluten Free"
+                in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient13)" name="meat" value="Gluten Free" checked><label class="form-check-label btn btn-outline-success" for="(ingredient13)">Gluten Free</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient13)" name="meat" value="Gluten Free"><label class="form-check-label btn btn-outline-success" for="(ingredient13)">Gluten Free</label><br> {% endif %} {% if "Healthy"
+                in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient14)" name="meat" value="Healthy" checked><label class="form-check-label btn btn-outline-success" for="(ingredient14)">Healthy</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient14)" name="meat" value="Healthy"><label class="form-check-label btn btn-outline-success" for="(ingredient14)">Healthy</label><br> {% endif %} {% if "Quick and Easy"
+                in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient15)" name="meat" value="Quick and Easy" checked><label class="form-check-label btn btn-outline-success" for="(ingredient15)">Quick and Easy</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient15)" name="meat" value="Quick and Easy"><label class="form-check-label btn btn-outline-success" for="(ingredient15)">Quick and Easy</label><br> {% endif %} {% if
+                "Vegeterian" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient16)" name="meat" value="Vegeterian" checked><label class="form-check-label btn btn-outline-success" for="(ingredient16)">Vegeterian</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient16)" name="meat" value="Vegeterian"><label class="form-check-label btn btn-outline-success" for="(ingredient16)">Vegeterian</label><br> {% endif %} {% if "Whole Grain"
+                in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient17)" name="meat" value="Whole Grain" checked><label class="form-check-label btn btn-outline-success" for="(ingredient17)">Whole Grain</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient17)" name="meat" value="Whole Grain"><label class="form-check-label btn btn-outline-success" for="(ingredient17)">Whole Grain</label><br> {% endif %}
+            </div>
+            <div class="tags-container">
+
+                {% if "Winter" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient18)" name="meat" value="Winter" checked><label class="form-check-label btn btn-outline-success" for="(ingredient18)">Winter</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient18)" name="meat" value="Winter"><label class="form-check-label btn btn-outline-success" for="(ingredient18)">Winter</label><br> {% endif %} {% if "Spring" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient19)" name="meat" value="Spring" checked><label class="form-check-label btn btn-outline-success" for="(ingredient19)">Spring</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient19)" name="meat" value="Spring"><label class="form-check-label btn btn-outline-success" for="(ingredient19)">Spring</label><br> {% endif %} {% if "Summer" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient20)" name="meat" value="Summer" checked><label class="form-check-label btn btn-outline-success" for="(ingredient20)">Summer</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient20)" name="meat" value="Summer"><label class="form-check-label btn btn-outline-success" for="(ingredient20)">Summer</label><br> {% endif %} {% if "Autumn" in single_recipe["tags"]%}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient21)" name="meat" value="Autumn" checked><label class="form-check-label btn btn-outline-success" for="(ingredient21)">Autumn</label><br> {% else %}
+                <input type="checkbox" class="form-check-input btn-check" id="(ingredient21)" name="meat" value="Autumn"><label class="form-check-label btn btn-outline-success" for="(ingredient21)">Autumn</label><br> {% endif %}
+            </div>
+        </div>
         <!-- Ingridients, unit, delete -->
         <!-- NOTE: each button needs a new insert-ingridient div to create a new row on a new line -->
-        {% for ingr in key['ingredients']%}
-        <div id="insert-ingredient">
-            <input id="ingredient" class="form-control" type="text" value="{{ingr}}" name="ingredient1">
-            <input id="unit" class="form-control" type="text" value="{{key['ingredients'][ingr]}}" name="unit1">
-        </div>{% endfor %}
+        {% for ingr in single_recipe['ingredients']%} {% if loop.index == 1 %}
+        <div class="insert-ingredient">
+            <div><input id="ingredient{{loop.index}}" class="form-control count-js" type="text" value="{{ingr}}" name="ingredient{{loop.index}}"></div>
+            <div><input id="unit{{loop.index}}" class="form-control count-js" type="text" value="{{single_recipe['ingredients'][ingr]}}" name="unit{{loop.index}}"></div>
+        </div>
+        {% else %}
+        <div id='delete{{loop.index}}' class="insert-ingredient">
+            <div><input id="ingredient{{loop.index}}" class="form-control count-js" type="text" value="{{ingr}}" name="ingredient{{loop.index}}"></div>
+            <div><input id="unit{{loop.index}}" class="form-control count-js" type="text" value="{{single_recipe['ingredients'][ingr]}}" name="unit{{loop.index}}"></div>
+            <button type='button' id='delete{{loop.index}}' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button>
+        </div>
+        {% endif %} {% endfor %}
 
 
         <!-- add button -->
-        <div class="add-button-container">
+        <div id="add-button-container">
             <button id="add-button" type="button" class="btn btn-primary" onclick="addCode()">Add +</button>
         </div>
 
         <!-- steps -->
         <div class="steps-container">
-            <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction">{{key['instructions']}}</textarea>
+            <textarea id="steps" class="form-control" id="exampleFormControlTextarea1" rows="3" name="instruction">{{single_recipe['instructions']}}</textarea>
         </div>
+        <div id="picture-file">
 
+            <dl>
+                <p>
+                    <input id="image_field" type="file" name="file" class="form-control" autocomplete="off" accept="image/*">
+                    <input id="online_image" class="form-control" type="text" value="{{single_recipe['img']}}" name="img">
+                </p>
+            </dl>
+        </div>
         <!-- save,cancle button -->
         <div class="cancle-save-container">
-            <a href="/recipe/view/{{key['recipeID']}}">
+            <a href="/recipe/view/{{single_recipe['recipeID']}}">
                 <button id="cancle-button" type="button" class="btn btn-outline-secondary">Cancel</button></a>
 
             <button id="save-button" type="submit" class="btn btn-success">Save</button>
         </div>
-    </form>{% endif %} {% endfor %}
+    </form>
 
 
     <!-- <h1 class="a ">Test Lorem Ipsum</h1>
@@ -65,21 +152,37 @@
     <!-- https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Fusers%2Fsimple-user-icon&psig=AOvVaw2JK2IUr8if_R16GQRBkWqr&ust=1651196331872000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIiNiunPtfcCFQAAAAAdAAAAABAD -->
 </div>
 <script>
-    var count = 2
+    var x = $(".count-js").last().attr("id").slice(-1)
+    console.log(x)
+    var count = parseInt(x) + 1
 
     function addCode() {
-        var ingredientAddHTML = ("<div id ='delete" + count + "'>") + "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
+        var ingredientAddHTML = ("<div id ='delete" + count + "' class='dynamic_div'>") + "<input id='ingredient' class='form-control' type='text' placeholder=\"Ingredient: 'Sugar'\""
         ingredientAddHTML += " name=\"ingredient" + count + "\""
         ingredientAddHTML += "><input id='unit' class='form-control' type='text' placeholder=\"Unit: '1 tsp'\""
         ingredientAddHTML += " name=\"unit" + count + "\""
+
         ingredientAddHTML += "><button type='button' id='delete" + count + "' onClick='reply_click(this.id)' class='btn btn-outline-danger delete'>Delete</button></div>"
-        document.getElementById("insert-ingredient").innerHTML += ingredientAddHTML
+        document.getElementById("add-button-container").insertAdjacentHTML("beforebegin", ingredientAddHTML)
+
         count += 1
     }
 
     function reply_click(clicked_id) {
         const element = document.getElementById(clicked_id);
         element.remove();
+    }
+
+    function validateMyForm() {
+        if (document.getElementById("image_field").files.length != 0 && document.getElementById("online_image").value.length != 0) {
+            alert("Choose a Image File to upload OR an Image URL, not Both");
+            return false
+        }
+        if (document.getElementById("title").value.length == 0) {
+            alert("You need a title");
+            return false
+        }
+        return true
     }
 </script>
 {% endblock %}

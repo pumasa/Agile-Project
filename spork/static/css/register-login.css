@@ -170,8 +170,16 @@ body {
 .account-image {
     width: 10pc;
     height: 10pc;
-    background-color: #181817;
+    /* background-color: #181817; */
     border-radius: 100%;
+}
+
+.account-image-login {
+    width: 10pc;
+    /* height: 10pc; */
+    /* background-color: #181817; */
+    border-radius: 100%;
+    margin-left: -1rem;
 }
 
 
@@ -280,6 +288,17 @@ i {
     padding-top: 0%
 }
 
-.account-icon{
+.account-icon {
     max-height: 40px;
+}
+
+
+/* fix blue text links */
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: black;
+    text-decoration: none;
 }
