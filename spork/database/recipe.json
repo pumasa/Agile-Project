@@ -1,781 +1,782 @@
-[{
-        "recipeID": 1,
-        "title": "Grilled Flank Steak",
-        "tags": [
-            "Beef",
-            "Dinner"
-        ],
-        "author": "Lee Funke",
-        "description": "Marinated flank steak makes dinner an ace in the hole. Mix a quick marinade with soy sauce, honey, garlic, and pepper for a grilled flank steak recipe you will go to again and again.",
-        "serving": "4",
-        "ingredients": {
-            "Flank steak": "2 lb.",
-            "Coarse salt": "1/2 teaspoon",
-            "Ground black pepper": "1/2 teaspoon",
-            "Soy sauce": "1/2 cup",
-            "Honey": "2\u20133 tablespoons"
-        },
-        "instructions": "1) Begin by placing the flank steak onto a large cutting board. Use a meat tenderizer to even out your cut of meat. The goal here isn\u2019t a certain thickness, rather to get everything even.\r\n2) Next, transfer the flank steak onto a large baking sheet with edges. You will be marinating the meat on the baking sheet.\r\n3) Sprinkle both sides of the flank steak with salt and pepper and massage the spices into the meat.\r\n4) Next, whisk together the soy sauce and honey and pour the marinade over the flank steak.\r\n5) Cover the flank steak with plastic wrap and place it in the refrigerator for at least 2 hours, flipping the flank steak at 1 hour to make sure both sides of the flank steak have time to marinate. Alternatively, you can use a large, gallon-size bag or casserole dish.\r\n6) Preheat the grill to 450\u00baF \u2013 500\u00baF.\r\n7) Remove the meat from the refrigerator and let it sit at room temperature for at least 15 minutes.\r\n8) Next, shake out any excess marinade from the flank steak and then sear the steak over direct heat for 1-2 minutes on each side (the grill should be very hot).\r\n9) Then, move the flank steak over to indirect heat and cook for about 10 minutes, flipping after 5 minutes. This will vary on how hot your grill is. Be sure to check the internal temperature of the steak at 5 minutes, 10 minutes, and so on until the internal temperature reaches about 130\u00ba \u2013 135\u00ba for a medium-rare flank steak.\r\n10) Remove the steak from the grill and let it rest for 5 minutes.\r\n11) Slice the flank steak into strips by cutting the meat across the grain of the steak to break up the muscle fibers in the steak.\r\n12) Serve and enjoy!",
-        "image": "default-recipe.jpg",
-        "img": "https://www.simplyrecipes.com/thmb/998iTM_FyoQM15gWbUyX5xd_os8=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2015__06__grilled-marinated-flank-steak-horiz-a-1200-de7ebb9b530242468fdc014bd45696e9.jpg"
-    },
-    {
-        "recipeID": 2,
-        "title": "Smoked Tri-Tip Street Tacos",
-        "tags": [
-            "Beef",
-            "Snacks and Appetizers"
-        ],
-        "author": "Beef Ranchers",
-        "img": "https://cdn.whatsgabycooking.com/wp-content/uploads/2012/12/WGC-Tri-tip-Tacos-copy.jpg",
-        "serving": 3,
-        "description": "Smoked and roasted Tri-Tip is unexpected in a street taco. Try this flavorful version with your favorite toppings for a satisfying meal.",
-        "ingredients": {
-            " beef Tri-Tip Roast": "1-1/2 pounds",
-            "olive oil": "1 tablespoon",
-            "sweet onion": "1 Large sliced",
-            "minced garlic": "4 teaspoons",
-            "corn tortillas": "12 small ",
-            "fresh lime juice": "2 tablespoons"
-        },
-        "instructions": "Preheat smoker to 225F. Add beef Tri-Tip Roast to smoker according to manufacturer's instructions. Set timer for 45 minutes depending on desired smoke flavor.Meanwhile heat oil in large skillet over medium heat until hot. Add poblano peppers, onion and garlic; cook 8 minutes until softened, stirring occasionally. Add ancho powder and stir until combined. Cook 5 to 6 minutes until heated through. Season with salt and pepper, as desired, Remove from heat and stir in lime juice until combined. When roast is done smoking, carefully remove it from smoker. Place roast on grid over medium heat on preheated gas grill or in 350\u00c2\u00b0F oven until roast reaches 145\u00c2\u00b0F doneness (medium rare), approximately 8 to 10 minutes. Remove roast and transfer to carving board; tent loosely with aluminum foil. Let stand 10 minutes. Carve roast into thin slices. Place poblano mixture to tortillas; top with beef. Garnish tacos with toppings, as desired.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 3,
-        "title": "Mom's Yeast Rolls",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Kathy",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/5461.jpg",
-        "serving": 2,
-        "description": "This is the best bread recipe.  Light and fluffy rolls that melt in your mouth. Can be used to make loaves or cinnamon rolls.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Melt margarine in hot water. Add sugar and salt and stir. Add cold water and yeast. Stir to dissolve yeast. Add 3 cups flour and mix. Add eggs and 2 1/2 - 3 cups more flour. Mix, cover and let rise until dough doubles in size. Punch down and let rise 30 more minutes or until doubles. Make walnut size balls of dough. Place about 2 inches apart in well-buttered 9 x 13 inch pan. Bake in a preheated 350 degrees F (175 degrees C) oven for 30-45 minutes. Brush top of rolls with margarine while hot.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 4,
-        "title": "Red Potato Salad",
-        "tags": [
-            "Healthy",
-            "Vegeterian"
-        ],
-        "author": "Joanne",
-        "serving": "6",
-        "ingredients": {
-            "mayonnaise": "1/4 cup",
-            "extra virgin olive oil": "1/4 cup",
-            "white wine vinegar": "1 tbsp",
-            "Dijon mustard": "1 tbsp",
-            "salt": "1/2 tsp",
-            "freshly ground black pepper": "1/4 tsp",
-            "red potatoes": "2.5 lb",
-            "finely chopped celery": "1/2 cup",
-            "sliced scallions": "1/3 cup",
-            "sliced chives": "1/3 cup"
-        },
-        "instructions": "In a large bowl, whisk to combine the mayonnaise, olive oil, vinegar, mustard, 1/2 tsp salt, and 1/4 tsp black pepper. Place the cut up red potatoes into a large pot, and fill with enough cold water to cover the potatoes, plus an inch. Bring the pot to a boil over high heat, and cook the potatoes until fork tender. The time will really vary depending on if you sliced the potatoes or cut them into chunks, and how large, but for me it usually only takes about 5 minutes once the water is boiling, about 10-15 minutes total. Once the potatoes are fork tender, drain them in a colander and let them sit for a few minutes for the excess steam to come off. While the potatoes are still warm, toss them well with the dressing. Stir in the celery, scallions, and chives, then serve warm or chill for several hours before serving. Enjoy! ",
-        "image": "default-recipe.jpg",
-        "img": "https://www.fifteenspatulas.com/wp-content/uploads/2018/08/Red-Potato-Salad-Fifteen-Spatulas-7-640x427.jpg",
-        "description": "Healthy salad bowl for sharing"
-    },
-    {
-        "recipeID": 5,
-        "title": "Orange Buns",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "DeeDee",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/4499841.jpg",
-        "serving": 2,
-        "description": "You can make these into braids or buns. Frost with an orange icing and sprinkle some nuts on top, if desired.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Stir butter and 1 teaspoon sugar into the hot milk until butter is melted. When mixture is lukewarm, stir in yeast and set aside for 5 minutes. When mixture is creamy, transfer to a large mixing bowl. Mix in 2 cups of bread flour. Add 1/2 cup sugar, eggs, orange juice, orange zest, and salt and beat until combined. Add remaining flour, mixing well after each addition, until it pulls away from the sides of the bowl. Knead for about 10 minutes. Transfer dough to a greased bowl, cover with plastic wrap, and let rise until doubled, about 1 hour. If time permits, you can punch dough down, cover it, and let it rise again. Transfer dough to a lightly floured work surface. Cut dough into 3 balls, cover with plastic wrap, and let rest for 10 minutes. Preheat oven to 375 degrees F (190 degrees C). Lightly grease two baking sheets or line with parchment paper. Shape each piece of dough into braided loaves or buns; place on baking sheets. Let rise until doubled, about 30 minutes. Bake until rolls or loaves are golden brown, 10 to 12 minutes for individual buns, about 20 minutes for braids. Frost rolls, if desired (see Cook's Note) or sprinkle with confectioners' sugar.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 6,
-        "title": "Cornish Splits",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Linda Jackman",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/1843306.jpg",
-        "serving": 2,
-        "description": "Delicious!  This recipe originated in Cornwall, England.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "In a small bowl, dissolve the yeast in the milk and add the sugar. In another bowl, sift the flour and salt together and add the cooled melted butter. Add the yeast mixture to the flour mixture, and turn out onto a floured counter and knead until the dough is smooth and elastic. Place the dough in an oiled bowl, cover with a clean towel and let rise in a warm, draft free place to 45 minutes. Turn dough out onto the freshly floured board and shape into 9 balls. Place dough balls into a buttered and floured 9 inch square pan. Let them sit, covered for another 15 minutes to rise again. Preheat the oven to 425 degrees F (220 degrees C). Bake for 15-20 minutes until browned and puffed. Split open and serve warm.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 7,
-        "title": "Jalapeno Cheese Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "DeeDee",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/3875224.jpg",
-        "serving": 2,
-        "description": "A rich and spicy bread!",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "In a very large bowl, combine 7 cups of flour, cheese, jalapenos, 7 tablespoons sugar and the salt; mix well. In a separate bowl, combine the water, yeast and remaining 1 tablespoon sugar. Let sit about 10 minutes; stir until all yeast is dissolved. Add the oil to the liquid mixture, stirring . Add half of the liquid mixture to the flour mixture. Mix with hands to moisten flour as much as possible. Add remaining liquid mixture to dough and mix until flour is thoroughly incorporated. Turn onto a lightly floured surface and knead by hand until smooth and elastic to the touch, about 15 minutes, gradually adding only enough additional flour to keep dough from sticking. Place in a large greased bowl and invert dough so top is greased; cover with a dry towel and let stand in a warm place (90 - 100F) until doubled in size, about 1 hour. Punch down dough. To Make Bread: Divide dough into 3 equal portions. Form each into a ball, then stretch out dough with both hands and tuck edges under to form a smooth surface. Pop any large air bubbles by pinching them. Form into loaves. (Note: I like to use a rolling pin and roll out dough, which pops all bubbles easily and quickly.) Place in 3 greased 8 1/2 x 4 1/2 inch loaf pans. Cover with towel again and allow to rise until almost doubled in size, about 45 minutes to 1 hour. Bake at 325 degrees F (165 degrees C) until dark brown and done, about 1 hour, rotating the pans after 25 minutes for more even browning. Remove from pan as soon as bread will easily lift out, after about 5 to 10 minutes. Let cool about 1 hour before slicing.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 8,
-        "title": "Homemade Sushi Recipe",
-        "tags": [
-            "Fish & Seafood",
-            "Snacks and Appetizers",
-            "Healthy",
-            "Quick and Easy",
-            "Spring",
-            "Summer"
-        ],
-        "author": "Vlad",
-        "serving": "3",
-        "ingredients": {
-            "Sushi seaweed": "6 sheets",
-            "Prepared sushi rice": "1 Batch",
-            "Sushi-grade raw salmon": "0.5 lb",
-            "Cream cheese": "4 oz",
-            "Avocado": "1",
-            "Soy sauce": "5 ml"
-        },
-        "instructions": "Place the seaweed on a bamboo mat, then cover the sheet of seaweed with an even layer of prepared sushi rice. Smooth gently with the rice paddle. Layer salmon, cream cheese, and avocado on the rice, and roll it up tightly. Slice with a sharp knife, and enjoy with soy sauce.",
-        "image": "default-recipe.jpg",
-        "img": "https://www.fifteenspatulas.com/wp-content/uploads/2016/06/Homemade-Sushi-3-640x427.jpg",
-        "description": "Easy to made and healthy dish"
-    },
-    {
-        "recipeID": 9,
-        "title": "Oatmeal Bread I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "DeeDee",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/823523.jpg",
-        "serving": 2,
-        "description": "Dough needs to rise overnight.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Combine oats, molasses, oil, salt and boiling water. Let cool to about 105 degrees F. Dissolve the yeast in the warm water and let stand for 5 minutes or until creamy. Stir the yeast into oat mixture and mix well. Add whole wheat flour, 2 cups bread flour, and the eggs. Mix until well combined. Stir in enough of the remaining flour to make a soft dough. Turn dough out to a floured counter and knead for about 10 minutes. Place the dough in a well-greased bowl and cover with greased plastic wrap. Let the dough rest in the refrigerator overnight. Preheat oven to 375 degrees F (190 degrees C). Grease 3 regular loaf pans and 4 mini loaf pans. Transfer the dough onto a floured surface and divide it into 4 pieces. Shape the dough into loaves and place them in the pans, seam-side down. Let rise until doubled, about 90 minutes. Bake in the preheated oven until the loaves are golden brown and sound hollow when tapped, about 30 minutes.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 10,
-        "title": "Spaghetti",
-        "tags": [
-            "Dinner"
-        ],
-        "author": "Adam and Joanna",
-        "description": "Easy weeknight friendly spaghetti and meat sauce that's made completely from scratch. Use ground beef, turkey, pork, chicken or lamb to make this simple spaghetti recipe.",
-        "serving": "6",
-        "ingredients": {
-            "ground beef": "1 lb",
-            "olive oil": "3 Tbsp",
-            "onion": "130 g",
-            "garlic": "1 Tbsp",
-            "oregano": "1/2 tsp",
-            "red pepper flakes": "5 pinches",
-            "water": "1 cup",
-            "crushed tomato": "28 oz",
-            "salt": "1 Tbsp",
-            "pepper": "1 Tbsp",
-            "basil": "1 handful",
-            "noodles": "12 oz",
-            "parmesan": "1/2 cup"
-        },
-        "instructions": "1) Heat the oil in a large pot over medium-high heat (we use a Dutch oven). Add the meat and cook until browned, about 8 minutes. As the meat cooks, use a wooden spoon to break it up into smaller crumbles. \r\n2) Add the onions and cook, stirring every once and a while, until softened, about 5 minutes. \r\n3) Stir in the garlic, tomato paste, oregano, and red pepper flakes and cook, stirring continuously for about 1 minute. \r\n4) Pour in the water and use a wooden spoon to scrape up any bits of meat or onion stuck to the bottom of the pot. Stir in the tomatoes, 3/4 teaspoon of salt, and a generous pinch of black pepper. Bring the sauce to a low simmer. Cook, uncovered, at a low simmer for 25 minutes. As it cooks, stir and taste the sauce a few times so you can adjust the seasoning accordingly (see notes for suggestions). \r\n5) About 15 minutes before the sauce finishes cooking, bring a large pot of salted water to the boil, and then cook pasta according to package directions, but check for doneness a minute or two before the suggested cooking time. \r\n6) Take the sauce off of the heat, and then stir in the basil. Toss in the cooked pasta, and then leave for a minute so that the pasta absorbs some of the sauce. Toss again, and then serve with parmesan sprinkled on top.",
-        "image": "spaghetti.jpg",
-        "img": "https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg"
-    },
-    {
-        "recipeID": 11,
-        "title": "Sun Dried Tomato and Asiago Cheese Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Marlene Rosensweig",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/3010.jpg",
-        "serving": 2,
-        "description": "Tomato and cheese healthful, low-fat bread for the bread machine. You may substitute wheat bran for the amaranth flour if you wish.",
-        "ingredients": {
-            "freshly ground black pepper": "1/2 teaspoon"
-        },
-        "instructions": "Place all ingredients into bread machine in order given. Bake according to bread machine directions for regular bake.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 12,
-        "title": "Hawaiian Sweet Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Melanie",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/2692064.jpg",
-        "serving": 2,
-        "description": "Flavorful, light sweet bread that is great by itself, or for french toast and summer sandwiches.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Measure ingredients into the bread machine in the order suggested by the manufacturer. Set machine for dough. Place dough in a 9x5 inch loaf pan. Allow to rise until doubled. Preheat the oven to 350 degrees F (175 degrees C). Bake in the preheated oven for about 30 minutes. Crust should be golden and bread should sound hollow when thumped.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 13,
-        "title": "The Best Corn Bread You'll Ever Eat",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Debbie Rowe",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/2985865.jpg",
-        "serving": 2,
-        "description": "A soft, moist cornbread center with a crunchy crust.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Heat oven to 425 degrees F (220 degrees C). Grease a 9 inch iron skillet. In a large bowl, beat the egg. Add milk, oil, sour cream, cream corn, and cornmeal mix; stir until cornmeal is just dampened. Pour batter into greased skillet. Bake for 25 to 30 minutes, or until knife inserted in center comes out clean.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 14,
-        "title": "No Knead Refrigerator Rolls",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Debbie Rowe",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/359621.jpg",
-        "serving": 2,
-        "description": "A light fluffy yeast roll that melts in your mouth.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "In a large bowl, dissolve yeast in warm water and set aside to proof. In another bowl, mix together sugar, salt, shortening, and egg with an electric mixer at low speed. Add mixture to yeast, and stir in flour. The last 3 cups of flour will have to be mixed in by hand. Cover dough with a damp cloth, and place in refrigerator. Punch down occasionally as dough rises. You can leave dough in refrigerator overnight. Two hours before baking, shape the dough into rolls. Place on greased pans, baking trays or muffin pans. Let rise 2 hours. Bake at 400 degrees F ( 205 degrees C) for 8 to 10 minutes.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 15,
-        "title": "Sourdough Starter I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Becky Richardson",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/906669.jpg",
-        "serving": 2,
-        "description": "A starter good for any sourdough recipe.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Combine instant potatoes, sugar, water, and yeast in a covered container. Let the starter sit on a counter for 5 days, stirring daily with a wooden spoon. On the morning of the fifth day, feed the starter with 3 tablespoons instant potatoes, 3 tablespoons sugar, and 1 cup warm water. In the evening, take out 1 cup of the starter to use in a sourdough recipe. Refrigerate the remaining starter. Every five days, feed the starter 3 tablespoons instant potatoes, 3 tablespoons sugar and 1 cup water. If starter is to be used in a recipe, let the fed starter rest at room temperature 6 hours before use. If starter is not being used in a recipe, keep refrigerated and discard 1 cup of starter after each feeding.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 16,
-        "title": "Sourdough Bread I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Becky Richardson",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/4525477.jpg",
-        "serving": 2,
-        "description": "Sour dough bread that takes time to prepare, but worth the wait!!",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Mix sugar, corn oil, salt, water, and 1 cup of sourdough starter together in a large bowl. Sift the flour and add to the mixture. Grease or oil the dough. Place the dough in an oiled bowl, cover, and let rise overnight. The next day, knead the dough for 10 minutes. Divide in half, and place into two greased 4 x 8 inch bread pans. Allow the dough to double in size. Bake at 350 degrees F (175 degrees C) for 40 to 45 minutes, or until bread is golden brown and taps hollow. Turn out to cool on wire racks.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 17,
-        "title": "Dilly Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "ZIPPY",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/2317716.jpg",
-        "serving": 2,
-        "description": "A wonderful savory yeast bread.  There is no messy kneading; it rises in the saucepan!",
-        "ingredients": {
-            "cups all-purpose flour": "2 1/4"
-        },
-        "instructions": "Stir the yeast into the warm water, and add a pinch of sugar. Set aside to proof. In a large saucepan, warm the cottage cheese and margarine until the fat is melted. Remove from heat, and add sugar, onion flakes, dill seed, salt, and soda. Mix in egg and dissolved yeast. Stir in flour for a stiff dough. Place dough in a greased bowl, and turn several times to thoroughly coat. Let rise until double in size in a warm place, usually 50 to 60 minutes. Stir the dough until it is deflated. Place into an 8 inch round, buttered 2 quart casserole. Let rise 30 to 40 minutes in a warm place. Bake at 350 degrees F (175 degrees C) for 40 to 50 minutes until golden brown. Brush top with melted margarine. Sprinkle lightly with salt.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 18,
-        "title": "Pumpkin Bread I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Lynn Borden",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/918150.jpg",
-        "serving": 2,
-        "description": "This is recipe that I modified several years ago to lower the calories and fat. Also, by using 3 medium loaf pans instead of one regular loaf pan, the bread is eaten before it dries out. I freeze the other two loaves.",
-        "ingredients": {
-            "chopped walnuts (optional)": "1/2 cup"
-        },
-        "instructions": "Preheat oven to 350 degrees F (175 degrees C). Grease three 7 1/2 x 3 1/2-inch loaf pans. In a large mixing bowl combine the flour, soda, salt, baking powder, sugar, cinnamon, and pumpkin pie spice. Stir well. Add applesauce, eggs, pumpkin, and water. Mix batter until well combined. Stir in nuts. Pour batter into prepared pans. Bake until tester inserted in the center of each loaf comes out clean, 50 to 60 minutes.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 19,
-        "title": "Sy's Challah",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Sy Dolnick",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/1141764.jpg",
-        "serving": 2,
-        "description": "Virtually fail-proof recipe designed for ease of preparation and maximum flavor.  NOT sweet, but may be sweetened by using 1/2 cup sugar instead of 1/4 cup.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Place sugar, salt, and oil in either a mixing bowl for an electric mixer with a dough hook or any large bowl. Add hot water, and stir to dissolve the sugar and salt. Stir in yeast, and let stand until mixture gets foamy. Add slightly beaten eggs. If using an electric mixer, add 4 1/2 cups of flour to the yeast mixture. Mix until flour is mixed in, and dough gets stringy. This stringiness indicates that the gluten has developed. Continue to add flour until dough is all on dough hook; 1 or 2 cups is usually sufficient. Let hook continue to knead for several minutes. Dough should be smooth and elastic. To knead by hand, stir 4 1/2 cups of flour in to the yeast mixture. Turn soft dough onto lightly floured surface, and work in 1 to 2 cups of flour. Knead until smooth and elastic, about 8 to 10 minutes. Place dough into a greased bowl, and turn several times to coat the surface. Cover bowl with a damp cloth. Let dough rise until doubled in bulk. Punch down after first rising, and allow to rise a second time. The first rising is about 1 hour, the second about 45 minutes. Two risings makes for a better bread, but if time is a problem just do one. Divide dough in half, and divide each half into three or four equal parts. Make two braids, and place both breads on a greased baking sheet. Cover, and allow to rise until doubled. Brush with beaten egg. Sprinkle with poppy seeds, if desired. Bake at 350 degrees F (175 degrees C) for 35 minutes until golden brown. Allow loaves to cool on a wire rack.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 20,
-        "title": "Onion Bread I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Alma Ackerman",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/340352.jpg",
-        "serving": 2,
-        "description": "This flavorful loaf of bread gets a savory flavor of onion thanks to the simple addition of a packet of onion soup mix.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Warm the milk in a small saucepan until it bubbles, then remove from heat. Let cool until lukewarm. In a large bowl, stir together yeast, warm water, and 1 teaspoon sugar. Set aside to proof. Add milk, 2 2/3 tablespoons sugar, salt, butter or margarine, flour, and soup mix to the yeast in the bowl. Combine until dough forms, and then turn out on a lightly floured surface. Knead until dough is elastic. Oil a large bowl. Place the dough in the bowl, and turn several times to coat. Cover the bowl with a damp cloth, and set aside in a warm place to rise for 30 minutes. Divide dough in half. Shape into loaves, and place into two greased 8 1/2 x 4 1/2 inch bread pans. Set aside to rise for 30 minutes. Bake at 375 degrees F (190 degrees C) for 40 minutes. Loaf will sound hollow when done.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 21,
-        "title": "Grandma VanDoren's White Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Marilyn VanDoren Sim",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/3261061.jpg",
-        "serving": 2,
-        "description": "What Grandma used to make!  Our family's favorite.  The recipe was never written down (that I know of) until she shared it with me when she was in her 90's.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "In a large bowl, combine warm water, yeast, salt, oil, sugar, and 4 cups flour. Mix thoroughly, and let sponge rise until doubled in size. Gradually add about 4 cups flour, kneading until smooth. Place dough in a greased bowl, and turn several times to coat. Cover with a damp cloth. Allow to rise until doubled. Punch down the dough, let it rest a few minutes. Divide dough into three equal parts. Shape into loaves, and place in three 8 1/2 x 4 1/2 inch greased bread pans. Let rise until almost doubled. Bake at 350 degrees F (175 degrees C) for 35 to 45 minutes. The loaves may need to be covered for the last few minutes with foil to prevent excess browning.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 22,
-        "title": "Italian Bread I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Shelley Ross",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/422084.jpg",
-        "serving": 2,
-        "description": "This loaf is easy to prepare for the newcomer to bread-making. There is no yeast, and the bread is very dense.  Great as a side to pasta and salad.",
-        "ingredients": {
-            "cups buttermilk": "1 1/2"
-        },
-        "instructions": "Preheat oven to 350 degrees F (175 degrees C). Grease a 9 x 5 loaf pan. Whisk together the oil, egg, and buttermilk in a small bowl. In a large bowl, whisk together flour, sugar, baking powder, soda, salt, and dried herbs. Stir in cheese and onions. Pour buttermilk mixture into the flour mixture, and stir to combine. Add garlic and tomatoes until evenly distributed. Spread batter into prepared pan. Smooth top, and tap pan on counter to remove bubbles. Bake for 60 to 65 minutes, until golden. Cool loaf on wire rack.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 23,
-        "title": "Sunday Dinner Rolls",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Martha Harmo",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/196189.jpg",
-        "serving": 2,
-        "description": "I make the dough on Saturday night, and shape the rolls on Sunday morning.  The rolls rise while I am at church, and are ready to pop into the oven for Sunday dinner.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "In a large bowl, stir yeast, 1/4 cup warm water, and a pinch of sugar. In another bowl, beat eggs in 1 cup warm water; add oil and salt. Mix egg mixture into yeast, and add sugar. Gradually add flour. Cover with a damp cloth, and allow to stand at room temperature for 1 hour, then place in the refrigerator and allow to rise overnight. This dough is rather sticky, and will raise to at least twice it's size. Divide the dough into 4 equal parts. Roll each section out into a circle on a floured board or wax paper. Cut into pizza slice shapes, and roll slices large end to small end. Place on greased flat baking pans, and allow to rise for 2 hours. Bake at 375 degrees F (190 degrees C) for 8 minutes.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 24,
-        "title": "Banana Wheat Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Gladys George",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/202505.jpg",
-        "serving": 2,
-        "description": "This is a delicious and nutritious bread that is very easy to make.  I like  it so much, I sometimes have it for breakfast!",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Grease a 9 x 5 inch loaf pan. Preheat oven to 350 degrees (175 degrees C). Combine oil, honey, eggs, vanilla, and mashed bananas in a bowl. In a large bowl, whisk together flour, wheat germ, salt, and baking soda. Make a well in dry ingredients, and add the banana mixture. Mix together until dry ingredients are moistened. Stir in nuts. Pour batter into prepared pan. Bake 1 hour in preheated oven. Test for doneness, and cool on wire rack.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 25,
-        "title": "Banana Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Nikki",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/4480205.jpg",
-        "serving": 2,
-        "description": "This is our family favorite.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Grease and flour two 7x3 inch loaf pans. Preheat oven to 350 degrees F (175 degrees C). In one bowl, whisk together flour, soda, salt, and sugar. Mix in slightly beaten eggs, melted butter, and mashed bananas. Stir in nuts if desired. Pour into prepared pans. Bake at 350 degrees F (175 degrees C) for 1 hour, or until a wooden toothpick inserted in the center comes out clean.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 26,
-        "title": "Candied Fruit Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Carol",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/325017.jpg",
-        "serving": 2,
-        "description": "This is a great bread for tea at Christmas time when you don't like to make fruitcake.  It is an old recipe that belonged to my mother, and really good.",
-        "ingredients": {
-            "milk": "1 cup"
-        },
-        "instructions": "Grease an 8 x 5 inch loaf tin thoroughly. Preheat oven to 375 degrees F (190 degrees C). In a small bowl, beat the eggs well. Add milk and melted butter or shortening, and mix well. Sift together flour, baking powder, salt, and cinnamon into a large mixing bowl. Add sugar, prepared fruits and nuts, and mix well. Add egg mixture to fruit and nut mixture, stirring just enough to blend. Turn batter into greased loaf tin. Let stand for 20 minutes. Place pan in center of oven on middle rack. Bake for 60 to 70 minutes. Turn out on wire rack, and allow to cool for several hours before slicing.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 27,
-        "title": "Nut and Fruit Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Carol",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/4499063.jpg",
-        "serving": 2,
-        "description": "This is another great holiday bread to make that belonged to my mother.  She sometimes served this one, and it is a very old recipe.  This bread is good the first day, but better the second. You may use dates instead of raisins if you wish.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Grease an 8 x 5 inch loaf tin thoroughly. Preheat oven to 350 degrees F (175 degrees C). In a small bowl, beat the egg well. Mix in milk and melted butter or shortening. Sift flour, baking powder, and salt together into a mixing bowl. Add sugar, nuts, raisins and orange rind; mix well. Blend egg mixture into fruit and nut mixture until flour is just moistened. Turn batter into greased loaf tin, and allow to stand for 20 minutes. Place pan in the center of the oven. Bake for 55 to 60 minutes. Turn bread out on wire rack, and cool for several hours before slicing.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 28,
-        "title": "Mother's Banana Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Carol",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/1032660.jpg",
-        "serving": 2,
-        "description": "This is an old recipe that belonged to my mother.  I've been making this bread since I was a teenager.  At a candy striper bake sale a doctor bought this bread and said that this was the best banana bread that he had tasted.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Grease an 8x4 inch loaf pan. Preheat oven to 350 degrees F (175 degrees C). In a large mixing bowl, sift together flour, baking powder, baking soda, salt, and sugar. Add butter, eggs, nuts, and mashed banana. Beat until well blended. Pour batter into prepared pan and bake about 1 hour, or until a toothpick inserted in the center of the loaf comes out clean.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 29,
-        "title": "Pumpernickel Bread I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Clem Zulinski",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/975243.jpg",
-        "serving": 2,
-        "description": "This recipe makes a loaf that is not the very heavy textured bread made from the book that comes with the bread machine.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Place ingredients into the bread machine in order suggested by the manufacturer. Use the Light Crust or Whole Wheat settings. Start the machine.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 30,
-        "title": "Buttermilk Bread I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Debbie Symons",
-        "img": "http://images.media-allrecipes.com/userphotos/560x315/4460345.jpg",
-        "serving": 2,
-        "description": "This is a great bread recipe for your bread machine.  It's easy and very good.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Place buttermilk, butter or margarine, sugar, salt, flour, whole wheat flour, and yeast into pan of bread machine. Bake on White Bread setting. Cool on wire racks before slicing.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 31,
-        "title": "Mac and Cheese",
-        "tags": [
-            "Quick and Easy",
-            "Dinner",
-            "Vegeterian"
-        ],
-        "author": "Mark Doe",
-        "description": "Quick, easy, and tasty macaroni and cheese dish. Fancy, designer mac and cheese often costs forty or fifty dollars to prepare when you have so many exotic and expensive cheeses, but they aren't always the best tasting. This simple recipe is cheap and tasty.",
-        "serving": "4",
-        "ingredients": {
-            "Macaroni": "1 cup",
-            "Butter": "1/4 cup",
-            "Flour": "1/4 cup",
-            "Salt": "1/2 tsp",
-            "Milk": "2 cups",
-            "Cheddar cheese": "2 cups"
-        },
-        "instructions": "1) Bring a large pot of lightly salted water to a boil. Cook elbow macaroni in the boiling water, stirring occasionally until cooked through but firm to the bite, 8 minutes.\r\n2) melt butter in a saucepan over medium heat. Add flour, salt, and pepper and stir until smooth, about 5 minutes. Pour in milk slowly, while stirring continuously. Continue to cook and stir until mixture is smooth and bubbling, about 5 minutes, making sure the milk doesn't burn.\r\n3) Add Cheddar cheese and stir until melted, 2 to 4 minutes.\r\n4) Drain macaroni and fold into cheese sauce until coated.",
-        "image": "mac.jpg",
-        "img": ""
-    },
-    {
-        "recipeID": 32,
-        "title": "Brussels Sprouts in Alfredo Sauce",
-        "tags": [
-            "Quick and Easy",
-            "Holiday",
-            "Pork"
-        ],
-        "author": "Natasha Kravchuk",
-        "description": "Creamy parmesan garlic alfredo sauce topped with crispy bacon is our favorite way to eat them. This Brussels sprouts recipe is a fun way to dress up classic roasted Brussels sprouts. It's a quick and easy side dish that comes together in one-pan!",
-        "serving": "4",
-        "ingredients": {
-            "Brussels sprouts": "2 lbs",
-            "Bacon": "6 oz",
-            "Garlic": "1 clove",
-            "Whipping cream": "1 1/2 cups",
-            "Lemon Juice": "1 Tbsp",
-            "Parmesan cheese": "1/3 cup",
-            "Salt": "3/4 tsp",
-            "Black pepper": "1/4 tsp"
-        },
-        "instructions": "1)Place a large deep skillet or dutch oven or medium heat. Add 6 oz chopped bacon and cook until browned. Remove bacon to a plate, keeping 3 Tbsp of bacon fat in the pan.\r\n2) Add trimmed and halved brussels sprouts and season with 1/2 tsp salt and 1/4 tsp black pepper. Cover and stir occasionally 8-9 min or until tender and lightly browned.\r\n3) Add minced garlic and stir 1 minute until fragrant. Add 1 1/2 cups heavy cream and bring to a simmer.\r\n4) Stir in 1 Tbsp lemon juice then sprinkle the top with 1/3 cup parmesan cheese and stir to combine and season to taste (I added another 1/4 tsp salt). Bring just to a simmer then remove from heat and serve garnished with reserved bacon.",
-        "image": "brussels.jpg",
-        "img": ""
-    },
-    {
-        "recipeID": 33,
-        "title": "Old-Fashioned Banana Cream Pie",
-        "tags": [
-            "Quick and Easy",
-            "Dessert"
-        ],
-        "author": "Mary Smith",
-        "description": "This old-fashioned banana cream pie recipe is full of flavor. Because it uses instant pudding, this no-bake dessert is ready in just minutes.",
-        "serving": "8",
-        "ingredients": {
-            "Milk": "1 cup",
-            "Instant vanilla pudding mix": "3.4 ounces",
-            "Vanilla extract": "1/2 tsp",
-            "Whipped topping": "12 ounces",
-            "Cracker crust": "1 cup",
-            "Banana": "2"
-        },
-        "instructions": "1) In a large bowl, whisk milk, pudding mix and vanilla for 2 minutes (mixture will be thick). Fold in 3 cups whipped topping.\r\n2) Pour 1-1/3 cups pudding mixture into pie crust. Layer with banana slices and remaining pudding mixture. Top with remaining whipped topping. If desired, garnish with additional banana slices. Refrigerate until serving.",
-        "image": "banana_cream.jpg",
-        "img": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Old-Fashioned-Banana-Cream-Pie_EXPS_FT20_18664_F_0827_1.jpg?fit=700,1024"
-    },
-    {
-        "recipeID": 34,
-        "title": "Classic Borscht",
-        "tags": [
-            "Dinner"
-        ],
-        "author": "Natasha Kravchuck",
-        "description": "Our family's go-to recipe for Borscht (Red Beet Soup). It's best to have all of the ingredients prepped and ready to go which makes this soon super easy and care free. Serve with a dollop of sour cream or real mayo.",
-        "serving": "10",
-        "ingredients": {
-            "beets": "3",
-            "olive oil": "4 Tbsp",
-            "chicken broth": "8 cups",
-            "water": "2 cups",
-            "potato": "3",
-            "carrot": "2"
-        },
-        "instructions": "1) Peel, grate and/or slice all vegetables (keeping sliced potatoes in cold water to prevent browning until ready to use then drain). \r\n2) Heat a large soup pot (5 1/2 Qt or larger) over medium/high heat and add 2 Tbsp olive oil. Add grated beets and saute 10 minutes, stirring occasionally until beets are softened. \r\n3) Add 8 cups broth and 2 cups water. Add sliced potatoes and sliced carrots then cook for 10-15 minutes or until easily pierced with a fork. \r\n4) While potatoes are cooking, place a large skillet over medium/high heat and add 2 Tbsp oil. Add chopped onion, celery and bell pepper. Saute stirring occasionally until softened and lightly golden (7-8 minutes). Add 4 Tbsp Ketchup and stir fry 30 seconds then transfer to the soup pot to continue cooking with the potatoes. \r\n5) When potatoes and carrots reach desired softness, add 1 can of beans with their juice, 2 bay leaves, 2-3 Tbsp white vinegar, 1 tsp salt, 1/4 tsp black pepper, 1 pressed garlic clove, and 3 Tbsp chopped dill. Simmer for an additional 2-3 minutes and add more salt and vinegar to taste.",
-        "image": "borscht.jpg",
-        "img": "https://natashaskitchen.com/wp-content/uploads/2018/10/Borscht-Recipe-3-768x1152.jpg"
-    },
-    {
-        "recipeID": 35,
-        "title": "Chicken Cutlets",
-        "tags": [
-            "Chicken",
-            "Dinner"
-        ],
-        "author": "Anthony Miller",
-        "description": "They may be simple, but chicken cutlets will forever be one of our favorite options for versatile protein. Our recipe combines panko bread crumbs and Parmesan for a final coating that gets perfectly crispy-chewy when pan-fried. Serve the cutlets alongside roasted veggies, sliced atop salads, or between bread for a crispy chicken sandwich, the options are endless!",
-        "serving": "4",
-        "ingredients": {
-            "chicken breast": "1lb",
-            "salt": "1 tsp",
-            "black pepper": "1 tsp",
-            "flour": "125 g",
-            "eggs": "2",
-            "breadcrumbs": "170 g",
-            "parmesan cheese": "125 g",
-            "vegetable oil": "60 mL",
-            "parsley": "10 g for serving",
-            "lemon wedge": "for serving"
-        },
-        "instructions": "1) On a cutting board, slice the chicken breasts in half horizontally, creating 2 cutlets. Place the cutlets, 1 at a time, in a large zip-top bag and use a meat mallet to pound to a quarter-inch-thick. Transfer the chicken to a cutting board and pat dry with a paper towel. Season the chicken on both sides with salt and pepper. \r\n2) In a shallow bowl, whisk together the flour, 1 teaspoon of salt, and 1 teaspoon of pepper. In another shallow bowl, beat the eggs. Add the panko and Parmesan to a third shallow bowl and whisk to combine. \r\n3) Coat the chicken in the flour, shaking off any excess. Then, dip in the eggs, letting any excess drip off. Finally, coat in the panko-Parmesan mixture, making sure all sides are covered. Transfer the chicken to a clean cutting board. \r\n4) Heat the vegetable oil in a large pan over medium-high heat until shimmering. Working in batches if needed to avoid overcrowding the pan, add the chicken and cook until golden brown and cooked through, between 2 and 3 minutes per side. \r\n5) Transfer the chicken to a paper towel-lined plate and season with salt. Garnish the chicken cutlets with the parsley and serve with lemon wedges for squeezing on top.",
-        "image": "default-recipe.jpg",
-        "img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/12/20/0/FNK_Chicken-Cutlet_H_s4x3.jpg.rend.hgtvcom.616.462.suffix/1576855328048.jpeg"
-    },
-    {
-        "recipeID": 36,
-        "title": "Strawberry Bread I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Mary E. Crain",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/347834.jpg",
-        "serving": 2,
-        "description": "A bread you MUST try!  This is one you'll want to keep on hand.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Grease and flour a 9 x 5 inch pan well. Preheat oven to 350 degrees F (175 degrees C). In a large mixing bowl, sift together sugar, flour, cinnamon, salt, and baking soda. In a smaller bowl, beat the eggs and oil. Stir in pecans and strawberries. Add egg mixture to the sifted ingredients, and stir until just combined. Bake for 1 hour, or until tester inserted in the center comes out clean.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 37,
-        "title": "Dee's Health Bread",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Dee Dee",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/111116.jpg",
-        "serving": 2,
-        "description": "Whole wheat bread with sunflower seeds, cracked wheat, and honey.",
-        "ingredients": {
-            "cracked wheat": "1/4 cup"
-        },
-        "instructions": "In a small bowl, dissolve the yeast and sugar in 1/2 cup warm water. In a large bowl, mix remaining 3 1/2 cups warm water, honey, molasses, oil, eggs and lemon juice. Mix well. Add yeast mixture and stir. Gradually add 5 cups whole wheat flour beating well after each addition. Add the flax, cracked wheat and sunflower seeds, stir well. Let stand for 20 minutes, until mixture is very light. Stir in salt and the rest of the flours until dough pulls away from the sides of the bowl. Knead 10 to 15 minutes until dough is smooth and elastic. Put into a greased bowl and cover, let rise in the oven with light on until doubled, about 1 hour. Punch down and shape into 6 round balls. Cover and let rest for 20 minutes. Form into loaves and let rise covered in oven until doubled. Bake at 375 degrees F (190 degrees C) 25-35 minutes.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 38,
-        "title": "Homemade Mozarella Sticks",
-        "tags": [
-            "Snacks and Appetizers"
-        ],
-        "author": "Vlad",
-        "serving": "2",
-        "ingredients": {
-            "Whole milk mozarella cheese": "16 oz",
-            "Egg": "3",
-            "Italian style bread crumb": "3 cups",
-            "salt": "10 g",
-            "oil": "500 ml"
-        },
-        "instructions": "Cut the block of cheese into 1/2 inch thick sticks, a few inches tall (see blog photos). I had 20 pieces. Place the eggs in a bowl with 1/4 tsp salt and 1 tablespoon of water, and whisk to combine. Place the bread crumbs in a second bowl next to the eggs. Take a cheese stick and dip it into the egg, letting the excess drip off. Then coat it in the bread crumbs, shake off the excess, and place on a tray.  Repeat with the remaining cheese sticks.  Once each cheese stick has been breaded, take each one through the egg and bread crumbs again for a second coating, at a minimum. I prefer to bread the cheese sticks three times for a more robust shell, but two coats is sufficient to prevent the cheese from leaking during cooking. Freeze the mozzarella sticks, on the tray, for at least for two hours. Heat the tallow or frying fat of choice to 365F, using either a deep fryer or a heavy bottomed 8\" saucepan monitored with a thermometer. You want the fat to come a few inches up the sides of the pan. Fry the mozzarella sticks in batches**** for about 2 minutes, until golden brown. Let the cheese sticks drain briefly on a paper towel, then serve promptly with marinara or your favorite dunking sauce. Enjoy!",
-        "image": "https://www.fifteenspatulas.com/wp-content/uploads/2016/06/Homemade-Sushi-3-640x427.jpg",
-        "img": "https://www.fifteenspatulas.com/wp-content/uploads/2013/02/How-to-Make-Homemade-Mozzarella-Sticks.jpg",
-        "description": "Tasty snack for home"
-    },
-    {
-        "recipeID": 39,
-        "title": "Sweet Potato Bread I",
-        "tags": [
-            "Whole Grain"
-        ],
-        "author": "Mary E. Crain",
-        "img": "http://images.media-allrecipes.com/userphotos/250x250/394676.jpg",
-        "serving": 2,
-        "description": "A Southern delight with a 'more-ish'  taste.  One bite and you want more! This bread freezes well.",
-        "ingredients": {
-            "": ""
-        },
-        "instructions": "Combine sugar and oil; beat well. Add eggs and beat. Combine flour, baking soda, salt, cinnamon and nutmeg. Stir flour mixture into egg mixture alternately with water. Stir in sweet potatoes and chopped nuts. Pour batter into greased 9x5 inch loaf pan (or 2 small loaf pans). Bake at 350 degrees F (175 degrees C) for about one hour.",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 40,
-        "title": "Loaded Baked Potato Casserole",
-        "tags": [
-            "Quick and Easy",
-            "Snacks and Appetizers"
-        ],
-        "author": "Gurpreet",
-        "img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/6/13/0/FNK_LOADED-BAKED-POTATO-CASSEROLE-H_s4x3.jpg.rend.hgtvcom.616.462.suffix/1497385559585.jpeg",
-        "serving": 2,
-        "description": "Loaded baked potatoes are stuffed with cheesy, creamy goodness for the ultimate comfort food.",
-        "ingredients": {
-            "Potatoes": "3-4",
-            "Sour Cream": "1/2 cup",
-            "butter melted": "2 Tbsp",
-            "cheddar cheese": "1/2 cup",
-            "bacon": "4 slices"
-        },
-        "instructions": "Preheat oven to 375\u00c2\u00b0F. Poke holes with a fork. Coat the outside of each potato with olive oil and salt to taste. Bake 50-60 minutes. Remove from the oven and cool about 20 minutes. Cut each potato in 1/2 lengthwise and use a spoon to scoop out the flesh leaving a 1/8inch shell. Combine the scooped potato with sour cream, butter and salt & pepper to taste. Mash until smooth. Add desired add-ins and stir to combine. Spoon filling into each potato skin and top with cheddar cheese. Bake 15-20 minutes or until heated through and cheese is melted. ",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 41,
-        "title": "Yummy Potato wedges",
-        "tags": [
-            "Snacks and Appetizers",
-            "Vegeterian",
-            "Quick and Easy"
-        ],
-        "author": "Gurpreet",
-        "img": "https://cafedelites.com/wp-content/uploads/2016/06/Baked-Potato-Wedges-IMAGE-49.jpg",
-        "serving": 2,
-        "description": "Seasoned Baked Potato Wedges are the perfect side dish and great with everything from Oven Fried Chicken to a juicy steak dinner, or Crispy Chicken Cutlets! I used to buy store-bought until we realized how quick, easy and tasty they are to make at home!",
-        "ingredients": {
-            "Russet Potatoes": "4",
-            "olive oil": "80ml",
-            "salt": "1 Tbsp",
-            "pepper": "1/2 Tbsp",
-            "Garlic Powder": "1 Tbsp",
-            "Oregano dried": "1 Tbsp",
-            "paprika": "1 Tbsp",
-            "Parmesan Cheese": "1/2 Cup"
-        },
-        "instructions": "Preheat oven to 400\u00c2\u00b0F (200\u00c2\u00b0C). Thoroughly wash potatoes, cut in half, and slice into wedges. Toss wedges in olive oil and seasonings. Place on a baking sheet, skin side down. Bake 40-50 minutes. Enjoy!",
-        "image": "default-recipe.jpg"
-    },
-    {
-        "recipeID": 42,
-        "title": "Spatchcock Chicken",
-        "tags": [
-            "Chicken",
-            "Dinner"
-        ],
-        "description": "This Spatchcock Chicken recipe is our favorite way to roast a whole chicken. Every part of the roasted chicken turns out juicy and so flavorful with that garlic herb butter. This one pan chicken dinner is easy and so delicious!",
-        "author": "Linley Richter",
-        "serving": "4-6",
-        "ingredients": {
-            "Whole chicken": "3 \u2013 4-lb.",
-            "salt (separated)": "1.5 teaspoon",
-            "olive oil, separated": "3 tablespoons",
-            "white onion, chopped": "\u00bd ",
-            "garlic, peeled and smashed ": "4 cloves",
-            "fresh thyme": "10 sprigs",
-            "dry white wine ": "\u00bc cup",
-            "broth, any kind (separated)": "1.5 cups",
-            " lemon juice ": "2 teaspoons",
-            "cornstarch": "2 teaspoons"
-        },
-        "instructions": "First, prepare the chicken seasoning. Mix together all spices and set aside.\r\nNext, remove the chicken from the packaging and place the chicken on a clean, dry cutting board. \r\nRemove excess moisture from the chicken with a paper towel.\r\nTo spatchcock the chicken, set the chicken breast-side down on a cutting board and use very sharp kitchen shears to begin cutting down one side of the spine through the ribs and then repeat on the other side of the spine. Discard the spine. \r\nFlip the chicken over onto the chicken breasts and use your hands to press on the middle of the bird pressing down firmly to flatten the chicken. \r\nPlace the chicken on a large plate and carefully separate the chicken meat from the chicken skin with your hand. \r\nCarefully rub 1 teaspoon salt on the chicken meat under the skin being sure the chicken meat is covered with salt. \r\nNext, season the whole chicken with the all purpose chicken seasoning. Be sure the whole chicken is covered (skin, legs, thighs, etc.). Then, refrigerate the chicken for at least 2 hours or overnight.\r\nWhen you are ready to cook, preheat the oven to 425\u00baF and line a baking sheet with aluminum foil. \r\nRemove the chicken from the refrigerator and let it come to room temperature. \r\nPlace the onion, garlic, thyme, white wine, \u00bd cup of broth, and 1 tablespoon olive oil on top of the aluminum foil and sprinkle with the remaining \u00bd teaspoon salt.  \r\nPlace a metal rack on top of the foil and vegetables and carefully place the whole chicken flat on top of the metal rack breast-side up. \r\nRub the chicken with the additional 2 tablespoons of oil. Be sure to really massage the oil into the chicken. \r\nPlace the chicken in the oven and bake at 425\u00baF for 35-45 minutes or until the whole bird has an internal temperature of at least 160\u00ba. Make sure to take the temperature at the thickest parts.\r\nRemove the chicken from the oven and let the chicken rest for at least 15 minutes. Your chicken should continue to cook 5\u00baF to make the internal temperature 165\u00baF.\r\nWhile the chicken is resting, prepare the sauce. Add all of the cooked vegetables, liquid, and herbs from the bottom of the pan into a small saucepan along with the rest of the broth (1 cup). \r\nBring the sauce to a boil and then turn the heat to medium/low and add the lemon juice. \r\nThen, carefully sprinkle the cornstarch into the sauce and whisk. Let the sauce cook over medium heat until thick. Remove from heat and discard the herb stems. \r\nCarve the chicken and serve with the sauce. ",
-        "image": "default-recipe.jpg",
-        "img": "https://natashaskitchen.com/wp-content/uploads/2018/02/Roasted-Spatchcock-Chicken-Recipe-6-768x1152.jpg"
-    }
+[
+ {
+  "recipeID": 1,
+  "title": "Grilled Flank Steak",
+  "tags": [
+   "Beef",
+   "Dinner"
+  ],
+  "author": "Lee Funke",
+  "description": "Marinated flank steak makes dinner an ace in the hole. Mix a quick marinade with soy sauce, honey, garlic, and pepper for a grilled flank steak recipe you will go to again and again.",
+  "serving": "4",
+  "ingredients": {
+   "Flank steak": "2 lb.",
+   "Coarse salt": "1/2 teaspoon",
+   "Ground black pepper": "1/2 teaspoon",
+   "Soy sauce": "1/2 cup",
+   "Honey": "2\u20133 tablespoons"
+  },
+  "instructions": "1) Begin by placing the flank steak onto a large cutting board. Use a meat tenderizer to even out your cut of meat. The goal here isn\u2019t a certain thickness, rather to get everything even.\r\n2) Next, transfer the flank steak onto a large baking sheet with edges. You will be marinating the meat on the baking sheet.\r\n3) Sprinkle both sides of the flank steak with salt and pepper and massage the spices into the meat.\r\n4) Next, whisk together the soy sauce and honey and pour the marinade over the flank steak.\r\n5) Cover the flank steak with plastic wrap and place it in the refrigerator for at least 2 hours, flipping the flank steak at 1 hour to make sure both sides of the flank steak have time to marinate. Alternatively, you can use a large, gallon-size bag or casserole dish.\r\n6) Preheat the grill to 450\u00baF \u2013 500\u00baF.\r\n7) Remove the meat from the refrigerator and let it sit at room temperature for at least 15 minutes.\r\n8) Next, shake out any excess marinade from the flank steak and then sear the steak over direct heat for 1-2 minutes on each side (the grill should be very hot).\r\n9) Then, move the flank steak over to indirect heat and cook for about 10 minutes, flipping after 5 minutes. This will vary on how hot your grill is. Be sure to check the internal temperature of the steak at 5 minutes, 10 minutes, and so on until the internal temperature reaches about 130\u00ba \u2013 135\u00ba for a medium-rare flank steak.\r\n10) Remove the steak from the grill and let it rest for 5 minutes.\r\n11) Slice the flank steak into strips by cutting the meat across the grain of the steak to break up the muscle fibers in the steak.\r\n12) Serve and enjoy!",
+  "image": "default-recipe.jpg",
+  "img": "https://www.simplyrecipes.com/thmb/998iTM_FyoQM15gWbUyX5xd_os8=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2015__06__grilled-marinated-flank-steak-horiz-a-1200-de7ebb9b530242468fdc014bd45696e9.jpg"
+ },
+ {
+  "recipeID": 2,
+  "title": "Smoked Tri-Tip Street Tacos",
+  "tags": [
+   "Beef",
+   "Snacks and Appetizers"
+  ],
+  "author": "Beef Ranchers",
+  "img": "https://cdn.whatsgabycooking.com/wp-content/uploads/2012/12/WGC-Tri-tip-Tacos-copy.jpg",
+  "serving": 3,
+  "description": "Smoked and roasted Tri-Tip is unexpected in a street taco. Try this flavorful version with your favorite toppings for a satisfying meal.",
+  "ingredients": {
+   " beef Tri-Tip Roast": "1-1/2 pounds",
+   "olive oil": "1 tablespoon",
+   "sweet onion": "1 Large sliced",
+   "minced garlic": "4 teaspoons",
+   "corn tortillas": "12 small ",
+   "fresh lime juice": "2 tablespoons"
+  },
+  "instructions": "Preheat smoker to 225F. Add beef Tri-Tip Roast to smoker according to manufacturer's instructions. Set timer for 45 minutes depending on desired smoke flavor.Meanwhile heat oil in large skillet over medium heat until hot. Add poblano peppers, onion and garlic; cook 8 minutes until softened, stirring occasionally. Add ancho powder and stir until combined. Cook 5 to 6 minutes until heated through. Season with salt and pepper, as desired, Remove from heat and stir in lime juice until combined. When roast is done smoking, carefully remove it from smoker. Place roast on grid over medium heat on preheated gas grill or in 350\u00c2\u00b0F oven until roast reaches 145\u00c2\u00b0F doneness (medium rare), approximately 8 to 10 minutes. Remove roast and transfer to carving board; tent loosely with aluminum foil. Let stand 10 minutes. Carve roast into thin slices. Place poblano mixture to tortillas; top with beef. Garnish tacos with toppings, as desired.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 3,
+  "title": "Mom's Yeast Rolls",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Kathy",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/5461.jpg",
+  "serving": 2,
+  "description": "This is the best bread recipe.  Light and fluffy rolls that melt in your mouth. Can be used to make loaves or cinnamon rolls.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Melt margarine in hot water. Add sugar and salt and stir. Add cold water and yeast. Stir to dissolve yeast. Add 3 cups flour and mix. Add eggs and 2 1/2 - 3 cups more flour. Mix, cover and let rise until dough doubles in size. Punch down and let rise 30 more minutes or until doubles. Make walnut size balls of dough. Place about 2 inches apart in well-buttered 9 x 13 inch pan. Bake in a preheated 350 degrees F (175 degrees C) oven for 30-45 minutes. Brush top of rolls with margarine while hot.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 4,
+  "title": "Red Potato Salad",
+  "tags": [
+   "Healthy",
+   "Vegeterian"
+  ],
+  "author": "Joanne",
+  "serving": "6",
+  "ingredients": {
+   "mayonnaise": "1/4 cup",
+   "extra virgin olive oil": "1/4 cup",
+   "white wine vinegar": "1 tbsp",
+   "Dijon mustard": "1 tbsp",
+   "salt": "1/2 tsp",
+   "freshly ground black pepper": "1/4 tsp",
+   "red potatoes": "2.5 lb",
+   "finely chopped celery": "1/2 cup",
+   "sliced scallions": "1/3 cup",
+   "sliced chives": "1/3 cup"
+  },
+  "instructions": "In a large bowl, whisk to combine the mayonnaise, olive oil, vinegar, mustard, 1/2 tsp salt, and 1/4 tsp black pepper. Place the cut up red potatoes into a large pot, and fill with enough cold water to cover the potatoes, plus an inch. Bring the pot to a boil over high heat, and cook the potatoes until fork tender. The time will really vary depending on if you sliced the potatoes or cut them into chunks, and how large, but for me it usually only takes about 5 minutes once the water is boiling, about 10-15 minutes total. Once the potatoes are fork tender, drain them in a colander and let them sit for a few minutes for the excess steam to come off. While the potatoes are still warm, toss them well with the dressing. Stir in the celery, scallions, and chives, then serve warm or chill for several hours before serving. Enjoy! ",
+  "image": "default-recipe.jpg",
+  "img": "https://www.fifteenspatulas.com/wp-content/uploads/2018/08/Red-Potato-Salad-Fifteen-Spatulas-7-640x427.jpg",
+  "description": "Healthy salad bowl for sharing"
+ },
+ {
+  "recipeID": 5,
+  "title": "Orange Buns",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "DeeDee",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/4499841.jpg",
+  "serving": 2,
+  "description": "You can make these into braids or buns. Frost with an orange icing and sprinkle some nuts on top, if desired.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Stir butter and 1 teaspoon sugar into the hot milk until butter is melted. When mixture is lukewarm, stir in yeast and set aside for 5 minutes. When mixture is creamy, transfer to a large mixing bowl. Mix in 2 cups of bread flour. Add 1/2 cup sugar, eggs, orange juice, orange zest, and salt and beat until combined. Add remaining flour, mixing well after each addition, until it pulls away from the sides of the bowl. Knead for about 10 minutes. Transfer dough to a greased bowl, cover with plastic wrap, and let rise until doubled, about 1 hour. If time permits, you can punch dough down, cover it, and let it rise again. Transfer dough to a lightly floured work surface. Cut dough into 3 balls, cover with plastic wrap, and let rest for 10 minutes. Preheat oven to 375 degrees F (190 degrees C). Lightly grease two baking sheets or line with parchment paper. Shape each piece of dough into braided loaves or buns; place on baking sheets. Let rise until doubled, about 30 minutes. Bake until rolls or loaves are golden brown, 10 to 12 minutes for individual buns, about 20 minutes for braids. Frost rolls, if desired (see Cook's Note) or sprinkle with confectioners' sugar.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 6,
+  "title": "Cornish Splits",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Linda Jackman",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/1843306.jpg",
+  "serving": 2,
+  "description": "Delicious!  This recipe originated in Cornwall, England.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "In a small bowl, dissolve the yeast in the milk and add the sugar. In another bowl, sift the flour and salt together and add the cooled melted butter. Add the yeast mixture to the flour mixture, and turn out onto a floured counter and knead until the dough is smooth and elastic. Place the dough in an oiled bowl, cover with a clean towel and let rise in a warm, draft free place to 45 minutes. Turn dough out onto the freshly floured board and shape into 9 balls. Place dough balls into a buttered and floured 9 inch square pan. Let them sit, covered for another 15 minutes to rise again. Preheat the oven to 425 degrees F (220 degrees C). Bake for 15-20 minutes until browned and puffed. Split open and serve warm.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 7,
+  "title": "Jalapeno Cheese Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "DeeDee",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/3875224.jpg",
+  "serving": 2,
+  "description": "A rich and spicy bread!",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "In a very large bowl, combine 7 cups of flour, cheese, jalapenos, 7 tablespoons sugar and the salt; mix well. In a separate bowl, combine the water, yeast and remaining 1 tablespoon sugar. Let sit about 10 minutes; stir until all yeast is dissolved. Add the oil to the liquid mixture, stirring . Add half of the liquid mixture to the flour mixture. Mix with hands to moisten flour as much as possible. Add remaining liquid mixture to dough and mix until flour is thoroughly incorporated. Turn onto a lightly floured surface and knead by hand until smooth and elastic to the touch, about 15 minutes, gradually adding only enough additional flour to keep dough from sticking. Place in a large greased bowl and invert dough so top is greased; cover with a dry towel and let stand in a warm place (90 - 100F) until doubled in size, about 1 hour. Punch down dough. To Make Bread: Divide dough into 3 equal portions. Form each into a ball, then stretch out dough with both hands and tuck edges under to form a smooth surface. Pop any large air bubbles by pinching them. Form into loaves. (Note: I like to use a rolling pin and roll out dough, which pops all bubbles easily and quickly.) Place in 3 greased 8 1/2 x 4 1/2 inch loaf pans. Cover with towel again and allow to rise until almost doubled in size, about 45 minutes to 1 hour. Bake at 325 degrees F (165 degrees C) until dark brown and done, about 1 hour, rotating the pans after 25 minutes for more even browning. Remove from pan as soon as bread will easily lift out, after about 5 to 10 minutes. Let cool about 1 hour before slicing.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 8,
+  "title": "Homemade Sushi Recipe",
+  "tags": [
+   "Fish & Seafood",
+   "Snacks and Appetizers",
+   "Healthy",
+   "Quick and Easy",
+   "Spring",
+   "Summer"
+  ],
+  "author": "Vlad",
+  "serving": "3",
+  "ingredients": {
+   "Sushi seaweed": "6 sheets",
+   "Prepared sushi rice": "1 Batch",
+   "Sushi-grade raw salmon": "0.5 lb",
+   "Cream cheese": "4 oz",
+   "Avocado": "1",
+   "Soy sauce": "5 ml"
+  },
+  "instructions": "Place the seaweed on a bamboo mat, then cover the sheet of seaweed with an even layer of prepared sushi rice. Smooth gently with the rice paddle. Layer salmon, cream cheese, and avocado on the rice, and roll it up tightly. Slice with a sharp knife, and enjoy with soy sauce.",
+  "image": "default-recipe.jpg",
+  "img": "https://www.fifteenspatulas.com/wp-content/uploads/2016/06/Homemade-Sushi-3-640x427.jpg",
+  "description": "Easy to made and healthy dish"
+ },
+ {
+  "recipeID": 9,
+  "title": "Oatmeal Bread I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "DeeDee",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/823523.jpg",
+  "serving": 2,
+  "description": "Dough needs to rise overnight.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Combine oats, molasses, oil, salt and boiling water. Let cool to about 105 degrees F. Dissolve the yeast in the warm water and let stand for 5 minutes or until creamy. Stir the yeast into oat mixture and mix well. Add whole wheat flour, 2 cups bread flour, and the eggs. Mix until well combined. Stir in enough of the remaining flour to make a soft dough. Turn dough out to a floured counter and knead for about 10 minutes. Place the dough in a well-greased bowl and cover with greased plastic wrap. Let the dough rest in the refrigerator overnight. Preheat oven to 375 degrees F (190 degrees C). Grease 3 regular loaf pans and 4 mini loaf pans. Transfer the dough onto a floured surface and divide it into 4 pieces. Shape the dough into loaves and place them in the pans, seam-side down. Let rise until doubled, about 90 minutes. Bake in the preheated oven until the loaves are golden brown and sound hollow when tapped, about 30 minutes.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 10,
+  "title": "Spaghetti",
+  "tags": [
+   "Dinner"
+  ],
+  "author": "Adam and Joanna",
+  "description": "Easy weeknight friendly spaghetti and meat sauce that's made completely from scratch. Use ground beef, turkey, pork, chicken or lamb to make this simple spaghetti recipe.",
+  "serving": "6",
+  "ingredients": {
+   "ground beef": "1 lb",
+   "olive oil": "3 Tbsp",
+   "onion": "130 g",
+   "garlic": "1 Tbsp",
+   "oregano": "1/2 tsp",
+   "red pepper flakes": "5 pinches",
+   "water": "1 cup",
+   "crushed tomato": "28 oz",
+   "salt": "1 Tbsp",
+   "pepper": "1 Tbsp",
+   "basil": "1 handful",
+   "noodles": "12 oz",
+   "parmesan": "1/2 cup"
+  },
+  "instructions": "1) Heat the oil in a large pot over medium-high heat (we use a Dutch oven). Add the meat and cook until browned, about 8 minutes. As the meat cooks, use a wooden spoon to break it up into smaller crumbles. \r\n2) Add the onions and cook, stirring every once and a while, until softened, about 5 minutes. \r\n3) Stir in the garlic, tomato paste, oregano, and red pepper flakes and cook, stirring continuously for about 1 minute. \r\n4) Pour in the water and use a wooden spoon to scrape up any bits of meat or onion stuck to the bottom of the pot. Stir in the tomatoes, 3/4 teaspoon of salt, and a generous pinch of black pepper. Bring the sauce to a low simmer. Cook, uncovered, at a low simmer for 25 minutes. As it cooks, stir and taste the sauce a few times so you can adjust the seasoning accordingly (see notes for suggestions). \r\n5) About 15 minutes before the sauce finishes cooking, bring a large pot of salted water to the boil, and then cook pasta according to package directions, but check for doneness a minute or two before the suggested cooking time. \r\n6) Take the sauce off of the heat, and then stir in the basil. Toss in the cooked pasta, and then leave for a minute so that the pasta absorbs some of the sauce. Toss again, and then serve with parmesan sprinkled on top.",
+  "image": "spaghetti.jpg",
+  "img": "https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg"
+ },
+ {
+  "recipeID": 11,
+  "title": "Sun Dried Tomato and Asiago Cheese Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Marlene Rosensweig",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/3010.jpg",
+  "serving": 2,
+  "description": "Tomato and cheese healthful, low-fat bread for the bread machine. You may substitute wheat bran for the amaranth flour if you wish.",
+  "ingredients": {
+   "freshly ground black pepper": "1/2 teaspoon"
+  },
+  "instructions": "Place all ingredients into bread machine in order given. Bake according to bread machine directions for regular bake.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 12,
+  "title": "Hawaiian Sweet Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Melanie",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/2692064.jpg",
+  "serving": 2,
+  "description": "Flavorful, light sweet bread that is great by itself, or for french toast and summer sandwiches.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Measure ingredients into the bread machine in the order suggested by the manufacturer. Set machine for dough. Place dough in a 9x5 inch loaf pan. Allow to rise until doubled. Preheat the oven to 350 degrees F (175 degrees C). Bake in the preheated oven for about 30 minutes. Crust should be golden and bread should sound hollow when thumped.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 13,
+  "title": "The Best Corn Bread You'll Ever Eat",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Debbie Rowe",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/2985865.jpg",
+  "serving": 2,
+  "description": "A soft, moist cornbread center with a crunchy crust.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Heat oven to 425 degrees F (220 degrees C). Grease a 9 inch iron skillet. In a large bowl, beat the egg. Add milk, oil, sour cream, cream corn, and cornmeal mix; stir until cornmeal is just dampened. Pour batter into greased skillet. Bake for 25 to 30 minutes, or until knife inserted in center comes out clean.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 14,
+  "title": "No Knead Refrigerator Rolls",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Debbie Rowe",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/359621.jpg",
+  "serving": 2,
+  "description": "A light fluffy yeast roll that melts in your mouth.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "In a large bowl, dissolve yeast in warm water and set aside to proof. In another bowl, mix together sugar, salt, shortening, and egg with an electric mixer at low speed. Add mixture to yeast, and stir in flour. The last 3 cups of flour will have to be mixed in by hand. Cover dough with a damp cloth, and place in refrigerator. Punch down occasionally as dough rises. You can leave dough in refrigerator overnight. Two hours before baking, shape the dough into rolls. Place on greased pans, baking trays or muffin pans. Let rise 2 hours. Bake at 400 degrees F ( 205 degrees C) for 8 to 10 minutes.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 15,
+  "title": "Sourdough Starter I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Becky Richardson",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/906669.jpg",
+  "serving": 2,
+  "description": "A starter good for any sourdough recipe.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Combine instant potatoes, sugar, water, and yeast in a covered container. Let the starter sit on a counter for 5 days, stirring daily with a wooden spoon. On the morning of the fifth day, feed the starter with 3 tablespoons instant potatoes, 3 tablespoons sugar, and 1 cup warm water. In the evening, take out 1 cup of the starter to use in a sourdough recipe. Refrigerate the remaining starter. Every five days, feed the starter 3 tablespoons instant potatoes, 3 tablespoons sugar and 1 cup water. If starter is to be used in a recipe, let the fed starter rest at room temperature 6 hours before use. If starter is not being used in a recipe, keep refrigerated and discard 1 cup of starter after each feeding.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 16,
+  "title": "Sourdough Bread I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Becky Richardson",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/4525477.jpg",
+  "serving": 2,
+  "description": "Sour dough bread that takes time to prepare, but worth the wait!!",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Mix sugar, corn oil, salt, water, and 1 cup of sourdough starter together in a large bowl. Sift the flour and add to the mixture. Grease or oil the dough. Place the dough in an oiled bowl, cover, and let rise overnight. The next day, knead the dough for 10 minutes. Divide in half, and place into two greased 4 x 8 inch bread pans. Allow the dough to double in size. Bake at 350 degrees F (175 degrees C) for 40 to 45 minutes, or until bread is golden brown and taps hollow. Turn out to cool on wire racks.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 17,
+  "title": "Dilly Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "ZIPPY",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/2317716.jpg",
+  "serving": 2,
+  "description": "A wonderful savory yeast bread.  There is no messy kneading; it rises in the saucepan!",
+  "ingredients": {
+   "cups all-purpose flour": "2 1/4"
+  },
+  "instructions": "Stir the yeast into the warm water, and add a pinch of sugar. Set aside to proof. In a large saucepan, warm the cottage cheese and margarine until the fat is melted. Remove from heat, and add sugar, onion flakes, dill seed, salt, and soda. Mix in egg and dissolved yeast. Stir in flour for a stiff dough. Place dough in a greased bowl, and turn several times to thoroughly coat. Let rise until double in size in a warm place, usually 50 to 60 minutes. Stir the dough until it is deflated. Place into an 8 inch round, buttered 2 quart casserole. Let rise 30 to 40 minutes in a warm place. Bake at 350 degrees F (175 degrees C) for 40 to 50 minutes until golden brown. Brush top with melted margarine. Sprinkle lightly with salt.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 18,
+  "title": "Pumpkin Bread I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Lynn Borden",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/918150.jpg",
+  "serving": 2,
+  "description": "This is recipe that I modified several years ago to lower the calories and fat. Also, by using 3 medium loaf pans instead of one regular loaf pan, the bread is eaten before it dries out. I freeze the other two loaves.",
+  "ingredients": {
+   "chopped walnuts (optional)": "1/2 cup"
+  },
+  "instructions": "Preheat oven to 350 degrees F (175 degrees C). Grease three 7 1/2 x 3 1/2-inch loaf pans. In a large mixing bowl combine the flour, soda, salt, baking powder, sugar, cinnamon, and pumpkin pie spice. Stir well. Add applesauce, eggs, pumpkin, and water. Mix batter until well combined. Stir in nuts. Pour batter into prepared pans. Bake until tester inserted in the center of each loaf comes out clean, 50 to 60 minutes.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 19,
+  "title": "Sy's Challah",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Sy Dolnick",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/1141764.jpg",
+  "serving": 2,
+  "description": "Virtually fail-proof recipe designed for ease of preparation and maximum flavor.  NOT sweet, but may be sweetened by using 1/2 cup sugar instead of 1/4 cup.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Place sugar, salt, and oil in either a mixing bowl for an electric mixer with a dough hook or any large bowl. Add hot water, and stir to dissolve the sugar and salt. Stir in yeast, and let stand until mixture gets foamy. Add slightly beaten eggs. If using an electric mixer, add 4 1/2 cups of flour to the yeast mixture. Mix until flour is mixed in, and dough gets stringy. This stringiness indicates that the gluten has developed. Continue to add flour until dough is all on dough hook; 1 or 2 cups is usually sufficient. Let hook continue to knead for several minutes. Dough should be smooth and elastic. To knead by hand, stir 4 1/2 cups of flour in to the yeast mixture. Turn soft dough onto lightly floured surface, and work in 1 to 2 cups of flour. Knead until smooth and elastic, about 8 to 10 minutes. Place dough into a greased bowl, and turn several times to coat the surface. Cover bowl with a damp cloth. Let dough rise until doubled in bulk. Punch down after first rising, and allow to rise a second time. The first rising is about 1 hour, the second about 45 minutes. Two risings makes for a better bread, but if time is a problem just do one. Divide dough in half, and divide each half into three or four equal parts. Make two braids, and place both breads on a greased baking sheet. Cover, and allow to rise until doubled. Brush with beaten egg. Sprinkle with poppy seeds, if desired. Bake at 350 degrees F (175 degrees C) for 35 minutes until golden brown. Allow loaves to cool on a wire rack.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 20,
+  "title": "Onion Bread I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Alma Ackerman",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/340352.jpg",
+  "serving": 2,
+  "description": "This flavorful loaf of bread gets a savory flavor of onion thanks to the simple addition of a packet of onion soup mix.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Warm the milk in a small saucepan until it bubbles, then remove from heat. Let cool until lukewarm. In a large bowl, stir together yeast, warm water, and 1 teaspoon sugar. Set aside to proof. Add milk, 2 2/3 tablespoons sugar, salt, butter or margarine, flour, and soup mix to the yeast in the bowl. Combine until dough forms, and then turn out on a lightly floured surface. Knead until dough is elastic. Oil a large bowl. Place the dough in the bowl, and turn several times to coat. Cover the bowl with a damp cloth, and set aside in a warm place to rise for 30 minutes. Divide dough in half. Shape into loaves, and place into two greased 8 1/2 x 4 1/2 inch bread pans. Set aside to rise for 30 minutes. Bake at 375 degrees F (190 degrees C) for 40 minutes. Loaf will sound hollow when done.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 21,
+  "title": "Grandma VanDoren's White Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Marilyn VanDoren Sim",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/3261061.jpg",
+  "serving": 2,
+  "description": "What Grandma used to make!  Our family's favorite.  The recipe was never written down (that I know of) until she shared it with me when she was in her 90's.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "In a large bowl, combine warm water, yeast, salt, oil, sugar, and 4 cups flour. Mix thoroughly, and let sponge rise until doubled in size. Gradually add about 4 cups flour, kneading until smooth. Place dough in a greased bowl, and turn several times to coat. Cover with a damp cloth. Allow to rise until doubled. Punch down the dough, let it rest a few minutes. Divide dough into three equal parts. Shape into loaves, and place in three 8 1/2 x 4 1/2 inch greased bread pans. Let rise until almost doubled. Bake at 350 degrees F (175 degrees C) for 35 to 45 minutes. The loaves may need to be covered for the last few minutes with foil to prevent excess browning.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 22,
+  "title": "Italian Bread I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Shelley Ross",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/422084.jpg",
+  "serving": 2,
+  "description": "This loaf is easy to prepare for the newcomer to bread-making. There is no yeast, and the bread is very dense.  Great as a side to pasta and salad.",
+  "ingredients": {
+   "cups buttermilk": "1 1/2"
+  },
+  "instructions": "Preheat oven to 350 degrees F (175 degrees C). Grease a 9 x 5 loaf pan. Whisk together the oil, egg, and buttermilk in a small bowl. In a large bowl, whisk together flour, sugar, baking powder, soda, salt, and dried herbs. Stir in cheese and onions. Pour buttermilk mixture into the flour mixture, and stir to combine. Add garlic and tomatoes until evenly distributed. Spread batter into prepared pan. Smooth top, and tap pan on counter to remove bubbles. Bake for 60 to 65 minutes, until golden. Cool loaf on wire rack.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 23,
+  "title": "Sunday Dinner Rolls",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Martha Harmo",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/196189.jpg",
+  "serving": 2,
+  "description": "I make the dough on Saturday night, and shape the rolls on Sunday morning.  The rolls rise while I am at church, and are ready to pop into the oven for Sunday dinner.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "In a large bowl, stir yeast, 1/4 cup warm water, and a pinch of sugar. In another bowl, beat eggs in 1 cup warm water; add oil and salt. Mix egg mixture into yeast, and add sugar. Gradually add flour. Cover with a damp cloth, and allow to stand at room temperature for 1 hour, then place in the refrigerator and allow to rise overnight. This dough is rather sticky, and will raise to at least twice it's size. Divide the dough into 4 equal parts. Roll each section out into a circle on a floured board or wax paper. Cut into pizza slice shapes, and roll slices large end to small end. Place on greased flat baking pans, and allow to rise for 2 hours. Bake at 375 degrees F (190 degrees C) for 8 minutes.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 24,
+  "title": "Banana Wheat Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Gladys George",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/202505.jpg",
+  "serving": 2,
+  "description": "This is a delicious and nutritious bread that is very easy to make.  I like  it so much, I sometimes have it for breakfast!",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Grease a 9 x 5 inch loaf pan. Preheat oven to 350 degrees (175 degrees C). Combine oil, honey, eggs, vanilla, and mashed bananas in a bowl. In a large bowl, whisk together flour, wheat germ, salt, and baking soda. Make a well in dry ingredients, and add the banana mixture. Mix together until dry ingredients are moistened. Stir in nuts. Pour batter into prepared pan. Bake 1 hour in preheated oven. Test for doneness, and cool on wire rack.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 25,
+  "title": "Banana Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Nikki",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/4480205.jpg",
+  "serving": 2,
+  "description": "This is our family favorite.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Grease and flour two 7x3 inch loaf pans. Preheat oven to 350 degrees F (175 degrees C). In one bowl, whisk together flour, soda, salt, and sugar. Mix in slightly beaten eggs, melted butter, and mashed bananas. Stir in nuts if desired. Pour into prepared pans. Bake at 350 degrees F (175 degrees C) for 1 hour, or until a wooden toothpick inserted in the center comes out clean.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 26,
+  "title": "Candied Fruit Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Carol",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/325017.jpg",
+  "serving": 2,
+  "description": "This is a great bread for tea at Christmas time when you don't like to make fruitcake.  It is an old recipe that belonged to my mother, and really good.",
+  "ingredients": {
+   "milk": "1 cup"
+  },
+  "instructions": "Grease an 8 x 5 inch loaf tin thoroughly. Preheat oven to 375 degrees F (190 degrees C). In a small bowl, beat the eggs well. Add milk and melted butter or shortening, and mix well. Sift together flour, baking powder, salt, and cinnamon into a large mixing bowl. Add sugar, prepared fruits and nuts, and mix well. Add egg mixture to fruit and nut mixture, stirring just enough to blend. Turn batter into greased loaf tin. Let stand for 20 minutes. Place pan in center of oven on middle rack. Bake for 60 to 70 minutes. Turn out on wire rack, and allow to cool for several hours before slicing.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 27,
+  "title": "Nut and Fruit Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Carol",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/4499063.jpg",
+  "serving": 2,
+  "description": "This is another great holiday bread to make that belonged to my mother.  She sometimes served this one, and it is a very old recipe.  This bread is good the first day, but better the second. You may use dates instead of raisins if you wish.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Grease an 8 x 5 inch loaf tin thoroughly. Preheat oven to 350 degrees F (175 degrees C). In a small bowl, beat the egg well. Mix in milk and melted butter or shortening. Sift flour, baking powder, and salt together into a mixing bowl. Add sugar, nuts, raisins and orange rind; mix well. Blend egg mixture into fruit and nut mixture until flour is just moistened. Turn batter into greased loaf tin, and allow to stand for 20 minutes. Place pan in the center of the oven. Bake for 55 to 60 minutes. Turn bread out on wire rack, and cool for several hours before slicing.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 28,
+  "title": "Mother's Banana Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Carol",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/1032660.jpg",
+  "serving": 2,
+  "description": "This is an old recipe that belonged to my mother.  I've been making this bread since I was a teenager.  At a candy striper bake sale a doctor bought this bread and said that this was the best banana bread that he had tasted.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Grease an 8x4 inch loaf pan. Preheat oven to 350 degrees F (175 degrees C). In a large mixing bowl, sift together flour, baking powder, baking soda, salt, and sugar. Add butter, eggs, nuts, and mashed banana. Beat until well blended. Pour batter into prepared pan and bake about 1 hour, or until a toothpick inserted in the center of the loaf comes out clean.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 29,
+  "title": "Pumpernickel Bread I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Clem Zulinski",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/975243.jpg",
+  "serving": 2,
+  "description": "This recipe makes a loaf that is not the very heavy textured bread made from the book that comes with the bread machine.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Place ingredients into the bread machine in order suggested by the manufacturer. Use the Light Crust or Whole Wheat settings. Start the machine.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 30,
+  "title": "Buttermilk Bread I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Debbie Symons",
+  "img": "http://images.media-allrecipes.com/userphotos/560x315/4460345.jpg",
+  "serving": 2,
+  "description": "This is a great bread recipe for your bread machine.  It's easy and very good.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Place buttermilk, butter or margarine, sugar, salt, flour, whole wheat flour, and yeast into pan of bread machine. Bake on White Bread setting. Cool on wire racks before slicing.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 31,
+  "title": "Mac and Cheese",
+  "tags": [
+   "Quick and Easy",
+   "Dinner",
+   "Vegeterian"
+  ],
+  "author": "Mark Doe",
+  "description": "Quick, easy, and tasty macaroni and cheese dish. Fancy, designer mac and cheese often costs forty or fifty dollars to prepare when you have so many exotic and expensive cheeses, but they aren't always the best tasting. This simple recipe is cheap and tasty.",
+  "serving": "4",
+  "ingredients": {
+   "Macaroni": "1 cup",
+   "Butter": "1/4 cup",
+   "Flour": "1/4 cup",
+   "Salt": "1/2 tsp",
+   "Milk": "2 cups",
+   "Cheddar cheese": "2 cups"
+  },
+  "instructions": "1) Bring a large pot of lightly salted water to a boil. Cook elbow macaroni in the boiling water, stirring occasionally until cooked through but firm to the bite, 8 minutes.\r\n2) melt butter in a saucepan over medium heat. Add flour, salt, and pepper and stir until smooth, about 5 minutes. Pour in milk slowly, while stirring continuously. Continue to cook and stir until mixture is smooth and bubbling, about 5 minutes, making sure the milk doesn't burn.\r\n3) Add Cheddar cheese and stir until melted, 2 to 4 minutes.\r\n4) Drain macaroni and fold into cheese sauce until coated.",
+  "image": "mac.jpg",
+  "img": ""
+ },
+ {
+  "recipeID": 32,
+  "title": "Brussels Sprouts in Alfredo Sauce",
+  "tags": [
+   "Quick and Easy",
+   "Holiday",
+   "Pork"
+  ],
+  "author": "Natasha Kravchuk",
+  "description": "Creamy parmesan garlic alfredo sauce topped with crispy bacon is our favorite way to eat them. This Brussels sprouts recipe is a fun way to dress up classic roasted Brussels sprouts. It's a quick and easy side dish that comes together in one-pan!",
+  "serving": "4",
+  "ingredients": {
+   "Brussels sprouts": "2 lbs",
+   "Bacon": "6 oz",
+   "Garlic": "1 clove",
+   "Whipping cream": "1 1/2 cups",
+   "Lemon Juice": "1 Tbsp",
+   "Parmesan cheese": "1/3 cup",
+   "Salt": "3/4 tsp",
+   "Black pepper": "1/4 tsp"
+  },
+  "instructions": "1)Place a large deep skillet or dutch oven or medium heat. Add 6 oz chopped bacon and cook until browned. Remove bacon to a plate, keeping 3 Tbsp of bacon fat in the pan.\r\n2) Add trimmed and halved brussels sprouts and season with 1/2 tsp salt and 1/4 tsp black pepper. Cover and stir occasionally 8-9 min or until tender and lightly browned.\r\n3) Add minced garlic and stir 1 minute until fragrant. Add 1 1/2 cups heavy cream and bring to a simmer.\r\n4) Stir in 1 Tbsp lemon juice then sprinkle the top with 1/3 cup parmesan cheese and stir to combine and season to taste (I added another 1/4 tsp salt). Bring just to a simmer then remove from heat and serve garnished with reserved bacon.",
+  "image": "brussels.jpg",
+  "img": ""
+ },
+ {
+  "recipeID": 33,
+  "title": "Old-Fashioned Banana Cream Pie",
+  "tags": [
+   "Quick and Easy",
+   "Dessert"
+  ],
+  "author": "Mary Smith",
+  "description": "This old-fashioned banana cream pie recipe is full of flavor. Because it uses instant pudding, this no-bake dessert is ready in just minutes.",
+  "serving": "8",
+  "ingredients": {
+   "Milk": "1 cup",
+   "Instant vanilla pudding mix": "3.4 ounces",
+   "Vanilla extract": "1/2 tsp",
+   "Whipped topping": "12 ounces",
+   "Cracker crust": "1 cup",
+   "Banana": "2"
+  },
+  "instructions": "1) In a large bowl, whisk milk, pudding mix and vanilla for 2 minutes (mixture will be thick). Fold in 3 cups whipped topping.\r\n2) Pour 1-1/3 cups pudding mixture into pie crust. Layer with banana slices and remaining pudding mixture. Top with remaining whipped topping. If desired, garnish with additional banana slices. Refrigerate until serving.",
+  "image": "banana_cream.jpg",
+  "img": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Old-Fashioned-Banana-Cream-Pie_EXPS_FT20_18664_F_0827_1.jpg?fit=700,1024"
+ },
+ {
+  "recipeID": 34,
+  "title": "Classic Borscht",
+  "tags": [
+   "Dinner"
+  ],
+  "author": "Natasha Kravchuck",
+  "description": "Our family's go-to recipe for Borscht (Red Beet Soup). It's best to have all of the ingredients prepped and ready to go which makes this soon super easy and care free. Serve with a dollop of sour cream or real mayo.",
+  "serving": "10",
+  "ingredients": {
+   "beets": "3",
+   "olive oil": "4 Tbsp",
+   "chicken broth": "8 cups",
+   "water": "2 cups",
+   "potato": "3",
+   "carrot": "2"
+  },
+  "instructions": "1) Peel, grate and/or slice all vegetables (keeping sliced potatoes in cold water to prevent browning until ready to use then drain). \r\n2) Heat a large soup pot (5 1/2 Qt or larger) over medium/high heat and add 2 Tbsp olive oil. Add grated beets and saute 10 minutes, stirring occasionally until beets are softened. \r\n3) Add 8 cups broth and 2 cups water. Add sliced potatoes and sliced carrots then cook for 10-15 minutes or until easily pierced with a fork. \r\n4) While potatoes are cooking, place a large skillet over medium/high heat and add 2 Tbsp oil. Add chopped onion, celery and bell pepper. Saute stirring occasionally until softened and lightly golden (7-8 minutes). Add 4 Tbsp Ketchup and stir fry 30 seconds then transfer to the soup pot to continue cooking with the potatoes. \r\n5) When potatoes and carrots reach desired softness, add 1 can of beans with their juice, 2 bay leaves, 2-3 Tbsp white vinegar, 1 tsp salt, 1/4 tsp black pepper, 1 pressed garlic clove, and 3 Tbsp chopped dill. Simmer for an additional 2-3 minutes and add more salt and vinegar to taste.",
+  "image": "borscht.jpg",
+  "img": "https://natashaskitchen.com/wp-content/uploads/2018/10/Borscht-Recipe-3-768x1152.jpg"
+ },
+ {
+  "recipeID": 35,
+  "title": "Chicken Cutlets",
+  "tags": [
+   "Chicken",
+   "Dinner"
+  ],
+  "author": "Anthony Miller",
+  "description": "They may be simple, but chicken cutlets will forever be one of our favorite options for versatile protein. Our recipe combines panko bread crumbs and Parmesan for a final coating that gets perfectly crispy-chewy when pan-fried. Serve the cutlets alongside roasted veggies, sliced atop salads, or between bread for a crispy chicken sandwich, the options are endless!",
+  "serving": "4",
+  "ingredients": {
+   "chicken breast": "1lb",
+   "salt": "1 tsp",
+   "black pepper": "1 tsp",
+   "flour": "125 g",
+   "eggs": "2",
+   "breadcrumbs": "170 g",
+   "parmesan cheese": "125 g",
+   "vegetable oil": "60 mL",
+   "parsley": "10 g for serving",
+   "lemon wedge": "for serving"
+  },
+  "instructions": "1) On a cutting board, slice the chicken breasts in half horizontally, creating 2 cutlets. Place the cutlets, 1 at a time, in a large zip-top bag and use a meat mallet to pound to a quarter-inch-thick. Transfer the chicken to a cutting board and pat dry with a paper towel. Season the chicken on both sides with salt and pepper. \r\n2) In a shallow bowl, whisk together the flour, 1 teaspoon of salt, and 1 teaspoon of pepper. In another shallow bowl, beat the eggs. Add the panko and Parmesan to a third shallow bowl and whisk to combine. \r\n3) Coat the chicken in the flour, shaking off any excess. Then, dip in the eggs, letting any excess drip off. Finally, coat in the panko-Parmesan mixture, making sure all sides are covered. Transfer the chicken to a clean cutting board. \r\n4) Heat the vegetable oil in a large pan over medium-high heat until shimmering. Working in batches if needed to avoid overcrowding the pan, add the chicken and cook until golden brown and cooked through, between 2 and 3 minutes per side. \r\n5) Transfer the chicken to a paper towel-lined plate and season with salt. Garnish the chicken cutlets with the parsley and serve with lemon wedges for squeezing on top.",
+  "image": "default-recipe.jpg",
+  "img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/12/20/0/FNK_Chicken-Cutlet_H_s4x3.jpg.rend.hgtvcom.616.462.suffix/1576855328048.jpeg"
+ },
+ {
+  "recipeID": 36,
+  "title": "Strawberry Bread I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Mary E. Crain",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/347834.jpg",
+  "serving": 2,
+  "description": "A bread you MUST try!  This is one you'll want to keep on hand.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Grease and flour a 9 x 5 inch pan well. Preheat oven to 350 degrees F (175 degrees C). In a large mixing bowl, sift together sugar, flour, cinnamon, salt, and baking soda. In a smaller bowl, beat the eggs and oil. Stir in pecans and strawberries. Add egg mixture to the sifted ingredients, and stir until just combined. Bake for 1 hour, or until tester inserted in the center comes out clean.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 37,
+  "title": "Dee's Health Bread",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Dee Dee",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/111116.jpg",
+  "serving": 2,
+  "description": "Whole wheat bread with sunflower seeds, cracked wheat, and honey.",
+  "ingredients": {
+   "cracked wheat": "1/4 cup"
+  },
+  "instructions": "In a small bowl, dissolve the yeast and sugar in 1/2 cup warm water. In a large bowl, mix remaining 3 1/2 cups warm water, honey, molasses, oil, eggs and lemon juice. Mix well. Add yeast mixture and stir. Gradually add 5 cups whole wheat flour beating well after each addition. Add the flax, cracked wheat and sunflower seeds, stir well. Let stand for 20 minutes, until mixture is very light. Stir in salt and the rest of the flours until dough pulls away from the sides of the bowl. Knead 10 to 15 minutes until dough is smooth and elastic. Put into a greased bowl and cover, let rise in the oven with light on until doubled, about 1 hour. Punch down and shape into 6 round balls. Cover and let rest for 20 minutes. Form into loaves and let rise covered in oven until doubled. Bake at 375 degrees F (190 degrees C) 25-35 minutes.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 38,
+  "title": "Homemade Mozarella Sticks",
+  "tags": [
+   "Snacks and Appetizers"
+  ],
+  "author": "Vlad",
+  "serving": "2",
+  "ingredients": {
+   "Whole milk mozarella cheese": "16 oz",
+   "Egg": "3",
+   "Italian style bread crumb": "3 cups",
+   "salt": "10 g",
+   "oil": "500 ml"
+  },
+  "instructions": "Cut the block of cheese into 1/2 inch thick sticks, a few inches tall (see blog photos). I had 20 pieces. Place the eggs in a bowl with 1/4 tsp salt and 1 tablespoon of water, and whisk to combine. Place the bread crumbs in a second bowl next to the eggs. Take a cheese stick and dip it into the egg, letting the excess drip off. Then coat it in the bread crumbs, shake off the excess, and place on a tray.  Repeat with the remaining cheese sticks.  Once each cheese stick has been breaded, take each one through the egg and bread crumbs again for a second coating, at a minimum. I prefer to bread the cheese sticks three times for a more robust shell, but two coats is sufficient to prevent the cheese from leaking during cooking. Freeze the mozzarella sticks, on the tray, for at least for two hours. Heat the tallow or frying fat of choice to 365F, using either a deep fryer or a heavy bottomed 8\" saucepan monitored with a thermometer. You want the fat to come a few inches up the sides of the pan. Fry the mozzarella sticks in batches**** for about 2 minutes, until golden brown. Let the cheese sticks drain briefly on a paper towel, then serve promptly with marinara or your favorite dunking sauce. Enjoy!",
+  "image": "https://www.fifteenspatulas.com/wp-content/uploads/2016/06/Homemade-Sushi-3-640x427.jpg",
+  "img": "https://www.fifteenspatulas.com/wp-content/uploads/2013/02/How-to-Make-Homemade-Mozzarella-Sticks.jpg",
+  "description": "Tasty snack for home"
+ },
+ {
+  "recipeID": 39,
+  "title": "Sweet Potato Bread I",
+  "tags": [
+   "Whole Grain"
+  ],
+  "author": "Mary E. Crain",
+  "img": "http://images.media-allrecipes.com/userphotos/250x250/394676.jpg",
+  "serving": 2,
+  "description": "A Southern delight with a 'more-ish'  taste.  One bite and you want more! This bread freezes well.",
+  "ingredients": {
+   "": ""
+  },
+  "instructions": "Combine sugar and oil; beat well. Add eggs and beat. Combine flour, baking soda, salt, cinnamon and nutmeg. Stir flour mixture into egg mixture alternately with water. Stir in sweet potatoes and chopped nuts. Pour batter into greased 9x5 inch loaf pan (or 2 small loaf pans). Bake at 350 degrees F (175 degrees C) for about one hour.",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 40,
+  "title": "Loaded Baked Potato Casserole",
+  "tags": [
+   "Quick and Easy",
+   "Snacks and Appetizers"
+  ],
+  "author": "Gurpreet",
+  "img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/6/13/0/FNK_LOADED-BAKED-POTATO-CASSEROLE-H_s4x3.jpg.rend.hgtvcom.616.462.suffix/1497385559585.jpeg",
+  "serving": 2,
+  "description": "Loaded baked potatoes are stuffed with cheesy, creamy goodness for the ultimate comfort food.",
+  "ingredients": {
+   "Potatoes": "3-4",
+   "Sour Cream": "1/2 cup",
+   "butter melted": "2 Tbsp",
+   "cheddar cheese": "1/2 cup",
+   "bacon": "4 slices"
+  },
+  "instructions": "Preheat oven to 375\u00c2\u00b0F. Poke holes with a fork. Coat the outside of each potato with olive oil and salt to taste. Bake 50-60 minutes. Remove from the oven and cool about 20 minutes. Cut each potato in 1/2 lengthwise and use a spoon to scoop out the flesh leaving a 1/8inch shell. Combine the scooped potato with sour cream, butter and salt & pepper to taste. Mash until smooth. Add desired add-ins and stir to combine. Spoon filling into each potato skin and top with cheddar cheese. Bake 15-20 minutes or until heated through and cheese is melted. ",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 41,
+  "title": "Yummy Potato wedges",
+  "tags": [
+   "Snacks and Appetizers",
+   "Vegeterian",
+   "Quick and Easy"
+  ],
+  "author": "Gurpreet",
+  "img": "https://cafedelites.com/wp-content/uploads/2016/06/Baked-Potato-Wedges-IMAGE-49.jpg",
+  "serving": 2,
+  "description": "Seasoned Baked Potato Wedges are the perfect side dish and great with everything from Oven Fried Chicken to a juicy steak dinner, or Crispy Chicken Cutlets! I used to buy store-bought until we realized how quick, easy and tasty they are to make at home!",
+  "ingredients": {
+   "Russet Potatoes": "4",
+   "olive oil": "80ml",
+   "salt": "1 Tbsp",
+   "pepper": "1/2 Tbsp",
+   "Garlic Powder": "1 Tbsp",
+   "Oregano dried": "1 Tbsp",
+   "paprika": "1 Tbsp",
+   "Parmesan Cheese": "1/2 Cup"
+  },
+  "instructions": "Preheat oven to 400\u00c2\u00b0F (200\u00c2\u00b0C). Thoroughly wash potatoes, cut in half, and slice into wedges. Toss wedges in olive oil and seasonings. Place on a baking sheet, skin side down. Bake 40-50 minutes. Enjoy!",
+  "image": "default-recipe.jpg"
+ },
+ {
+  "recipeID": 42,
+  "title": "Spatchcock Chicken",
+  "tags": [
+   "Chicken",
+   "Dinner"
+  ],
+  "description": "This Spatchcock Chicken recipe is our favorite way to roast a whole chicken. Every part of the roasted chicken turns out juicy and so flavorful with that garlic herb butter. This one pan chicken dinner is easy and so delicious!",
+  "author": "Linley Richter",
+  "serving": "4-6",
+  "ingredients": {
+   "Whole chicken": "3 \u2013 4-lb.",
+   "salt (separated)": "1.5 teaspoon",
+   "olive oil, separated": "3 tablespoons",
+   "white onion, chopped": "\u00bd ",
+   "garlic, peeled and smashed ": "4 cloves",
+   "fresh thyme": "10 sprigs",
+   "dry white wine ": "\u00bc cup",
+   "broth, any kind (separated)": "1.5 cups",
+   " lemon juice ": "2 teaspoons",
+   "cornstarch": "2 teaspoons"
+  },
+  "instructions": "First, prepare the chicken seasoning. Mix together all spices and set aside.\r\nNext, remove the chicken from the packaging and place the chicken on a clean, dry cutting board. \r\nRemove excess moisture from the chicken with a paper towel.\r\nTo spatchcock the chicken, set the chicken breast-side down on a cutting board and use very sharp kitchen shears to begin cutting down one side of the spine through the ribs and then repeat on the other side of the spine. Discard the spine. \r\nFlip the chicken over onto the chicken breasts and use your hands to press on the middle of the bird pressing down firmly to flatten the chicken. \r\nPlace the chicken on a large plate and carefully separate the chicken meat from the chicken skin with your hand. \r\nCarefully rub 1 teaspoon salt on the chicken meat under the skin being sure the chicken meat is covered with salt. \r\nNext, season the whole chicken with the all purpose chicken seasoning. Be sure the whole chicken is covered (skin, legs, thighs, etc.). Then, refrigerate the chicken for at least 2 hours or overnight.\r\nWhen you are ready to cook, preheat the oven to 425\u00baF and line a baking sheet with aluminum foil. \r\nRemove the chicken from the refrigerator and let it come to room temperature. \r\nPlace the onion, garlic, thyme, white wine, \u00bd cup of broth, and 1 tablespoon olive oil on top of the aluminum foil and sprinkle with the remaining \u00bd teaspoon salt.  \r\nPlace a metal rack on top of the foil and vegetables and carefully place the whole chicken flat on top of the metal rack breast-side up. \r\nRub the chicken with the additional 2 tablespoons of oil. Be sure to really massage the oil into the chicken. \r\nPlace the chicken in the oven and bake at 425\u00baF for 35-45 minutes or until the whole bird has an internal temperature of at least 160\u00ba. Make sure to take the temperature at the thickest parts.\r\nRemove the chicken from the oven and let the chicken rest for at least 15 minutes. Your chicken should continue to cook 5\u00baF to make the internal temperature 165\u00baF.\r\nWhile the chicken is resting, prepare the sauce. Add all of the cooked vegetables, liquid, and herbs from the bottom of the pan into a small saucepan along with the rest of the broth (1 cup). \r\nBring the sauce to a boil and then turn the heat to medium/low and add the lemon juice. \r\nThen, carefully sprinkle the cornstarch into the sauce and whisk. Let the sauce cook over medium heat until thick. Remove from heat and discard the herb stems. \r\nCarve the chicken and serve with the sauce. ",
+  "image": "default-recipe.jpg",
+  "img": "https://natashaskitchen.com/wp-content/uploads/2018/02/Roasted-Spatchcock-Chicken-Recipe-6-768x1152.jpg"
+ }
 ]
