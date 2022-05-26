@@ -1,5 +1,4 @@
-[
-    {
+[{
         "recipeID": 1,
         "title": "Grilled Flank Steak",
         "tags": [
@@ -554,7 +553,7 @@
             "Pork"
         ],
         "author": "Natasha Kravchuk",
-        "description": "Creamy parmesan garlic alfredo sauce topped with crispy bacon is our favorite way to eat them. This Brussels sprouts recipe is a fun way to dress up classic roasted Brussels sprouts. It\u00e2\u20ac\u2122s a quick and easy side dish that comes together in one-pan!",
+        "description": "Creamy parmesan garlic alfredo sauce topped with crispy bacon is our favorite way to eat them. This Brussels sprouts recipe is a fun way to dress up classic roasted Brussels sprouts. It's a quick and easy side dish that comes together in one-pan!",
         "serving": "4",
         "ingredients": {
             "Brussels sprouts": "2 lbs",

@@ -10,14 +10,14 @@
 <div class="account-body-container">
     <div class="container" id="account-body">
         {% with messages = get_flashed_messages() %} {% if messages %}
-        <div class="notification">
+        <div class="notification text-center">
             {{ messages[0] }}
         </div>
         {% endif %} {% endwith %}
 
         <!-- account image -->
         <div class="account-image container">
-            <img>
+            <img class="account-image-login" src="{{url_for('static', filename='images/account-icon-notcoloured.png')}}">
         </div>
 
         <form action="/login" method="POST">
