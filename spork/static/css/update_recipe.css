@@ -24,7 +24,7 @@ body {
 #create_body {
     background-color: #faf9f9;
     /* padding: 2pc auto 2pc auto; */
-    margin-top: 8pc;
+    margin-top: 2pc;
     margin-bottom: 8pc;
     padding-bottom: 2pc;
     padding-top: 1pc;
@@ -205,4 +205,35 @@ body {
 
 #picture-file {
     width: 80%
+}
+
+
+/* override nav cuz of a diff bootstrap version */
+
+.navbar-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+/* make them green selection buttons */
+
+.form-check-label {
+    margin-bottom: 0.5rem;
+    padding-top: 0.1875rem;
+    padding-bottom: 0.1875rem;
+    border-radius: 5%;
+    border-color: #c6e5e3;
+    /* border-width: 0.01pc; */
+    color: black;
+    /* height: 1rem; */
+}
+
+.form-check-label:hover {
+    background-color: #38a552;
+    border-color: #38a552;
+}
+
+.form-check-label:focus {
+    outline: none;
 }
