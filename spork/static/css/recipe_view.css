@@ -13,6 +13,8 @@
 
 body {
     background-color: var(--body_bg);
+    padding-bottom: 3rem;
+    padding-top: 5rem;
 }
 
 
@@ -32,6 +34,14 @@ body {
     top: 0;
     /* Position the navbar at the top of the page */
     width: 100%;
+}
+
+
+/* override nav cuz of a diff bootstrap version */
+
+.navbar-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 
@@ -58,9 +68,10 @@ body {
 
 #create_body {
     background-color: #faf9f9;
-    margin-top: 8pc;
+    margin-top: 3pc;
     margin-bottom: 8pc;
     padding-bottom: 2pc;
+    width: 75%;
 }
 
 .ricipe-title {
@@ -87,12 +98,13 @@ body {
 
 /* image */
 
-#image > *{
+#image>* {
     width: 20pc;
     height: 20pc;
     margin-top: 1.5pc;
     max-height: 20pc;
     max-width: 20pc;
+    margin-left: 1.5rem;
 }
 
 .basic-info-image {
@@ -159,6 +171,21 @@ body {
     margin-top: 0rem;
 }
 
-.account-icon{
+.account-icon {
     max-height: 40px;
+}
+
+
+/* save recipe button */
+
+#save-recipe {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+}
+
+#saved-recipe {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
 }

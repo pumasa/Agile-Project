@@ -132,12 +132,12 @@
         element.remove();
     }
 
-    function validateMyForm (){
-        if( document.getElementById("image_field").files.length != 0 && document.getElementById("online_image").value.length !=0 ){
+    function validateMyForm() {
+        if (document.getElementById("image_field").files.length != 0 && document.getElementById("online_image").value.length != 0) {
             alert("Choose a Image File to upload OR an Image URL, not Both");
             return false
         }
-        if( document.getElementById("title").value.length == 0 ){
+        if (document.getElementById("title").value.length == 0) {
             alert("You need a title");
             return false
         }
