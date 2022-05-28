@@ -88,12 +88,12 @@ def test_check_error():
     assert rf.check_error() == {
         "confirm_password_error": False,
         "email_error": False,
-        "password_strength_error": False
+        "password_strength_error": False,
     }
 
     rf = RegisterForm("test@test.com", "1234567", "1234567")
     assert rf.check_error() == {
         "confirm_password_error": False,
         "email_error": False,
-        "password_strength_error": True
+        "password_strength_error": True,
     }

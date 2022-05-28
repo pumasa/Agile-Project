@@ -259,9 +259,8 @@ def test_update(recipe3):
                 "ingredients": {"Sugar": "1 tsp", "Salt": "1 kg", "Eggs": "1"},
                 "instructions": "A million years ago Mike decided to cook a salty omlet",
                 "image": "",
-                "img": ""
+                "img": "",
             }
-            
 
 
 def return_path(given_path):

@@ -2,7 +2,16 @@
 
 import random
 import uuid
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, abort
+from flask import (
+    Flask,
+    render_template,
+    request,
+    redirect,
+    url_for,
+    flash,
+    jsonify,
+    abort,
+)
 import json
 import os
 from flask_login import (
@@ -37,7 +46,6 @@ app = Flask(
 
 UPLOAD_FOLDER = return_path("./spork/static/images")
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
-
 
 
 app.config["SECRET_KEY"] = "johnny"
@@ -347,11 +355,11 @@ def recipe_delete(id):
                     path = os.path.join(dir_path, recipe["image"])
                     if os.path.isfile(path):
                         os.remove(path)
-                
+
                 csv_path_user = return_path("spork/database/user.json")
                 with open(csv_path_user, "r") as f:
                     users = json.loads(f.read())
-                
+
                 with open(csv_path_user, "w") as f:
                     for user in users:
                         if id in user["recipes"]:
@@ -367,13 +375,12 @@ def recipe_delete(id):
                                 data_recipes_list2 = []
                             user.update({"saved_recipes": data_recipes_list2})
                     json.dump(users, f, indent=1)
-                    
+
                 recipes.remove(recipe)
 
         with open(csv_path, "w") as f:
             json.dump(recipes, f, indent=1)
 
-        
         return redirect(url_for("index"))
     else:
         abort(404)
@@ -432,7 +439,7 @@ def recipe_update(id):
                         filename = ".".join(file_breakdown)
                     else:
                         break
-                    
+
                 file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
                 recipe.image = filename
             recipe.update()
@@ -481,6 +488,7 @@ def unsave(id):
 
     return redirect(url_for("recipe_view", id=id))
 
+
 ################################################# Error pages #################################################
 @app.errorhandler(404)
 def page_not_found(e):
@@ -490,6 +498,7 @@ def page_not_found(e):
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template("500.html"), 500
+
 
 ################################################# start the server with the 'run()' method #################################################
 if __name__ == "__main__":

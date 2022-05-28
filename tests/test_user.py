@@ -3,6 +3,7 @@ from spork.models.user import User
 import pytest
 from unittest.mock import patch, mock_open
 import os
+
 # Mockmock = Mock()
 
 JSON_FILE = """ [{
@@ -70,8 +71,8 @@ def test_to_json(user2):
         "email": "michael@gmail.com",
         "password": "pass",
         "recipes": [2, 3, 5],
-        "saved_recipes":[],
-        "is_admin" :False
+        "saved_recipes": [],
+        "is_admin": False,
     }
 
 
@@ -94,51 +95,62 @@ def test_save(user2):
                 "password": "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e",
                 "recipes": [2],
                 "saved_recipes": [1],
-                "is_admin" :False
+                "is_admin": False,
             }
             assert data[1] == {
                 "id": "2",
                 "email": "michael@gmail.com",
                 "password": "pass",
                 "recipes": [2, 3, 5],
-                "saved_recipes":[],
-                "is_admin" :False
+                "saved_recipes": [],
+                "is_admin": False,
             }
 
-def test_find_by_email(user):
-        with patch(
-            "builtins.open", new_callable=mock_open, read_data=JSON_FILE
-        ) as mock_file:
-            user = user.find_by_email("a@a.com")
 
-            assert mock_file.call_count == 2
-            csv_path = return_path("../spork/database/user.json")
-            assert csv_path == mock_file.call_args[0][0]
-            
-            assert isinstance(user,User)
-            assert user.id == "1"
-            assert user.email == "a@a.com"
-            assert user.password == "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e"
-            assert user.recipes == [2]
-            
+def test_find_by_email(user):
+    with patch(
+        "builtins.open", new_callable=mock_open, read_data=JSON_FILE
+    ) as mock_file:
+        user = user.find_by_email("a@a.com")
+
+        assert mock_file.call_count == 2
+        csv_path = return_path("../spork/database/user.json")
+        assert csv_path == mock_file.call_args[0][0]
+
+        assert isinstance(user, User)
+        assert user.id == "1"
+        assert user.email == "a@a.com"
+        assert (
+            user.password
+            == "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e"
+        )
+        assert user.recipes == [2]
+
+
 def test_get_id(user):
     assert user.get_id() == "2"
-    
-def test_find_by_id(user):
-        with patch(
-            "builtins.open", new_callable=mock_open, read_data=JSON_FILE
-        ) as mock_file:
-            user = user.find_by_id("1")
 
-            assert mock_file.call_count == 2
-            csv_path = return_path("../spork/database/user.json")
-            assert csv_path == mock_file.call_args[0][0]
-            
-            assert isinstance(user,User)
-            assert user.id == "1"
-            assert user.email == "a@a.com"
-            assert user.password == "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e"
-            assert user.recipes == [2]
+
+def test_find_by_id(user):
+    with patch(
+        "builtins.open", new_callable=mock_open, read_data=JSON_FILE
+    ) as mock_file:
+        user = user.find_by_id("1")
+
+        assert mock_file.call_count == 2
+        csv_path = return_path("../spork/database/user.json")
+        assert csv_path == mock_file.call_args[0][0]
+
+        assert isinstance(user, User)
+        assert user.id == "1"
+        assert user.email == "a@a.com"
+        assert (
+            user.password
+            == "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e"
+        )
+        assert user.recipes == [2]
+
+
 def test_update_user(user2):
     with patch("json.dump") as mock_json:
         with patch(
@@ -157,17 +169,18 @@ def test_update_user(user2):
                 "password": "sha256$nfBqhxKdqWrpUmVt$16a70e7b6fc30de0c2e3f02be359b38d1c01983ec1642a9ac3d88785017c9d6e",
                 "recipes": [2],
                 "saved_recipes": [1],
-                "is_admin" :False
+                "is_admin": False,
             }
             assert data[1] == {
                 "id": "2",
                 "email": "michael@gmail.com",
                 "password": "pass",
                 "recipes": [2, 3, 5],
-                "saved_recipes":[1],
-                "is_admin" :False
+                "saved_recipes": [1],
+                "is_admin": False,
             }
-            
+
+
 def return_path(given_path):
     cwd = os.path.abspath(os.path.dirname(__file__))
     csv_path = os.path.abspath(os.path.join(cwd, given_path))

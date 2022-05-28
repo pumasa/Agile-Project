@@ -2,6 +2,7 @@ import json
 from flask_login import UserMixin
 import os
 
+
 class User(UserMixin):
     def __init__(self, email, password):
         biggest_id = 0
@@ -80,12 +81,12 @@ class User(UserMixin):
             f"password": str(self.password),
             f"recipes": self.recipes,
             f"saved_recipes": self.saved_recipes,
-            f"is_admin": self.is_admin
+            f"is_admin": self.is_admin,
         }
 
         return json
 
-    def return_path(self,given_path):
+    def return_path(self, given_path):
         cwd = os.path.abspath(os.path.dirname(__file__))
         csv_path = os.path.abspath(os.path.join(cwd, given_path))
         return csv_path
@@ -95,10 +96,9 @@ class User(UserMixin):
         file_data = self.load_database()
         csv_path = self.return_path("../database/user.json")
         with open(csv_path, "w") as f:
-       
-            for instance in file_data:
-                if instance['id'] == to_json['id']:
-                    instance.update(to_json) 
-                    
-            json.dump(file_data, f, indent=1)
 
+            for instance in file_data:
+                if instance["id"] == to_json["id"]:
+                    instance.update(to_json)
+
+            json.dump(file_data, f, indent=1)
