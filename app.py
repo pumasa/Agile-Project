@@ -2,7 +2,16 @@
 
 import random
 import uuid
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, abort
+from flask import (
+    Flask,
+    render_template,
+    request,
+    redirect,
+    url_for,
+    flash,
+    jsonify,
+    abort,
+)
 import json
 import os
 from flask_login import (
@@ -21,12 +30,21 @@ from werkzeug.utils import secure_filename
 ################################################# Function Tool Box ###########################################
 ################################################# return path #################################################
 def return_path(given_path):
+    """Return the full path relate to this file according to input
+
+    Args:
+        given_path (string): the path that is related to this
+
+    Returns:
+        str: The complete path
+    """
     cwd = os.path.abspath(os.path.dirname(__file__))
     csv_path = os.path.abspath(os.path.join(cwd, given_path))
     return csv_path
 
 
 def allowed_file(filename):
+
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
@@ -34,10 +52,9 @@ def allowed_file(filename):
 app = Flask(
     __name__, template_folder="./spork/templates", static_folder="./spork/static"
 )
-
+# Where all the recipe image upload
 UPLOAD_FOLDER = return_path("./spork/static/images")
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
-
 
 
 app.config["SECRET_KEY"] = "johnny"
@@ -48,7 +65,7 @@ login_manager = LoginManager()
 login_manager.login_view = "login"
 login_manager.init_app(app)
 
-
+# Return a user by id
 @login_manager.user_loader
 def load_user(id):
     temp_account = User("temp_dont_touch", "password")
@@ -59,6 +76,11 @@ def load_user(id):
 ################################################# filter #################################################
 @app.route("/filter", methods=["GET", "POST"])
 def filter():
+    """Render filter option page for GET, return recipes with selected tags for POST
+
+    Returns:
+        template: a html template
+    """
     if request.method == "POST":
         csv_path = return_path("spork/database/recipe.json")
         with open(csv_path, "r") as myfile:
@@ -79,6 +101,8 @@ def filter():
 ################################################# index/home page - renders info from recipe.json #################################################
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """The main page, renders all the recipe"""
+    # Open recipe database
     csv_path = return_path("spork/database/recipe.json")
     with open(csv_path, "r") as myfile:
         data = json.loads(myfile.read())
@@ -86,10 +110,12 @@ def index():
     pool = []
     for recipe in data:
         pool.append(recipe)
+    # Randomly choose a recipe from database
     recommendation = random.choice(pool)
 
     search = str(request.form.get("search"))
 
+    # Search logic
     results = []
     keywords = search.lower().split()
     # search recipes
@@ -118,7 +144,7 @@ def index():
             else:
                 continue
             break
-
+    # If no search result
     if request.method == "POST":
         if len(results) < 1:
             flash("This recipe does not exist! Please try a different one!")
@@ -131,6 +157,7 @@ def index():
 ################################################# Random API #################################################
 @app.route("/random", methods=["GET"])
 def random_view():
+    """Random recipe endpoint, return a random recipe from database in json format"""
     csv_path = return_path("spork/database/recipe.json")
     with open(csv_path, "r") as myfile:
         data = json.loads(myfile.read())
@@ -138,11 +165,13 @@ def random_view():
     for recipe in data:
         pool.append(recipe)
     recommendation = random.choice(pool)
+    # return local image path if img is empty
     if recommendation["img"] == "":
         return jsonify(
             recipe=recommendation,
             image_link=url_for("static", filename=f'images/{recommendation["image"]}'),
         )
+    # return online image if it is included
     else:
         return jsonify(recipe=recommendation, image_link=recommendation["img"])
 
@@ -151,6 +180,7 @@ def random_view():
 @app.route("/recipe/create", methods=["GET", "POST"])
 @login_required
 def create():
+    """Create a Recipe, can only be accessed if login"""
     if request.method == "POST":
         csv_path = return_path("spork/database/recipe.json")
         with open(csv_path, "r") as myfile:
@@ -160,9 +190,9 @@ def create():
                 if i["recipeID"] > biggest_id:
                     biggest_id = i["recipeID"]
             biggest_id += 1
-
+        # Grab data from html form
         recipe_data = request.form
-
+        # create a recipe instance
         recipe = Recipe(
             biggest_id,
             recipe_data["title"],
@@ -205,6 +235,7 @@ def create():
         recipe.save()
 
         if current_user.is_authenticated:
+            # Add data to the user who created
             current_user.recipes.append(biggest_id)
             current_user.update_user()
 
@@ -347,11 +378,11 @@ def recipe_delete(id):
                     path = os.path.join(dir_path, recipe["image"])
                     if os.path.isfile(path):
                         os.remove(path)
-                
+
                 csv_path_user = return_path("spork/database/user.json")
                 with open(csv_path_user, "r") as f:
                     users = json.loads(f.read())
-                
+
                 with open(csv_path_user, "w") as f:
                     for user in users:
                         if id in user["recipes"]:
@@ -367,13 +398,12 @@ def recipe_delete(id):
                                 data_recipes_list2 = []
                             user.update({"saved_recipes": data_recipes_list2})
                     json.dump(users, f, indent=1)
-                    
+
                 recipes.remove(recipe)
 
         with open(csv_path, "w") as f:
             json.dump(recipes, f, indent=1)
 
-        
         return redirect(url_for("index"))
     else:
         abort(404)
@@ -432,7 +462,7 @@ def recipe_update(id):
                         filename = ".".join(file_breakdown)
                     else:
                         break
-                    
+
                 file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
                 recipe.image = filename
             recipe.update()
@@ -481,6 +511,7 @@ def unsave(id):
 
     return redirect(url_for("recipe_view", id=id))
 
+
 ################################################# Error pages #################################################
 @app.errorhandler(404)
 def page_not_found(e):
@@ -490,6 +521,7 @@ def page_not_found(e):
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template("500.html"), 500
+
 
 ################################################# start the server with the 'run()' method #################################################
 if __name__ == "__main__":

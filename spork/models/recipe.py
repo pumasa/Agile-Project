@@ -1,6 +1,8 @@
 import json
 import random
 import os
+
+
 class Recipe:
     def __init__(self, recipeID, title, author, serving):
         """This is the constructor"""
@@ -16,6 +18,7 @@ class Recipe:
         self.tags = []
         self.description = ""
         self.img = ""
+
     # adds an ingredient and ingredient quantity to the recipe's ingredient list
     # takes ingredient and how many of the ingredient is in the recipe as parameters
 
@@ -28,7 +31,6 @@ class Recipe:
     def remove_ingredient(self, ingredient):
         self.ingredients.pop(ingredient)
 
-    
     # #adds an instruction to the instruction list
     def update_instructions(self, instruction):
         self.instructions = instruction
@@ -37,75 +39,73 @@ class Recipe:
         self.description = description
 
     def update_img(self, img):
-        self.img = img        
+        self.img = img
 
     def update_title(self, title):
         self.title = title
 
-
     def update_author(self, author):
         self.author = author
-
 
     def update_serving(self, serving):
         self.serving = serving
 
     def search(self, search):
-        results=[]
+        results = []
 
-        #breaks the search string into lowercase keywords
+        # breaks the search string into lowercase keywords
         keywords = search.lower().split()
-        #retrieves list of recipes in database
+        # retrieves list of recipes in database
         file_data = self.load_database()
 
-        #iterates through all recipes
+        # iterates through all recipes
         for recipe in file_data:
-            #breaks the title into lowercase words
-            title_words = recipe['title'].lower().split()
+            # breaks the title into lowercase words
+            title_words = recipe["title"].lower().split()
             for word in title_words:
                 for keyword in keywords:
-                    #checks for a match between a word from a title and a keyword
+                    # checks for a match between a word from a title and a keyword
                     if word == keyword:
-                        #if a match is found, both the loops will break and we will move onto the next recipe
-                        results.append(recipe['recipeID'])
+                        # if a match is found, both the loops will break and we will move onto the next recipe
+                        results.append(recipe["recipeID"])
                         break
-                #this else statement executes if there were no matches with the current title word
-                #it loops and checks for a match between a keyword and the next word from the recipe's title
-                #(an else statement after a for loop will execute only when the for loop terminated normally)
-                #(it will not execute if the for loop was ended by the break keyword)
+                # this else statement executes if there were no matches with the current title word
+                # it loops and checks for a match between a keyword and the next word from the recipe's title
+                # (an else statement after a for loop will execute only when the for loop terminated normally)
+                # (it will not execute if the for loop was ended by the break keyword)
                 else:
                     continue
                 break
 
-        #returns list of recipe ids that were found
+        # returns list of recipe ids that were found
         return results
 
     def filter(self, filter):
-        #filter is a list of strings, where the strings are the ingredients you are filtering
-        #the filter list is case sensitive
+        # filter is a list of strings, where the strings are the ingredients you are filtering
+        # the filter list is case sensitive
         results = []
-        #retrieves list of recipes from the database
+        # retrieves list of recipes from the database
         file_data = self.load_database()
 
-        #iterates over all recipes
+        # iterates over all recipes
         for recipe in file_data:
-            #sets the variable used to keep track of how many ingredients matched
+            # sets the variable used to keep track of how many ingredients matched
             x = 0
-            #iterates over all the ingredients we're filtering for
+            # iterates over all the ingredients we're filtering for
             for ingredient in filter:
-                #if the ingredient is in the recipe, add 1 to the match counter
-                if ingredient.lower() in [x.lower() for x in recipe['ingredients'].keys()]:
+                # if the ingredient is in the recipe, add 1 to the match counter
+                if ingredient.lower() in [
+                    x.lower() for x in recipe["ingredients"].keys()
+                ]:
                     x += 1
-                #if there was no match, exit loop and move onto the next recipe
+                # if there was no match, exit loop and move onto the next recipe
                 else:
                     break
-            #adds the recipeID to the result list if all ingredients from the filter are in the recipe
+            # adds the recipeID to the result list if all ingredients from the filter are in the recipe
             if x == len(filter):
-                results.append(recipe['recipeID'])
-        
+                results.append(recipe["recipeID"])
+
         return results
-
-
 
     # writes the recipe into the json file
     def save(self):
@@ -117,7 +117,7 @@ class Recipe:
             x = 0
 
             for instance in file_data:
-                if instance['recipeID'] == to_json['recipeID']:
+                if instance["recipeID"] == to_json["recipeID"]:
                     instance.update(to_json)
                     x = 1
             if x == 0:
@@ -130,13 +130,13 @@ class Recipe:
         file_data = self.load_database()
 
         with open(csv_path, "w") as f:
-       
+
             for instance in file_data:
-                if instance['recipeID'] == to_json['recipeID']:
-                    instance.update(to_json) 
-                    
+                if instance["recipeID"] == to_json["recipeID"]:
+                    instance.update(to_json)
+
             json.dump(file_data, f, indent=1)
-            
+
     def to_json(self):
 
         json = {
@@ -153,8 +153,8 @@ class Recipe:
         }
 
         return json
-    
-    def return_path(self,given_path):
+
+    def return_path(self, given_path):
         cwd = os.path.abspath(os.path.dirname(__file__))
         csv_path = os.path.abspath(os.path.join(cwd, given_path))
         return csv_path
@@ -164,7 +164,9 @@ class Recipe:
         with open(csv_path, "r") as f:
             file_data = json.loads(f.read())
         return file_data
-#def delete(recipeid):
+
+
+# def delete(recipeid):
 #
 #    with open(f"spork\\database\\recipe.json", "r") as f:
 #        recipes = json.loads(f.read())
@@ -178,7 +180,7 @@ class Recipe:
 #
 #    with open(f'spork\\database\\user.json', 'r') as f:
 #        users = json.loads(f.read())
-#        
+#
 #    for user in users:
 #        if recipeid in user['recipes']:
 #            user['recipes'].remove(recipeid)
