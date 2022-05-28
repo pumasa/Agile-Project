@@ -99,6 +99,7 @@ class RegisterForm:
             return False
 
     def check_error(self):
+        """Return True if it has error"""
         return {
             "confirm_password_error": not self.check_confirm_password(),
             "email_error": not self.check_email(),
